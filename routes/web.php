@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('layouts.welcome');
-});
-
-
-Route::get('/home', function () {
     return view('layouts.home');
 });
+
+
+/*
+Route::get('/home', function () {
+    return view('layouts.home');
+});*/

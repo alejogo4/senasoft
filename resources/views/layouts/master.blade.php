@@ -1,14 +1,25 @@
-<html>
-<head>
-    <title>@yield('title')</title>
-</head>
-<body>
-@section('sidebar')
-    This is the master sidebar.
-@show
+<!DOCTYPE html>
+<html lang="es">
 
-<div class="container">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="Sitio Web - Senasoft 2019">
+
+    <title>@yield('title')</title>
+
+    <!--Librerias del head que usa la plantilla-->
+    @yield('librariesTop',View::make('layouts.components.librariesTop'))
+
+</head>
+
+<body>
+
     @yield('content')
-</div>
+
+
+<!--Librerias del head que usa la plantilla-->
+@yield('libreriasBottom',View::make('layouts.components.librariesBottom'))
 </body>
 </html>
