@@ -34,12 +34,11 @@
             <div class="row">
 
                 <!--begin col-md-8-->
-                <div class="col-md-10 col-md-offset-1 text-center padding-top-50">
-
-                    <h1>The Wold's Most Powerful App Template</h1>
-
-                    <p>Curabitur quam etsum lacus etsumis nulatis etsumised vitae nislet varius loremis sedit feugiat ligulatum aliquam etsimus dictimelis et netsum ipsum etim quias ligula.</p>
-
+                <div class="col-md-10 col-md-offset-1 text-center">
+                    <img src="images/logo_sena.png" alt="Logo SENA" class="logo-sena">     
+                    <h1>SENASOFT 2019  | MEDELLÍN</h1>
+                    <p>En Medellín estamos preparando el evento SenaSoft 2019, el mayor encuentro tecnológico organizado por el SENA </p>
+                  
                     @yield('countdown',View::make('layouts.components.countdown'))
 
                 </div>
@@ -304,149 +303,7 @@
     </section>
     <!--end video-wrapper -->
 
-    <!--begin faq section -->
-    <section class="section-white small-padding-bottom">
-
-        <!--begin container-->
-        <div class="container">
-
-            <!--begin row-->
-            <div class="row">
-
-                <!--begin col-md-6-->
-                <div class="col-md-6 margin-top-10">
-
-                    <img src="http://placehold.it/555x421" alt="picture" class="width-100">
-
-                </div>
-                <!--end col-sm-6-->
-
-                <!--begin col-md-6-->
-                <div class="col-md-6 margin-top-10">
-
-                    <h3>Frequently Asked Questions</h3>
-
-                    <!--begin panel-group -->
-                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-
-                        <!--begin panel-default -->
-                        <div class="panel panel-default">
-
-                            <div class="panel-heading" role="tab" id="headingOne">
-
-                                <h4 class="panel-title">
-
-                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <i class="icon icon-rocket panel-icon"></i> What's the difference between organic vs. paid results?
-                                    </a>
-
-                                </h4>
-
-                            </div>
-
-                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-
-                                <div class="panel-body">
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!--end panel-default -->
-
-                        <!--begin panel-default -->
-                        <div class="panel panel-default">
-
-                            <div class="panel-heading" role="tab" id="headingTwo">
-
-                                <h4 class="panel-title">
-
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <i class="icon icon-prize-award panel-icon"></i> Should I optimize my domain name to include keywords?
-                                    </a>
-
-                                </h4>
-
-                            </div>
-
-                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-
-                                <div class="panel-body">
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!--end panel-default -->
-
-                        <!--begin panel-default -->
-                        <div class="panel panel-default">
-
-                            <div class="panel-heading" role="tab" id="headingThree">
-
-                                <h4 class="panel-title">
-
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <i class="icon icon-present-gift panel-icon"></i> What is the difference between indexed and crawling?
-                                    </a>
-
-                                </h4>
-
-                            </div>
-
-                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-
-                                <div class="panel-body">
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!--end panel-default -->
-
-                        <!--begin panel-default -->
-                        <div class="panel panel-default">
-
-                            <div class="panel-heading" role="tab" id="headingFour">
-
-                                <h4 class="panel-title">
-
-                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <i class="icon icon-present-gift panel-icon"></i> What is the difference between indexed and crawling?
-                                    </a>
-
-                                </h4>
-
-                            </div>
-
-                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-
-                                <div class="panel-body">
-                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
-                                </div>
-
-                            </div>
-
-                        </div>
-                        <!--end panel-default -->
-
-                    </div>
-                    <!--end panel-group -->
-
-                </div>
-                <!--end col-sm-6-->
-
-            </div>
-            <!--end row-->
-
-        </div>
-        <!--end container-->
-
-    </section>
-    <!--end faq section -->
+    
 
     <!--begin team section -->
     <section class="top-shape-wrapper">
@@ -584,7 +441,7 @@
                 <!--begin col md 12 -->
                 <div class="col-md-12 text-center">
 
-                    <h2 class="section-title white">Explore Latest Projects</h2>
+                    <h2 class="section-title white">Categorias de participación</h2>
 
                     <p class="section-subtitle white">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
 
@@ -1285,8 +1142,8 @@
     </section>
     <!--end white-grey -->
 
-    <!--begin blog -->
-    <section class="section-grey" id="blog">
+    <!--begin faq section -->
+    <section class="section-white small-padding-bottom" id="pqr">
 
         <!--begin container-->
         <div class="container">
@@ -1294,273 +1151,131 @@
             <!--begin row-->
             <div class="row">
 
-                <!--begin col-md-12-->
-                <div class="col-md-10 col-md-offset-1 text-center">
-                    <h2 class="section-title">Our Latest News</h2>
+                <!--begin col-md-6-->
+                <div class="col-md-6 margin-top-10">
 
-                    <div class="separator_wrapper">
-                        <i class="icon icon-star-two blue"></i>
-                    </div>
+                    <img src="http://placehold.it/555x421" alt="picture" class="width-100">
 
-                    <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
                 </div>
-                <!--end col-md-12-->
+                <!--end col-sm-6-->
 
-            </div>
-            <!--end row-->
+                <!--begin col-md-6-->
+                <div class="col-md-6 margin-top-10">
 
-            <!--begin row-->
-            <div class="row">
+                    <h3>Preguntas Frecuentes</h3>
 
-                <!--begin col-md-12 -->
-                <div class="col-md-12">
+                    <!--begin panel-group -->
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-                    <div id="myCarousel" class="carousel carousel1 slide margin-top-20 margin-bottom-10" data-interval="false">
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
+                        <!--begin panel-default -->
+                        <div class="panel panel-default">
 
-                            <div class="item active">
+                            <div class="panel-heading" role="tab" id="headingOne">
 
-                                <!--begin col-sm-4 -->
-                                <div class="col-sm-4">
+                                <h4 class="panel-title">
 
-                                    <!--begin blog-item -->
-                                    <div class="blog-item">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <i class="icon icon-rocket panel-icon"></i> What's the difference between organic vs. paid results?
+                                    </a>
 
-                                        <!--begin popup image -->
-                                        <div class="popup-wrapper">
-                                            <div class="popup-gallery">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/350x240" class="width-100" alt="pic">
-                                                    <span class="eye-wrapper2"><i class="fa fa-link eye-icon"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!--end popup image -->
-
-                                        <!--begin blog-item_inner -->
-                                        <div class="blog-item-inner">
-
-                                            <h3 class="blog-title"><a href="#">Affinity Designer Quick Start</a></h3>
-
-                                            <a href="#" class="blog-icons"><i class="fa fa-user"></i> Paul Smith</a>
-
-                                            <a href="#" class="blog-icons last"><i class="fa fa-tags"></i> WordPress</a>
-
-                                            <p>Quis autem velis etis reprehender etid quiste voluptate velite esse quam nihis etsa illum sedit varias netsum.</p>
-
-                                        </div>
-                                        <!--end blog-item-inner -->
-
-                                    </div>
-                                    <!--end blog-item -->
-
-                                </div>
-                                <!--end col-sm-4-->
-
-                                <!--begin col-sm-4 -->
-                                <div class="col-sm-4">
-
-                                    <!--begin blog-item -->
-                                    <div class="blog-item">
-
-                                        <!--begin popup image -->
-                                        <div class="popup-wrapper">
-                                            <div class="popup-gallery">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/350x240" class="width-100" alt="pic">
-                                                    <span class="eye-wrapper2"><i class="fa fa-link eye-icon"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!--end popup image -->
-
-                                        <!--begin blog-item_inner -->
-                                        <div class="blog-item-inner">
-
-                                            <h3 class="blog-title"><a href="#">Solid HTML Form Structure</a></h3>
-
-                                            <a href="#" class="blog-icons"><i class="fa fa-user"></i> By John Doe</a>
-
-                                            <a href="#" class="blog-icons last"><i class="fa fa-tags"></i> Marketing</a>
-
-                                            <p>Quis autem velis etis reprehender etid quiste voluptate velite esse quam nihis etsa illum sedit varias netsum.</p>
-
-                                        </div>
-                                        <!--end blog-item-inner -->
-
-                                    </div>
-                                    <!--end blog-item -->
-
-                                </div>
-                                <!--end col-sm-4-->
-
-                                <!--begin col-sm-4 -->
-                                <div class="col-sm-4">
-
-                                    <!--begin blog-item -->
-                                    <div class="blog-item">
-
-                                        <!--begin popup image -->
-                                        <div class="popup-wrapper">
-                                            <div class="popup-gallery">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/350x240" class="width-100" alt="pic">
-                                                    <span class="eye-wrapper2"><i class="fa fa-link eye-icon"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!--end popup image -->
-
-                                        <!--begin blog-item_inner -->
-                                        <div class="blog-item-inner">
-
-                                            <h3 class="blog-title"><a href="#">New WordPress Theme</a></h3>
-
-                                            <a href="#" class="blog-icons"><i class="fa fa-user"></i> By John Doe</a>
-
-                                            <a href="#" class="blog-icons last"><i class="fa fa-tags"></i> Design</a>
-
-                                            <p>Quis autem velis etis reprehender etid quiste voluptate velite esse quam nihis etsa illum sedit varias netsum.</p>
-
-                                        </div>
-                                        <!--end blog-item-inner -->
-
-                                    </div>
-                                    <!--end blog-item -->
-
-                                </div>
-                                <!--end col-sm-4-->
+                                </h4>
 
                             </div>
 
-                            <div class="item text-center">
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 
-                                <!--begin col-sm-4 -->
-                                <div class="col-sm-4">
-
-                                    <!--begin blog-item -->
-                                    <div class="blog-item">
-
-                                        <!--begin popup image -->
-                                        <div class="popup-wrapper">
-                                            <div class="popup-gallery">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/350x240" class="width-100" alt="pic">
-                                                    <span class="eye-wrapper2"><i class="fa fa-link eye-icon"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!--end popup image -->
-
-                                        <!--begin blog-item_inner -->
-                                        <div class="blog-item-inner">
-
-                                            <h3 class="blog-title"><a href="#">Affinity Designer Quick Start</a></h3>
-
-                                            <a href="#" class="blog-icons"><i class="fa fa-user"></i> Paul Smith</a>
-
-                                            <a href="#" class="blog-icons last"><i class="fa fa-tags"></i> WordPress</a>
-
-                                            <p>Quis autem velis etis reprehender etid quiste voluptate velite esse quam nihis etsa illum sedit varias netsum.</p>
-
-                                        </div>
-                                        <!--end blog-item-inner -->
-
-                                    </div>
-                                    <!--end blog-item -->
-
+                                <div class="panel-body">
+                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
                                 </div>
-                                <!--end col-sm-4-->
-
-                                <!--begin col-sm-4 -->
-                                <div class="col-sm-4">
-
-                                    <!--begin blog-item -->
-                                    <div class="blog-item">
-
-                                        <!--begin popup image -->
-                                        <div class="popup-wrapper">
-                                            <div class="popup-gallery">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/350x240" class="width-100" alt="pic">
-                                                    <span class="eye-wrapper2"><i class="fa fa-link eye-icon"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!--end popup image -->
-
-                                        <!--begin blog-item_inner -->
-                                        <div class="blog-item-inner">
-
-                                            <h3 class="blog-title"><a href="#">Solid HTML Form Structure</a></h3>
-
-                                            <a href="#" class="blog-icons"><i class="fa fa-user"></i> By John Doe</a>
-
-                                            <a href="#" class="blog-icons last"><i class="fa fa-tags"></i> Marketing</a>
-
-                                            <p>Quis autem velis etis reprehender etid quiste voluptate velite esse quam nihis etsa illum sedit varias netsum.</p>
-
-                                        </div>
-                                        <!--end blog-item-inner -->
-
-                                    </div>
-                                    <!--end blog-item -->
-
-                                </div>
-                                <!--end col-sm-4-->
-
-                                <!--begin col-sm-4 -->
-                                <div class="col-sm-4">
-
-                                    <!--begin blog-item -->
-                                    <div class="blog-item">
-
-                                        <!--begin popup image -->
-                                        <div class="popup-wrapper">
-                                            <div class="popup-gallery">
-                                                <a href="#">
-                                                    <img src="http://placehold.it/350x240" class="width-100" alt="pic">
-                                                    <span class="eye-wrapper2"><i class="fa fa-link eye-icon"></i></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!--end popup image -->
-
-                                        <!--begin blog-item_inner -->
-                                        <div class="blog-item-inner">
-
-                                            <h3 class="blog-title"><a href="#">New WordPress Theme</a></h3>
-
-                                            <a href="#" class="blog-icons"><i class="fa fa-user"></i> By John Doe</a>
-
-                                            <a href="#" class="blog-icons last"><i class="fa fa-tags"></i> Design</a>
-
-                                            <p>Quis autem velis etis reprehender etid quiste voluptate velite esse quam nihis etsa illum sedit varias netsum.</p>
-
-                                        </div>
-                                        <!--end blog-item-inner -->
-
-                                    </div>
-                                    <!--end blog-item -->
-
-                                </div>
-                                <!--end col-sm-4-->
 
                             </div>
 
                         </div>
+                        <!--end panel-default -->
 
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                        </ol>
+                        <!--begin panel-default -->
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" role="tab" id="headingTwo">
+
+                                <h4 class="panel-title">
+
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <i class="icon icon-prize-award panel-icon"></i> Should I optimize my domain name to include keywords?
+                                    </a>
+
+                                </h4>
+
+                            </div>
+
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+
+                                <div class="panel-body">
+                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--end panel-default -->
+
+                        <!--begin panel-default -->
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" role="tab" id="headingThree">
+
+                                <h4 class="panel-title">
+
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <i class="icon icon-present-gift panel-icon"></i> What is the difference between indexed and crawling?
+                                    </a>
+
+                                </h4>
+
+                            </div>
+
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+
+                                <div class="panel-body">
+                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--end panel-default -->
+
+                        <!--begin panel-default -->
+                        <div class="panel panel-default">
+
+                            <div class="panel-heading" role="tab" id="headingFour">
+
+                                <h4 class="panel-title">
+
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        <i class="icon icon-present-gift panel-icon"></i> What is the difference between indexed and crawling?
+                                    </a>
+
+                                </h4>
+
+                            </div>
+
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+
+                                <div class="panel-body">
+                                    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--end panel-default -->
 
                     </div>
+                    <!--end panel-group -->
 
                 </div>
-                <!--end col-md-12-->
+                <!--end col-sm-6-->
 
             </div>
             <!--end row-->
@@ -1569,7 +1284,7 @@
         <!--end container-->
 
     </section>
-    <!--end blog -->
+    <!--end faq section -->
 
     <!--begin contact -->
     <section class="section-white no-padding-bottom" id="contact">

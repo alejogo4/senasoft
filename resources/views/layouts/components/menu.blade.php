@@ -1,3 +1,4 @@
+
     <!--begin navbar -->
     <div class="navbar-header">
 
@@ -9,7 +10,7 @@
         </button>
 
         <!--logo -->
-        <a href="index.html" class="navbar-brand" id="logo">Nova</a>
+        <a href="index.html" class="navbar-brand" id="logo"><img src="images/logo.png"></a>
 
     </div>
 
@@ -25,15 +26,11 @@
 
             <li><a href="#gallery">Categorias</a></li>
 
-            <li><a href="#features">Registro</a></li>
+            <li><a href="#features">App</a></li>
 
-            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#pqr">PQR</a></li>
 
-            <li><a href="#blog">Blog</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
-            <li><a href="#download-app" class="external discover-btn">Descargar la app</a></li>
+            <li><a href="#contact" class="external discover-btn btn-alert">Registro</a></li>
 
         </ul>
     </div>
