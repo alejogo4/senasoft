@@ -26,7 +26,7 @@
 
             <li><a href="#gallery">Categorias</a></li>
 
-            <li><a href="#features">App</a></li>
+            <li><a href="#app">App</a></li>
 
             <li><a href="#pqr">PQR</a></li>
 

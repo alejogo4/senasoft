@@ -130,7 +130,7 @@
     <!--end section-grey -->
 
     <!--begin features -->
-    <section class="section-white">
+    <section class="section-white" id="app">
 
         <!--begin container -->
         <div class="container">
@@ -141,9 +141,10 @@
                 <!--begin col-md-12 -->
                 <div class="col-md-12 margin-bottom-40 text-center">
 
-                    <h2 class="section-title">Amazing Features</h2>
+                    <h2 class="section-title">Aplicación Móvil</h2>
 
-                    <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+                    <p class="section-subtitle">
+                    Para la estrategia de Senasoft 2019 hemos desarrollado una aplicación para facilitar el proceso de registro y evaluación de equipos <br>Esta posee unas grandes características como: </p>
 
                 </div>
                 <!--end col-md-12 -->
@@ -1154,7 +1155,18 @@
                 <!--begin col-md-6-->
                 <div class="col-md-6 margin-top-10">
 
-                    <img src="http://placehold.it/555x421" alt="picture" class="width-100">
+                    <h4>Ubicación del evento</h4>
+
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <h5>Centro de Servicios y Gestión Empresarial</h5>
+
+                    <p class="contact-info">
+                        <i class="fa fa-map-o"></i> Cra. 57 #51-83, Medellín, Antioquia</p>
+
+                    <p class="contact-info"><i class="fa fa-envelope-o"></i>
+                     <a href="mailto:agiraldo186@misena.edu.co">agiraldo186@misena.edu.co</a></p>
+
+                    <p class="contact-info"><i class="fa fa-phone"></i> +57 3217219988</p>
 
                 </div>
                 <!--end col-sm-6-->
@@ -1175,7 +1187,7 @@
                                 <h4 class="panel-title">
 
                                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <i class="icon icon-rocket panel-icon"></i> What's the difference between organic vs. paid results?
+                                        <i class="icon icon-rocket panel-icon"></i> ¿Qué herramientas se van a utilizar en cada una de las categorías?
                                     </a>
 
                                 </h4>
@@ -1201,7 +1213,7 @@
                                 <h4 class="panel-title">
 
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        <i class="icon icon-prize-award panel-icon"></i> Should I optimize my domain name to include keywords?
+                                        <i class="icon icon-prize-award panel-icon"></i> ¿Cuántas personas se deben inscribir para cada una de las categorías?
                                     </a>
 
                                 </h4>
@@ -1227,7 +1239,7 @@
                                 <h4 class="panel-title">
 
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        <i class="icon icon-present-gift panel-icon"></i> What is the difference between indexed and crawling?
+                                        <i class="icon icon-present-gift panel-icon"></i> ¿Dónde podemos encontrar el cronograma del evento?
                                     </a>
 
                                 </h4>
@@ -1253,7 +1265,7 @@
                                 <h4 class="panel-title">
 
                                     <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        <i class="icon icon-present-gift panel-icon"></i> What is the difference between indexed and crawling?
+                                        <i class="icon icon-present-gift panel-icon"></i> ¿Cuál es la manera más fácil de llegar al centro de formación? 
                                     </a>
 
                                 </h4>
@@ -1296,22 +1308,49 @@
             <div class="row">
 
                 <!--begin col-md-6 -->
-                <div class="col-md-6">
+                <div class="col-md-12">
 
-                    <h4>Get in touch</h4>
+                    <h4>Registro al evento</h4>
 
                     <!--begin success message -->
-                    <p class="contact_success_box" style="display:none;">We received your message and you'll hear from us soon. Thank You!</p>
+                    <p class="contact_success_box" style="display:none;">Gracias, hemos recibido el registro exitosamente</p>
                     <!--end success message -->
 
                     <!--begin contact form -->
-                    <form id="contact-form" class="contact" action="php/contact.php" method="post">
+                    <form id="contact-form" class="contact" action="{{ route('registro.store') }}" method="post">
+                        {{csrf_field()}}
+                        <input class="contact-input white-input" required="" name="codigo" placeholder="Ingresar Código*" type="text">
 
-                        <input class="contact-input white-input" required="" name="contact_names" placeholder="Full Name*" type="text">
+                        <input class="contact-input white-input" disabled required="" name="regional" placeholder="Regional" type="text">
+                        
+                        <input class="contact-input white-input" disabled required="" name="centro" placeholder="Centro" type="text">
+                        
+                        <select class="contact-input white-input" required="" name="categoria">
+                            <option value="" disabled selected>----Seleccionar Categoría----</option>
+                        </select>
 
-                        <input class="contact-input white-input" required="" name="contact_email" placeholder="Email Adress*" type="email">
-
-                        <input class="contact-input white-input" required="" name="contact_phone" placeholder="Phone Number*" type="text">
+                        <select class="contact-input white-input" required="" name="tipo">
+                            <option value="" disabled selected>----Seleccionar Rol----</option>
+                        </select>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <select class="contact-input white-input" required="" name="categoria">
+                                <option value="" disabled selected>----Tipo de documento ----</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input class="contact-input white-input" required="" name="documento" placeholder="Documento*" type="text">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <input class="contact-input white-input" required="" name="nombres" placeholder="Nombres*" type="text">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input class="contact-input white-input" required="" name="apellidos" placeholder="Apellidos*" type="text">
+                            </div>
+                        </div>
+                        
 
                         <textarea class="contact-commnent white-input" rows="2" cols="20" name="contact_message" placeholder="Your Message..."></textarea>
 
@@ -1320,26 +1359,7 @@
                     </form>
                     <!--end contact form -->
 
-                </div>
-                <!--end col-md-6 -->
-
-                <!--begin col-md-6 -->
-                <div class="col-md-6">
-
-                    <h4>How to find us</h4>
-
-                    <iframe class="contact-maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9050207912896!2d-0.14675028449633118!3d51.514958479636384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761ad554c335c1%3A0xda2164b934c67c1a!2sOxford+St%2C+London%2C+UK!5e0!3m2!1sen!2sro!4v1485889312335" width="600" height="270" style="border:0" allowfullscreen></iframe>
-
-                    <h5>Head Office</h5>
-
-                    <p class="contact-info"><i class="fa fa-map-o"></i> 10 Oxford Street, London, UK, E1 1EC</p>
-
-                    <p class="contact-info"><i class="fa fa-envelope-o"></i> <a href="mailto:contact@email.com">office@amazing-apps.co.uk</a></p>
-
-                    <p class="contact-info"><i class="fa fa-phone"></i> +44 987 654 321</p>
-
-                </div>
-                <!--end col-md-6 -->
+                
 
             </div>
             <!--end row-->
@@ -1362,7 +1382,7 @@
                 <!--begin col-md-12 -->
                 <div class="col-md-12 text-center">
 
-                    <p>Copyright © 2018 Nova. Designed by <a href="https://themeforest.net/user/epic-themes/portfolio?ref=Epic-Themes" target="_blank">Epic-Themes</a></p>
+                    <p>Copyright © 2019 SENA.</p>
 
                     <!--begin footer_social -->
                     <ul class="footer_social">

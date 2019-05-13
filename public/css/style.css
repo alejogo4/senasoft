@@ -1737,7 +1737,8 @@ p.contact-info i {
     margin-bottom: 10px;
 }
 
-input.contact-input {
+input.contact-input,
+select.contact-input {
     width: 100%;
     height: 55px;
     padding-left: 2%;

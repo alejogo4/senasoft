@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 
+Route::resource('/registro', 'RegistroController');
 /*
 Route::get('/home', function () {
     return view('layouts.home');
