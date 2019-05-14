@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
 <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
 
+<link rel="stylesheet" href="{{asset('css/steeper.css')}}">
 <!-- Font Favicon -->
 <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
 
