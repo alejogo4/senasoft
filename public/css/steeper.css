@@ -1,21 +1,26 @@
 body {
-    margin-top:40px;
+    margin-top: 40px;
 }
+
 .stepwizard-step p {
     margin-top: 10px;
 }
+
 .stepwizard-row {
     display: table-row;
 }
+
 .stepwizard {
     display: table;
-    width: 50%;
+    width: 75%;
     position: relative;
 }
+
 .stepwizard-step button[disabled] {
     opacity: 1 !important;
     filter: alpha(opacity=100) !important;
 }
+
 .stepwizard-row:before {
     top: 14px;
     bottom: 0;
@@ -26,11 +31,13 @@ body {
     background-color: #ccc;
     z-order: 0;
 }
+
 .stepwizard-step {
     display: table-cell;
     text-align: center;
     position: relative;
 }
+
 .btn-circle {
     width: 30px;
     height: 30px;
@@ -39,4 +46,105 @@ body {
     font-size: 12px;
     line-height: 1.428571429;
     border-radius: 15px;
+}
+
+.btn-primary {
+    background: #077c74 !important;
+}
+
+
+/*Schedule*/
+
+#schedule {
+    padding: 60px 0 60px 0;
+}
+
+#schedule .nav-tabs {
+    text-align: center;
+    margin: auto;
+    display: block;
+    border-bottom: 0;
+    margin-bottom: 30px;
+}
+
+#schedule .nav-tabs li {
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+#schedule .nav-tabs a {
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    background-color: #0e8481;
+    color: #fff;
+    padding: 10px 100px;
+}
+
+#schedule .nav-tabs a.active {
+    background-color: #27c0b3;
+    color: #fff;
+}
+
+#schedule .sub-heading {
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0 auto 30px auto;
+}
+
+#schedule .tab-pane {
+    transition: ease-in-out .2s;
+}
+
+#schedule .schedule-item {
+    border-bottom: 1px solid #cad4f6;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    transition: background-color ease-in-out 0.3s;
+}
+
+#schedule .schedule-item:hover {
+    background-color: #fff;
+}
+
+#schedule .schedule-item time {
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#schedule .schedule-item .speaker {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+#schedule .schedule-item .speaker img {
+    height: 100%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-left: 50%;
+    transition: all ease-in-out 0.3s;
+}
+
+#schedule .schedule-item h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#schedule .schedule-item h4 span {
+    font-style: italic;
+    color: #19328e;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#schedule .schedule-item p {
+    font-style: italic;
+    color: #152b79;
+    margin-bottom: 0;
 }

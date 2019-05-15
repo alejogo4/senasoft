@@ -20,7 +20,7 @@
 
             <li><a href="#home_wrapper">Inicio</a></li>
 
-            <li><a href="#about">Senasoft 2019</a></li>
+            <li><a href="#schedule">Senasoft 2019</a></li>
 
             <li><a href="#team">Histórico</a></li>
 

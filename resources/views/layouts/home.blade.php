@@ -54,7 +54,7 @@
 <!--end home section -->
 
 <!--begin section-grey -->
-<section class="section-grey" id="about">
+<section class="section-grey" id="schedule">
 
     <!--begin container -->
     <div class="container">
@@ -65,63 +65,186 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center">
 
-                <h2 class="section-title">How It Works</h2>
+                <h2 class="section-title">Itinerario del evento</h2>
 
-                <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+                <p class="section-subtitle">El cronograma del evento estará sujeto a modificaciones, este es un cronograma inicial de las participación Senasoft 2019</p>
 
             </div>
             <!--end col-md-12 -->
+            <ul class="nav nav-tabs mt-4 mb-4 justify-content-center">
+                <li class="active"><a data-toggle="tab" href="#dia1">Día 1</a></li>
+                <li><a data-toggle="tab" href="#dia2">Día 2</a></li>
+                <li><a data-toggle="tab" href="#dia3">Día 3</a></li>
+                <li><a data-toggle="tab" href="#dia4">Día 4</a></li>
+            </ul>
+            <div class="tab-content">
+                <div id="dia1" class="tab-pane fade in active">
+                    <div class="row schedule-item justify-content-center">
+                        <div class="col-md-2"><time>09:30 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Registration</h4>
+                            <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
+                        </div>
+                    </div>
 
-            <!--begin col-md-4 -->
-            <div class="col-md-4">
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>10:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/1.jpg" alt="Brenden Legros">
+                            </div>
+                            <h4>Keynote <span>Brenden Legros</span></h4>
+                            <p>Facere provident incidunt quos voluptas.</p>
+                        </div>
+                    </div>
 
-                <div class="main-services">
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>11:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/2.jpg" alt="Hubert Hirthe">
+                            </div>
+                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
+                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                        </div>
+                    </div>
 
-                    <img src="http://placehold.it/100x100" class="width-100" alt="pic">
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>12:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/3.jpg" alt="Cole Emmerich">
+                            </div>
+                            <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
+                            <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+                        </div>
+                    </div>
 
-                    <h3>Search Oportunities</h3>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>02:00 PM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/4.jpg" alt="Jack Christiansen">
+                            </div>
+                            <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
+                            <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
+                        </div>
+                    </div>
 
-                    <p>Curabitur quam etsum lacus etsumis nulat iaculis ets vitae etsum nisle varius sed aliquam ets vitae dictis netsum.</p>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>03:00 PM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/5.jpg" alt="Alejandrin Littel">
+                            </div>
+                            <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
+                            <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
+                        </div>
+                    </div>
 
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>04:00 PM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/6.jpg" alt="Willow Trantow">
+                            </div>
+                            <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
+                            <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
+                        </div>
+                    </div>
                 </div>
+                <div id="dia2" class="tab-pane fade">
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>09:30 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Registration</h4>
+                            <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
+                        </div>
+                    </div>
 
-            </div>
-            <!--end col-md-4 -->
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>10:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/1.jpg" alt="Brenden Legros">
+                            </div>
+                            <h4>Keynote <span>Brenden Legros</span></h4>
+                            <p>Facere provident incidunt quos voluptas.</p>
+                        </div>
+                    </div>
 
-            <!--begin col-md-4 -->
-            <div class="col-md-4">
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>11:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/2.jpg" alt="Hubert Hirthe">
+                            </div>
+                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
+                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                        </div>
+                    </div>
 
-                <div class="main-services">
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>12:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/3.jpg" alt="Cole Emmerich">
+                            </div>
+                            <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
+                            <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+                        </div>
+                    </div>
 
-                    <img src="http://placehold.it/100x100" class="width-100" alt="pic">
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>02:00 PM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/4.jpg" alt="Jack Christiansen">
+                            </div>
+                            <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
+                            <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
+                        </div>
+                    </div>
 
-                    <h3>Reach Clients</h3>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>03:00 PM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/5.jpg" alt="Alejandrin Littel">
+                            </div>
+                            <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
+                            <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
+                        </div>
+                    </div>
 
-                    <p>Curabitur quam etsum lacus etsumis nulat iaculis ets vitae etsum nisle varius sed aliquam ets vitae dictis netsum.</p>
-
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>04:00 PM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="img/speakers/6.jpg" alt="Willow Trantow">
+                            </div>
+                            <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
+                            <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
+                        </div>
+                    </div>
                 </div>
-
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4 -->
-            <div class="col-md-4">
-
-                <div class="main-services">
-
-                    <img src="http://placehold.it/100x100" class="width-100" alt="pic">
-
-                    <h3>Get Rewarded</h3>
-
-                    <p>Curabitur quam etsum lacus etsumis nulat iaculis ets vitae etsum nisle varius sed aliquam ets vitae dictis netsum.</p>
-
+                <div id="dia3" class="tab-pane fade">
+                    <h3>Menu 2</h3>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                 </div>
-
+                <div id="dia4" class="tab-pane fade">
+                    <h3>Menu 3</h3>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
             </div>
-            <!--end col-md-4 -->
-
         </div>
-        <!--end row -->
+
+
+    </div>
+
+
+    </div>
+    <!--end row -->
 
     </div>
     <!--end container -->
@@ -129,144 +252,7 @@
 </section>
 <!--end section-grey -->
 
-<!--begin features -->
-<section class="section-white" id="app">
 
-    <!--begin container -->
-    <div class="container">
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col-md-12 -->
-            <div class="col-md-12 margin-bottom-40 text-center">
-
-                <h2 class="section-title">Aplicación Móvil</h2>
-
-                <p class="section-subtitle">
-                    Para la estrategia de Senasoft 2019 hemos desarrollado una aplicación para facilitar el proceso de registro y evaluación de equipos <br>Esta posee unas grandes características como: </p>
-
-            </div>
-            <!--end col-md-12 -->
-
-            <!--begin col-md-4 -->
-            <div class="col-md-4 padding-top-40">
-
-                <!--begin features_item -->
-                <div class="features_item">
-
-                    <div class="dropcaps_right">
-                        <span class="fa fa-laptop features_icons"></span>
-                    </div>
-
-                    <div class="text_align_right">
-                        <h4>Responsive Layout</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
-                    </div>
-
-                </div>
-                <!--end features_item -->
-
-                <!--begin features_item -->
-                <div class="features_item">
-
-                    <div class="dropcaps_right">
-                        <span class="fa fa-code features_icons"></span>
-                    </div>
-
-                    <div class="text_align_right">
-                        <h4>Clean Code</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
-                    </div>
-
-                </div>
-                <!--end features_item -->
-
-                <!--begin features_item -->
-                <div class="features_item">
-
-                    <div class="dropcaps_right">
-                        <span class="fa fa-camera-retro features_icons"></span>
-                    </div>
-
-                    <div class="text_align_right">
-                        <h4>Retina Ready</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
-                    </div>
-
-                </div>
-                <!--end features_item -->
-
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4 -->
-            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
-
-                <img src="images/features-iphone.png" alt="picture" class="width-100">
-
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4 -->
-            <div class="col-md-4 padding-top-40">
-
-                <!--begin features_item -->
-                <div class="features_item">
-
-                    <div class="dropcaps_left">
-                        <span class="fa fa-leaf features_icons"></span>
-                    </div>
-
-                    <div class="text_align_left">
-                        <h4>Modern Design</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
-                    </div>
-
-                </div>
-                <!--end features_item -->
-
-                <!--begin features_item -->
-                <div class="features_item">
-
-                    <div class="dropcaps_left">
-                        <span class="fa fa-rocket features_icons"></span>
-                    </div>
-
-                    <div class="text_align_left">
-                        <h4>Premium Features</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
-                    </div>
-
-                </div>
-                <!--end features_item -->
-
-                <!--begin features_item -->
-                <div class="features_item">
-
-                    <div class="dropcaps_left">
-                        <span class="fa fa-comments features_icons"></span>
-                    </div>
-
-                    <div class="text_align_left">
-                        <h4>24/7 Support</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
-                    </div>
-
-                </div>
-                <!--end features_item -->
-
-            </div>
-            <!--end col-md-4 -->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
-</section>
-<!--end features -->
 
 <!--begin video-wrapper -->
 <section class="video-wrapper">
@@ -321,7 +307,7 @@
                 <!--begin col-md-12 -->
                 <div class="col-md-12 text-center">
 
-                    <h2 class="section-title">The Team Behind Nova</h2>
+                    <h2 class="section-title">Historial Senasoft 2019</h2>
 
                     <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
 
@@ -462,27 +448,27 @@
                 <div id="owl2" class="owl-carousel owl-theme">
 
                     <div>
-                        <img src="images/showcase1.jpg" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/showcase2.jpg" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/showcase3.jpg" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/showcase4.jpg" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/showcase5.jpg" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/showcase6.jpg" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
                     </div>
 
                 </div>
@@ -513,7 +499,7 @@
         <div class="row">
 
             <div class="col-md-3">
-                <h4 class="our-partners-title">Our Amazing Partners<br><span>We’ve built apps featured on:</span></h4>
+                <h4 class="our-partners-title">Patrocinadores<br><span>Ejemplo:</span></h4>
             </div>
 
             <div class="col-md-9">
@@ -541,173 +527,7 @@
 </section>
 <!--end partners section -->
 
-<!--begin services section -->
-<section class="section-white small-padding-bottom" id="features">
 
-    <!--begin container -->
-    <div class="container">
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col-md-12-->
-            <div class="col-md-12 text-center padding-bottom-10">
-
-                <h2 class="section-title">Amazing Features</h2>
-
-                <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
-
-            </div>
-            <!--end col-md-12 -->
-
-        </div>
-        <!--end row -->
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col-md-4-->
-            <div class="col-md-4">
-
-                <div class="feature-box light-green wow fadeIn" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
-
-                    <i class="pe-7s-tools"></i>
-
-                    <div class="feature-box-text">
-
-                        <h4>Support 24/7</h4>
-
-                        <p>Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
-
-                    </div>
-
-                </div>
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4-->
-            <div class="col-md-4">
-
-                <div class="feature-box light-blue wow fadeIn" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
-
-                    <i class="pe-7s-users"></i>
-
-                    <div class="feature-box-text">
-
-                        <h4>User Friendly</h4>
-
-                        <p>Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
-
-                    </div>
-
-                </div>
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md 4-->
-            <div class="col-md-4">
-
-                <div class="feature-box orange wow fadeIn" data-wow-delay="0.75s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
-
-                    <i class="pe-7s-bell"></i>
-
-                    <div class="feature-box-text">
-
-                        <h4>Notifications</h4>
-
-                        <p>Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
-
-                    </div>
-
-                </div>
-            </div>
-            <!--end col-md-4 -->
-
-        </div>
-        <!--end row -->
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col-md-4-->
-            <div class="col-md-4">
-
-                <div class="feature-box dark-green wow fadeIn" data-wow-delay="1s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
-
-                    <i class="pe-7s-chat"></i>
-
-                    <div class="feature-box-text">
-
-                        <h4>Chat With Friends</h4>
-
-                        <p>Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
-
-                    </div>
-
-                </div>
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4-->
-            <div class="col-md-4">
-
-                <div class="feature-box dark-blue wow fadeIn" data-wow-delay="1.25s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
-
-                    <i class="pe-7s-world"></i>
-
-                    <div class="feature-box-text">
-
-                        <h4>Accesibility</h4>
-
-                        <p>Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
-
-                    </div>
-
-                </div>
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4-->
-            <div class="col-md-4">
-
-                <div class="feature-box light-red wow fadeIn" data-wow-delay="1.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
-
-                    <i class="pe-7s-piggy"></i>
-
-                    <div class="feature-box-text">
-
-                        <h4>Cost Control</h4>
-
-                        <p>Utise wisi enim minim veniam, quis tation ullamcorper suscipit et loboti nisl consequat nihis.</p>
-
-                    </div>
-
-                </div>
-            </div>
-            <!--end col-md-4 -->
-
-        </div>
-        <!--end row -->
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col-md-12-->
-            <div class="col-md-12 padding-top-40">
-
-                <img src="images/iphone-v.png" alt="home-iphone" class="extra-image width-100 wow fadeInUp" data-wow-delay="1s" style="visibility: visible; animation-delay: 0.25s; animation-name: fadeInUp;">
-
-            </div>
-            <!--end col-md-4 -->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
-</section>
-<!--end services section -->
 
 <!--begin newsletter section -->
 <section class="section-lyla-shape" id="newsletter-section">
@@ -721,8 +541,7 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center padding-top-60 padding-bottom-20">
 
-                <h3 class="white-text">Seen enough? We are currently in the closed beta.<br>
-                    Please enter your email to join the waiting list.</h3>
+                <h3 class="white-text">Escríbenos tus dudas</h3>
 
             </div>
             <!--end col-md-12 -->
@@ -768,176 +587,9 @@
 </section>
 <!--end newsletter section -->
 
-<!--begin pricing section -->
-<section class="section-white bottom-shape z-100" id="pricing">
 
-    <!--begin container -->
-    <div class="container">
 
-        <!--begin row -->
-        <div class="row">
 
-            <!--begin col-md-12 -->
-            <div class="col-md-12 text-center padding-bottom-40">
-
-                <h2 class="section-title">Great Pricing Plans</h2>
-
-                <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
-
-            </div>
-            <!--end col-md-12 -->
-
-            <!--begin col-md-4-->
-            <div class="col-md-4 col-sm-4">
-
-                <div class="price-box-white">
-
-                    <ul class="pricing-list">
-
-                        <li class="price-title">FREE</li>
-
-                        <li class="price-value">$0</li>
-
-                        <li class="price-subtitle">Per Month</li>
-
-                        <li class="price-text">24/7 Support</li>
-
-                        <li class="price-text">50 Gb Bandwidth</li>
-
-                        <li class="price-text">1 User Acount</li>
-
-                        <li class="price-tag"><a href="#">GET STARTED</a></li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4 -->
-            <div class="col-md-4 col-sm-4">
-
-                <div class="price-box-grey">
-
-                    <ul class="pricing-list">
-
-                        <li class="price-title">REGULAR</li>
-
-                        <li class="price-value">$29</li>
-
-                        <li class="price-subtitle">Per Month</li>
-
-                        <li class="price-text">24/7 Support</li>
-
-                        <li class="price-text">200 Gb Bandwidth</li>
-
-                        <li class="price-text">Unlimited Experiences</li>
-
-                        <li class="price-text">10 Themes</li>
-
-                        <li class="price-text">Weekly Updates</li>
-
-                        <li class="price-tag"><a href="#">GET STARTED</a></li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-            <!--end col-md-4 -->
-
-            <!--begin col-md-4 -->
-            <div class="col-md-4 col-sm-4">
-
-                <div class="price-box-blue">
-
-                    <ul class="pricing-list">
-
-                        <li class="price-title white-text">GOLD</li>
-
-                        <li class="price-value white-text">$99</li>
-
-                        <li class="price-subtitle white-text">Per Month</li>
-
-                        <li class="price-text white-text">24/7 Support</li>
-
-                        <li class="price-text white-text">Unlimited Bandwidth</li>
-
-                        <li class="price-text white-text">50 Gb Bandwidth</li>
-
-                        <li class="price-text white-text">Daily Updates</li>
-
-                        <li class="price-text white-text">10 User Acounts</li>
-
-                        <li class="price-text white-text">Custom Hosting</li>
-
-                        <li class="price-text white-text">Unlimited Acces</li>
-
-                        <li class="price-tag"><a href="#">GET STARTED</a></li>
-
-                    </ul>
-
-                </div>
-
-            </div>
-            <!--end col-md-4 -->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
-</section>
-<!--end pricing section -->
-
-<!--begin section-white -->
-<section class="section-white small-padding-top">
-
-    <!--begin container-->
-    <div class="container">
-
-        <!--begin row-->
-        <div class="row">
-
-            <!--begin col-md-6-->
-            <div class="col-md-6 wow slideInLeft" data-wow-delay="0.25s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInLeft;">
-
-                <img src="images/benefits.png" class="width-100" alt="pic">
-
-            </div>
-            <!--end col-sm-6-->
-
-            <!--begin col-md-6-->
-            <div class="col-md-6 padding-top-20">
-
-                <h3>Get ready to discover all the benefits and secrets of a perfect launch</h3>
-
-                <p>Velis demo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, sed quia magni dolores eos qui ratione sequi nesciunt neque et poris ratione sequi enim quia tempor magni.</p>
-
-                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum lorem fugit, sed quia magni dolores eos qui ratione sequi.</p>
-
-                <ul class="benefits">
-                    <li><i class="fa fa-check"></i> Quia magni netsum eos qui ratione sequi.</li>
-                    <li><i class="fa fa-check"></i> Venis ratione sequi enim quia tempor magni.</li>
-                    <li><i class="fa fa-check"></i> Enim ipsam voluptatem quia voluptas.</li>
-                    <li><i class="fa fa-check"></i> Ratione nes sequi nesciunt neque.</li>
-                </ul>
-
-                <a href="#download-app" class="btn-lyla scrool">Download App</a>
-
-            </div>
-            <!--end col-md-6-->
-
-        </div>
-        <!--end row-->
-
-    </div>
-    <!--end container-->
-
-</section>
-<!--end section-white-->
 
 <!--begin testimonials section -->
 <section class="section-grey">
@@ -1154,7 +806,144 @@
 
 </section>
 <!--end white-grey -->
+<!--begin features -->
+<section class="section-white" id="app">
 
+    <!--begin container -->
+    <div class="container">
+
+        <!--begin row -->
+        <div class="row">
+
+            <!--begin col-md-12 -->
+            <div class="col-md-12 margin-bottom-40 text-center">
+
+                <h2 class="section-title">Aplicación Móvil</h2>
+
+                <p class="section-subtitle">
+                    Para la estrategia de Senasoft 2019 hemos desarrollado una aplicación para facilitar el proceso de registro y evaluación de equipos <br>Esta posee unas grandes características como: </p>
+
+            </div>
+            <!--end col-md-12 -->
+
+            <!--begin col-md-4 -->
+            <div class="col-md-4 padding-top-40">
+
+                <!--begin features_item -->
+                <div class="features_item">
+
+                    <div class="dropcaps_right">
+                        <span class="fa fa-laptop features_icons"></span>
+                    </div>
+
+                    <div class="text_align_right">
+                        <h4>Responsive Layout</h4>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                    </div>
+
+                </div>
+                <!--end features_item -->
+
+                <!--begin features_item -->
+                <div class="features_item">
+
+                    <div class="dropcaps_right">
+                        <span class="fa fa-code features_icons"></span>
+                    </div>
+
+                    <div class="text_align_right">
+                        <h4>Clean Code</h4>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                    </div>
+
+                </div>
+                <!--end features_item -->
+
+                <!--begin features_item -->
+                <div class="features_item">
+
+                    <div class="dropcaps_right">
+                        <span class="fa fa-camera-retro features_icons"></span>
+                    </div>
+
+                    <div class="text_align_right">
+                        <h4>Retina Ready</h4>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                    </div>
+
+                </div>
+                <!--end features_item -->
+
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md-4 -->
+            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
+
+                <img src="images/features-iphone.png" alt="picture" class="width-100">
+
+            </div>
+            <!--end col-md-4 -->
+
+            <!--begin col-md-4 -->
+            <div class="col-md-4 padding-top-40">
+
+                <!--begin features_item -->
+                <div class="features_item">
+
+                    <div class="dropcaps_left">
+                        <span class="fa fa-leaf features_icons"></span>
+                    </div>
+
+                    <div class="text_align_left">
+                        <h4>Modern Design</h4>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                    </div>
+
+                </div>
+                <!--end features_item -->
+
+                <!--begin features_item -->
+                <div class="features_item">
+
+                    <div class="dropcaps_left">
+                        <span class="fa fa-rocket features_icons"></span>
+                    </div>
+
+                    <div class="text_align_left">
+                        <h4>Premium Features</h4>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                    </div>
+
+                </div>
+                <!--end features_item -->
+
+                <!--begin features_item -->
+                <div class="features_item">
+
+                    <div class="dropcaps_left">
+                        <span class="fa fa-comments features_icons"></span>
+                    </div>
+
+                    <div class="text_align_left">
+                        <h4>24/7 Support</h4>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                    </div>
+
+                </div>
+                <!--end features_item -->
+
+            </div>
+            <!--end col-md-4 -->
+
+        </div>
+        <!--end row -->
+
+    </div>
+    <!--end container -->
+
+</section>
+<!--end features -->
 <!--begin faq section -->
 <section class="section-white small-padding-bottom" id="pqr">
 
@@ -1321,15 +1110,13 @@
 
             <!--begin col-md-12 -->
             <div class="col-md-12">
-
                 <h4>Registro al evento</h4>
-
                 <!--begin success message -->
                 <p class="contact_success_box" style="display:none;">Gracias, hemos recibido el registro exitosamente</p>
                 <!--end success message -->
                 <!--Slider Form-->
                 <div class="container">
-                    <div class="stepwizard col-md-offset-3">
+                    <div class="stepwizard col-md-offset-1">
                         <div class="stepwizard-row setup-panel">
                             <div class="stepwizard-step">
                                 <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
@@ -1345,7 +1132,11 @@
                             </div>
                             <div class="stepwizard-step">
                                 <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                                <p>4: Otros Datos</p>
+                                <p>4: Datos específos</p>
+                            </div>
+                            <div class="stepwizard-step">
+                                <a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+                                <p>5: Último paso</p>
                             </div>
                         </div>
                     </div>
@@ -1356,7 +1147,7 @@
                             <div class="col-md-6 col-md-offset-3">
                                 <div class="col-md-12">
                                     <input class="contact-input white-input" required="" name="codigo" placeholder="Ingresar Código*" type="text">
-                                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
+                                    <button class="btn btn-primary nextBtn btn-sm pull-right" type="button">Siguiente</button>
                                 </div>
                             </div>
                         </div>
@@ -1374,8 +1165,8 @@
                                 <select class="contact-input white-input" required="" name="tipo">
                                     <option value="" disabled selected>----Seleccionar Rol----</option>
                                 </select>
-                                <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Anterior</button>
-                                <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
+                                <button class="btn btn-primary prevBtn btn-sm pull-left" type="button">Anterior</button>
+                                <button class="btn btn-primary nextBtn btn-sm pull-right" type="button">Siguiente</button>
                             </div>
                         </div>
                         <div class="row setup-content" id="step-3">
@@ -1384,7 +1175,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <select class="contact-input white-input" required="" name="categoria">
-                                                <option value="" disabled selected>----Tipo de documento ----</option>
+                                                <option value="" disabled selected>---- Tipo de documento ----</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
@@ -1423,65 +1214,67 @@
                                             <input class="contact-input white-input" required="" name="otro_telefono" placeholder="Teléfono Alterno" type="text">
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary prevBtn btn-lg pull-left" type="button">Anterior</button>
-                                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Siguiente</button>
+                                    <button class="btn btn-primary prevBtn btn-sm pull-left" type="button">Anterior</button>
+                                    <button class="btn btn-primary nextBtn btn-sm pull-right" type="button">Siguiente</button>
                                 </div>
                             </div>
                         </div>
                         <div class="row setup-content" id="step-4">
                             <div class="col-xs-6 col-md-offset-3">
                                 <div class="col-md-12">
-                                    <h3> Step 1</h3>
-                                    <div class="form-group">
-                                        <label class="control-label">First Name</label>
-                                        <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <input class="contact-input white-input" required="" name="Cargo" placeholder="Cargo" type="text">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input class="contact-input white-input" required="" name="Rh" placeholder="Rh*" type="text">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Last Name</label>
-                                        <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <input class="contact-input white-input" required="" name="Talla_camisa" placeholder="Talla Camisa*" type="text">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input class="contact-input white-input" required="" name="Eps" placeholder="Eps*" type="text">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label">Address</label>
-                                        <textarea required="required" class="form-control" placeholder="Enter your address"></textarea>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <input class="contact-input white-input" required="" name="Ciudad" placeholder="Ciudad*" type="text">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <input class="contact-input white-input" required="" name="Empresa" placeholder="Empresa" type="text">
+                                        </div>
                                     </div>
-                                    <button class="btn btn-primary nextBtn btn-lg pull-right" type="button">Next</button>
+
+                                    <button class="btn btn-primary prevBtn btn-sm pull-left" type="button">Anterior</button>
+                                    <button class="btn btn-primary nextBtn btn-sm pull-right" type="button">Siguiente</button>
                                 </div>
                             </div>
                         </div>
-                    </form>
-
                 </div>
-
-                <!--end Slider Form-->
-                <!--begin contact form -->
-                <form id="contact-form" class="contact" action="{{ route('registro.store') }}" method="post">
-                    {{csrf_field()}}
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-
-                            <textarea class="contact-commnent white-input" rows="2" cols="20" name="contact_message" placeholder="Your Message..."></textarea>
-
-                            <input value="Send Message" id="submit-button" class="contact-submit" type="submit">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input class="contact-input white-input" required="" name="codigo" placeholder="Ingresar Código*" type="text">
-
-                            <input class="contact-input white-input" disabled required="" name="regional" placeholder="Regional" type="text">
-
-                            <input class="contact-input white-input" disabled required="" name="centro" placeholder="Centro" type="text">
-
+                <div class="row setup-content" id="step-5">
+                    <div class="col-xs-6 col-md-offset-3">
+                        <div class="col-md-12">
+                            <textarea class="contact-commnent white-input" rows="2" cols="5" name="contact_message" placeholder="Alergias"></textarea>
+                            <textarea class="contact-commnent white-input" rows="2" cols="5" name="contact_message" placeholder="Enfermedades"></textarea>
+                            <textarea class="contact-commnent white-input" rows="2" cols="5" name="contact_message" placeholder="Medicamentos"></textarea>
+                            <button class="btn btn-primary prevBtn btn-sm pull-left" type="button">Anterior</button>
+                            <input value="Registrarse" class="btn btn-primary nextBtn btn-sm pull-right" type="submit" id="submit-button">
                         </div>
                     </div>
+                </div>
                 </form>
-                <!--end contact form -->
-
-
 
             </div>
-            <!--end row-->
+
+            <!--end Slider Form-->
 
         </div>
-        <!--end container-->
+        <!--end row-->
+
+    </div>
+    <!--end container-->
 
 </section>
 <!--end contact-->

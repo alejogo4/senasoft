@@ -1754,7 +1754,7 @@ select.contact-input {
 }
 
 textarea {
-    height: 205px;
+    height: 100px;
     margin-bottom: 20px;
     width: 100%;
     padding-left: 2%;

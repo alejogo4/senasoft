@@ -95,7 +95,7 @@ $(window).on('load', function() {
     /*   Hide Responsive Navigation On-Click                      */
     /* ========================================================== */
 
-    $(".navbar-nav li a").on('click', function(event) {
+    $(".header .navbar-nav li a").on('click', function(event) {
         $(".navbar-collapse").collapse('hide');
     });
 
@@ -113,7 +113,7 @@ $(window).on('load', function() {
     /*   SmoothScroll                                             */
     /* ========================================================== */
 
-    $(".nav li a, a.scrool").on('click', function(e) {
+    $(".header .nav li a, a.scrool").on('click', function(e) {
 
         var full_url = this.href;
         var parts = full_url.split("#");
