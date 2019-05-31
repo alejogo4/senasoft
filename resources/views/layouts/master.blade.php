@@ -12,6 +12,11 @@
     <!--Librerias del head que usa la plantilla-->
     @yield('librariesTop',View::make('layouts.components.librariesTop'))
 
+    <style>
+        li.dropdown:hover > .dropdown-menu {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +24,9 @@
     @yield('content')
 
 
-<!--Librerias del head que usa la plantilla-->
-@yield('libreriasBottom',View::make('layouts.components.librariesBottom'))
+    <!--Librerias del head que usa la plantilla-->
+    @yield('libreriasBottom',View::make('layouts.components.librariesBottom'))
+    @yield('script')
 </body>
+
 </html>
