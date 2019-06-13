@@ -232,6 +232,32 @@ iframe {
     padding: 90px 0 70px 0;
 }
 
+.btn-formato {
+    display: block;
+    width: 50%;
+    height: 45px;
+    margin: 0 auto;
+    padding: 2px;
+    color: white;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.btn-formato:hover {
+    color: #eeeeee;
+}
+
+.btn-formato:active {
+    background: rgba(0, 160, 155, 1);
+    background: -moz-linear-gradient(left, rgba(0, 160, 155, 1) 0%, rgba(24, 219, 190, 1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0, 160, 155, 1)), color-stop(100%, rgba(24, 219, 190, 1)));
+    background: -webkit-linear-gradient(left, rgba(0, 160, 155, 1) 0%, rgba(24, 219, 190, 1) 100%);
+    background: -o-linear-gradient(left, rgba(0, 160, 155, 1) 0%, rgba(21, 189, 164, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(0, 160, 155, 1) 0%, rgba(24, 219, 190, 1) 100%);
+    background: linear-gradient(to right, rgba(0, 160, 155, 1) 0%, rgba(24, 219, 190, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00a09b', endColorstr='#18dbbe', GradientType=1);
+}
+
 .section-lyla-shape {
     z-index: 10;
     overflow: hidden;

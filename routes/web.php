@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/registro', 'RegistroController@index');
+Route::resource('registro', 'RegistroController');
+
+Route::resource('proyecto', 'ProyectoController');
 /*
 Route::get('/home', function () {
     return view('layouts.home');

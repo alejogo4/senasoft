@@ -72,148 +72,137 @@
             </div>
             <!--end col-md-12 -->
             <ul class="nav nav-tabs mt-4 mb-4 justify-content-center">
-                <li class="active"><a data-toggle="tab" href="#dia1">Día 1</a></li>
-                <li><a data-toggle="tab" href="#dia2">Día 2</a></li>
-                <li><a data-toggle="tab" href="#dia3">Día 3</a></li>
-                <li><a data-toggle="tab" href="#dia4">Día 4</a></li>
+                <li class="active"><a data-toggle="tab" href="#dia1">Martes</a></li>
+                <li><a data-toggle="tab" href="#dia2">Miercoles</a></li>
+                <li><a data-toggle="tab" href="#dia3">Jueves</a></li>
+                <li><a data-toggle="tab" href="#dia4">Viernes</a></li>
             </ul>
             <div class="tab-content">
                 <div id="dia1" class="tab-pane fade in active">
                     <div class="row schedule-item justify-content-center">
-                        <div class="col-md-2"><time>09:30 AM</time></div>
+                        <div class="col-md-2"><time>06:00 AM</time></div>
                         <div class="col-md-10">
-                            <h4>Registration</h4>
-                            <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
+                            <h4>Llegada a Medellín.</h4>
+                            <p>Traslado a los hoteles desde el aeropuerto o terminal.</p>
+                            <p>10:00 a.m primer transporte.</p>
+                            <p>12:00 a.m segundo transporte.</p>
+                            <p>2:00 p.m tercer transporte.</p>
                         </div>
                     </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>10:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/1.jpg" alt="Brenden Legros">
-                            </div>
-                            <h4>Keynote <span>Brenden Legros</span></h4>
-                            <p>Facere provident incidunt quos voluptas.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>11:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/2.jpg" alt="Hubert Hirthe">
-                            </div>
-                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
+                    <div class="row schedule-item justify-content-center">
                         <div class="col-md-2"><time>12:00 AM</time></div>
                         <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/3.jpg" alt="Cole Emmerich">
-                            </div>
-                            <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                            <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+                            <h4>Registro en el hotel.</h4>
+                            <p>Se realiza el registro de todos los integrantes.</p>
                         </div>
                     </div>
-
-                    <div class="row schedule-item">
+                    <div class="row schedule-item justify-content-center">
                         <div class="col-md-2"><time>02:00 PM</time></div>
                         <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/4.jpg" alt="Jack Christiansen">
-                            </div>
-                            <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                            <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
+                            <h4>Traslado desde el hotel a lugar del evento.</h4>
+                            <p>Quienes lleguen despues de las 2.00 p.m. al aeropuerto, llegan al lugar del evento.</p>
                         </div>
                     </div>
-
-                    <div class="row schedule-item">
+                    <div class="row schedule-item justify-content-center">
                         <div class="col-md-2"><time>03:00 PM</time></div>
                         <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/5.jpg" alt="Alejandrin Littel">
-                            </div>
-                            <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                            <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
+                            <h4>Registro en el evento y entrega de equipos.</h4>
+                            <p>Se reciben todos los equipos que desean registrar.</p>
                         </div>
                     </div>
-
+                
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>04:00 PM</time></div>
+                        <div class="col-md-2"><time>06:00 PM</time></div>
+                        <div class="col-md-10">   
+                            <h4>Inaguración al evento</h4>
+                            <p>Se realiza la inaguración de SenaSoft 2019 - Medellín</p>
+                        </div>
+                    </div>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>07:00 PM</time></div>
                         <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/6.jpg" alt="Willow Trantow">
-                            </div>
-                            <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                            <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
+                            <h4>Traslado y cena.</h4>
+                            <p>Se regresa al lugar de hospedaje para tomar la cena.</p>
+                        </div>
+                    </div>
+                    <div class="row schedule-item justify-content-center">
+                        <div class="col-md-2"><time>08:00 PM</time></div>
+                        <div class="col-md-10">
+                            <h4>Registro en el evento y entrega de equipos segunda parte.</h4>
+                            <p>Se reciben todos los equipos que desean registrar.</p>
                         </div>
                     </div>
                 </div>
                 <div id="dia2" class="tab-pane fade">
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>09:30 AM</time></div>
+                    <div class="row schedule-item justify-content-center">
+                        <div class="col-md-2"><time>06:00 AM</time></div>
                         <div class="col-md-10">
-                            <h4>Registration</h4>
-                            <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
+                            <h4>Traslado desde el hotel a lugar del evento.</h4>
+                            <p>Quienes lleguen despues de las 2.00 p.m. al aeropuerto, llegan al lugar del evento.</p>
                         </div>
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>10:00 AM</time></div>
+                        <div class="col-md-2"><time>07:00 AM</time></div>
                         <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/1.jpg" alt="Brenden Legros">
-                            </div>
-                            <h4>Keynote <span>Brenden Legros</span></h4>
-                            <p>Facere provident incidunt quos voluptas.</p>
+                            <h4>Charla para aprendices e instructores.</h4>
+                            <p>Se realiza una charla introductoria en general para todos.</p>
+                        </div>
+                    </div>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>08:30 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Refrigerio.</h4>
+                        </div>
+                    </div>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>09:00 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Competencia Aprendices.</h4>
+                            <p>Inicia la competencia; <b>Todos los instructores deben asistir a una conferencia en auditorio.<b></p>
                         </div>
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>11:00 AM</time></div>
+                        <div class="col-md-2"><time>12:00 PM</time></div>
                         <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/2.jpg" alt="Hubert Hirthe">
-                            </div>
-                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>12:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/3.jpg" alt="Cole Emmerich">
-                            </div>
-                            <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                            <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+                            <h4>Almuerzo</h4>
                         </div>
                     </div>
 
                     <div class="row schedule-item">
                         <div class="col-md-2"><time>02:00 PM</time></div>
                         <div class="col-md-10">
+                            <h4>Workshops para los instructores.</h4>
                             <div class="speaker">
-                                <img src="img/speakers/4.jpg" alt="Jack Christiansen">
+                                <img src="images/speaker4.jpg" alt="Jack Christiansen">
                             </div>
-                            <h4>Qui non qui vel amet culpa sequi. <span>Jack Christiansen</span></h4>
-                            <p>Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
+                            <p>Workshop Software - Ambiente #1.</p>
+                            <div class="speaker">
+                                <img src="images/speaker4.jpg" alt="Jack Christiansen">
+                            </div>
+                            <p>Workshop Infraestructura - Ambiente #2</p>
+                            <div class="speaker">
+                                <img src="images/speaker4.jpg" alt="Jack Christiansen">
+                            </div>
+                            <p>Workshop Contenidos Digitales - Ambiente #3.</p>
+                            
                         </div>
                     </div>
-
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>03:00 PM</time></div>
+                        <div class="col-md-2"><time>04:00 PM</time></div>
                         <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/5.jpg" alt="Alejandrin Littel">
-                            </div>
-                            <h4>Quos ratione neque expedita asperiores. <span>Alejandrin Littel</span></h4>
-                            <p>Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
+                            <h4>Reunión de Instructores por área.</h4>
+                            <p>Software - Ambiente #1.</p>
+                            <p>Infraestructura - Ambiente #2</p>
+                            <p>Contenidos Digitales - Ambiente #3.</p>
+                        </div>
+                    </div>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>06:00 PM</time></div>
+                        <div class="col-md-10">
+                            <h4>Finalización de competencia.</h4>
+                            <p>.</p>
                         </div>
                     </div>
 
