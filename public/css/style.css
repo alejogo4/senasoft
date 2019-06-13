@@ -1862,10 +1862,10 @@ textarea.white-input:-ms-input-placeholder {
 }
 
 p.contact_success_box {
-    display: inline-block;
-    color: #454545;
+    color: #16d6bb;
     font-size: 21px;
     font-style: italic;
+    text-align: center;
 }
 
 

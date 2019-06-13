@@ -33,7 +33,9 @@
             <div class="col-md-12">
                 <h4>Concurso de proyectos de centro</h4>
                 <!--begin success message -->
-                <p class="contact_success_box" style="display:none;">Gracias, hemos recibido el registro exitosamente</p>
+                @if (session('mensaje'))
+                    <p class="contact_success_box animated fadeIn">{{ session('mensaje') }}</p>
+                @endif
                 <!--end success message -->
                 <!--Slider Form-->
                 <div class="container">
@@ -54,8 +56,9 @@
                         </div>
                     </div>
 
-                    <form id="contact-form" class="contact" action="" method="post">
-                        <div class="row setup-content" id="step-1">
+                    <form action="{{ route('proyecto.store') }}"  method="post" enctype="multipart/form-data" id="contact-form"  class="contact" >
+                    {{ csrf_field() }}       
+                    <div class="row setup-content" id="step-1">
 
                             <div class="col-md-6 col-md-offset-3">
                                 <div class="col-md-12">
@@ -85,7 +88,15 @@
                     </form>
 
             </div>
-
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <!--end Slider Form-->
 
         </div>

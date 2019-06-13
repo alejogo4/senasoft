@@ -25,6 +25,7 @@ class ProyectoController extends Controller
     public function create()
     {
         //
+        
     }
 
     /**
@@ -35,7 +36,37 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        //Crear la validacion del código
+
+        $this->validateForm($request);
+        
+
+        $file = $request->file('proyecto_file');
+        if($file){
+            $file_name = $request->input('codigo')."-".$file->getClientOriginalName();
+            $file_name = str_replace(" ","",$file_name);
+            \Storage::disk('proyectos')->put($file_name,\File::get($file));
+
+        }
+
+        return  redirect()->route('proyecto.index')->with(array(
+            "mensaje"=>"Proyecto registrado con exito"
+         ));
+    }
+
+    public function validateForm(Request $request){
+
+
+        $rules = [
+            'proyecto_file'=>'mimes:xls,xlsx'
+        ];
+    
+        $customMessages = [
+            'mimes' => 'El archivo adjunto debe ser un formato de excel, asegurate de descargar el formato en el paso #1'
+        ];
+    
+        return $this->validate($request, $rules, $customMessages);
     }
 
     /**

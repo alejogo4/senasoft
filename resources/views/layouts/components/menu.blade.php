@@ -9,7 +9,7 @@
     </button>
 
     <!--logo -->
-    <a href="index.html" class="navbar-brand" id="logo"><img src="images/logo.png"></a>
+    <a href="{{ url('/') }}" class="navbar-brand" id="logo"><img src="images/logo.png"></a>
 
 </div>
 
