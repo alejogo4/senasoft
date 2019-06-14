@@ -18,7 +18,7 @@ class TblCentro extends Migration
         Schema::create('tbl_centro', function (Blueprint $table) {
             
             $table->bigIncrements('id');
-            $table->char('nombre_centro', 20); 
+            $table->varchar('nombre_centro', 100); 
             $table->unsignedBigInteger('regional_id');
             $table->char('codigo', 45);
             $table->timestamps();
