@@ -20,6 +20,7 @@ class TblCentro extends Migration
             $table->bigIncrements('id');
             $table->char('nombre_centro', 20); 
             $table->unsignedBigInteger('regional_id');
+            $table->char('codigo', 45);
             $table->timestamps();
 
             $table->foreign('regional_id')->references('id')->on('tbl_regional')->onDelete('cascade');

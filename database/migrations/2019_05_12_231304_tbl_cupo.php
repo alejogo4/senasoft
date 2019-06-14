@@ -19,14 +19,13 @@ class TblCupo extends Migration
             $table->bigIncrements('id');
             $table->integer('n_cupos_disponibles');
             $table->integer('n_cupos_utilizados');
-            $table->char('codigo', 45);
             $table->timestamps();
 
             $table->unsignedBigInteger('centro_id');
             $table->unsignedBigInteger('categoria_id');
 
             $table->foreign('centro_id')->references('id')->on('tbl_centro')->onDelete('cascade');
-            $table->foreign('categoria_id')->references('id')->on('tbl_categoria');
+            $table->foreign('categoria_id')->references('id')->on('tbl_categoria')->onDelete('cascade');
         });
     }
 

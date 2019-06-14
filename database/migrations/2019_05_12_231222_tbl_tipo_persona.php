@@ -17,7 +17,7 @@ class TblTipoPersona extends Migration
         Schema::create('tbl_tipo_persona', function (Blueprint $table) {
             
             $table->bigIncrements('id');
-            $table->char('nombre_tipo_persona', 50);
+            $table->char('descripcion_tipo_persona', 50);
             $table->timestamps();
 
         });

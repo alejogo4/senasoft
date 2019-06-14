@@ -11,6 +11,7 @@
 
     <!--Librerias del head que usa la plantilla-->
     @yield('librariesTop',View::make('layouts.components.librariesTop'))
+    @yield('style')
 
     <style>
         li.dropdown:hover > .dropdown-menu {

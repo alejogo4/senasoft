@@ -33,11 +33,16 @@ class TblPersona extends Migration
             $table->char('eps', 45);
             $table->char('ciudad', 60);
             $table->char('empresa', 80);
+            $table->mediumText('tipo_alimentacion', 20);
             $table->mediumText('alergias');
             $table->mediumText('enfermedades');
             $table->mediumText('medicamento_consume');
+            $table->mediumText('arhivo_documento');
+            $table->mediumText('arhivo_certificado_eps');
+            $table->mediumText('arhivo_constancia_estudio');
             $table->unsignedBigInteger('asignacion_cupos_id');
             $table->unsignedBigInteger('tipo_persona');
+            $table->boolean('tour');
             $table->timestamps();
 
             $table->foreign('asignacion_cupos_id')->references('id')->on('tbl_cupo')->onDelete('cascade');
