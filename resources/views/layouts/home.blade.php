@@ -23,7 +23,7 @@
 <!--end header -->
 
 <!--begin home section -->
-<section class="home-section" id="home_wrapper">
+<section class="home-section" id="home">
 
     <div class="home-section-overlay"></div>
 
@@ -241,34 +241,65 @@
 </section>
 <!--end section-grey -->
 
-
-
-<!--begin video-wrapper -->
-<section class="video-wrapper">
-
-    <div class="video-wrapper-overlay"></div>
-
-    <div class="shape-image-top"></div>
+<!--begin gallery section -->
+<section class="section-lyla" id="category">
 
     <!--begin container -->
-    <div class="container">
+    <div class="container-fluid ">
 
         <!--begin row -->
         <div class="row">
 
-            <!--begin col-md-12-->
+            <!--begin col md 12 -->
             <div class="col-md-12 text-center">
 
-                <!--begin popup-gallery-->
-                <div class="popup-gallery">
-                    <a class="popup4 video-icon" href="https://www.youtube.com/watch?v=FPfQMVf4vwQ"><i class="fa fa-play"></i></a>
-                </div>
-                <!--end popup-gallery-->
+                <h2 class="section-title white">Categorias de participación</h2>
 
-                <h3 class="video-title white">Watch Demo Video<br><span>Amazing Features, Unlimited Possibilities.</span></h3>
+                <p class="section-subtitle white">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
 
             </div>
-            <!--end col-md-12-->
+            <!--end col md 12 -->
+
+            <!--begin col md 12 -->
+            <div class="gallery-item-wrapper padding-top-30">
+
+                <!--begin owl carousel -->
+                <div id="owl2" class="owl-carousel owl-theme">
+
+                    <div>
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                    </div>
+
+                    <div>
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                    </div>
+
+                    <div>
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                    </div>
+
+                    <div>
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                    </div>
+
+                    <div>
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                    </div>
+
+                    <div>
+                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                    </div>
+
+                </div>
+                <!--end owl carousel -->
+
+                <div class="owl-dots">
+                    <div class="owl-dot active"><span></span></div>
+                    <div class="owl-dot"><span></span></div>
+                    <div class="owl-dot"><span></span></div>
+                </div>
+            </div>
+            <!--end col md  12-->
 
         </div>
         <!--end row -->
@@ -277,15 +308,14 @@
     <!--end container -->
 
 </section>
-<!--end video-wrapper -->
-
+<!--end gallery section -->
 
 
 <!--begin team section -->
 <section class="top-shape-wrapper">
 
     <!--begin top-shape section -->
-    <div class="top-shape" id="team">
+    <div class="top-shape" id="history">
 
         <!--begin container-->
         <div class="container">
@@ -411,74 +441,7 @@
 </section>
 <!--end team section -->
 
-<!--begin gallery section -->
-<section class="section-lyla" id="gallery">
 
-    <!--begin container -->
-    <div class="container-fluid ">
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col md 12 -->
-            <div class="col-md-12 text-center">
-
-                <h2 class="section-title white">Categorias de participación</h2>
-
-                <p class="section-subtitle white">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
-
-            </div>
-            <!--end col md 12 -->
-
-            <!--begin col md 12 -->
-            <div class="gallery-item-wrapper padding-top-30">
-
-                <!--begin owl carousel -->
-                <div id="owl2" class="owl-carousel owl-theme">
-
-                    <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
-                    </div>
-
-                    <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
-                    </div>
-
-                    <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
-                    </div>
-
-                    <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
-                    </div>
-
-                    <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
-                    </div>
-
-                    <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
-                    </div>
-
-                </div>
-                <!--end owl carousel -->
-
-                <div class="owl-dots">
-                    <div class="owl-dot active"><span></span></div>
-                    <div class="owl-dot"><span></span></div>
-                    <div class="owl-dot"><span></span></div>
-                </div>
-            </div>
-            <!--end col md  12-->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
-</section>
-<!--end gallery section -->
 
 <!--begin partners section -->
 <section class="section-grey partners-paddings">
@@ -530,7 +493,7 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center padding-top-60 padding-bottom-20">
 
-                <h3 class="white-text">Escríbenos tus dudas</h3>
+                <h3 class="white-text">Envianos tu email, nos contactaremos contigo.</h3>
 
             </div>
             <!--end col-md-12 -->
@@ -551,9 +514,9 @@
                         <!--begin newsletter-form -->
                         <form id="newsletter-form" class="newsletter-form" action="php/newsletter.php" method="post">
 
-                            <input id="email_newsletter" type="email" name="nf_email" placeholder="Enter Your Email Address">
+                            <input id="email_newsletter" type="email" name="nf_email" placeholder="Ingresar Email">
 
-                            <input type="submit" value="GET STARTED!" id="submit-button-newsletter">
+                            <input type="submit" value="ENVIAR!" id="submit-button-newsletter">
 
                         </form>
                         <!--end newsletter-form -->
@@ -572,229 +535,10 @@
 
     </div>
     <!--end container -->
-
-</section>
 <!--end newsletter section -->
-
-
-
-
-
-<!--begin testimonials section -->
-<section class="section-grey">
-
-    <!--begin container -->
-    <div class="container">
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col-md-10 -->
-            <div class="col-md-8 col-md-offset-2">
-
-                <!--begin owl carousel -->
-                <div id="owl1" class="owl-carousel owl-theme">
-
-                    <!--begin testim-inner -->
-                    <div class="testim-inner">
-
-                        <img src="http://placehold.it/200x200" alt="testimonials" class="testim-img">
-
-                        <p>The attention of a traveller, should be particularly turned, in the first place, to the various works of Nature, to mark the distinctions of the climates he may explore, and to offer such useful observations on the different productions as may occur.</p>
-
-                        <h6>Jennifer Smith<span class="job-text"> - Web Designer</span></h6>
-
-                    </div>
-                    <!--end testim-inner -->
-
-                    <!--begin testim-inner -->
-                    <div class="testim-inner">
-
-                        <img src="http://placehold.it/200x200" alt="testimonials" class="testim-img">
-
-                        <p>The attention of a traveller, should be particularly turned, in the first place, to the various works of Nature, to mark the distinctions of the climates he may explore, and to offer such useful observations on the different productions as may occur.</p>
-
-                        <h6>John Doe<span class="job-text"> - General Manager</span></h6>
-
-                    </div>
-                    <!--end testim-inner -->
-
-                    <!--begin testim-inner -->
-                    <div class="testim-inner">
-
-                        <img src="http://placehold.it/200x200" alt="testimonials" class="testim-img">
-
-                        <p>The attention of a traveller, should be particularly turned, in the first place, to the various works of Nature, to mark the distinctions of the climates he may explore, and to offer such useful observations on the different productions as may occur.</p>
-
-                        <h6>Alexandra Smith<span class="job-text"> - App Magazine Editor</span></h6>
-
-                    </div>
-                    <!--end testim-inner -->
-
-                </div>
-                <!--end owl carousel -->
-
-                <!--begin owl carousel -->
-                <div class="owl-dots">
-
-                    <div class="owl-dot active"><span></span></div>
-
-                    <div class="owl-dot"><span></span></div>
-
-                    <div class="owl-dot"><span></span></div>
-
-                </div>
-                <!--end owl carousel -->
-
-            </div>
-            <!--end-col-md-10 -->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
 </section>
 <!--end testimonials section -->
 
-<!--begin download-app-wrapper -->
-<section class="download-app-wrapper" id="download-app">
-
-    <div class="download-app-wrapper-overlay"></div>
-
-    <div class="shape-grey-image-top"></div>
-
-    <!--begin container -->
-    <div class="container">
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin col-md-5-->
-            <div class="col-md-6 padding-top-100">
-
-                <h2 class="title-download-app-padding white-text">Get The App Now!</h2>
-
-                <p class="white-text">Curabitur quam etsum lacus etsumis nulatis etsumised vitae nisledita variustimuslis loremis sedit feugiat ligula aliquam etsimus dictimelis etis dinetsumitis ipsum netsum etim quias nets ligula.</p>
-
-                <a href="#" class="btn-download-app"><span class="fa fa-apple"></span>
-                    <p><small>Download On</small><br>App Store</p>
-                </a>
-
-                <a href="#" class="btn-download-app"><span class="fa fa-android"></span>
-                    <p><small>Get It On</small><br>Google Play</p>
-                </a>
-
-                <a href="#" class="btn-download-app last"><span class="fa fa-windows"></span>
-                    <p><small>Get It From</small><br>Windows</p>
-                </a>
-
-            </div>
-            <!--end col-md-5-->
-
-            <!--begin col-md-7-->
-            <div class="col-md-6 wow slideInRight" data-wow-delay="0.15s" style="visibility: visible; animation-delay: 0.15s; animation-name: slideInRight;">
-
-                <img src="images/download-app-iphone.png" alt="picture" class="download-app-iphone width-100">
-
-            </div>
-            <!--end col-md-7-->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
-</section>
-<!--end download-app-wrapper -->
-
-<!--begin section-white -->
-<section class="section-white small-paddings">
-
-    <!--begin container -->
-    <div class="container">
-
-        <!--begin row -->
-        <div class="row">
-
-            <!--begin fun-facts-box-->
-            <div class="col-sm-3 fun-facts-box">
-
-                <div class="fun-facts-icon">
-                    <i class="fa fa-trophy"></i>
-                </div>
-
-                <div class="fun-facts-text">
-
-                    <h3 class="fun-facts-title">Trusted By 5K</h3>
-                    <p class="fun-facts-subtitle">App Of The Year</p>
-
-                </div>
-
-            </div>
-            <!--end fun-facts-box -->
-
-            <!--begin fun-facts-box-->
-            <div class="col-sm-3 fun-facts-box">
-
-                <div class="fun-facts-icon">
-                    <i class="fa fa-download"></i>
-                </div>
-
-                <div class="fun-facts-text">
-
-                    <h3 class="fun-facts-title">11500</h3>
-                    <p class="fun-facts-subtitle">Total Downloads</p>
-
-                </div>
-
-            </div>
-            <!--end fun-facts-box -->
-
-            <!--begin fun-facts-box-->
-            <div class="col-sm-3 fun-facts-box">
-
-                <div class="fun-facts-icon">
-                    <i class="fa fa-heart"></i>
-                </div>
-
-                <div class="fun-facts-text">
-
-                    <h3 class="fun-facts-title">5500</h3>
-                    <p class="fun-facts-subtitle">Active Members</p>
-
-                </div>
-
-            </div>
-            <!--end fun-facts-box -->
-
-            <!--begin fun-facts-box-->
-            <div class="col-sm-3 fun-facts-box">
-
-                <div class="fun-facts-icon">
-                    <i class="fa fa-rocket"></i>
-                </div>
-
-                <div class="fun-facts-text">
-
-                    <h3 class="fun-facts-title">1000+</h3>
-                    <p class="fun-facts-subtitle">Diferent Premium Avatars</p>
-
-                </div>
-
-            </div>
-            <!--end fun-facts-box -->
-
-        </div>
-        <!--end row -->
-
-    </div>
-    <!--end container -->
-
-</section>
-<!--end white-grey -->
 <!--begin features -->
 <section class="section-white" id="app">
 

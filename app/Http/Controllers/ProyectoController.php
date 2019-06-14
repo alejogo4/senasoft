@@ -47,7 +47,6 @@ class ProyectoController extends Controller
             $file_name = $request->input('codigo')."-".$file->getClientOriginalName();
             $file_name = str_replace(" ","",$file_name);
             \Storage::disk('proyectos')->put($file_name,\File::get($file));
-
         }
 
         return  redirect()->route('proyecto.index')->with(array(

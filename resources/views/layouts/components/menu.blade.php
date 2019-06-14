@@ -17,18 +17,12 @@
 
     <ul class="nav navbar-nav navbar-right">
 
-        <li><a href="#home_wrapper">Inicio</a></li>
-
+        <li><a href="#home">Inicio</a></li>
         <li><a href="#schedule">Senasoft 2019</a></li>
-
-        <li><a href="#team">Histórico</a></li>
-
-        <li><a href="#gallery">Categorias</a></li>
-
+        <li><a href="#category">Categorias</a></li>
+        <li><a href="#history">Histórico</a></li>
         <li><a href="#app">App</a></li>
-
         <li><a href="#pqr">PQR</a></li>
-
         <li class="dropdown">
             <a href="#" class="discover-btn btn-alert dropdown-toggle" role="button" aria-haspopup="true"
                 aria-expanded="false" id="dropdownMenuButton" data-toggle="dropdown">Registro</a>
