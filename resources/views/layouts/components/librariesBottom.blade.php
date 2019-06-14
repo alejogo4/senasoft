@@ -11,3 +11,4 @@
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('js/steeper.js')}}"></script>
+<script src="{{asset('js/sweetalert2@8.js')}}"></script>

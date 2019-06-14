@@ -1,3 +1,6 @@
+.swal2-popup {
+    zoom: 1.5;
+}
 ul,
 ol {
     list-style: none;

@@ -27,7 +27,7 @@
             <a href="#" class="discover-btn btn-alert dropdown-toggle" role="button" aria-haspopup="true"
                 aria-expanded="false" id="dropdownMenuButton" data-toggle="dropdown">Registro</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a href="{{ url('/registro') }}">Registrar Participantes</a></li>
+                <li><a onclick="confirmar_codigo()" href="#">Registrar Participantes</a></li>
                 <li><a href="#">Registrar Equipos</a></li>
                 <li><a href="{{ url('/proyecto') }}">Registrar Proyectos</a></li>
             </ul>
