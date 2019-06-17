@@ -19,6 +19,7 @@ class TblCategoria extends Migration
             $table->bigIncrements('id');
             $table->char('nombre_categoria',45);
             $table->char('tipo_agrupacion',10);
+            
             $table->timestamps();
 
         

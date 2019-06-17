@@ -12,6 +12,7 @@ class RegistroController extends Controller
         if($codigo != null){
 
             $centro = Centro::where("codigo", $codigo)
+            ->where("estado", 0)
             ->join("tbl_regional", "tbl_centro.regional_id", "=", "tbl_regional.id")
             ->first();
 
@@ -19,7 +20,7 @@ class RegistroController extends Controller
                 session(["codigo" => $codigo, "centro"=>$centro->nombre_centro, "regional"=>$centro->nombre_regional]);
                 return response()->json(["ok"=>true]);
             }else{
-                return response()->json(["ok"=>false, "mensaje"=>"El código no existe en los registros"]);
+                return response()->json(["ok"=>false, "mensaje"=>"El código no existe o ya fue utilizado"]);
             }
 
         }else{

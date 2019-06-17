@@ -19,6 +19,7 @@ class TblRegional extends Migration
             $table->bigIncrements('id');
             $table->char('nombre_regional', 20);
             
+            
             $table->timestamps();
 
             

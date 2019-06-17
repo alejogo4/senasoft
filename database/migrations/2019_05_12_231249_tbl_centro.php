@@ -21,6 +21,7 @@ class TblCentro extends Migration
             $table->char('nombre_centro', 100); 
             $table->unsignedBigInteger('regional_id');
             $table->char('codigo', 45);
+            
             $table->boolean('estado');
             $table->timestamps();
 

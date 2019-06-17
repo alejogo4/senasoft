@@ -18,6 +18,7 @@ class TblTipoPersona extends Migration
             
             $table->bigIncrements('id');
             $table->char('descripcion_tipo_persona', 50);
+            
             $table->timestamps();
 
         });

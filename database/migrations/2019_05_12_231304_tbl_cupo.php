@@ -19,6 +19,7 @@ class TblCupo extends Migration
             $table->bigIncrements('id');
             $table->integer('n_cupos_disponibles');
             $table->integer('n_cupos_utilizados');
+            
             $table->timestamps();
 
             $table->unsignedBigInteger('centro_id');
