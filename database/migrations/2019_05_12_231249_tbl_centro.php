@@ -21,6 +21,7 @@ class TblCentro extends Migration
             $table->varchar('nombre_centro', 100); 
             $table->unsignedBigInteger('regional_id');
             $table->char('codigo', 45);
+            $table->boolean('estado');
             $table->timestamps();
 
             $table->foreign('regional_id')->references('id')->on('tbl_regional')->onDelete('cascade');

@@ -1,6 +1,7 @@
 <!-- Load JS here for greater good =============================-->
 <script src="{{asset('js/jquery-1.11.3.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.js')}}"></script>
+<script src="{{asset('js/bootstrap.js')}}"></script>
 <script src="{{asset('js/owl.carousel.min.js')}}"></script>
 <script src="{{asset('js/jquery.scrollTo-min.js')}}"></script>
 <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>

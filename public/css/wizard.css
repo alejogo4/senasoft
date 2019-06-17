@@ -351,8 +351,6 @@ input {
 
 label.error {
   display: block;
-  position: absolute;
-  top: 0px;
   right: 0; }
   label.error:after {
     font-family: 'Material-Design-Iconic-Font';

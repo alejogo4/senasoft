@@ -31,6 +31,7 @@ class TblPersona extends Migration
             $table->char('rh', 3);
             $table->char('talla_camisa', 3);
             $table->char('eps', 45);
+            $table->char('arl', 45);
             $table->char('ciudad', 60);
             $table->char('empresa', 80);
             $table->mediumText('tipo_alimentacion', 20);

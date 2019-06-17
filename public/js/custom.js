@@ -158,6 +158,8 @@ $(window).on('load', function () {
             }
         });
     })
+
+    $("select").select2();
 });
 
 /* ========================================================== */
@@ -191,37 +193,48 @@ $('.popup-gallery').find('a.popup4').magnificPopup({
     }
 });
 
-function confirmar_codigo() {
+
+
+$(".registro").on("click", function () {
+    let url = $(this).attr("url");
+    confirmar_codigo(url);
+})
+
+
+function confirmar_codigo(url) {
     Swal.fire({
         title: 'Ingresa el código',
         input: 'text',
         inputAttributes: {
-            autocapitalize: 'off'
+            autocapitalize: 'on'
         },
         showCancelButton: true,
-        confirmButtonText: 'Look up',
+        confirmButtonText: 'Validar',
         showLoaderOnConfirm: true,
-        preConfirm: (login) => {
-            return fetch(`//api.github.com/users/${login}`)
+        preConfirm: (codigo) => {
+            return fetch(`/validar/codigo/${codigo}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(response.statusText)
                     }
                     return response.json()
+                }).then(result =>{
+                    console.log(result);
+                    if (result) {
+
+                        if (result.ok) {
+                            location.href = url;
+                        } else {
+                            throw new Error(result.mensaje)
+                        }
+                    }
                 })
                 .catch(error => {
                     Swal.showValidationMessage(
-                        `Request failed: ${error}`
+                        `${error}`
                     )
                 })
         },
         allowOutsideClick: () => !Swal.isLoading()
-    }).then((result) => {
-        if (result.value) {
-            Swal.fire({
-                title: `${result.value.login}'s avatar`,
-                imageUrl: result.value.avatar_url
-            })
-        }
     })
 }

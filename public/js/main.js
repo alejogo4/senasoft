@@ -1,14 +1,13 @@
+var dropZoneEps = null;
+var dropZoneDocumentos = null;
+var dropZoneCertificado = null;
+var dropZoneFoto = null;
 (function ($) {
     var form = $("#signup-form");
     form.validate({
-        errorPlacement: function errorPlacement(error, element) {
-            element.before(error);
-        },
-        rules: {
-            email: {
-                email: true
-            }
-        },
+        // errorPlacement: function errorPlacement(error, element) {
+        //     element.after(error);
+        // },
         onfocusout: function (element) {
             $(element).valid();
         },
@@ -49,6 +48,7 @@
             return form.valid();
         },
         onFinished: function (event, currentIndex) {
+            guardar();
             alert('Submited');
         },
         onStepChanged: function (event, currentIndex, priorIndex) {
@@ -58,14 +58,91 @@
     });
 })(jQuery);
 
-function validar_tipo_persona(){
-    var tipo_persona = $("input[name='tipo_persona']:checked").val();
-    switch(tipo_persona){
-        case "1":
-            $("#categoria").show();
-        break;
-        case "2":
-            $("#categoria").hide();
-        break;
-    }
+$(function () {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    Dropzone.prototype.defaultOptions.dictDefaultMessage = "Arrastra los archivos aquí para subirlos";
+    Dropzone.prototype.defaultOptions.dictFallbackMessage = "Your browser does not support drag'n'drop file uploads.";
+    Dropzone.prototype.defaultOptions.dictFallbackText = "Please use the fallback form below to upload your files like in the olden days.";
+    Dropzone.prototype.defaultOptions.dictFileTooBig = "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.";
+    Dropzone.prototype.defaultOptions.dictInvalidFileType = "You can't upload files of this type.";
+    Dropzone.prototype.defaultOptions.dictResponseError = "Server responded with {{statusCode}} code.";
+    Dropzone.prototype.defaultOptions.dictCancelUpload = "Cancel upload";
+    Dropzone.prototype.defaultOptions.dictCancelUploadConfirmation = "Are you sure you want to cancel this upload?";
+    Dropzone.prototype.defaultOptions.dictRemoveFile = "Remove file";
+    Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "You can not upload any more files.";
+
+    Dropzone.autoDiscover = false
+
+    dropZoneEps = new Dropzone("div#cedulas", {
+        acceptedFiles: "application/pdf",
+        url: "/",
+        autoProcessQueue: false,
+        parallelUploads: 20,
+        uploadMultiple: true,
+        addRemoveLinks: true
+    });
+    dropZoneDocumento = new Dropzone("div#eps", {
+        acceptedFiles: "application/pdf",
+        url: "/",
+        autoProcessQueue: false,
+        parallelUploads: 20,
+        uploadMultiple: true,
+        addRemoveLinks: true
+    });
+    dropZoneCertificado = new Dropzone("div#certificado", {
+        acceptedFiles: "application/pdf",
+        url: "/",
+        autoProcessQueue: false,
+        parallelUploads: 20,
+        uploadMultiple: true,
+        addRemoveLinks: true
+    });
+    dropZoneFoto = new Dropzone("div#foto", {
+        acceptedFiles: "image/*",
+        url: "/",
+        autoProcessQueue: false,
+        parallelUploads: 20,
+        uploadMultiple: true,
+        addRemoveLinks: true
+    });
+
+    $.ajax({
+        url : "/ciudades.json",
+        dataType : 'json'
+    }).done(e => {
+        $("#ciudad").empty();
+        $("#ciudad").append("<option value=''>Seleccione</option>");
+
+        e.forEach(v => {
+            $("#ciudad").append(`<option value='${v.Departamento+"-"+v.Ciudad}'>${v.Departamento+"-"+v.Ciudad}</option>`);
+        })
+    })
+})
+
+function guardar() {
+    var data = new FormData();
+    let images = dropZoneEps.getAcceptedFiles();
+
+    images.forEach((e, i) => {
+        data.append("archivo[]", e);
+    });
+
+    jQuery.ajax({
+        url: '/registro',
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        method: 'POST'
+    });
+
+    // let form = $("#signup-form").serializeArray();
+
+    // console.log(form)
+
 }
