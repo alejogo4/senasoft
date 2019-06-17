@@ -1,6 +1,7 @@
 .swal2-popup {
     zoom: 1.5;
 }
+
 ul,
 ol {
     list-style: none;
@@ -777,6 +778,7 @@ ul.footer_social li a i:hover {
     left: 0;
     right: 0;
     bottom: 0;
+    overflow: hidden;
 }
 
 .home-section h1 {
@@ -1522,6 +1524,10 @@ ul.pricing-list li.price-tag a:hover {
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
     border-radius: 5px 5px 0 0;
+}
+
+#bg_video {
+    opacity: 0.2;
 }
 
 .blog-item-inner {

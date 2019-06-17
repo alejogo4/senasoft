@@ -1,4 +1,24 @@
 @extends('layouts.master')
+@section("style")
+<!-- Font Icon -->
+<link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="/vendor/nouislider/nouislider.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="/css/wizard.css">
+
+<style>
+    .section-white {
+        padding: 0;
+    }
+
+    .section-white.no-padding-bottom,
+    .section-grey.no-padding-bottom {
+        padding: 0;
+    }
+
+</style>
+@endsection
 
 @section('content')
 
@@ -23,72 +43,8 @@
 <!--begin contact -->
 <section class="section-white no-padding-bottom" id="contact">
 
-    <!--begin container-->
-    <div class="container">
-
-        <!--begin row-->
-        <div class="row">
-
-            <!--begin col-md-12 -->
-            <div class="col-md-12">
-                <h4>Concurso de proyectos de centro</h4>
-                <!--begin success message -->
-                @if (session('mensaje'))
-                    <p class="contact_success_box animated fadeIn">{{ session('mensaje') }}</p>
-                @endif
-                <!--end success message -->
-                <!--Slider Form-->
-                <div class="container">
-                    <div class="stepwizard col-md-offset-1">
-                        <div class="stepwizard-row setup-panel">
-                            <div class="stepwizard-step">
-                                <a href="#step-1" type="button" class="btn btn-primary  btn-circle" >1</a>
-                                <p>1: Descarga y diligencia el formato</p>
-                            </div>
-                            <div class="stepwizard-step">
-                                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                                <p>2: Ingresa el código de centro</p>
-                            </div>
-                            <div class="stepwizard-step">
-                                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                                <p>3: Cargar el formato</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <form action="{{ route('proyecto.store') }}"  method="post" enctype="multipart/form-data" id="contact-form"  class="contact" >
-                    {{ csrf_field() }}       
-                    <div class="row setup-content" id="step-1">
-
-                            <div class="col-md-6 col-md-offset-3">
-                                <div class="col-md-12">
-                                    <a href="{{asset('files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx')}}" class="section-lyla btn btn-formato">Descargar el formato <span class="fa fa-download"></span></a>
-                                    <button class="btn btn-primary nextBtn btn-sm pull-right" type="button">Siguiente</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row setup-content" id="step-2">
-
-                            <div class="col-md-6 col-md-offset-3">
-                                <div class="col-md-12">
-                                    <input class="contact-input white-input" required="" name="codigo" placeholder="Ingresar Código*" type="text">
-                                    <button class="btn btn-primary nextBtn btn-sm pull-right" type="button">Siguiente</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row setup-content" id="step-3">
-                            <div class="col-xs-6 col-md-offset-3">
-
-                                <input class="contact-input white-input" required="" name="proyecto_file" placeholder="Regional" type="file">
-
-                                <input value="Enviar proyecto" class="btn btn-primary nextBtn btn-sm pull-right" type="submit" id="submit-button">
-                            </div>
-                        </div>
-                        
-                    </form>
-
-            </div>
-            @if ($errors->any())
+    <div class="main">
+        @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -96,17 +52,59 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
-            <!--end Slider Form-->
+        @endif
+        <!--begin success message -->
+        @if (session('mensaje'))
+            <p class="contact_success_box animated fadeIn">{{ session('mensaje') }}</p>
+        @endif
+        <form action="{{ route('proyecto.store') }}"  method="post" enctype="multipart/form-data" id="signup-form" class="signup-form">
+        {{ csrf_field() }}       
+            <div>
+                <h3>Empecemosss</h3>
+                <fieldset class="row">
+                    <h2 class="col-md-12">Concurso de proyectos de centro</h2>
+                    <div class="col-md-12">
+                        <div class="col-md-6">
 
-        </div>
-        <!--end row-->
+                        </div>
+                    </div>
+                    <div class="choose-bank col-md-12">
+                        <p class="choose-bank-desc">Explicacion</p>
+                        <div class="form-radio-flex">
+                            <a href="{{asset('files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx')}}" class="section-lyla btn btn-formato">Descargar el formato <span class="fa fa-download"></span></a>
+                        </div>
+                    </div>
+                </fieldset>
 
+                <h3>Cargar el formato</h3>
+                <fieldset>
+                    <h2>Cargar el formato</h2>
+                    <p class="desc">Cargar el formato diligenciado.</p>
+                    <div class="fieldset-content">
+                        <div class="form-row">
+                            <div class="row">
+                                <div class="col-md-8 offset-md-2">
+                                    <input class="contact-input white-input" required="" name="proyecto_file" placeholder="Regional" type="file">
+                                    <input value="Enviar proyecto" class="btn btn-primary nextBtn btn-sm pull-right" type="submit" id="submit-button">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
     </div>
-    <!--end container-->
-
 </section>
-<!--end contact-->
+
+@endsection
 
 
+@section('script')
+<script src="/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+<script src="/vendor/jquery-steps/jquery.steps.min.js"></script>
+<script src="/vendor/minimalist-picker/dobpicker.js"></script>
+<script src="/vendor/nouislider/nouislider.min.js"></script>
+<script src="/vendor/wnumb/wNumb.js"></script>
+<script src="/js/main.js"></script>
 @endsection
