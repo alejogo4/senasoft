@@ -2,13 +2,13 @@ var dropZoneEps = null;
 var dropZoneDocumentos = null;
 var dropZoneCertificado = null;
 var dropZoneFoto = null;
-(function ($) {
-    var form = $("#signup-form");
+(function($) {
+    var form = $("#form");
     form.validate({
         // errorPlacement: function errorPlacement(error, element) {
         //     element.after(error);
         // },
-        onfocusout: function (element) {
+        onfocusout: function(element) {
             $(element).valid();
         },
     });
@@ -24,7 +24,7 @@ var dropZoneFoto = null;
             finish: 'Finalizar',
             current: ''
         },
-        onStepChanging: function (event, currentIndex, newIndex) {
+        onStepChanging: function(event, currentIndex, newIndex) {
             // if (currentIndex === 0) {
             //     form.parent().parent().parent().append('<div class="footer footer-' + currentIndex + '"></div>');
             // }
@@ -43,22 +43,22 @@ var dropZoneFoto = null;
             form.validate().settings.ignore = ":disabled,:hidden";
             return form.valid();
         },
-        onFinishing: function (event, currentIndex) {
+        onFinishing: function(event, currentIndex) {
             form.validate().settings.ignore = ":disabled";
             return form.valid();
         },
-        onFinished: function (event, currentIndex) {
+        onFinished: function(event, currentIndex) {
             guardar();
             alert('Submited');
         },
-        onStepChanged: function (event, currentIndex, priorIndex) {
+        onStepChanged: function(event, currentIndex, priorIndex) {
 
             return true;
         }
     });
 })(jQuery);
 
-$(function () {
+$(function() {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -112,8 +112,8 @@ $(function () {
     });
 
     $.ajax({
-        url : "/ciudades.json",
-        dataType : 'json'
+        url: "/ciudades.json",
+        dataType: 'json'
     }).done(e => {
         $("#ciudad").empty();
         $("#ciudad").append("<option value=''>Seleccione</option>");

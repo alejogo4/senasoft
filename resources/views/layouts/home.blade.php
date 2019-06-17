@@ -26,10 +26,9 @@
 <section class="home-section" id="home">
 
     <div class="home-section-overlay">
-    <video id="bg_video"  title="Centro de servicios y gestión empresarial" autoplay="true"  muted="muted">
-        <source src="{{asset('files/videos/metas 2018.mp4')}}" type="video/mp4">
-    </video>
-    
+        <video id="bg_video"  title="Centro de servicios y gestión empresarial" autoplay="true"  muted="muted">
+            <source src="{{asset('files/videos/metas 2018.mp4')}}" type="video/mp4">
+        </video>
     </div>
 
     <!--begin container -->

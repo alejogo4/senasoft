@@ -57,7 +57,7 @@
         @if (session('mensaje'))
             <p class="contact_success_box animated fadeIn">{{ session('mensaje') }}</p>
         @endif
-        <form action="{{ route('proyecto.store') }}"  method="post" enctype="multipart/form-data" id="signup-form" class="signup-form">
+        <form action="{{ route('proyecto.store') }}"  method="post" enctype="multipart/form-data" id="form" class="signup-form">
         {{ csrf_field() }}       
             <div>
                 <h3>Empecemosss</h3>

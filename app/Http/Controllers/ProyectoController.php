@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Centro;
 class ProyectoController extends Controller
 {
     /**
@@ -11,6 +11,26 @@ class ProyectoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function validar_codigo($codigo){
+
+        if($codigo != null){
+
+            $centro = Centro::where("codigo", $codigo)
+            ->join("tbl_regional", "tbl_centro.regional_id", "=", "tbl_regional.id")
+            ->first();
+
+            if($centro != null){
+                session(["codigo" => $codigo, "centro"=>$centro->nombre_centro, "regional"=>$centro->nombre_regional]);
+                return response()->json(["ok"=>true]);
+            }else{
+                return response()->json(["ok"=>false, "mensaje"=>"El código no existe en los registros"]);
+            }
+
+        }else{
+            return response()->json(["ok"=>false, "mensaje"=>"Debes ingresar un código"]);
+        }
+    }
+
     public function index()
     {
         //

@@ -1,4 +1,4 @@
-$(window).on('load', function () {
+$(window).on('load', function() {
 
     "use strict";
 
@@ -57,7 +57,7 @@ $(window).on('load', function () {
             format: "on"
         },
 
-        function () {
+        function() {
             // callback function
         });
 
@@ -67,7 +67,7 @@ $(window).on('load', function () {
     /*   Navigation Background Color                              */
     /* ========================================================== */
 
-    $(window).on('scroll', function () {
+    $(window).on('scroll', function() {
         if ($(this).scrollTop() > 450) {
             $('.navbar-fixed-top').addClass('opaque');
         } else {
@@ -80,7 +80,7 @@ $(window).on('load', function () {
     /*   Hide Responsive Navigation On-Click                      */
     /* ========================================================== */
 
-    $(".header .navbar-nav li a").on('click', function (event) {
+    $(".header .navbar-nav li a").on('click', function(event) {
         $(".navbar-collapse").collapse('hide');
     });
 
@@ -98,7 +98,7 @@ $(window).on('load', function () {
     /*   SmoothScroll                                             */
     /* ========================================================== */
 
-    $(".header .nav li a, a.scrool").on('click', function (e) {
+    $(".header .nav li a, a.scrool").on('click', function(e) {
 
         var full_url = this.href;
         var parts = full_url.split("#");
@@ -118,15 +118,15 @@ $(window).on('load', function () {
     /*   Newsletter                                               */
     /* ========================================================== */
 
-    $('.newsletter-form').each(function () {
+    $('.newsletter-form').each(function() {
         var form = $(this);
         //form.validate();
-        form.submit(function (e) {
+        form.submit(function(e) {
             if (!e.isDefaultPrevented()) {
                 jQuery.post(this.action, {
                     'email': $('input[name="nf_email"]').val(),
-                }, function (data) {
-                    form.fadeOut('fast', function () {
+                }, function(data) {
+                    form.fadeOut('fast', function() {
                         $(this).siblings('p.newsletter_success_box').show();
                     });
                 });
@@ -139,18 +139,18 @@ $(window).on('load', function () {
     /* ========================================================== */
     /*   Contact                                                  */
     /* ========================================================== */
-    $('#contact-form').each(function () {
+    $('#contact-form').each(function() {
         var form = $(this);
         //form.validate();
-        form.submit(function (e) {
+        form.submit(function(e) {
             if (!e.isDefaultPrevented()) {
                 jQuery.post(this.action, {
                     'names': $('input[name="contact_names"]').val(),
                     'email': $('input[name="contact_email"]').val(),
                     'phone': $('input[name="contact_phone"]').val(),
                     'message': $('textarea[name="contact_message"]').val(),
-                }, function (data) {
-                    form.fadeOut('fast', function () {
+                }, function(data) {
+                    form.fadeOut('fast', function() {
                         $(this).siblings('p').show();
                     });
                 });
@@ -159,7 +159,7 @@ $(window).on('load', function () {
         });
     })
 
-    $("select").select2();
+    //$("select").select2();
 });
 
 /* ========================================================== */
@@ -195,7 +195,7 @@ $('.popup-gallery').find('a.popup4').magnificPopup({
 
 
 
-$(".registro").on("click", function () {
+$(".registro").on("click", function() {
     let url = $(this).attr("url");
     confirmar_codigo(url);
 })
@@ -218,7 +218,7 @@ function confirmar_codigo(url) {
                         throw new Error(response.statusText)
                     }
                     return response.json()
-                }).then(result =>{
+                }).then(result => {
                     console.log(result);
                     if (result) {
 

@@ -54,7 +54,7 @@
 <section class="section-white no-padding-bottom" id="contact">
 
     <div class="main">
-        <form method="POST" id="signup-form" class="signup-form" action="#">
+        <form method="POST" id="form" class="signup-form register" action="#">
             <div>
                 <h3>Empecemos</h3>
                 <fieldset class="row">
