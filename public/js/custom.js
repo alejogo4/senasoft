@@ -159,7 +159,11 @@ $(window).on('load', function () {
         });
     })
 
-    $("select").select2();
+    var $select = $("select").select2();
+
+    $select.on('change', function() {
+        $(this).trigger('blur');
+    });
 });
 
 /* ========================================================== */

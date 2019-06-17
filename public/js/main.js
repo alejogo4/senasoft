@@ -5,9 +5,14 @@ var dropZoneFoto = null;
 (function ($) {
     var form = $("#signup-form");
     form.validate({
-        // errorPlacement: function errorPlacement(error, element) {
-        //     element.after(error);
-        // },
+        errorPlacement: function errorPlacement(error, element) {
+
+            if ($(element).is("select")) {
+                $(element).next().append(error);
+            } else {
+                element.after(error);
+            }
+        },
         onfocusout: function (element) {
             $(element).valid();
         },
@@ -25,21 +30,6 @@ var dropZoneFoto = null;
             current: ''
         },
         onStepChanging: function (event, currentIndex, newIndex) {
-            // if (currentIndex === 0) {
-            //     form.parent().parent().parent().append('<div class="footer footer-' + currentIndex + '"></div>');
-            // }
-            // if (currentIndex === 1) {
-            //     form.parent().parent().parent().find('.footer').removeClass('footer-0').addClass('footer-' + currentIndex + '');
-            // }
-            // if (currentIndex === 2) {
-            //     form.parent().parent().parent().find('.footer').removeClass('footer-1').addClass('footer-' + currentIndex + '');
-            // }
-            // if (currentIndex === 3) {
-            //     form.parent().parent().parent().find('.footer').removeClass('footer-2').addClass('footer-' + currentIndex + '');
-            // }
-            // if(currentIndex === 4) {
-            //     form.parent().parent().parent().append('<div class="footer" style="height:752px;"></div>');
-            // }
             form.validate().settings.ignore = ":disabled,:hidden";
             return form.valid();
         },
@@ -66,15 +56,15 @@ $(function () {
     });
 
     Dropzone.prototype.defaultOptions.dictDefaultMessage = "Arrastra los archivos aquí para subirlos";
-    Dropzone.prototype.defaultOptions.dictFallbackMessage = "Your browser does not support drag'n'drop file uploads.";
-    Dropzone.prototype.defaultOptions.dictFallbackText = "Please use the fallback form below to upload your files like in the olden days.";
-    Dropzone.prototype.defaultOptions.dictFileTooBig = "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.";
-    Dropzone.prototype.defaultOptions.dictInvalidFileType = "You can't upload files of this type.";
-    Dropzone.prototype.defaultOptions.dictResponseError = "Server responded with {{statusCode}} code.";
-    Dropzone.prototype.defaultOptions.dictCancelUpload = "Cancel upload";
-    Dropzone.prototype.defaultOptions.dictCancelUploadConfirmation = "Are you sure you want to cancel this upload?";
-    Dropzone.prototype.defaultOptions.dictRemoveFile = "Remove file";
-    Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "You can not upload any more files.";
+    Dropzone.prototype.defaultOptions.dictFallbackMessage = "Su navegador no admite la carga de archivos con arrastrar y soltar.";
+    Dropzone.prototype.defaultOptions.dictFallbackText = "Utilice el formulario de reserva a continuación para cargar sus archivos como en los días anteriores.";
+    Dropzone.prototype.defaultOptions.dictFileTooBig = "El archivo es demasiado grande ({{filesize}}MiB). Tamaño máximo de archivo: {{maxFilesize}}MiB.";
+    Dropzone.prototype.defaultOptions.dictInvalidFileType = "No puedes subir archivos de este tipo.";
+    Dropzone.prototype.defaultOptions.dictResponseError = "Servidor respondió con el código {{statusCode}}.";
+    Dropzone.prototype.defaultOptions.dictCancelUpload = "Cancelar carga";
+    Dropzone.prototype.defaultOptions.dictCancelUploadConfirmation = "¿Estás seguro de que quieres cancelar esta carga?";
+    Dropzone.prototype.defaultOptions.dictRemoveFile = "Remover archivo";
+    Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "No puedes subir más archivos.";
 
     Dropzone.autoDiscover = false
 
@@ -86,7 +76,7 @@ $(function () {
         uploadMultiple: true,
         addRemoveLinks: true
     });
-    dropZoneDocumento = new Dropzone("div#eps", {
+    dropZoneDocumentos = new Dropzone("div#eps", {
         acceptedFiles: "application/pdf",
         url: "/",
         autoProcessQueue: false,
@@ -112,8 +102,8 @@ $(function () {
     });
 
     $.ajax({
-        url : "/ciudades.json",
-        dataType : 'json'
+        url: "/ciudades.json",
+        dataType: 'json'
     }).done(e => {
         $("#ciudad").empty();
         $("#ciudad").append("<option value=''>Seleccione</option>");
@@ -125,24 +115,50 @@ $(function () {
 })
 
 function guardar() {
+
     var data = new FormData();
-    let images = dropZoneEps.getAcceptedFiles();
 
-    images.forEach((e, i) => {
-        data.append("archivo[]", e);
-    });
+    let eps = dropZoneEps.getAcceptedFiles();
+    let documentos = dropZoneDocumentos.getAcceptedFiles();
+    let certificado = dropZoneCertificado.getAcceptedFiles();
+    let foto = dropZoneFoto.getAcceptedFiles();
 
-    jQuery.ajax({
-        url: '/registro',
-        data: data,
-        cache: false,
-        contentType: false,
-        processData: false,
-        method: 'POST'
-    });
+    if (eps.length > 0 && documentos.length > 0 && certificado.length > 0 && foto.length > 0) {
 
-    // let form = $("#signup-form").serializeArray();
+        let form = $("#signup-form").serializeArray();
 
-    // console.log(form)
+        form.forEach(e=>{
+            data.append(e.name, e.value);
+        })
+
+        data.append("foto", $("#fotografia").val());
+        data.append("aprendices", $("#aprednices").val());
+
+        eps.forEach((e, i) => {
+            data.append("archio_eps[]", e);
+        });
+
+        documentos.forEach((e, i) => {
+            data.append("archio_documentos[]", e);
+        });
+
+        certificado.forEach((e, i) => {
+            data.append("archio_certificado[]", e);
+        });
+
+        foto.forEach((e, i) => {
+            data.append("archio_foto[]", e);
+        });
+
+        jQuery.ajax({
+            url: '/registro',
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            method: 'POST'
+        });
+
+    }
 
 }

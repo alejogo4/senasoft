@@ -58,7 +58,7 @@ class RegistroController extends Controller
     public function store(Request $request)
     {
         //
-        dd($request->files);
+        dd($request->files, $request->all());
     }
 
     /**
