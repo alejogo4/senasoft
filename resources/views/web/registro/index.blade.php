@@ -344,5 +344,5 @@
 <script src="{{asset('js/select2.min.js')}}"></script>
 <script src="{{asset('js/select2-es.js')}}"></script>
 <script src="{{asset('js/dropzone.js')}}"></script>
-<script src="/js/main.js"></script>
+<script src="/js/registro_usuarios.js"></script>
 @endsection

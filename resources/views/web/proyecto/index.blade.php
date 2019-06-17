@@ -106,5 +106,5 @@
 <script src="/vendor/minimalist-picker/dobpicker.js"></script>
 <script src="/vendor/nouislider/nouislider.min.js"></script>
 <script src="/vendor/wnumb/wNumb.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/registro_proyectos.js"></script>
 @endsection

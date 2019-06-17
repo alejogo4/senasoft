@@ -24,3 +24,7 @@ Route::resource('/proyecto', 'ProyectoController');
 Route::get('/home', function () {
     return view('layouts.home');
 });*/
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
