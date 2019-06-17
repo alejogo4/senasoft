@@ -65,7 +65,12 @@
 
                     <div class="col-md-12">
                         <div class="col-md-6">
-
+                            <h2>Recomendaciones para las fotografias</h2>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                data-target="#myModal">
+                                Ver
+                            </button>
                         </div>
                     </div>
                 </fieldset>
@@ -88,11 +93,11 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="">Documento</label>
-                                    <input type="text" name="nombre" id="nombre" required />
+                                    <input type="text" name="documento" id="documento" required />
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="">Nombres</label>
-                                    <input type="text" name="apellido" id="apellido" required />
+                                    <input type="text" name="nombre" id="nombre" required />
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="">Apellidos</label>
@@ -102,11 +107,21 @@
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="email" class="form-label">Correo Principal</label>
-                                    <input type="email" name="email" id="email" required/>
+                                    <input type="email" name="correo" id="correo" required />
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="email" class="form-label">Correo Alterno</label>
-                                    <input type="email" name="email_alterno" id="email_alterno" />
+                                    <input type="email" name="correo_alterno" id="correo_alterno" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="telefono" class="form-label">Teléfono Principal</label>
+                                    <input type="text" name="telefono" id="telefono" required />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="telefono" class="form-label">Teléfono Alterno</label>
+                                    <input type="text" name="telefono_alterno" id="telefono_alterno" />
                                 </div>
                             </div>
                             <div class="row">
@@ -122,7 +137,7 @@
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text" class="form-label">Programa de Formación que imparte</label>
-                                    <input type="text" name="programa_formacion" id="programa_formacion" required/>
+                                    <input type="text" name="programa_formacion" id="programa_formacion" required />
                                 </div>
                             </div>
                         </div>
@@ -139,57 +154,75 @@
                             <div class="row">
                                 <div class="form-group col-md-3 col-sm-3">
                                     <label for="">RH</label>
-                                    <select name="" id="">
-                                        <option value="">TI</option>
-                                        <option value="">CC</option>
+                                    <select name="rh" id="rh" required>
+                                        <option value="">Seleccione</option>
+                                        <option value="A+">A+</option>
+                                        <option value="B+">B+</option>
+                                        <option value="O+">O+</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B-">B-</option>
+                                        <option value="O-">O-</option>
+                                        <option value="AB-">AB-</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3">
                                     <label for="">EPS</label>
-                                    <input type="text">
+                                    <input type="text" name="eps" id="eps" required>
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3">
                                     <label for="">ARL</label>
-                                    <input type="text">
+                                    <input type="text" name="arl" id="arl" required>
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3">
                                     <label for="">Talla Camisa</label>
-                                    <select name="" id="">
-                                        <option value="">TI</option>
-                                        <option value="">CC</option>
+                                    <select name="talla_camisa" id="talla_camisa" required>
+                                        <option value="">Seleccione</option>
+                                        <option value="XS">XS</option>
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4 col-sm-4">
                                     <label for="">Tipo Alimentación</label>
-                                    <select name="" id="">
-                                        <option value="">Vegana</option>
-                                        <option value="">Diabetico</option>
+                                    <select name="tip_alimentacion" id="tipo_alimentacion" required>
+                                        <option value="">Seleccione</option>
+                                        <option value="Vegana">Vegana</option>
+                                        <option value="Diabetico">Diabetico</option>
+                                        <option value="Normal">Normal</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 col-sm-4">
                                     <label for="">Enfermedades</label>
-                                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="enfermedades" id="" cols="30" rows="10"
+                                        class="form-control"></textarea>
                                 </div>
                                 <div class="form-group col-md-4 col-sm-4">
                                     <label for="">Alergias</label>
-                                    <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="alergias" id="" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-12">
-                                    <label for="text" class="form-label">Medicamentos</label>
-                                    <input type="text" name="email" id="email" />
+                                    <label for="text" class="form-label">Medicamentos que debe tomar</label>
+                                    <input type="text" name="medicamentos" id="medicamentos" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <h4 for="">Desea participar en el tour por Medellin</h4>
+                                    <h4 for="">Desea participar en el tour por Medellin
+                                        <br>
+                                        <label for="">
+                                            SI <input type="checkbox" name="tour" value="si">
+                                        </label>
+                                    </h4>
                                     <br>
-                                    <label for="">
-                                        SI <input type="checkbox">
-                                    </label>
+
 
                                 </div>
                             </div>
@@ -202,6 +235,15 @@
                     <h2>Aprendices y Documentación</h2>
                     <p class="desc">Set up your money limit to reach the future plan</p>
                     <div class="fieldset-content">
+                        <div class="form-row">
+                            <div class="col-md-12 text-center">
+                                <label for="email" class="form-label">Archivo de Excel con los aprendices</label>
+                                <input class="col-md-offset-4 col-md-4" type="file" name="aprendices" id="aprendices"
+                                    required />
+                            </div>
+                        </div>
+                        <br>
+                        <hr>
                         <div class="form-row" id="">
                             <div class="col-md-6">
                                 <div class="panel panel-info">
@@ -271,6 +313,23 @@
     </div>
 
 </section>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <img src="/images/recomendaciones.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
 <!--end contact-->
 @endsection
 

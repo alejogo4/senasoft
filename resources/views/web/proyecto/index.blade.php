@@ -60,7 +60,7 @@
         <form action="{{ route('proyecto.store') }}"  method="post" enctype="multipart/form-data" id="form" class="signup-form">
         {{ csrf_field() }}       
             <div>
-                <h3>Empecemosss</h3>
+                <h3>Empecemos</h3>
                 <fieldset class="row">
                     <h2 class="col-md-12">Concurso de proyectos de centro</h2>
                     <div class="col-md-12">
