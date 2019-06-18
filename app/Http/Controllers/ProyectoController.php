@@ -34,6 +34,9 @@ class ProyectoController extends Controller
     public function index()
     {
         //
+        if(session("codigo") == null){
+            return redirect("/");
+        }
         return view("web.proyecto.index");
     }
 

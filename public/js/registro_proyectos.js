@@ -1,4 +1,4 @@
-var dropZoneDocumentos = null;
+var dropZoneDocumento = null;
 
 (function($) {
     var form = $("#form");
@@ -38,7 +38,7 @@ var dropZoneDocumentos = null;
             return form.valid();
         },
         onFinished: function(event, currentIndex) {
-            guardar();
+            //guardar();
             alert('Submited');
         },
         onStepChanged: function(event, currentIndex, priorIndex) {
@@ -68,32 +68,9 @@ $(function() {
 
     Dropzone.autoDiscover = false
 
-    dropZoneEps = new Dropzone("div#cedulas", {
-        acceptedFiles: "application/pdf",
-        url: "/",
-        autoProcessQueue: false,
-        parallelUploads: 20,
-        uploadMultiple: true,
-        addRemoveLinks: true
-    });
-    dropZoneDocumentos = new Dropzone("div#eps", {
-        acceptedFiles: "application/pdf",
-        url: "/",
-        autoProcessQueue: false,
-        parallelUploads: 20,
-        uploadMultiple: true,
-        addRemoveLinks: true
-    });
-    dropZoneCertificado = new Dropzone("div#certificado", {
-        acceptedFiles: "application/pdf",
-        url: "/",
-        autoProcessQueue: false,
-        parallelUploads: 20,
-        uploadMultiple: true,
-        addRemoveLinks: true
-    });
-    dropZoneFoto = new Dropzone("div#foto", {
-        acceptedFiles: "image/*",
+
+    dropZoneDocumento = new Dropzone("div#certificado", {
+        acceptedFiles: ".xls, .xlsx",
         url: "/",
         autoProcessQueue: false,
         parallelUploads: 20,
@@ -101,17 +78,8 @@ $(function() {
         addRemoveLinks: true
     });
 
-    $.ajax({
-        url: "/ciudades.json",
-        dataType: 'json'
-    }).done(e => {
-        $("#ciudad").empty();
-        $("#ciudad").append("<option value=''>Seleccione</option>");
 
-        e.forEach(v => {
-            $("#ciudad").append(`<option value='${v.Departamento+"-"+v.Ciudad}'>${v.Departamento+"-"+v.Ciudad}</option>`);
-        })
-    })
+
 })
 
 function guardar() {

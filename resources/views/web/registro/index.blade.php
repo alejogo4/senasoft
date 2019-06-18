@@ -56,9 +56,9 @@
     <div class="main">
         <form method="POST" id="form" class="signup-form register" action="#">
             <div>
-                <h3>Empecemos</h3>
+                <h3>Empecemos!</h3>
                 <fieldset class="row">
-                    <h2 class="col-md-12">Bienvenido instructor del {{session("centro")}} de la Regional
+                    <h2 class="col-md-12">Bienvenid@ instructor del {{session("centro")}} de la Regional
                         {{session("regional")}}</h2>
                     <p class="col-md-12">Tenga en cuenta la siguiente información para poder diligenciar el formulario
                     </p>
