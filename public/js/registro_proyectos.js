@@ -73,9 +73,10 @@ $(function() {
         acceptedFiles: ".xls, .xlsx",
         url: "/",
         autoProcessQueue: false,
-        parallelUploads: 20,
+        parallelUploads: 1,
         uploadMultiple: false,
         addRemoveLinks: true
+
     });
 
 
@@ -83,6 +84,7 @@ $(function() {
 })
 
 function guardar() {
+
 
     var data = new FormData();
 
@@ -98,9 +100,9 @@ function guardar() {
             data.append(e.name, e.value);
         })
 
-        data.append("proyecto_file", $("#proyecto").val());
+        data.append("proyecto_file", dropZoneDocumento.getQueuedFiles()[0]);
 
-        console.log("prrooo" + $("#proyecto").val());
+
         jQuery.ajax({
             url: '/proyecto',
             data: data,
@@ -109,6 +111,7 @@ function guardar() {
             processData: false,
             method: 'POST',
             success: data => {
+                console.log(data);
                 if (data.ok) {
                     location.href = "/";
                 }

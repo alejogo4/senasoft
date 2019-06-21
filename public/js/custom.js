@@ -162,9 +162,9 @@ $(window).on('load', function() {
 
     //var $select = $("select").select2();
 
-    $select.on('change', function() {
+    /*$select.on('change', function() {
         $(this).trigger('blur');
-    });
+    });*/
 
 });
 

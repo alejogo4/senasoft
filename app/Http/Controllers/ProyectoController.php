@@ -65,7 +65,7 @@ class ProyectoController extends Controller
     {
         
         //Crear la validacion del código
-        //$this->validateForm($request);
+        $this->validateForm($request);
         
         $Proyecto = new Proyecto();
         $Proyecto->nombres = $request->get('nombre');
@@ -77,7 +77,7 @@ class ProyectoController extends Controller
 
         $file = $request->file('proyecto_file');
         if($file){
-            $file_name = $request->input('codigo')."-".$file->getClientOriginalName();
+            $file_name = session('codigo')."-".$file->getClientOriginalName();
             $file_name = str_replace(" ","",$file_name);
             $Proyecto->arhivo_proyecto_centro = $file_name;
             \Storage::disk('proyectos')->put($file_name,\File::get($file));
