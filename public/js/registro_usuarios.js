@@ -127,7 +127,7 @@ function guardar() {
 
     if (eps.length > 0 && documentos.length > 0 && certificado.length > 0 && foto.length > 0) {
 
-        let form = $("#signup-form").serializeArray();
+        let form = $("#form").serializeArray();
 
         form.forEach(e => {
             data.append(e.name, e.value);

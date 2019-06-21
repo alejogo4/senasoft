@@ -69,7 +69,7 @@ $(function() {
     Dropzone.autoDiscover = false
 
 
-    dropZoneDocumento = new Dropzone("div#certificado", {
+    dropZoneDocumento = new Dropzone("div#proyecto", {
         acceptedFiles: ".xls, .xlsx",
         url: "/",
         autoProcessQueue: false,
@@ -86,14 +86,12 @@ function guardar() {
 
     var data = new FormData();
 
-    let eps = dropZoneEps.getAcceptedFiles();
-    let documentos = dropZoneDocumentos.getAcceptedFiles();
-    let certificado = dropZoneCertificado.getAcceptedFiles();
-    let foto = dropZoneFoto.getAcceptedFiles();
+    let proyecto = dropZoneDocumento.getAcceptedFiles();
 
-    if (eps.length > 0 && documentos.length > 0 && certificado.length > 0 && foto.length > 0) {
 
-        let form = $("#signup-form").serializeArray();
+    if (proyecto.length > 0) {
+
+        let form = $("#form").serializeArray();
 
         form.forEach(e => {
             data.append(e.name, e.value);
