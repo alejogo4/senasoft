@@ -38,8 +38,8 @@ var dropZoneDocumento = null;
             return form.valid();
         },
         onFinished: function(event, currentIndex) {
-            //guardar();
-            alert('Submited');
+            guardar();
+            //alert('Submited');
         },
         onStepChanged: function(event, currentIndex, priorIndex) {
 
@@ -74,7 +74,7 @@ $(function() {
         url: "/",
         autoProcessQueue: false,
         parallelUploads: 20,
-        uploadMultiple: true,
+        uploadMultiple: false,
         addRemoveLinks: true
     });
 
@@ -93,36 +93,26 @@ function guardar() {
 
         let form = $("#form").serializeArray();
 
+
         form.forEach(e => {
             data.append(e.name, e.value);
         })
 
-        data.append("foto", $("#fotografia").val());
-        data.append("aprendices", $("#aprednices").val());
+        data.append("proyecto_file", $("#proyecto").val());
 
-        eps.forEach((e, i) => {
-            data.append("archio_eps[]", e);
-        });
-
-        documentos.forEach((e, i) => {
-            data.append("archio_documentos[]", e);
-        });
-
-        certificado.forEach((e, i) => {
-            data.append("archio_certificado[]", e);
-        });
-
-        foto.forEach((e, i) => {
-            data.append("archio_foto[]", e);
-        });
-
+        console.log("prrooo" + $("#proyecto").val());
         jQuery.ajax({
-            url: '/registro',
+            url: '/proyecto',
             data: data,
             cache: false,
             contentType: false,
             processData: false,
-            method: 'POST'
+            method: 'POST',
+            success: data => {
+                if (data.ok) {
+                    location.href = "/";
+                }
+            }
         });
 
     }

@@ -139,8 +139,7 @@
                                         <div class="panel panel-info">
                                             <div class="panel-heading">
                                                 <h5>Adjuntar el archivo</h5>
-                                                <p>Adjuntar archivo de excel</p>
-                                               
+                                                <p>Adjuntar archivo de excel</p> 
                                             </div>
                                             <div class="panel-body dropzone" id="proyecto">
 

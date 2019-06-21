@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+
 use App\Models\Centro;
+use App\Models\Proyecto;
+
 class ProyectoController extends Controller
 {
     /**
@@ -61,20 +65,29 @@ class ProyectoController extends Controller
     {
         
         //Crear la validacion del código
+        //$this->validateForm($request);
+        
+        $Proyecto = new Proyecto();
+        $Proyecto->nombres = $request->get('nombre');
+        $Proyecto->apellidos = $request->get('apellido');
+        $Proyecto->correo = $request->get('correo');
+        $Proyecto->telefono = $request->get('telefono');
 
-        $this->validateForm($request);
         
 
         $file = $request->file('proyecto_file');
         if($file){
             $file_name = $request->input('codigo')."-".$file->getClientOriginalName();
             $file_name = str_replace(" ","",$file_name);
+            $Proyecto->arhivo_proyecto_centro = $file_name;
             \Storage::disk('proyectos')->put($file_name,\File::get($file));
+        }else{
+            $Proyecto->arhivo_proyecto_centro = "null";
         }
+        
+        $Proyecto->save();
 
-        return  redirect()->route('proyecto.index')->with(array(
-            "mensaje"=>"Proyecto registrado con exito"
-         ));
+        return response()->json(["ok"=>true]);
     }
 
     public function validateForm(Request $request){
