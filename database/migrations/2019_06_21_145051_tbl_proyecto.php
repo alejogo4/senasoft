@@ -37,6 +37,6 @@ class TblProyecto extends Migration
     public function down()
     {
         //
-        Schema::drop('tbl_persona');
+        Schema::drop('tbl_proyecto');
     }
 }
