@@ -14,7 +14,15 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Preparar los Roles ! {{$mensaje}}
+
+                    @can('read proyectos')
+                        <h2>Acceso para evaluador de proyecto</h2>
+                    @endcan
+                    @can('read users')
+                        <h2>Acceso para moderadores</h2>
+                    @endcan
+                    <h2>Acceso para full</h2>
                 </div>
             </div>
         </div>
