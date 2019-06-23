@@ -22,7 +22,7 @@ class TblCentro extends Migration
             $table->unsignedBigInteger('regional_id');
             $table->char('codigo', 45);
             
-            $table->boolean('estado');
+            $table->tinyInteger('estado')->default('0');
             $table->timestamps();
 
             $table->foreign('regional_id')->references('id')->on('tbl_regional')->onDelete('cascade');

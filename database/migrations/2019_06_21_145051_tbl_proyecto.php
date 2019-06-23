@@ -22,7 +22,8 @@ class TblProyecto extends Migration
             $table->char('correo', 150);
             $table->char('telefono', 20);
             $table->mediumText('arhivo_proyecto_centro');
-            
+            $table->tinyInteger('estado')->default('0');
+            $table->integer('puntaje');
             $table->timestamps();
 
             

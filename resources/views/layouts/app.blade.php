@@ -93,6 +93,7 @@
     <script src="{{asset('js/jquery-1.11.3.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.js')}}"></script>
     <script src="{{asset('assets/vendors/js/base/core.min.js')}}"></script>
+    <script src="{{asset('assets/vendors/js/nicescroll/nicescroll.min.js')}}"></script>
     <!-- End Vendor Js -->
     <!-- Begin Page Vendor Js -->
     <script src="{{asset('assets/vendors/js/app/app.js')}}"></script>
