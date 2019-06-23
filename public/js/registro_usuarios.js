@@ -3,9 +3,47 @@ var dropZoneDocumentos = null;
 var dropZoneCertificado = null;
 var dropZoneFoto = null;
 (function($) {
+
+    $.validator.addMethod( "maxsize", function( value, element, param ) {
+        if ( this.optional( element ) ) {
+            return true;
+        }
+    
+        if ( $( element ).attr( "type" ) === "file" ) {
+            if ( element.files && element.files.length ) {
+                for ( var i = 0; i < element.files.length; i++ ) {
+                    if ( (element.files[ i ].size ) > param * 1000000) {
+                        return false;
+                    }
+                }
+            }
+        }
+    
+        return true;
+    }, $.validator.format( "El tamaño del archivo no debe exceder {0} megabyte." ) );
+
+    
     var form = $("#form");
     form.validate({
-
+        rules: {
+            fotografia: {
+                required: true,
+                accept:"image/jpeg,image/png",
+                maxsize: 1,
+            },
+            aprendices : {
+                required: true,
+                extension: "xls,xlsx",
+            }
+        },
+        messages :{
+            fotografia : {
+                accept : "Por favor, introduzca un valor con una extensión png, jpg."
+            },
+            aprendices : {
+                accept : "Por favor, introduzca un valor con una extensión xls, xlsx."
+            }
+        },
         errorPlacement: function errorPlacement(error, element) {
             if ($(element).is("select")) {
                 $(element).next().append(error);
@@ -110,11 +148,20 @@ $(function() {
         $("#ciudad").empty();
         $("#ciudad").append("<option value=''>Seleccione</option>");
 
+        $("#ciudad_desplazamiento").empty();
+        $("#ciudad_desplazamiento").append("<option value=''>Seleccione</option>");
+
         e.forEach(v => {
             $("#ciudad").append(`<option value='${v.Departamento+"-"+v.Ciudad}'>${v.Departamento+"-"+v.Ciudad}</option>`);
+            $("#ciudad_desplazamiento").append(`<option value='${v.Departamento+"-"+v.Ciudad}'>${v.Departamento+"-"+v.Ciudad}</option>`);
         })
     })
 })
+
+
+function mayus(e) {
+    e.value = e.value.toUpperCase();
+}
 
 function guardar() {
 
@@ -133,8 +180,8 @@ function guardar() {
             data.append(e.name, e.value);
         })
 
-        data.append("foto", $("#fotografia").val());
-        data.append("aprendices", $("#aprednices").val());
+        data.append("foto", $("#fotografia")[0].files[0]);
+        data.append("aprendices", $("#aprendices")[0].files[0]);
 
         eps.forEach((e, i) => {
             data.append("archio_eps[]", e);

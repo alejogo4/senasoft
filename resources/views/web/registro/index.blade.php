@@ -32,6 +32,21 @@
 
 @section('content')
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <img src="/images/recomendaciones.png" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--begin header -->
 <header class="header">
 
@@ -87,57 +102,105 @@
                                     <label for="">Tipo Documento <b class="text-danger">*</b></label>
                                     <select class="form-control" name="tipo_documento" id="" required>
                                         <option value="">Seleccione</option>
-                                        <option value="Cédula de ciudadanía">Cédula de ciudadanía</option>
-                                        <option value="Cédula de extranjería">Cédula de extranjería</option>
+                                        <option value="Cédula de ciudadanía">CÉDULA DE CIUDADANÍA</option>
+                                        <option value="Cédula de extranjería">CÉDULA DE EXTRANJERÍA</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="">Documento</label>
-                                    <input type="text" name="documento" id="documento" required />
+                                    <label for="">Documento <b class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="number" name="documento" id="documento"
+                                        required />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="">Nombres</label>
-                                    <input type="text" name="nombre" id="nombre" required />
+                                    <label for="">Nombres <b class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="text" name="nombre" id="nombre" required />
                                 </div>
                                 <div class="form-group col-md-3">
-                                    <label for="">Apellidos</label>
-                                    <input type="text" name="apellido" id="apellido" required />
+                                    <label for="">Apellidos <b class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="text" name="apellido" id="apellido" required />
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label for="email" class="form-label">Correo Principal</label>
-                                    <input type="email" name="correo" id="correo" required />
+                                <div class="form-group col-md-4">
+                                    <label for="email" class="form-label">Correo Principal <b
+                                            class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="email" name="correo" id="correo" required />
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="email" class="form-label">Correo Alterno</label>
-                                    <input type="email" name="correo_alterno" id="correo_alterno" />
+                                    <input onkeyup="mayus(this);" type="email" name="correo_alterno"
+                                        id="correo_alterno" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="email" class="form-label">Tipo de Contrato <b
+                                            class="text-danger">*</b></label>
+                                    <select name="tipo_contrato" id="tipo_contrato" required>
+                                        <option value="">Seleccione</option>
+                                        <option value="PLANTA">PLANTA</option>
+                                        <option value="CONTRATISTA">CONTRATISTA</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="form-group col-md-6">
-                                    <label for="telefono" class="form-label">Teléfono Principal</label>
-                                    <input type="text" name="telefono" id="telefono" required />
+                                <div class="form-group col-md-4">
+                                    <label for="telefono" class="form-label">Teléfono Principal <b
+                                            class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="text" name="telefono" id="telefono" required />
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                     <label for="telefono" class="form-label">Teléfono Alterno</label>
-                                    <input type="text" name="telefono_alterno" id="telefono_alterno" />
+                                    <input onkeyup="mayus(this);" type="text" name="telefono_alterno"
+                                        id="telefono_alterno" />
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label class="form-label">Fecha Nacimiento</label>
+                                    <input type="date" name="fecha_nacimiento"
+                                        id="fecha_nacimiento" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="email" class="form-label">Fotografia</label>
-                                    <input type="file" name="fotografia" id="fotografia" required />
+                                    <label for="email" class="form-label">Fotografia <b
+                                            class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="file" name="fotografia" id="fotografia"
+                                        required />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="text" class="form-label">Ciudad</label>
+                                    <label for="text" class="form-label">Ciudad <b class="text-danger">*</b></label>
                                     <select name="ciudad" id="ciudad" required>
                                         <option value="">Seleccione</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="text" class="form-label">Programa de Formación que imparte</label>
-                                    <input type="text" name="programa_formacion" id="programa_formacion" required />
+                                    <label for="text" class="form-label">Programa de Formación que imparte <b
+                                            class="text-danger">*</b></label>
+                                    <select name="programa_formacion" id="programa_formacion" required>
+                                        <option value="">Seleccione</option>
+                                        <option value="TG. EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN">TG. EN
+                                            ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN</option>
+                                        <option value="TG. EN PRODUCCIÓN DE MULTIMEDIA">TG. EN PRODUCCIÓN DE MULTIMEDIA
+                                        </option>
+                                        <option value="TG. EN GESTIÓN DE REDES DE DATOS">TG. EN GESTIÓN DE REDES DE
+                                            DATOS</option>
+                                        <option
+                                            value="TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO ESTRUCTURADO">
+                                            TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO
+                                            ESTRUCTURADO</option>
+                                        <option value="TG. EN ANIMACIÓN 3D">TG. EN ANIMACIÓN 3D</option>
+                                        <option value="TG. EN DESARROLLO DE VIDEOJUEGOS">TG. EN DESARROLLO DE
+                                            VIDEOJUEGOS</option>
+                                        <option value="TG. EN PRODUCCIÓN DE MEDIOS AUDIOVISUALES DIGITALES">TG. EN
+                                            PRODUCCIÓN DE MEDIOS AUDIOVISUALES DIGITALES</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="text" class="form-label">Ciudad de Desplazamiento Aereo <b
+                                            class="text-danger">*</b></label>
+                                    <select name="ciudad_desplazamiento" id="ciudad_desplazamiento" required>
+                                        <option value="">Seleccione</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -153,7 +216,7 @@
                         <div class="form-row">
                             <div class="row">
                                 <div class="form-group col-md-3 col-sm-3">
-                                    <label for="">RH</label>
+                                    <label for="">RH <b class="text-danger">*</b></label>
                                     <select name="rh" id="rh" required>
                                         <option value="">Seleccione</option>
                                         <option value="A+">A+</option>
@@ -167,15 +230,15 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3">
-                                    <label for="">EPS</label>
-                                    <input type="text" name="eps" id="eps" required>
+                                    <label for="">EPS <b class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="text" name="eps" id="eps" required>
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3">
-                                    <label for="">ARL</label>
-                                    <input type="text" name="arl" id="arl" required>
+                                    <label for="">ARL <b class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="text" name="arl" id="arl" required>
                                 </div>
                                 <div class="form-group col-md-3 col-sm-3">
-                                    <label for="">Talla Camisa</label>
+                                    <label for="">Talla Camisa <b class="text-danger">*</b></label>
                                     <select name="talla_camisa" id="talla_camisa" required>
                                         <option value="">Seleccione</option>
                                         <option value="XS">XS</option>
@@ -189,12 +252,11 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4 col-sm-4">
-                                    <label for="">Tipo Alimentación</label>
-                                    <select name="tip_alimentacion" id="tipo_alimentacion" required>
-                                        <option value="">Seleccione</option>
-                                        <option value="Vegana">Vegana</option>
-                                        <option value="Diabetico">Diabetico</option>
-                                        <option value="Normal">Normal</option>
+                                    <label for="">Alimentación Especial</label>
+                                    <select name="tip_alimentacion" id="tipo_alimentacion">
+                                        <option value="NO APLICA">NO APLICA</option>
+                                        <option value="VEGANA">VEGANA</option>
+                                        <option value="DIABÉTICO">DIABÉTICO</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 col-sm-4">
@@ -210,15 +272,17 @@
                             <div class="row">
                                 <div class="form-group col-md-12">
                                     <label for="text" class="form-label">Medicamentos que debe tomar</label>
-                                    <input type="text" name="medicamentos" id="medicamentos" />
+                                    <input onkeyup="mayus(this);" type="text" name="medicamentos" id="medicamentos" />
                                 </div>
                             </div>
+
+
                             <div class="row">
                                 <div class="col-md-12 text-center">
                                     <h4 for="">Desea participar en el tour por Medellin
                                         <br>
                                         <label for="">
-                                            SI <input type="checkbox" name="tour" value="si">
+                                            SI <input onkeyup="mayus(this);" type="checkbox" name="tour" value="si">
                                         </label>
                                     </h4>
                                     <br>
@@ -238,13 +302,13 @@
                         <div class="form-row">
                             <div class="col-md-12 text-center">
                                 <label for="email" class="form-label">Archivo de Excel con los aprendices</label>
-                                <input class="col-md-offset-4 col-md-4" type="file" name="aprendices" id="aprendices"
-                                    required />
+                                <input onkeyup="mayus(this);" class="col-md-offset-4 col-md-4" type="file"
+                                    name="aprendices" id="aprendices" required />
                             </div>
                         </div>
                         <br>
                         <hr>
-                        <div class="form-row" id="">
+                        <div class="form-row" id="" style="margin-top: 10%">
                             <div class="col-md-6">
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
@@ -297,8 +361,8 @@
                                         <h5>Fotografias</h5>
                                         <p>Adjuntar las fotografias de cada aprendiz de la siguiente forma :
                                         </p>
-                                        <p><b>Nombre del archivo:</b> numerodocumento_foto.pdf</p>
-                                        <p><b>Ejemplo:</b> 1152694464_foto.pdf</p>
+                                        <p><b>Nombre del archivo:</b> numerodocumento_foto.png</p>
+                                        <p><b>Ejemplo:</b> 1152694464_foto.png</p>
                                     </div>
                                     <div class="panel-body dropzone" id="foto">
 
@@ -315,21 +379,6 @@
 </section>
 
 
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <img src="/images/recomendaciones.png" alt="">
-            </div>
-        </div>
-    </div>
-</div>
 <!--end contact-->
 @endsection
 

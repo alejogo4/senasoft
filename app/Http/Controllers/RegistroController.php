@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Centro;
+use Excel;
+use App\Imports\AprendicesImport;
 
 class RegistroController extends Controller
 {
@@ -12,7 +14,7 @@ class RegistroController extends Controller
         if($codigo != null){
 
             $centro = Centro::where("codigo", $codigo)
-            ->where("estado", 0)
+            ->where("estado_registros", 0)
             ->join("tbl_regional", "tbl_centro.regional_id", "=", "tbl_regional.id")
             ->first();
 
@@ -40,15 +42,6 @@ class RegistroController extends Controller
         return view("web.registro.index");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -58,8 +51,9 @@ class RegistroController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        dd($request->files, $request->all());
+        $array = Excel::toArray(new AprendicesImport, request()->file('aprendices'));
+
+        dd($array);
     }
 
     /**
