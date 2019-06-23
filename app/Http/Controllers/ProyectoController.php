@@ -15,6 +15,12 @@ class ProyectoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['store', 'validar']);
+
+    }
+
     public function validar_codigo($codigo){
 
         if($codigo != null){
@@ -42,6 +48,15 @@ class ProyectoController extends Controller
             return redirect("/");
         }
         return view("web.proyecto.index");
+    }
+
+    public function index_admin(){
+        
+        $proyectos = Proyecto::all();
+        
+        return view("web.proyecto.list", array(
+            "proyectos"=>$proyectos
+        ));
     }
 
     /**
@@ -136,6 +151,15 @@ class ProyectoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $proyecto = Proyecto::find($id);
+        $proyecto->puntaje = $request->get('puntaje');
+        $proyecto->puntaje = $request->get('estado');
+        $proyecto->update();
+    
+       
+       return  redirect()->route('dash')->with(array(
+           "mensaje"=>"Proyecto evaluado con exito"
+        ));
     }
 
     /**

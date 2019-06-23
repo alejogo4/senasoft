@@ -18,6 +18,7 @@
 
                     @can('read proyectos')
                         <h2>Acceso para evaluador de proyecto</h2>
+                        <a href="{{route('proyecto_list')}}">Ver Proyectos</a>
                     @endcan
                     @can('read users')
                         <h2>Acceso para moderadores</h2>
