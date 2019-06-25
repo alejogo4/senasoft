@@ -168,7 +168,7 @@ class RegistroController extends Controller
     public function guardar_aprendiz($datos)
     {
         Personal::create([
-            'documento' => $input["documento"],
+            'documento' => $input[],
             'tipo_documento' => $input["tipo_documento"],
             'nombres' => $input["nombre"],
             'apellidos' => $input["apellido"],
