@@ -108,7 +108,7 @@ $(function() {
 
     Dropzone.autoDiscover = false
 
-    dropZoneEps = new Dropzone("div#cedulas", {
+    dropZoneEps = new Dropzone("div#eps", {
         acceptedFiles: "application/pdf",
         url: "/",
         autoProcessQueue: false,
@@ -116,7 +116,7 @@ $(function() {
         uploadMultiple: true,
         addRemoveLinks: true
     });
-    dropZoneDocumentos = new Dropzone("div#eps", {
+    dropZoneDocumentos = new Dropzone("div#cedulas", {
         acceptedFiles: "application/pdf",
         url: "/",
         autoProcessQueue: false,
@@ -133,7 +133,7 @@ $(function() {
         addRemoveLinks: true
     });
     dropZoneFoto = new Dropzone("div#foto", {
-        acceptedFiles: "image/*",
+        acceptedFiles: "image/jpeg",
         url: "/",
         autoProcessQueue: false,
         parallelUploads: 20,

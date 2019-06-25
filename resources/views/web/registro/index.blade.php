@@ -102,8 +102,8 @@
                                     <label for="">Tipo Documento <b class="text-danger">*</b></label>
                                     <select class="form-control" name="tipo_documento" id="" required>
                                         <option value="">Seleccione</option>
-                                        <option value="Cédula de ciudadanía">CÉDULA DE CIUDADANÍA</option>
-                                        <option value="Cédula de extranjería">CÉDULA DE EXTRANJERÍA</option>
+                                        <option value="CÉDULA DE CIUDADANÍA">CÉDULA DE CIUDADANÍA</option>
+                                        <option value="CÉDULA DE EXTRANJERÍA">CÉDULA DE EXTRANJERÍA</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-3">
@@ -153,9 +153,9 @@
                                         id="telefono_alterno" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label class="form-label">Fecha Nacimiento</label>
+                                    <label class="form-label">Fecha Nacimiento <b class="text-danger">*</b></label>
                                     <input type="date" name="fecha_nacimiento"
-                                        id="fecha_nacimiento" />
+                                        id="fecha_nacimiento" required/>
                                 </div>
                             </div>
                             <div class="row">
@@ -253,7 +253,7 @@
                             <div class="row">
                                 <div class="form-group col-md-4 col-sm-4">
                                     <label for="">Alimentación Especial</label>
-                                    <select name="tip_alimentacion" id="tipo_alimentacion">
+                                    <select name="tipo_alimentacion" id="tipo_alimentacion">
                                         <option value="NO APLICA">NO APLICA</option>
                                         <option value="VEGANA">VEGANA</option>
                                         <option value="DIABÉTICO">DIABÉTICO</option>
@@ -362,7 +362,7 @@
                                         <p>Adjuntar las fotografias de cada aprendiz de la siguiente forma :
                                         </p>
                                         <p><b>Nombre del archivo:</b> numerodocumento_foto.png</p>
-                                        <p><b>Ejemplo:</b> 1152694464_foto.png</p>
+                                        <p><b>Ejemplo:</b> 1152694464_foto.jpg</p>
                                     </div>
                                     <div class="panel-body dropzone" id="foto">
 
