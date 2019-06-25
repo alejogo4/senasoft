@@ -328,12 +328,19 @@ select {
 }
 
 .current .title .step-number {
-    background: #4966b1;
+    background: rgba(18, 120, 113);
+    background: -moz-linear-gradient(left, rgba(18, 120, 113) 0%, rgba(0, 92, 124) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(18, 120, 113)), color-stop(100%, rgba(0, 92, 124)));
+    background: -webkit-linear-gradient(left, rgba(18, 120, 113) 0%, rgba(0, 92, 124) 100%);
+    background: -o-linear-gradient(left, rgba(18, 120, 113) 0%, rgba(21, 189, 164, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(18, 120, 113) 0%, rgba(0, 92, 124) 100%);
+    background: linear-gradient(to right, rgba(18, 120, 113) 0%, rgba(0, 92, 124) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00a09b', endColorstr='#18dbbe', GradientType=1);
     color: #fff;
 }
 
 .current .title .step-text {
-    color: #4966b1;
+    color: #005C7C;
 }
 
 .content h3 {

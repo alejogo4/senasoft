@@ -32,7 +32,7 @@
         <!-- Begin Preloader -->
         <div id="preloader">
             <div class="canvas">
-                <img src="{{asset('admin/img/logo.png')}}" alt="logo" class="loader-logo">
+                <img src="{{asset('admin/img/logo-big.png')}}" alt="logo" class="loader-logo">
                 <div class="spinner"></div>   
             </div>
         </div>
@@ -50,7 +50,7 @@
                                     <img src="{{asset('admin/img/logo-big.png')}}" alt="logo" class="logo-big">
                                 </div>
                                 <div class="brand-image brand-small">
-                                    <img src="{{asset('admin/img/logo.png')}}" alt="logo" class="logo-small">
+                                    <img src="{{asset('admin/img/brand_small.png')}}" alt="logo" class="logo-small">
                                 </div>
                             </a>
                             <!-- Toggle Button -->
@@ -221,19 +221,10 @@
                     <!-- Begin Page Footer-->
                     <footer class="main-footer fixed-footer">
                         <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
-                                <p class="text-gradient-02">Design By Saerox</p>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+                                <p class="text-gradient-02">Desarrollado por : Juan David Ramirrez - Alejandro Giraldo Duque | Instructores SENA - CESGE</p>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
-                                <ul class="nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="documentation.html">Documentation</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="changelog.html">Changelog</a>
-                                    </li>
-                                </ul>
-                            </div>
+                        
                         </div>
                     </footer>
                     <!-- End Page Footer -->

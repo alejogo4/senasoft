@@ -26,7 +26,6 @@
     .select2-selection {
         height: 50px !important;
     }
-
 </style>
 @endsection
 
@@ -37,8 +36,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
                 <img src="/images/recomendaciones.png" alt="">
@@ -73,20 +71,63 @@
             <div>
                 <h3>Empecemos!</h3>
                 <fieldset class="row">
-                    <h2 class="col-md-12">Bienvenid@ instructor del {{session("centro")}} de la Regional
-                        {{session("regional")}}</h2>
-                    <p class="col-md-12">Tenga en cuenta la siguiente información para poder diligenciar el formulario
-                    </p>
+                    <h2 class="col-md-12 text-uppercase">Bienvenido(a) instructor del <span class="color-tittle">{{session("centro")}} </span>de la Regional
+                        <span class="color-tittle">{{session("regional")}}</span>
+                    </h2>
 
-                    <div class="col-md-12">
-                        <div class="col-md-6">
-                            <h2>Recomendaciones para las fotografias</h2>
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
-                                data-target="#myModal">
-                                Ver
-                            </button>
-                        </div>
+
+                    <div class="choose-bank col-md-12 mt-4">
+                        <p class="choose-bank-desc">
+                            Las inscripciones este año se harán por medio de esta plataforma, sin embargo, hay que leer detenidamente cada de las instrucciones que se le presentarán a continuación.
+                            Se debe tener presente los cupos para cada centro y para cada una de las categorías, los pasos que se deben seguir son los siguientes :
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    Registrar los datos del instructor que están en el siguiente paso
+
+                                </li>
+                                <li class="list-group-item">
+
+                                    Antes de realizar el registros debes contar con el certificado de estudio, eps, cedula y fotografía de cada aprendiz
+
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            Para la foto del aprendiz y del instructor se deben seguir las siguientes indicaciones
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="button" class="section-lyla btn btn-formato btn-lg" data-toggle="modal" data-target="#myModal">
+                                                Ver
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            Descargar el archivo de excel para inscripción de los aprendices
+                                        </div>
+                                        <div class="col-md-4">
+                                        <a href="{{asset('files/Inscripciones.xlsx')}}" class="section-lyla btn btn-formato">Descargar</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            Si deseas obtener mas información te recomendamos ver el siguiente video
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="button" class="section-lyla btn btn-formato btn-lg" data-toggle="modal" data-target="#myModal">
+                                                Ver
+                                            </button>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </p>
+                      
                     </div>
                 </fieldset>
 
@@ -108,8 +149,7 @@
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="">Documento <b class="text-danger">*</b></label>
-                                    <input onkeyup="mayus(this);" type="number" name="documento" id="documento"
-                                        required />
+                                    <input onkeyup="mayus(this);" type="number" name="documento" id="documento" required />
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="">Nombres <b class="text-danger">*</b></label>
@@ -122,18 +162,15 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="email" class="form-label">Correo Principal <b
-                                            class="text-danger">*</b></label>
+                                    <label for="email" class="form-label">Correo Principal <b class="text-danger">*</b></label>
                                     <input onkeyup="mayus(this);" type="email" name="correo" id="correo" required />
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="email" class="form-label">Correo Alterno</label>
-                                    <input onkeyup="mayus(this);" type="email" name="correo_alterno"
-                                        id="correo_alterno" />
+                                    <input onkeyup="mayus(this);" type="email" name="correo_alterno" id="correo_alterno" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="email" class="form-label">Tipo de Contrato <b
-                                            class="text-danger">*</b></label>
+                                    <label for="email" class="form-label">Tipo de Contrato <b class="text-danger">*</b></label>
                                     <select name="tipo_contrato" id="tipo_contrato" required>
                                         <option value="">Seleccione</option>
                                         <option value="PLANTA">PLANTA</option>
@@ -143,27 +180,22 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="telefono" class="form-label">Teléfono Principal <b
-                                            class="text-danger">*</b></label>
+                                    <label for="telefono" class="form-label">Teléfono Principal <b class="text-danger">*</b></label>
                                     <input onkeyup="mayus(this);" type="text" name="telefono" id="telefono" required />
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="telefono" class="form-label">Teléfono Alterno</label>
-                                    <input onkeyup="mayus(this);" type="text" name="telefono_alterno"
-                                        id="telefono_alterno" />
+                                    <input onkeyup="mayus(this);" type="text" name="telefono_alterno" id="telefono_alterno" />
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label class="form-label">Fecha Nacimiento <b class="text-danger">*</b></label>
-                                    <input type="date" name="fecha_nacimiento"
-                                        id="fecha_nacimiento" required/>
+                                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" required />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="email" class="form-label">Fotografia <b
-                                            class="text-danger">*</b></label>
-                                    <input onkeyup="mayus(this);" type="file" name="fotografia" id="fotografia"
-                                        required />
+                                    <label for="email" class="form-label">Fotografia <b class="text-danger">*</b></label>
+                                    <input onkeyup="mayus(this);" type="file" name="fotografia" id="fotografia" required />
                                 </div>
                                 <div class="form-group col-md-4">
                                     <label for="text" class="form-label">Ciudad <b class="text-danger">*</b></label>
@@ -172,8 +204,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="text" class="form-label">Programa de Formación que imparte <b
-                                            class="text-danger">*</b></label>
+                                    <label for="text" class="form-label">Programa de Formación que imparte <b class="text-danger">*</b></label>
                                     <select name="programa_formacion" id="programa_formacion" required>
                                         <option value="">Seleccione</option>
                                         <option value="TG. EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN">TG. EN
@@ -182,8 +213,7 @@
                                         </option>
                                         <option value="TG. EN GESTIÓN DE REDES DE DATOS">TG. EN GESTIÓN DE REDES DE
                                             DATOS</option>
-                                        <option
-                                            value="TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO ESTRUCTURADO">
+                                        <option value="TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO ESTRUCTURADO">
                                             TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO
                                             ESTRUCTURADO</option>
                                         <option value="TG. EN ANIMACIÓN 3D">TG. EN ANIMACIÓN 3D</option>
@@ -196,8 +226,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="text" class="form-label">Ciudad de Desplazamiento Aereo <b
-                                            class="text-danger">*</b></label>
+                                    <label for="text" class="form-label">Ciudad de Desplazamiento Aereo <b class="text-danger">*</b></label>
                                     <select name="ciudad_desplazamiento" id="ciudad_desplazamiento" required>
                                         <option value="">Seleccione</option>
                                     </select>
@@ -261,8 +290,7 @@
                                 </div>
                                 <div class="form-group col-md-4 col-sm-4">
                                     <label for="">Enfermedades</label>
-                                    <textarea name="enfermedades" id="" cols="30" rows="10"
-                                        class="form-control"></textarea>
+                                    <textarea name="enfermedades" id="" cols="30" rows="10" class="form-control"></textarea>
                                 </div>
                                 <div class="form-group col-md-4 col-sm-4">
                                     <label for="">Alergias</label>
@@ -302,8 +330,7 @@
                         <div class="form-row">
                             <div class="col-md-12 text-center">
                                 <label for="email" class="form-label">Archivo de Excel con los aprendices</label>
-                                <input onkeyup="mayus(this);" class="col-md-offset-4 col-md-4" type="file"
-                                    name="aprendices" id="aprendices" required />
+                                <input onkeyup="mayus(this);" class="col-md-offset-4 col-md-4" type="file" name="aprendices" id="aprendices" required />
                             </div>
                         </div>
                         <br>

@@ -781,6 +781,10 @@ ul.footer_social li a i:hover {
     overflow: hidden;
 }
 
+.color-tittle {
+    color: #005C7C;
+}
+
 .home-section h1 {
     line-height: 54px;
     font-weight: 700;

@@ -38,7 +38,7 @@
     <!-- Begin Preloader -->
     <div id="preloader">
         <div class="canvas">
-            <img src="/admin/img/logo.png" alt="logo" class="loader-logo">
+            <img src="{{asset('admin/img/logo-big.png')}}" alt="logo" class="loader-logo">
             <div class="spinner"></div>
         </div>
     </div>
@@ -76,7 +76,7 @@
                                 @csrf
                                 <div class="group material-input">
                                     <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="emaail"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
