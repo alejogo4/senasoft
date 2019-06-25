@@ -26,7 +26,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('admin/img/favicon-16x16.png') }}">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="{{ asset('admin/vendors/css/base/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('admin/vendors/css/base/elisyam-1.5.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/vendors/css/base/elisyam-1.5.css') }}">
     <link rel="stylesheet" href="{{ asset('admin/css/animate/animate.min.css') }}">
     <!-- Tweaks for older IEs-->
     <!--[if lt IE 9]>
@@ -56,9 +56,9 @@
                                 <img src="/admin/img/logo.png" alt="logo">
                             </a>
                         </div>
-                        <h1>Join Our Community</h1>
+                        <h1>Bienvenido</h1>
                         <span class="description">
-                            Etiam consequat urna at magna bibendum, in tempor arcu fermentum vitae mi massa egestas.
+                            Dashboard Senasoft 2019, Ingresa los datos de acceso.
                         </span>
                     </div>
                 </div>
@@ -71,12 +71,12 @@
                     <div class="tab-content" id="animate-tab-content">
                         <!-- Begin Sign In -->
                         <div role="tabpanel" class="tab-pane show active" id="singin" aria-labelledby="singin-tab">
-                            <h3>Sign In To Elisyam</h3>
+                            <h3>Acceso</h3>
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
                                 <div class="group material-input">
                                     <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="emaail"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                     @error('email')
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="group material-input">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Login') }}
+                                        Ingresar
                                     </button>
                                 </div>
                             </form>
@@ -116,14 +116,14 @@
                                             {{ old('remember') ? 'checked' : '' }}>
 
                                         <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
+                                            Recordarme
                                         </label>
                                     </div>
                                 </div>
                                 <div class="col text-right">
                                     @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        Olvide mi contraseña
                                     </a>
                                     @endif
                                 </div>
