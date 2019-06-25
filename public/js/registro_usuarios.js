@@ -2,46 +2,46 @@ var dropZoneEps = null;
 var dropZoneDocumentos = null;
 var dropZoneCertificado = null;
 var dropZoneFoto = null;
-(function($) {
+(function ($) {
 
-    $.validator.addMethod( "maxsize", function( value, element, param ) {
-        if ( this.optional( element ) ) {
+    $.validator.addMethod("maxsize", function (value, element, param) {
+        if (this.optional(element)) {
             return true;
         }
-    
-        if ( $( element ).attr( "type" ) === "file" ) {
-            if ( element.files && element.files.length ) {
-                for ( var i = 0; i < element.files.length; i++ ) {
-                    if ( (element.files[ i ].size ) > param * 1000000) {
+
+        if ($(element).attr("type") === "file") {
+            if (element.files && element.files.length) {
+                for (var i = 0; i < element.files.length; i++) {
+                    if ((element.files[i].size) > param * 1000000) {
                         return false;
                     }
                 }
             }
         }
-    
-        return true;
-    }, $.validator.format( "El tamaño del archivo no debe exceder {0} megabyte." ) );
 
-    
+        return true;
+    }, $.validator.format("El tamaño del archivo no debe exceder {0} megabyte."));
+
+
     var form = $("#form");
     form.validate({
         rules: {
             fotografia: {
                 required: true,
-                accept:"image/jpeg,image/png",
+                accept: "image/jpeg,image/png",
                 maxsize: 1,
             },
-            aprendices : {
+            aprendices: {
                 required: true,
                 extension: "xls,xlsx",
             }
         },
-        messages :{
-            fotografia : {
-                accept : "Por favor, introduzca un valor con una extensión png, jpg."
+        messages: {
+            fotografia: {
+                accept: "Por favor, introduzca un valor con una extensión png, jpg."
             },
-            aprendices : {
-                accept : "Por favor, introduzca un valor con una extensión xls, xlsx."
+            aprendices: {
+                accept: "Por favor, introduzca un valor con una extensión xls, xlsx."
             }
         },
         errorPlacement: function errorPlacement(error, element) {
@@ -51,7 +51,7 @@ var dropZoneFoto = null;
                 element.after(error);
             }
         },
-        onfocusout: function(element) {
+        onfocusout: function (element) {
             $(element).valid();
         },
     });
@@ -68,27 +68,27 @@ var dropZoneFoto = null;
             current: ''
         },
 
-        onStepChanging: function(event, currentIndex, newIndex) {
+        onStepChanging: function (event, currentIndex, newIndex) {
 
             form.validate().settings.ignore = ":disabled,:hidden";
             return form.valid();
         },
-        onFinishing: function(event, currentIndex) {
+        onFinishing: function (event, currentIndex) {
             form.validate().settings.ignore = ":disabled";
             return form.valid();
         },
-        onFinished: function(event, currentIndex) {
+        onFinished: function (event, currentIndex) {
             guardar();
             alert('Submited');
         },
-        onStepChanged: function(event, currentIndex, priorIndex) {
+        onStepChanged: function (event, currentIndex, priorIndex) {
 
             return true;
         }
     });
 })(jQuery);
 
-$(function() {
+$(function () {
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -206,6 +206,34 @@ function guardar() {
             contentType: false,
             processData: false,
             method: 'POST'
+        }).done((respuesta) => {
+            if (respuesta.ok) {
+                Swal.fire({
+                    title: 'Felicidades',
+                    text: respuesta.mensaje,
+                    type: 'success',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.value) {
+                        location.href = "/";
+                    }
+                })
+            }else{
+
+                Swal.fire({
+                    title: 'Espera',
+                    text: respuesta.mensaje,
+                    type: 'danger',
+                })
+            }
+        }).fail((error) => {
+            Swal.fire({
+                title: 'Espera',
+                text: "Ocurrió un error inesperado, intenta más tarde. En caso de persistir el error contacta al administrador del sitio",
+                type: 'danger',
+            })
         });
 
     }

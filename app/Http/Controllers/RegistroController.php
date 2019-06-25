@@ -57,6 +57,8 @@ class RegistroController extends Controller
     {
         $input = $request->all();
 
+        $centro_id = session("id_centro");
+
         $foto = $request->file('fotografia');
 
         $fotos = $request->file('archio_foto');
@@ -144,6 +146,11 @@ class RegistroController extends Controller
                     throw new Exception('No se registraron los aprendices');
                 }
 
+                $c = Centro::find($centro_id);
+                $c->update(["estado_registros"=>1]);
+
+                session(["codigo"=>null]);
+
                 return response()->json(["ok"=>true, "mensaje"=>"El registro se realizo de manera correcta"]);
 
                 DB::commit();
@@ -167,35 +174,36 @@ class RegistroController extends Controller
 
     public function guardar_aprendiz($datos)
     {
+        $categoria_id = Categoria::where("nombre_categoria", $datos[0])->first();
         Personal::create([
-            'documento' => $input[],
-            'tipo_documento' => $input["tipo_documento"],
-            'nombres' => $input["nombre"],
-            'apellidos' => $input["apellido"],
-            'fecha_nacimiento' => $input["fecha_nacimiento"],
-            'foto' => $input[""],
-            'correo_principal' => $input["correo"],
-            'correo_alterno' => $input["correo_alterno"],
-            'telefono' => $input["telefono"],
-            'otro_telefono' => $input["telefono_alterno"],
-            'rh' => $input["rh"],
-            'talla_camisa' => $input["talla_camisa"],
-            'eps' => $input["eps"],
-            'arl' => $input["arl"],
-            'tipo_contrato' => $input["tipo_contrato"],
-            'ciudad' => $input["ciudad"],
-            'ciudad_desplazamiento_aereo' => $input["ciudad_desplazamiento"],
-            'tipo_alimentacion' => $input["tipo_alimentacion"],
-            'alergias' => $input["alergias"],
-            'enfermedades' => $input["enfermedades"],
-            'medicamento_consume' => $input["medicamentos"],
-            'arhivo_documento' => $input[""],
-            'arhivo_certificado_eps' => $input[""],
-            'arhivo_constancia_estudio' => $input[""],
-            'asignacion_cupos_id' => $input[""],
-            'tipo_persona' => 1,
-            'tour' => isset($input["tour"]) ? true : false,
+            'documento' => $datos[2],
+            'tipo_documento' => $datos[1],
+            'nombres' => $datos[3],
+            'apellidos' => $datos[4],
+            'fecha_nacimiento' => $datos[5],
+            'foto' => $datos[2]."_foto.png",
+            'correo_principal' => $datos[6],
+            'correo_alterno' => $datos[7],
+            'telefono' => $datos[8],
+            'otro_telefono' => $datos[9],
+            'ficha' => $datos[11],
+            'rh' => $datos[12],
+            'talla_camisa' => $datos[14],
+            'eps' => $datos[13],
+            'ciudad' => $datos[10],
+            'tipo_alimentacion' => $datos[15],
+            'alergias' => $datos[17],
+            'enfermedades' => $datos[16],
+            'medicamento_consume' => $datos["18"],
+            'arhivo_documento' => $datos[2]."_doc.pdf",
+            'arhivo_certificado_eps' => $datos[2]."_eps.pdf",
+            'arhivo_constancia_estudio' => $datos[2]."_cert.pdf",
+            'categoria_id' => $categoria_id->id,
+            'tipo_persona' => 2,
+            'tour' => $datos[19] == "Si"  ? true : false,
         ]);
+
+        return false;
     }
 
     public function validar_cupo($categoria)

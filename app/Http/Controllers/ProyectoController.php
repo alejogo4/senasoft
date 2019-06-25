@@ -78,17 +78,16 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        
         //Crear la validacion del código
         $this->validateForm($request);
+
+        $centro_id = session("id_centro");
         
         $Proyecto = new Proyecto();
         $Proyecto->nombres = $request->get('nombre');
         $Proyecto->apellidos = $request->get('apellido');
         $Proyecto->correo = $request->get('correo');
         $Proyecto->telefono = $request->get('telefono');
-
-        
 
         $file = $request->file('proyecto_file');
         if($file){
@@ -99,15 +98,15 @@ class ProyectoController extends Controller
         }else{
             $Proyecto->arhivo_proyecto_centro = "null";
         }
-        
         $Proyecto->save();
+        
+        $c = Centro::find($centro_id);
+        $c->update(["estado_proyectos"=>1]);
 
         return response()->json(["ok"=>true]);
     }
 
     public function validateForm(Request $request){
-
-
         $rules = [
             'proyecto_file'=>'mimes:xls,xlsx'
         ];
@@ -156,7 +155,6 @@ class ProyectoController extends Controller
         $proyecto->puntaje = $request->get('estado');
         $proyecto->update();
     
-       
        return  redirect()->route('dash')->with(array(
            "mensaje"=>"Proyecto evaluado con exito"
         ));
