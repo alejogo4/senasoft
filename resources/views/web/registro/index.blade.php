@@ -82,13 +82,15 @@
                             Se debe tener presente los cupos para cada centro y para cada una de las categorías, los pasos que se deben seguir son los siguientes :
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    Registrar los datos del instructor que están en el siguiente paso
-
+                                    Debe diligenciar todos los campos requeridos que se le solicitaran como instructor
                                 </li>
                                 <li class="list-group-item">
-
-                                    Antes de realizar el registros debes contar con el certificado de estudio, eps, cedula y fotografía de cada aprendiz
-
+                                    Antes de comenzar con el registros debes contar con el certificado de estudio, eps, documento de identidad y fotografía de cada aprendiz
+                                    <b>Cada Archivo debe ser subido con el siguiente formato: <br>
+                                    numerodocumento_doc.pdf <br>
+                                    numerodocumento_eps.pdf <br>
+                                    numerodocumento_cert.pdf <br>
+                                    numerodocumento_foto.jpg <br> </b>
                                 </li>
                                 <li class="list-group-item">
                                     <div class="row">
@@ -105,7 +107,7 @@
                                 <li class="list-group-item">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            Descargar el archivo de excel para inscripción de los aprendices
+                                        Descargar el archivo de excel para el registro de los aprendices. Se deben tener en cuenta todos los campos requeridos <b class="text-danger">*</b>.
                                         </div>
                                         <div class="col-md-4">
                                         <a href="{{asset('files/Inscripciones.xlsx')}}" class="section-lyla btn btn-formato">Descargar</a>
@@ -134,8 +136,7 @@
                 <h3>Información Personal</h3>
                 <fieldset>
                     <h2>Información Personal</h2>
-                    <p class="desc">Please enter your infomation and proceed to next step so we can build your
-                        account</p>
+                    <p class="desc">Ingrese la información requerida <b class="text-danger">*</b> y continúe con el siguiente paso para poder finalizar el registro</p>
                     <div class="fieldset-content">
                         <div class="form-row">
                             <div class="row">
@@ -239,8 +240,7 @@
                 <h3>Información Específica</h3>
                 <fieldset>
                     <h2>Información Específica</h2>
-                    <p class="desc">Please enter your infomation and proceed to next step so we can build your
-                        account</p>
+                    <p class="desc">Ingrese la información requerida <b class="text-danger">*</b> y continúe con el siguiente paso para poder finalizar el registro</p>
                     <div class="fieldset-content">
                         <div class="form-row">
                             <div class="row">
@@ -307,7 +307,7 @@
 
                             <div class="row">
                                 <div class="col-md-12 text-center">
-                                    <h4 for="">Desea participar en el tour por Medellin
+                                    <h4 for="">Desea participar en el tour por la ciudad de Medellín el 12 de Septiembre de 8pm a 11pm.
                                         <br>
                                         <label for="">
                                             SI <input onkeyup="mayus(this);" type="checkbox" name="tour" value="si">
@@ -325,7 +325,7 @@
                 <h3>Aprendices y Documentación</h3>
                 <fieldset>
                     <h2>Aprendices y Documentación</h2>
-                    <p class="desc">Set up your money limit to reach the future plan</p>
+                    <p class="desc">Seguir cada indicación a continuación para poder completar el registro de los aprendices</p>
                     <div class="fieldset-content">
                         <div class="form-row">
                             <div class="col-md-12 text-center">

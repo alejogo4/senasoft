@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 
 Route::get("/validar/codigo/{codigo}", "RegistroController@validar_codigo");
+Route::get("/registro/resultados", "RegistroController@show");
 Route::resource('/registro', 'RegistroController');
 
 Route::resource('/proyecto', 'ProyectoController');

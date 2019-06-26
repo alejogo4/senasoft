@@ -46,11 +46,13 @@ class TblPersona extends Migration
             $table->mediumText('arhivo_certificado_eps')->nullable();
             $table->mediumText('arhivo_constancia_estudio')->nullable();
             $table->unsignedBigInteger('categoria_id')->nullable();
+            $table->unsignedBigInteger('centro_id')->nullable();
             $table->unsignedBigInteger('tipo_persona')->nullable();
             $table->boolean('tour')->nullable();
             $table->timestamps();
 
             $table->foreign('categoria_id')->references('id')->on('tbl_categoria')->onDelete('cascade');
+            $table->foreign('centro_id')->references('id')->on('tbl_centro')->onDelete('cascade');
             $table->foreign('tipo_persona')->references('id')->on('tbl_tipo_persona')->onDelete('cascade');
         });
     }

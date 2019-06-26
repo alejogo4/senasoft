@@ -2,6 +2,17 @@ var dropZoneEps = null;
 var dropZoneDocumentos = null;
 var dropZoneCertificado = null;
 var dropZoneFoto = null;
+
+function loading(){
+Swal.fire({
+  title: 'Registrando',
+  timer: 5000,
+  onBeforeOpen: () => {
+    Swal.showLoading()
+  }
+})
+}
+
 (function ($) {
 
     $.validator.addMethod("maxsize", function (value, element, param) {
@@ -78,8 +89,9 @@ var dropZoneFoto = null;
             return form.valid();
         },
         onFinished: function (event, currentIndex) {
+
+
             guardar();
-            alert('Submited');
         },
         onStepChanged: function (event, currentIndex, priorIndex) {
 
@@ -87,6 +99,8 @@ var dropZoneFoto = null;
         }
     });
 })(jQuery);
+
+
 
 $(function () {
     $.ajaxSetup({
@@ -207,6 +221,7 @@ function guardar() {
             processData: false,
             method: 'POST'
         }).done((respuesta) => {
+            Swal.hideLoading();
             if (respuesta.ok) {
                 Swal.fire({
                     title: 'Felicidades',
@@ -225,14 +240,15 @@ function guardar() {
                 Swal.fire({
                     title: 'Espera',
                     text: respuesta.mensaje,
-                    type: 'danger',
+                    type: 'warning',
                 })
             }
         }).fail((error) => {
+            Swal.hideLoading();
             Swal.fire({
                 title: 'Espera',
                 text: "Ocurrió un error inesperado, intenta más tarde. En caso de persistir el error contacta al administrador del sitio",
-                type: 'danger',
+                type: 'error',
             })
         });
 

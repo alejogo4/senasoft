@@ -36,7 +36,8 @@ class Persona extends Model
         'arhivo_documento',
         'arhivo_certificado_eps',
         'arhivo_constancia_estudio',
-        'asignacion_cupos_id',
+        'categoria_id',
+        'centro_id',
         'tipo_persona',
         'tour'];
 }

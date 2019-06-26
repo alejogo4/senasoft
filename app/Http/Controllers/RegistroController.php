@@ -6,6 +6,7 @@ use App\Imports\AprendicesImport;
 use App\Models\Categoria;
 use App\Models\Centro;
 use App\Models\Cupo;
+use App\Models\Persona;
 use DB;
 use Excel;
 use Illuminate\Http\Request;
@@ -59,7 +60,7 @@ class RegistroController extends Controller
 
         $centro_id = session("id_centro");
 
-        $foto = $request->file('fotografia');
+        $foto = $request->file('foto');
 
         $fotos = $request->file('archio_foto');
         $documentos = $request->file('archio_documentos');
@@ -76,7 +77,8 @@ class RegistroController extends Controller
 
             try {
                 $fotografia = $this->guardar_archivo($foto, "fotos");
-                Personal::create([
+
+                Persona::create([
                     'documento' => $input["documento"],
                     'tipo_documento' => $input["tipo_documento"],
                     'nombres' => $input["nombre"],
@@ -99,8 +101,11 @@ class RegistroController extends Controller
                     'enfermedades' => $input["enfermedades"],
                     'medicamento_consume' => $input["medicamentos"],
                     'tipo_persona' => 1,
+                    'centro_id' => $centro_id,
                     'tour' => isset($input["tour"]) ? true : false,
                 ]);
+
+            
                 $c_aprendices = 0;
                 foreach ($datos_guardar as $value) {
                     if ($this->validar_cupo($value[0])) {
@@ -149,8 +154,6 @@ class RegistroController extends Controller
                 $c = Centro::find($centro_id);
                 $c->update(["estado_registros"=>1]);
 
-                session(["codigo"=>null]);
-
                 return response()->json(["ok"=>true, "mensaje"=>"El registro se realizo de manera correcta"]);
 
                 DB::commit();
@@ -168,12 +171,18 @@ class RegistroController extends Controller
     public function guardar_archivo($archivo, $carpeta)
     {
         $nombre_archivo = $archivo->getClientOriginalName();
+
+        
+        
         \Storage::disk($carpeta)->put($nombre_archivo, \File::get($archivo));
+
+        dd($nombre_archivo);
         return $nombre_archivo;
     }
 
     public function guardar_aprendiz($datos)
     {
+        $centro_id = session("id_centro");
         $categoria_id = Categoria::where("nombre_categoria", $datos[0])->first();
         Personal::create([
             'documento' => $datos[2],
@@ -199,6 +208,7 @@ class RegistroController extends Controller
             'arhivo_certificado_eps' => $datos[2]."_eps.pdf",
             'arhivo_constancia_estudio' => $datos[2]."_cert.pdf",
             'categoria_id' => $categoria_id->id,
+            'centro_id' => $centro_id,
             'tipo_persona' => 2,
             'tour' => $datos[19] == "Si"  ? true : false,
         ]);
@@ -234,8 +244,8 @@ class RegistroController extends Controller
 
                 if ($this->valirdar_documento("_doc", ".pdf", $datos_aprendices, $documentos) &&
                     $this->valirdar_documento("_eps", ".pdf", $datos_aprendices, $eps) &&
-                    $this->valirdar_documento("_cert", ".pdf", $datos_aprendices, $eps) &&
-                    $this->valirdar_documento("_foto", ".jpg", $datos_aprendices, $eps)) {
+                    $this->valirdar_documento("_cert", ".pdf", $datos_aprendices, $estudio) &&
+                    $this->valirdar_documento("_foto", ".jpg", $datos_aprendices, $fotos)) {
 
                     return $datos_aprendices;
                 }
@@ -246,7 +256,6 @@ class RegistroController extends Controller
 
     public function valirdar_documento($prefijo, $extension, $aprendices, $comparar)
     {
-
         $cont = 0;
         foreach ($aprendices as $value) {
             $filtro = array_filter($comparar, function ($item) use ($prefijo, $extension, $value) {
@@ -283,42 +292,12 @@ class RegistroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $centro_id = session("id_centro");
+
+        
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
