@@ -376,9 +376,9 @@
 
                     <div class="team-item">
 
-                        <img src="http://placehold.it/200x200" class="team-img" alt="pic">
+                        <img src="/logosenasoft/2009.png" class="team-img" alt="pic">
 
-                        <h3>ALEXANDRA SMITHS</h3>
+                        <h3>2009</h3>
 
                         <div class="team-info">
                             <p>SEO Specialist</p>
