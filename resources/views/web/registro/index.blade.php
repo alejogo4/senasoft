@@ -78,14 +78,15 @@
 
                     <div class="choose-bank col-md-12 mt-4">
                         <p class="choose-bank-desc">
-                            Las inscripciones este año se harán por medio de esta plataforma, sin embargo, hay que leer detenidamente cada de las instrucciones que se le presentarán a continuación.
+                            Las inscripciones este año se harán por medio de esta plataforma, sin embargo, hay que leer detenidamente cada una de las instrucciones que se presentan a continuación.
                             Se debe tener presente los cupos para cada centro y para cada una de las categorías, los pasos que se deben seguir son los siguientes :
                             <ul class="list-group">
                                 <li class="list-group-item">
-                                    Debe diligenciar todos los campos requeridos que se le solicitaran como instructor
+                                    Debe diligenciar todos los campos requeridos que se le solicitarán como instructor
                                 </li>
                                 <li class="list-group-item">
-                                    Antes de comenzar con el registros debes contar con el certificado de estudio, eps, documento de identidad y fotografía de cada aprendiz
+                                    Antes de comenzar con el registro debe contar con el certificado de estudio, constancia de afiliación a EPS, documento de identidad y fotografía de cada aprendiz
+                                    <br>
                                     <b>Cada Archivo debe ser subido con el siguiente formato: <br>
                                     numerodocumento_doc.pdf <br>
                                     numerodocumento_eps.pdf <br>
@@ -107,7 +108,7 @@
                                 <li class="list-group-item">
                                     <div class="row">
                                         <div class="col-md-8">
-                                        Descargar el archivo de excel para el registro de los aprendices. Se deben tener en cuenta todos los campos requeridos <b class="text-danger">*</b>.
+                                        Descargar el archivo de excel para el registro de los aprendices. Se debe tener en cuenta todos los campos requeridos <b class="text-danger">*</b>.
                                         </div>
                                         <div class="col-md-4">
                                         <a href="{{asset('files/Inscripciones.xlsx')}}" class="section-lyla btn btn-formato">Descargar</a>
@@ -117,7 +118,7 @@
                                 <li class="list-group-item">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            Si deseas obtener mas información te recomendamos ver el siguiente video
+                                            Si desea obtener mas información, le recomendamos ver el siguiente video
                                         </div>
                                         <div class="col-md-4">
                                             <button type="button" class="section-lyla btn btn-formato btn-lg" data-toggle="modal" data-target="#myModal">
@@ -133,9 +134,9 @@
                     </div>
                 </fieldset>
 
-                <h3>Información Personal</h3>
+                <h3>Información Personal Instructor</h3>
                 <fieldset>
-                    <h2>Información Personal</h2>
+                    <h2>Información Personal Instructor</h2>
                     <p class="desc">Ingrese la información requerida <b class="text-danger">*</b> y continúe con el siguiente paso para poder finalizar el registro</p>
                     <div class="fieldset-content">
                         <div class="form-row">
@@ -171,7 +172,7 @@
                                     <input onkeyup="mayus(this);" type="email" name="correo_alterno" id="correo_alterno" />
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="email" class="form-label">Tipo de Contrato <b class="text-danger">*</b></label>
+                                    <label for="email" class="form-label">Tipo de Vinculación <b class="text-danger">*</b></label>
                                     <select name="tipo_contrato" id="tipo_contrato" required>
                                         <option value="">Seleccione</option>
                                         <option value="PLANTA">PLANTA</option>
@@ -195,7 +196,7 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-4">
-                                    <label for="email" class="form-label">Fotografia <b class="text-danger">*</b></label>
+                                    <label for="email" class="form-label">Fotografía <b class="text-danger">*</b></label>
                                     <input onkeyup="mayus(this);" type="file" name="fotografia" id="fotografia" required />
                                 </div>
                                 <div class="form-group col-md-4">
@@ -205,7 +206,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="text" class="form-label">Programa de Formación que imparte <b class="text-danger">*</b></label>
+                                    <label for="text" class="form-label">Programa de Formación que Orienta <b class="text-danger">*</b></label>
                                     <select name="programa_formacion" id="programa_formacion" required>
                                         <option value="">Seleccione</option>
                                         <option value="TG. EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN">TG. EN
@@ -227,7 +228,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="text" class="form-label">Ciudad de Desplazamiento Aereo <b class="text-danger">*</b></label>
+                                    <label for="text" class="form-label">Ciudad de Origen Desplazamiento Aéreo <b class="text-danger">*</b></label>
                                     <select name="ciudad_desplazamiento" id="ciudad_desplazamiento" required>
                                         <option value="">Seleccione</option>
                                     </select>
@@ -237,9 +238,9 @@
                     </div>
                 </fieldset>
 
-                <h3>Información Específica</h3>
+                <h3>Información Específica Instructor</h3>
                 <fieldset>
-                    <h2>Información Específica</h2>
+                    <h2>Información Específica Instructor</h2>
                     <p class="desc">Ingrese la información requerida <b class="text-danger">*</b> y continúe con el siguiente paso para poder finalizar el registro</p>
                     <div class="fieldset-content">
                         <div class="form-row">
@@ -325,7 +326,7 @@
                 <h3>Aprendices y Documentación</h3>
                 <fieldset>
                     <h2>Aprendices y Documentación</h2>
-                    <p class="desc">Seguir cada indicación a continuación para poder completar el registro de los aprendices</p>
+                    <p class="desc">Seguir cada indicación a continuación para completar el registro de los aprendices</p>
                     <div class="fieldset-content">
                         <div class="form-row">
                             <div class="col-md-12 text-center">
@@ -340,7 +341,7 @@
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
                                         <h5>Documento de Identidad</h5>
-                                        <p>Adjuntar los documentos de identidad de cada aprendiz de la siguiente forma :
+                                        <p>Adjuntar los documentos de identidad de todos los aprendices de la siguiente forma:
                                         </p>
                                         <p><b>Nombre del archivo:</b> numerodocumento_doc.pdf</p>
                                         <p><b>Ejemplo:</b> 1152694464_doc.pdf</p>
@@ -354,8 +355,7 @@
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
                                         <h5>Certificados de Afiliación a EPS</h5>
-                                        <p>Adjuntar los certificados de afiliación a EPs de cada aprendiz de la
-                                            siguiente forma :
+                                        <p>Adjuntar los certificados de afiliación a EPS de todos los aprendices de la siguiente forma:
                                         </p>
                                         <p><b>Nombre del archivo:</b> numerodocumento_eps.pdf</p>
                                         <p><b>Ejemplo:</b> 1152694464_eps.pdf</p>
@@ -372,7 +372,7 @@
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
                                         <h5>Certificado de Estudio (SOFIAPLUS)</h5>
-                                        <p>Adjuntar los certificados de estudio de cada aprendiz de la siguiente forma :
+                                        <p>Adjuntar los certificados de estudio de todos los aprendices de la siguiente forma:
                                         </p>
                                         <p><b>Nombre del archivo:</b> numerodocumento_cert.pdf</p>
                                         <p><b>Ejemplo:</b> 1152694464_cert.pdf</p>
@@ -385,8 +385,8 @@
                             <div class="col-md-6">
                                 <div class="panel panel-info">
                                     <div class="panel-heading">
-                                        <h5>Fotografias</h5>
-                                        <p>Adjuntar las fotografias de cada aprendiz de la siguiente forma :
+                                        <h5>Fotografías</h5>
+                                        <p>Adjuntar las fotografías de todos los aprendices de la siguiente forma:
                                         </p>
                                         <p><b>Nombre del archivo:</b> numerodocumento_foto.png</p>
                                         <p><b>Ejemplo:</b> 1152694464_foto.jpg</p>

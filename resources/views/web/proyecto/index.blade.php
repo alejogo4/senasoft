@@ -67,87 +67,123 @@
         @if (session('mensaje'))
         <p class="contact_success_box animated fadeIn">{{ session('mensaje') }}</p>
         @endif
-        <form action="{{ route('proyecto.store') }}" method="post" enctype="multipart/form-data" id="form" class="signup-form">
+        <form action="{{ route('proyecto.store') }}" method="post" enctype="multipart/form-data" id="form"
+            class="signup-form">
             {{ csrf_field() }}
             <div>
-                <h3>Empecemos</h3>
+                <h3>Empecemos!</h3>
                 <fieldset class="row">
-                    <h2 class="col-md-12">Concurso de proyectos de centro</h2>
-                    <div class="col-md-12">
-                        <div class="col-md-6">
-
-                        </div>
-                    </div>
+                    <h2 class="col-md-12">Proyectos Innovadores de Centro </h2>
                     <div class="choose-bank col-md-12">
                         <p class="choose-bank-desc">
-                            Los proyectos que se postulen para SenaSoft, deberán tener componentes innovadores y elementos como big data, inteligencia artificial, desarrollo web o internet de las cosas, entre otros y deben pertenecer a la red.
-                            <br>En este espacio encuentran:
+                            En la décima versión de SENASOFT se contará con un espacio para que doce (12) centros de
+                            formación, expongan proyectos innovadores.
+                            <br>
+                            <br>
+                            Los Centros de Formación que deseen participar en el proceso de selección de proyectos,
+                            deben descargar el formato ficha de proyecto. La ficha debe ser diligenciada y el instructor
+                            líder de SENASOFT en el Centro de Formación, subirá el formato.
+                            <br>
+                            <br>
+                            Los proyectos que se postulen para SENASOFT, deberán tener componentes innovadores y
+                            elementos como Big Data, Inteligencia Artificial, Desarrollo Web o Internet de las Cosas,
+                            entre otros y deben pertenecer a los programas de formación de nivel tecnólogo de la Red de
+                            Informática, Diseño y Desarrollo de Software.
+                            <br>
+                            <br>
+
+                            <b>Las fechas establecidas para el proceso de selección y evaluación de proyectos son las
+                                siguientes:</b>
                             <ul class="list-group">
-                                <li class="list-group-item">Los lineamientos del concurso para el Proyecto que seleccione cada Centro de Formación que ha sido invitado a SenaSoft Medellín 2019.</li>
-                                <li class="list-group-item">El plan de trabajo para esta modalidad, con cada una de las actividades y fechas máximas.</li>
-                                <li class="list-group-item">La ficha de proyecto que cada centro deberá diligenciar con el proyecto que postulan (Se deben diligenciar cada uno de los campos).</li>
-                                <li class="list-group-item">Adicional, encontrarán los criterios de selección de los proyectos que participarán en el concurso.</li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-7">
+                                            <b>Diligenciamiento y envío Formato Ficha Proyecto por cada centro </b> -
+                                            del 2 de Julio al
+                                            13 de Julio
+                                        </div>
+                                        <div class="col-md-5">
+                                            <a href="{{asset('files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx')}}"
+                                                class="section-lyla btn btn-formato">Descargar Formato
+                                                <span class="fa fa-download"></span></a>
+                                        </div>
+                                    </div>
+
+
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Evaluación Fichas de Proyecto </b> - del 15 Julio al 31 de Julio
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Publicación de los 12 proyectos seleccionados </b> - 2 de Agosto
+                                </li>
                             </ul>
                         </p>
-                        <div class="form-radio-flex">
-                            <a href="{{asset('files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx')}}" class="section-lyla btn btn-formato">Descargar el formato <span class="fa fa-download"></span></a>
-                        </div>
+                        <p>
+                            <h5>Reglamento</h5>
+                            <ol style="list-style: outside">
+                                <li>Para la presentación del proyecto, sólo se permite la participación de un (1)
+                                    aprendiz por Centro.</li>
+                                <li>Cada proyecto contará con un stand o espacio, para que el aprendiz exponga el
+                                    proyecto. En el stand, el aprendiz ubicará su equipo de cómputo y un pendón de 80 cm
+                                    * 1 mt, con información alusiva al proyecto (los equipos y pendón, los debe proveer
+                                    el Centro de Formación participante).</li>
+                                <li>Para la evaluación de los proyectos, se contará con un jurado conformado por
+                                    empresarios, subdirectores e instructores.</li>
+                            </ol>
+                        </p>
                     </div>
                 </fieldset>
-                <h3>Responsable</h3>
-                <fieldset class="row">
-                    <h2 class="col-md-12">Información del responsable</h2>
+                <h3>Instructor Responsable</h3>
+                <fieldset>
+                    <h2>Información del Instructor Responsable</h2>
+                    <p class="desc">Ingrese la información requerida <b class="text-danger">*</b> y continúe con el
+                        siguiente paso para poder finalizar el registro</p>
                     <div class="fieldset-content">
                         <div class="form-row">
                             <div class="row">
-
                                 <div class="form-group col-md-6">
-                                    <label for="">Nombres</label>
+                                    <label for="">Nombres <b class="text-danger">*</b></label>
                                     <input type="text" name="nombre" id="nombre" required />
                                 </div>
                                 <div class="form-group col-md-6 ">
-                                    <label for="">Apellidos</label>
+                                    <label for="">Apellidos <b class="text-danger">*</b></label>
                                     <input type="text" name="apellido" id="apellido" required />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="email" class="form-label">Correo Principal</label>
+                                    <label for="email" class="form-label">Correo Principal <b
+                                            class="text-danger">*</b></label>
                                     <input type="email" name="correo" id="correo" required />
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <label for="telefono" class="form-label">Teléfono <b
+                                            class="text-danger">*</b></label>
                                     <input type="text" name="telefono" id="telefono" required />
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </fieldset>
 
-                <h3>Cargar el formato</h3>
+                <h3>Cargar el Formato</h3>
                 <fieldset>
-                    <h2>Cargar el formato correctamente diligenciado</h2>
-                    <p class="desc"></p>
                     <div class="fieldset-content">
                         <div class="form-row">
                             <div class="row">
-                                <div class="col-md-8 offset-md-2">
 
-                                    <div class="col-md-12">
-                                        <div class="panel panel-info">
-                                            <div class="panel-heading">
-                                                <h5>Adjuntar el archivo</h5>
-                                                <p>Adjuntar archivo de excel</p> 
-                                            </div>
-                                            <div class="panel-body dropzone" id="proyecto">
+                                <div class="col-md-12">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading">
+                                            <h5>Adjuntar el archivo excel correctamente diligenciado</h5>
+                                        </div>
+                                        <div class="panel-body dropzone" id="proyecto">
 
-                                            </div>
                                         </div>
                                     </div>
-                                    <!--<input value="Enviar proyecto" class="btn btn-primary nextBtn btn-sm pull-right" type="submit" id="submit-button">-->
                                 </div>
+
                             </div>
                         </div>
                     </div>

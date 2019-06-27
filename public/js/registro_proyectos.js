@@ -22,7 +22,7 @@ var dropZoneDocumento = null;
         stepsOrientation: "vertical",
         titleTemplate: '<div class="title"><span class="step-number">#index#</span><span class="step-text">#title#</span></div>',
         labels: {
-            previous: 'Atras',
+            previous: 'Atrás',
             next: 'Siguiente',
             finish: 'Finalizar',
             current: ''

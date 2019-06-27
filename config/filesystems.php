@@ -60,6 +60,30 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'documentos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/documentos'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+        'eps' => [
+            'driver' => 'local',
+            'root' => storage_path('app/eps'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+        'certificados' => [
+            'driver' => 'local',
+            'root' => storage_path('app/certificados'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+        'fotos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/fotos'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
