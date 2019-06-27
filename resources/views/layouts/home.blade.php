@@ -271,29 +271,40 @@
                 <div id="owl2" class="owl-carousel owl-theme">
 
                     <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/algoritmos.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/animacion3d.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/audiovisuales.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/basesdedatos.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/ideatic.png" alt="showcase" class="gallery-show">
                     </div>
 
                     <div>
-                        <img src="images/categorias/ejemplo_categoria.png" alt="showcase" class="gallery-show">
+                        <img src="images/categorias/moviles.png" alt="showcase" class="gallery-show">
                     </div>
-
+                    <div>
+                        <img src="images/categorias/multimedia.png" alt="showcase" class="gallery-show">
+                    </div>
+                    <div>
+                        <img src="images/categorias/redes.png" alt="showcase" class="gallery-show">
+                    </div>
+                    <div>
+                        <img src="images/categorias/videojuegos.png" alt="showcase" class="gallery-show">
+                    </div>
+                    <div>
+                        <img src="images/categorias/web.png" alt="showcase" class="gallery-show">
+                    </div>
                 </div>
                 <!--end owl carousel -->
 
