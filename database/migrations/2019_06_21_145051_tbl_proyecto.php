@@ -22,9 +22,13 @@ class TblProyecto extends Migration
             $table->char('correo', 150);
             $table->char('telefono', 20);
             $table->mediumText('arhivo_proyecto_centro');
-            $table->tinyInteger('estado')->default('0');
-            $table->integer('puntaje');
+            $table->integer('puntaje')->default('0');
+            $table->integer('estado')->default('0');
             $table->timestamps();
+            $table->unsignedBigInteger('centro_id');
+
+            $table->foreign('centro_id')->references('id')->on('tbl_centro')->onDelete('cascade');
+           
 
             
         });

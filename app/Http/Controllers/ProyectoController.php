@@ -17,7 +17,7 @@ class ProyectoController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['store', 'validar']);
+        $this->middleware('auth')->except(['store', 'validar','index']);
 
     }
 
@@ -52,8 +52,12 @@ class ProyectoController extends Controller
 
     public function index_admin(){
         
-        $proyectos = Proyecto::all();
+       
+        //$proyectos = Proyecto::all();
         
+        //$proyectos =  Centro::all()->join('tbl_proyecto', 'tbl_centro.id', '=', 'tbl_proyecto.centro_id');
+
+        $proyectos = Proyecto::with(['Centro'])->get();
         return view("web.proyecto.list", array(
             "proyectos"=>$proyectos
         ));
@@ -78,9 +82,10 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
+        
         //Crear la validacion del código
         $this->validateForm($request);
-
+        
         $centro_id = session("id_centro");
         
         $Proyecto = new Proyecto();
@@ -88,7 +93,7 @@ class ProyectoController extends Controller
         $Proyecto->apellidos = $request->get('apellido');
         $Proyecto->correo = $request->get('correo');
         $Proyecto->telefono = $request->get('telefono');
-
+        $Proyecto->centro_id = $centro_id;
         $file = $request->file('proyecto_file');
         if($file){
             $file_name = session('codigo')."-".$file->getClientOriginalName();
@@ -98,6 +103,8 @@ class ProyectoController extends Controller
         }else{
             $Proyecto->arhivo_proyecto_centro = "null";
         }
+
+        
         $Proyecto->save();
         
         $c = Centro::find($centro_id);

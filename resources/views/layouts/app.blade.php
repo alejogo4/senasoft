@@ -155,7 +155,9 @@
                     <nav class="side-navbar box-scroll sidebar-scroll">
                         <!-- Begin Main Navigation -->
                         <ul class="list-unstyled">
-                            <li><a href="javascript:void(0);"><i class="la la-at"></i><span>Simple Link</span></a></li>
+                            @can('read proyectos')
+                             <li><a href="{{route('proyecto_list')}}"><i class="la la-at"></i><span>Evaluar Proyectos</span></a></li>
+                            @endcan
                             <li><a href="#dropdown" aria-expanded="false" data-toggle="collapse"><i class="la la-puzzle-piece"></i><span>Dropdown</span></a>
                                 <ul id="dropdown" class="collapse list-unstyled pt-0">
                                     <li><a href="javascript:void(0);">Link</a></li>
@@ -237,10 +239,14 @@
         <!-- Begin Vendor Js -->
         <script src="{{asset('admin/vendors/js/base/jquery.min.js')}}"></script>
         <script src="{{asset('admin/vendors/js/base/core.min.js')}}"></script>
+        <script src="{{asset('admin/vendors/js/tabledit/jquery.tabledit.min.js')}}"></script>
+        
         <!-- End Vendor Js -->
         <!-- Begin Page Vendor Js -->
         <script src="{{asset('admin/vendors/js/nicescroll/nicescroll.min.js')}}"></script>
         <script src="{{asset('admin/vendors/js/app/app.min.js')}}"></script>
+        <!-- End Page Vendor Js -->
+        <script src="{{asset('admin/js/components/tabledit/tabledit.js')}}"></script>
         <!-- End Page Vendor Js -->
     </body>
 </html>
