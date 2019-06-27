@@ -342,15 +342,17 @@
 
                     <div class="team-item">
 
-                        <img src="http://placehold.it/200x200" class="team-img" alt="pic">
+                        <img src="/logosenasoft/2008.jpg" class="team-img" alt="pic">
 
-                        <h3>JOHNATHAN HAWKINS</h3>
+                        <h3>2008</h3>
 
                         <div class="team-info">
-                            <p>Head of SEO</p>
+                            <p>MEDELLÍN</p>
                         </div>
 
-                        <p>Johnathan is our co-founder and has developed search strategies for a variety of clients for over 5 years.</p>
+                        <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de
+                            Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron
+                            doscientos (200) aprendices de Software de 18 regionales del SENA</p>
 
                         <ul class="team-icon">
 
