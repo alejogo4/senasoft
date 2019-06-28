@@ -27,6 +27,7 @@ Route::get('/home', function () {
 });*/
 Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
 Route::post('/proyecto/actualizarTabla','ProyectoController@update');
+Route::get('/proyecto-file/{file}',"ProyectoController@getProjectFile");
 
 Auth::routes();
 

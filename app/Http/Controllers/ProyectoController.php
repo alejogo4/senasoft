@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Models\Centro;
 use App\Models\Proyecto;
+use Symfony\Component\HttpFoundation\Response;
 
 class ProyectoController extends Controller
 {
@@ -175,5 +176,12 @@ class ProyectoController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getProjectFile($file){
+
+        $file = \Storage::disk('proyectos')->get($file);
+        return new Response($file,200);
+
     }
 }
