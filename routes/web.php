@@ -26,6 +26,7 @@ Route::get('/home', function () {
     return view('layouts.home');
 });*/
 Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
+Route::post('/proyecto/actualizarTabla','ProyectoController@update');
 
 Auth::routes();
 

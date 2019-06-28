@@ -5,16 +5,25 @@
     // ------------------------------------------------------- //
     // Example 03
     // ------------------------------------------------------ //	
+
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    })
+
+
     $('#tabla_proyectos').Tabledit({
-        editButton: true,
+        url: '/proyecto/actualizarTabla',
         deleteButton: false,
         columns: {
             identifier: [0, 'id'],
             editable: [
-                [1, 'firstname'],
-                [2, 'lastname'],
-                [3, 'mail'],
-                [4, 'country']
+
+                [3, 'puntaje'],
+                [4, 'estado', '{"0": "Aprobado", "1": "No Aprobado"}']
             ]
         },
         buttons: {
@@ -41,45 +50,35 @@
                 class: 'btn btn-primary',
                 html: 'Confirm'
             }
+        },
+        onDraw: function() {
+            console.log('onDraw()');
+        },
+        onSuccess: function(data, textStatus, jqXHR) {
+            console.log('onSuccess(data, textStatus, jqXHR)');
+            console.log(data);
+            console.log(textStatus);
+            console.log(jqXHR);
+        },
+        onFail: function(jqXHR, textStatus, errorThrown) {
+            console.log('onFail(jqXHR, textStatus, errorThrown)');
+            console.log(jqXHR);
+            console.log(textStatus);
+            console.log(errorThrown);
+        },
+        onAlways: function() {
+            console.log('onAlways()');
+        },
+        onAjax: function(action, serialize) {
+            console.log('onAjax(action, serialize)');
+            console.log(action);
+            console.log(serialize);
         }
     });
 
     // ------------------------------------------------------- //
     // Example 02
     // ------------------------------------------------------ //	
-    $('#example2').Tabledit({
-        url: '../assets/php/example.php',
-        editButton: false,
-        deleteButton: false,
-        hideIdentifier: false,
-        columns: {
-            identifier: [0, 'id'],
-            editable: [
-                [1, 'firstname'],
-                [2, 'lastname'],
-                [3, 'mail'],
-                [4, 'country']
-            ]
-        }
-    });
 
-    // ------------------------------------------------------- //
-    // Example 03
-    // ------------------------------------------------------ //	
-    $('#example3').Tabledit({
-        url: '../assets/php/example.php',
-        eventType: 'dblclick',
-        editButton: false,
-        deleteButton: false,
-        columns: {
-            identifier: [0, 'id'],
-            editable: [
-                [1, 'firstname'],
-                [2, 'lastname'],
-                [3, 'mail'],
-                [4, 'country']
-            ]
-        }
-    });
 
 })(jQuery);

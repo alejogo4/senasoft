@@ -154,17 +154,16 @@ class ProyectoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         //
-        $proyecto = Proyecto::find($id);
-        $proyecto->puntaje = $request->get('puntaje');
-        $proyecto->puntaje = $request->get('estado');
+       
+        $proyecto = Proyecto::find($request->id);
+        $proyecto->puntaje = $request->puntaje;
+        $proyecto->juicio = $request->estado;
         $proyecto->update();
     
-       return  redirect()->route('dash')->with(array(
-           "mensaje"=>"Proyecto evaluado con exito"
-        ));
+       return  response()->json(["ok"=>true]);;
     }
 
     /**

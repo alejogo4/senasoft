@@ -585,11 +585,17 @@ iframe {
 #logo img {
     width: 100%;
     display: inline;
+    padding: 0px 15px;
 }
 
 .navbar-header {
     width: 20%;
     border-right: 1px solid white;
+}
+
+.navbar-brand {
+    padding: 0px !important;
+    /* padding: 15px 15px; */
 }
 
 .navbar-fixed-top.opaque {

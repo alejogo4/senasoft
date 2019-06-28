@@ -26,7 +26,7 @@
 <section class="home-section" id="home">
 
     <div class="home-section-overlay">
-        <video id="bg_video"  title="Centro de servicios y gestión empresarial" autoplay="true"  muted="muted">
+        <video id="bg_video" title="Centro de servicios y gestión empresarial" autoplay="true" muted="muted">
             <source src="{{asset('files/videos/metas 2018.mp4')}}" type="video/mp4">
         </video>
     </div>
@@ -114,10 +114,10 @@
                             <p>Se reciben todos los equipos que desean registrar.</p>
                         </div>
                     </div>
-                
+
                     <div class="row schedule-item">
                         <div class="col-md-2"><time>06:00 PM</time></div>
-                        <div class="col-md-10">   
+                        <div class="col-md-10">
                             <h4>Inaguración al evento</h4>
                             <p>Se realiza la inaguración de SenaSoft 2019 - Medellín</p>
                         </div>
@@ -190,7 +190,7 @@
                                 <img src="images/speaker4.jpg" alt="Jack Christiansen">
                             </div>
                             <p>Workshop Contenidos Digitales - Ambiente #3.</p>
-                            
+
                         </div>
                     </div>
                     <div class="row schedule-item">
@@ -206,18 +206,7 @@
                         <div class="col-md-2"><time>06:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Finalización de competencia.</h4>
-                            <p>.</p>
-                        </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>04:00 PM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="img/speakers/6.jpg" alt="Willow Trantow">
-                            </div>
-                            <h4>Quo qui praesentium nesciunt <span>Willow Trantow</span></h4>
-                            <p>Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
+                            <p>Traslado a hoteles y cena en hoteles.</p>
                         </div>
                     </div>
                 </div>
@@ -231,16 +220,7 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-
-
-    </div>
-    <!--end row -->
-
-    </div>
-    <!--end container -->
 
 </section>
 <!--end section-grey -->
@@ -257,7 +237,7 @@
             <!--begin col md 12 -->
             <div class="col-md-12 text-center">
 
-                <h2 class="section-title white">Categorias de participación</h2>
+                <h2 class="section-title white">Categorías de participación</h2>
 
                 <p class="section-subtitle white">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
 
@@ -552,7 +532,7 @@
 
     </div>
     <!--end container -->
-<!--end newsletter section -->
+    <!--end newsletter section -->
 </section>
 <!--end testimonials section -->
 
@@ -922,16 +902,4 @@
 @endsection
 
 @section("script")
-    <script>
-        // $(function() {
-        //     $.vegas('slideshow', {
-        //         delay: 7000,
-        //         backgrounds: [
-        //             { src: '/images/video_top_1.gif', fade: 15000 },
-        //             { src: '/images/video_top_2.gif', fade: 15000 },
-        //         ],
-        //         loading: false
-        //     })
-        // });
-    </script>
 @endsection

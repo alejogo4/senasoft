@@ -14,21 +14,23 @@
                             <table id="tabla_proyectos" class="table mb-0">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>Id</th>
                                         <th>Centro</th>
                                         <th>Proyecto</th>
                                         <th>Evaluación</th>
-                                        <th>Estado</th>
+                                        <th>Estado Proyecto</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($proyectos as $proyecto)
                                     <tr>
-                                        <td>#</td>
+                                        <td>{{$proyecto->centro->id}}</td>
                                         <td>{{$proyecto->centro->nombre_centro}}</td>
                                         <td><a href="#" download>{{$proyecto->arhivo_proyecto_centro}}</a></td>
                                         <td>{{$proyecto->puntaje}}</td>
-                                        <td>Estado</td>
+                                        <td>
+                                            {{ $proyecto->juicio == 0 ? "Aprobado" : "No Aprobado" }}
+                                        </td>
                                     </tr>
                                 @endforeach
                                     
