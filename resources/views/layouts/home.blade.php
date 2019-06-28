@@ -41,7 +41,8 @@
             <div class="col-md-10 col-md-offset-1 text-center">
                 <img src="images/logo_sena.png" alt="Logo SENA" class="logo-sena">
                 <h1>SENASOFT 2019 | MEDELLÍN</h1>
-                <p>En Medellín estamos preparando el evento SenaSoft 2019, el mayor encuentro tecnológico organizado por el SENA </p>
+                <p>En Medellín estamos preparando el evento SenaSoft 2019, el mayor encuentro tecnológico organizado por
+                    el SENA </p>
 
                 @yield('countdown',View::make('layouts.components.countdown'))
 
@@ -71,7 +72,8 @@
 
                 <h2 class="section-title">Itinerario del evento</h2>
 
-                <p class="section-subtitle">El cronograma del evento estará sujeto a modificaciones, este es un cronograma inicial de las participación Senasoft 2019</p>
+                <p class="section-subtitle">El cronograma del evento estará sujeto a modificaciones, este es un
+                    cronograma inicial de las participación Senasoft 2019</p>
 
             </div>
             <!--end col-md-12 -->
@@ -163,7 +165,8 @@
                         <div class="col-md-2"><time>09:00 AM</time></div>
                         <div class="col-md-10">
                             <h4>Competencia Aprendices.</h4>
-                            <p>Inicia la competencia; <b>Todos los instructores deben asistir a una conferencia en auditorio.<b></p>
+                            <p>Inicia la competencia; <b>Todos los instructores deben asistir a una conferencia en
+                                    auditorio.<b></p>
                         </div>
                     </div>
 
@@ -212,11 +215,13 @@
                 </div>
                 <div id="dia3" class="tab-pane fade">
                     <h3>Menu 2</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                        totam rem aperiam.</p>
                 </div>
                 <div id="dia4" class="tab-pane fade">
                     <h3>Menu 3</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                        explicabo.</p>
                 </div>
             </div>
         </div>
@@ -239,7 +244,8 @@
 
                 <h2 class="section-title white">Categorías de participación</h2>
 
-                <p class="section-subtitle white">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+                <p class="section-subtitle white">There are many variations of passages of Lorem Ipsum available, but
+                    the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
 
             </div>
             <!--end col md 12 -->
@@ -323,7 +329,8 @@
 
                     <h2 class="section-title">Historial Senasoft 2019</h2>
 
-                    <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+                    <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the
+                        majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
 
                 </div>
                 <!--end col-md-12 -->
@@ -367,15 +374,16 @@
 
                     <div class="team-item">
 
-                        <img src="/logosenasoft/2009.png" class="team-img" alt="pic">
+                        <img src="/logosenasoft/2009.jpg" class="team-img" alt="pic">
 
                         <h3>2009</h3>
 
                         <div class="team-info">
-                            <p>SEO Specialist</p>
+                            <p>CAUCA</p>
                         </div>
 
-                        <p>Graduating with a degree in Spanish, English and French, Alexandra has always loved writing.</p>
+                        <p>Graduating with a degree in Spanish, English and French, Alexandra has always loved writing.
+                        </p>
 
                         <ul class="team-icon">
 
@@ -399,15 +407,216 @@
 
                     <div class="team-item">
 
-                        <img src="http://placehold.it/200x200" class="team-img" alt="pic">
+                        <img src="/logosenasoft/2010.jpg" class="team-img" alt="pic">
 
-                        <h3>ANDRES JOHANSON</h3>
+                        <h3>2010</h3>
 
                         <div class="team-info">
-                            <p>Marketing Manager</p>
+                            <p>MEDELLÍN</p>
                         </div>
 
-                        <p>Andres fell in love with marketing at the university and looks forward to being part of this industry for many years.</p>
+                        <p>Andres fell in love with marketing at the university and looks forward to being part of this
+                            industry for many years.</p>
+
+                        <ul class="team-icon">
+
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!--end team-item -->
+
+                <!--begin team-item -->
+                <div class="col-sm-12 col-md-4">
+
+                    <div class="team-item">
+
+                        <img src="/logosenasoft/2013.jpg" class="team-img" alt="pic">
+
+                        <h3>2013</h3>
+
+                        <div class="team-info">
+                            <p>CAUCA</p>
+                        </div>
+
+                        <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de
+                            Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron
+                            doscientos (200) aprendices de Software de 18 regionales del SENA</p>
+
+                        <ul class="team-icon">
+
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!--end team-item -->
+
+                <!--begin team-item -->
+                <div class="col-sm-12 col-md-4">
+
+                    <div class="team-item">
+
+                        <img src="/logosenasoft/2014.jpg" class="team-img" alt="pic">
+
+                        <h3>2014</h3>
+
+                        <div class="team-info">
+                            <p>HUILA</p>
+                        </div>
+
+                        <p>Graduating with a degree in Spanish, English and French, Alexandra has always loved writing.
+                        </p>
+
+                        <ul class="team-icon">
+
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!--end team-item -->
+
+                <!--begin team-item -->
+                <div class="col-sm-12 col-md-4">
+
+                    <div class="team-item">
+
+                        <img src="/logosenasoft/2015.JPG" class="team-img" alt="pic">
+
+                        <h3>2015</h3>
+
+                        <div class="team-info">
+                            <p>SANTANDER</p>
+                        </div>
+
+                        <p>Andres fell in love with marketing at the university and looks forward to being part of this
+                            industry for many years.</p>
+
+                        <ul class="team-icon">
+
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!--end team-item -->
+
+                <!--begin team-item -->
+                <div class="col-sm-12 col-md-4">
+
+                    <div class="team-item">
+
+                        <img src="/logosenasoft/2016.jpg" class="team-img" alt="pic">
+
+                        <h3>2016</h3>
+
+                        <div class="team-info">
+                            <p>QUINDIO</p>
+                        </div>
+
+                        <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de
+                            Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron
+                            doscientos (200) aprendices de Software de 18 regionales del SENA</p>
+
+                        <ul class="team-icon">
+
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!--end team-item -->
+
+                <!--begin team-item -->
+                <div class="col-sm-12 col-md-4">
+
+                    <div class="team-item">
+
+                        <img src="/logosenasoft/2017.jpg" class="team-img" alt="pic">
+
+                        <h3>2017</h3>
+
+                        <div class="team-info">
+                            <p>VALLE</p>
+                        </div>
+
+                        <p>Graduating with a degree in Spanish, English and French, Alexandra has always loved writing.
+                        </p>
+
+                        <ul class="team-icon">
+
+                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+                <!--end team-item -->
+
+                <!--begin team-item -->
+                <div class="col-sm-12 col-md-4">
+
+                    <div class="team-item">
+
+                        <img src="/logosenasoft/2018.jpg" class="team-img" alt="pic">
+
+                        <h3>2018</h3>
+
+                        <div class="team-info">
+                            <p>ATLÁNTICO</p>
+                        </div>
+
+                        <p>Andres fell in love with marketing at the university and looks forward to being part of this
+                            industry for many years.</p>
 
                         <ul class="team-icon">
 
@@ -447,22 +656,24 @@
 
         <div class="row">
 
-            <div class="col-md-3">
-                <h4 class="our-partners-title">Patrocinadores<br><span>Ejemplo:</span></h4>
+            <div class="col-md-2">
+                <h4 class="our-partners-title">Apoyo<br><span>:</span></h4>
             </div>
 
-            <div class="col-md-9">
+            <div class="col-md-10">
 
                 <!--begin partners-mentions -->
-                <ul class="partners-mentions">
+                <ul id="owl10" class="partners-mentions owl-carousel">
 
-                    <li><img src="images/award4a.png" alt="CSS Awards"></li>
+                    <li><img src="/logosempresas/fractal.png" alt="Fractal"></li>
 
-                    <li><img src="images/award1a.png" alt="Awwwards"></li>
+                    <li><img src="/logosempresas/gap.png" alt="GAP"></li>
 
-                    <li><img src="images/award5.png" alt="CSS Winner"></li>
+                    <li><img src="/logosempresas/castor.jpg" alt="Castor"></li>
 
-                    <li><img src="images/award3a.png" alt="CSS Design Awards"></li>
+                    <li><img src="/logosempresas/huellas.png" alt="Huellas"></li>
+
+                    <li><img src="/logosempresas/tyj.jpg" alt="Huellas"></li>
 
                 </ul>
                 <!--end partners-mentions -->
@@ -505,7 +716,8 @@
                     <div class="newsletter_form_box">
 
                         <!--begin success_box -->
-                        <p class="newsletter_success_box" style="display:none;">We received your message and you'll hear from us soon. Thank You!</p>
+                        <p class="newsletter_success_box" style="display:none;">We received your message and you'll hear
+                            from us soon. Thank You!</p>
                         <!--end success_box -->
 
                         <!--begin newsletter-form -->
@@ -551,7 +763,8 @@
                 <h2 class="section-title">Aplicación Móvil</h2>
 
                 <p class="section-subtitle">
-                    Para la estrategia de Senasoft 2019 hemos desarrollado una aplicación para facilitar el proceso de registro y evaluación de equipos <br>Esta posee unas grandes características como: </p>
+                    Para la estrategia de Senasoft 2019 hemos desarrollado una aplicación para facilitar el proceso de
+                    registro y evaluación de equipos <br>Esta posee unas grandes características como: </p>
 
             </div>
             <!--end col-md-12 -->
@@ -568,7 +781,8 @@
 
                     <div class="text_align_right">
                         <h4>Responsive Layout</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
+                            de etsum nisle lorem.</p>
                     </div>
 
                 </div>
@@ -583,7 +797,8 @@
 
                     <div class="text_align_right">
                         <h4>Clean Code</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
+                            de etsum nisle lorem.</p>
                     </div>
 
                 </div>
@@ -598,7 +813,8 @@
 
                     <div class="text_align_right">
                         <h4>Retina Ready</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
+                            de etsum nisle lorem.</p>
                     </div>
 
                 </div>
@@ -608,7 +824,8 @@
             <!--end col-md-4 -->
 
             <!--begin col-md-4 -->
-            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
+            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s"
+                style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
 
                 <img src="images/features-iphone.png" alt="picture" class="width-100">
 
@@ -627,7 +844,8 @@
 
                     <div class="text_align_left">
                         <h4>Modern Design</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
+                            de etsum nisle lorem.</p>
                     </div>
 
                 </div>
@@ -642,7 +860,8 @@
 
                     <div class="text_align_left">
                         <h4>Premium Features</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
+                            de etsum nisle lorem.</p>
                     </div>
 
                 </div>
@@ -657,7 +876,8 @@
 
                     <div class="text_align_left">
                         <h4>24/7 Support</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis de etsum nisle lorem.</p>
+                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
+                            de etsum nisle lorem.</p>
                     </div>
 
                 </div>
@@ -688,7 +908,9 @@
 
                 <h4>Ubicación del evento</h4>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco"
+                    width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <!--<h5>Centro de Servicios y Gestión Empresarial</h5>
 
                 <p class="contact-info">
@@ -717,18 +939,23 @@
 
                             <h4 class="panel-title">
 
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="icon icon-rocket panel-icon"></i> ¿Qué herramientas se van a utilizar en cada una de las categorías?
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <i class="icon icon-rocket panel-icon"></i> ¿Qué herramientas se van a utilizar en
+                                    cada una de las categorías?
                                 </a>
 
                             </h4>
 
                         </div>
 
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                            aria-labelledby="headingOne">
 
                             <div class="panel-body">
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
+                                    magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis
+                                    reprehenderit ets quis velit.</p>
                             </div>
 
                         </div>
@@ -743,18 +970,23 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <i class="icon icon-prize-award panel-icon"></i> ¿Cuántas personas se deben inscribir para cada una de las categorías?
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <i class="icon icon-prize-award panel-icon"></i> ¿Cuántas personas se deben
+                                    inscribir para cada una de las categorías?
                                 </a>
 
                             </h4>
 
                         </div>
 
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingTwo">
 
                             <div class="panel-body">
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
+                                    magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis
+                                    reprehenderit ets quis velit.</p>
                             </div>
 
                         </div>
@@ -769,18 +1001,23 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <i class="icon icon-present-gift panel-icon"></i> ¿Dónde podemos encontrar el cronograma del evento?
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <i class="icon icon-present-gift panel-icon"></i> ¿Dónde podemos encontrar el
+                                    cronograma del evento?
                                 </a>
 
                             </h4>
 
                         </div>
 
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingThree">
 
                             <div class="panel-body">
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
+                                    magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis
+                                    reprehenderit ets quis velit.</p>
                             </div>
 
                         </div>
@@ -795,18 +1032,23 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    <i class="icon icon-present-gift panel-icon"></i> ¿Cuál es la manera más fácil de llegar al centro de formación?
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <i class="icon icon-present-gift panel-icon"></i> ¿Cuál es la manera más fácil de
+                                    llegar al centro de formación?
                                 </a>
 
                             </h4>
 
                         </div>
 
-                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingFour">
 
                             <div class="panel-body">
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis reprehenderit ets quis velit.</p>
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
+                                    magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis
+                                    reprehenderit ets quis velit.</p>
                             </div>
 
                         </div>
