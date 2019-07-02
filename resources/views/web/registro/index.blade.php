@@ -111,7 +111,8 @@
                                         Descargar el archivo de excel para el registro de los aprendices. Se debe tener en cuenta todos los campos requeridos <b class="text-danger">*</b>.
                                         </div>
                                         <div class="col-md-4">
-                                        <a href="{{asset('files/Inscripciones.xlsx')}}" class="section-lyla btn btn-formato">Descargar</a>
+                                            <a href="{{asset('files/Inscripciones.xlsx')}}" class="section-lyla btn btn-formato">Descargar</a>
+                                            
                                         </div>
                                     </div>
                                 </li>

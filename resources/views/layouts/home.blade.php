@@ -41,7 +41,7 @@
             <div class="col-md-10 col-md-offset-1 text-center">
                 <img src="images/logo_sena.png" alt="Logo SENA" class="logo-sena">
                 <h1>SENASOFT 2019 | MEDELLÍN</h1>
-                <p>En Medellín estamos preparando el evento SenaSoft 2019, el mayor encuentro tecnológico organizado por
+                <p class="parrafo">En Medellín estamos preparando el evento SenaSoft 2019, el mayor encuentro tecnológico organizado por
                     el SENA </p>
 
                 @yield('countdown',View::make('layouts.components.countdown'))
@@ -54,7 +54,7 @@
 
     </div>
     <!--end container -->
-
+    <img src="{{asset('images/mascota.png')}}" class="mascota" alt="Mascota Senasoft 2019">
 </section>
 <!--end home section -->
 
@@ -76,15 +76,17 @@
                     cronograma inicial de las participación Senasoft 2019</p>
 
             </div>
-            <!--end col-md-12 -->
-            <ul class="nav nav-tabs mt-4 mb-4 justify-content-center">
-                <li class="active"><a data-toggle="tab" href="#dia1">Martes</a></li>
-                <li><a data-toggle="tab" href="#dia2">Miercoles</a></li>
-                <li><a data-toggle="tab" href="#dia3">Jueves</a></li>
-                <li><a data-toggle="tab" href="#dia4">Viernes</a></li>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#menu1">Menu 1</a></li>
+                <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
+                <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
+                <li><a data-toggle="tab" href="#menu4">Menu 4</a></li>
             </ul>
+
             <div class="tab-content">
-                <div id="dia1" class="tab-pane fade in active">
+        
+                <div id="menu1" class="tab-pane fade in active">
+                    <h3>Menu 1</h3>
                     <div class="row schedule-item justify-content-center">
                         <div class="col-md-2"><time>06:00 AM</time></div>
                         <div class="col-md-10">
@@ -139,7 +141,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="dia2" class="tab-pane fade">
+                <div id="menu2" class="tab-pane fade">
+                    <h3>Menu 2</h3>
                     <div class="row schedule-item justify-content-center">
                         <div class="col-md-2"><time>06:00 AM</time></div>
                         <div class="col-md-10">
@@ -213,17 +216,16 @@
                         </div>
                     </div>
                 </div>
-                <div id="dia3" class="tab-pane fade">
-                    <h3>Menu 2</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                        totam rem aperiam.</p>
-                </div>
-                <div id="dia4" class="tab-pane fade">
+                <div id="menu3" class="tab-pane fade">
                     <h3>Menu 3</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                        explicabo.</p>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                </div>
+                <div id="menu4" class="tab-pane fade">
+                    <h3>Menu 3</h3>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                 </div>
             </div>
+            <!--end col-md-12 -->
         </div>
     </div>
 
@@ -258,38 +260,118 @@
 
                     <div>
                         <img src="images/categorias/algoritmos.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Algoritmos</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
 
                     <div>
                         <img src="images/categorias/animacion3d.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Animación 3D</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
 
                     <div>
                         <img src="images/categorias/audiovisuales.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Audiovisuales</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
 
                     <div>
                         <img src="images/categorias/basesdedatos.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Bases de datos</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
 
                     <div>
                         <img src="images/categorias/ideatic.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Ideatic</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
 
                     <div>
                         <img src="images/categorias/moviles.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Móviles</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
                     <div>
                         <img src="images/categorias/multimedia.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Multimedia</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
                     <div>
                         <img src="images/categorias/redes.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Redes</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
                     <div>
                         <img src="images/categorias/videojuegos.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Videojuegos</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
                     <div>
                         <img src="images/categorias/web.png" alt="showcase" class="gallery-show">
+                        <div class="content-category">
+                            <h3>Web</h3>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <button class="section-lyla btn btn-formato">
+                                Lineamientos
+                                <span class="fa fa-download"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <!--end owl carousel -->
@@ -701,44 +783,18 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center padding-top-60 padding-bottom-20">
 
-                <h3 class="white-text">Envianos tu email, nos contactaremos contigo.</h3>
+                <h3 class="white-text">Descargar reglamento para la competencia Senasoft 2019.</h3>
 
             </div>
-            <!--end col-md-12 -->
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <a href="{{asset('files/Reglamento SENASOFT 2019.docx')}}}" class="btn btn-reglamento">Descargar Reglamento
+                        <span class="fa fa-download"></span>
+                    </a>
 
-            <!--begin col-md-12-->
-            <div class="col-md-12">
-
-                <!--begin newsletter_form_wrapper -->
-                <div class="newsletter_form_wrapper">
-
-                    <!--begin newsletter_form_box -->
-                    <div class="newsletter_form_box">
-
-                        <!--begin success_box -->
-                        <p class="newsletter_success_box" style="display:none;">We received your message and you'll hear
-                            from us soon. Thank You!</p>
-                        <!--end success_box -->
-
-                        <!--begin newsletter-form -->
-                        <form id="newsletter-form" class="newsletter-form" action="php/newsletter.php" method="post">
-
-                            <input id="email_newsletter" type="email" name="nf_email" placeholder="Ingresar Email">
-
-                            <input type="submit" value="ENVIAR!" id="submit-button-newsletter">
-
-                        </form>
-                        <!--end newsletter-form -->
-
-                    </div>
-                    <!--end newsletter_form_box -->
-
+                    </a>
                 </div>
-                <!--end newsletter_form_wrapper -->
-
             </div>
-            <!--end col-md-12 -->
-
         </div>
         <!--end row -->
 
@@ -776,58 +832,56 @@
                 <div class="features_item">
 
                     <div class="dropcaps_right">
-                        <span class="fa fa-laptop features_icons"></span>
+                        <span class="fa fa-cutlery features_icons"></span>
                     </div>
 
                     <div class="text_align_right">
-                        <h4>Responsive Layout</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
-                            de etsum nisle lorem.</p>
+                        <h4>Horarios de alimentación</h4>
+                        <p>En la aplicación puedes tener acceso a todos los horarios de alimentación.</p>
                     </div>
 
                 </div>
+
+
                 <!--end features_item -->
 
                 <!--begin features_item -->
                 <div class="features_item">
 
                     <div class="dropcaps_right">
-                        <span class="fa fa-code features_icons"></span>
+                        <span class="fa fa-users features_icons"></span>
                     </div>
 
                     <div class="text_align_right">
-                        <h4>Clean Code</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
-                            de etsum nisle lorem.</p>
+                        <h4>Horarios de los workshop</h4>
+                        <p>Además acceso a los workshops que se estarán presentando.</p>
                     </div>
 
                 </div>
                 <!--end features_item -->
-
                 <!--begin features_item -->
                 <div class="features_item">
 
                     <div class="dropcaps_right">
-                        <span class="fa fa-camera-retro features_icons"></span>
+                        <span class="fa fa-bar-chart features_icons"></span>
                     </div>
 
                     <div class="text_align_right">
-                        <h4>Retina Ready</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
-                            de etsum nisle lorem.</p>
+                        <h4>Puntaje Obtenido</h4>
+                        <p>Puedes conocer el rendimiento que ha obtenido durante la competencia.</p>
                     </div>
 
                 </div>
                 <!--end features_item -->
+
 
             </div>
             <!--end col-md-4 -->
 
             <!--begin col-md-4 -->
-            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s"
-                style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
+            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
 
-                <img src="images/features-iphone.png" alt="picture" class="width-100">
+                <img src="images/features-iphone.png" alt="App Senasoft 2019" class="width-100">
 
             </div>
             <!--end col-md-4 -->
@@ -839,13 +893,12 @@
                 <div class="features_item">
 
                     <div class="dropcaps_left">
-                        <span class="fa fa-leaf features_icons"></span>
+                        <span class="fa fa-handshake-o features_icons"></span>
                     </div>
 
                     <div class="text_align_left">
-                        <h4>Modern Design</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
-                            de etsum nisle lorem.</p>
+                        <h4>Conocer a tu pareja</h4>
+                        <p>Acceder a la información de tu compañero de competencia para estar siempre comunicados.</p>
                     </div>
 
                 </div>
@@ -855,33 +908,31 @@
                 <div class="features_item">
 
                     <div class="dropcaps_left">
-                        <span class="fa fa-rocket features_icons"></span>
+                        <span class="fa fa-calendar-check-o features_icons"></span>
                     </div>
 
                     <div class="text_align_left">
-                        <h4>Premium Features</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
-                            de etsum nisle lorem.</p>
+                        <h4>Confirmar asistencia</h4>
+                        <p>Confirmar asistencia a los workshop y asi controlar la asistencia de los instructores.</p>
                     </div>
 
                 </div>
                 <!--end features_item -->
-
                 <!--begin features_item -->
                 <div class="features_item">
 
                     <div class="dropcaps_left">
-                        <span class="fa fa-comments features_icons"></span>
+                        <span class="fa fa-info-circle features_icons"></span>
                     </div>
 
                     <div class="text_align_left">
-                        <h4>24/7 Support</h4>
-                        <p>Quis autem velis etis netsum etims quis voluptate velit nihil est netsum et quam donecs netis
-                            de etsum nisle lorem.</p>
+                        <h4>Información a la mano</h4>
+                        <p>Esta y otras características permitirán que estés enterado de toda la competencia.</p>
                     </div>
 
                 </div>
                 <!--end features_item -->
+
 
             </div>
             <!--end col-md-4 -->
@@ -908,9 +959,7 @@
 
                 <h4>Ubicación del evento</h4>
 
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco"
-                    width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <!--<h5>Centro de Servicios y Gestión Empresarial</h5>
 
                 <p class="contact-info">
@@ -939,8 +988,7 @@
 
                             <h4 class="panel-title">
 
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <i class="icon icon-rocket panel-icon"></i> ¿Qué herramientas se van a utilizar en
                                     cada una de las categorías?
                                 </a>
@@ -949,8 +997,7 @@
 
                         </div>
 
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                            aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -970,8 +1017,7 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     <i class="icon icon-prize-award panel-icon"></i> ¿Cuántas personas se deben
                                     inscribir para cada una de las categorías?
                                 </a>
@@ -980,8 +1026,7 @@
 
                         </div>
 
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                            aria-labelledby="headingTwo">
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -1001,8 +1046,7 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     <i class="icon icon-present-gift panel-icon"></i> ¿Dónde podemos encontrar el
                                     cronograma del evento?
                                 </a>
@@ -1011,8 +1055,7 @@
 
                         </div>
 
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                            aria-labelledby="headingThree">
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -1032,8 +1075,7 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     <i class="icon icon-present-gift panel-icon"></i> ¿Cuál es la manera más fácil de
                                     llegar al centro de formación?
                                 </a>
@@ -1042,8 +1084,7 @@
 
                         </div>
 
-                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
-                            aria-labelledby="headingFour">
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
