@@ -739,7 +739,7 @@
         <div class="row">
 
             <div class="col-md-2">
-                <h4 class="our-partners-title">Apoyo<br><span>:</span></h4>
+                <h4 class="our-partners-title">Apoyo:</h4>
             </div>
 
             <div class="col-md-10">
@@ -748,15 +748,10 @@
                 <ul id="owl10" class="partners-mentions owl-carousel">
 
                     <li><img src="/logosempresas/fractal.png" alt="Fractal"></li>
-
-                    <li><img src="/logosempresas/gap.png" alt="GAP"></li>
-
-                    <li><img src="/logosempresas/castor.jpg" alt="Castor"></li>
-
                     <li><img src="/logosempresas/huellas.png" alt="Huellas"></li>
-
-                    <li><img src="/logosempresas/tyj.jpg" alt="Huellas"></li>
-
+                    <li><img src="/logosempresas/gap.png" alt="GAP"></li>
+                    <li><img src="/logosempresas/tyj.png" alt="T y J sas"></li>
+                    <li><img src="/logosempresas/castor.png" alt="Castor"></li>
                 </ul>
                 <!--end partners-mentions -->
 
