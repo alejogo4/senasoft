@@ -1127,13 +1127,13 @@
                 <ul class="footer_social">
 
                     <li>
-                        <a href="https://twitter.com/SENAComunica">
+                        <a href="https://twitter.com/SENAComunica" target="_blank">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
 
                     <li>
-                        <a href="https://www.facebook.com/SENAColombiaOficial/">
+                        <a href="https://www.facebook.com/SENAColombiaOficial/" target="_blank">
                             <i class="fa fa-facebook"></i>
                         </a>
                     </li>
