@@ -32,14 +32,14 @@
 @section('content')
 
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modal_recomendaciones" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content" >
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
-                <img src="/images/recomendaciones.png" alt="">
+                <img src="/images/recomendaciones.png" alt="Recomendaciones fotografía" width="100%">
             </div>
         </div>
     </div>
@@ -99,7 +99,7 @@
                                             Para la foto del aprendiz y del instructor se deben seguir las siguientes indicaciones
                                         </div>
                                         <div class="col-md-4">
-                                            <button type="button" class="section-lyla btn btn-formato btn-lg" data-toggle="modal" data-target="#myModal">
+                                            <button type="button" class="section-lyla btn btn-formato btn-lg" data-toggle="modal" data-target="#modal_recomendaciones">
                                                 Ver
                                             </button>
                                         </div>
