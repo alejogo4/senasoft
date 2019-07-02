@@ -1127,38 +1127,14 @@
                 <ul class="footer_social">
 
                     <li>
-                        <a href="#">
+                        <a href="https://twitter.com/SENAComunica">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </li>
 
                     <li>
-                        <a href="#">
-                            <i class="fa fa-pinterest"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/SENAColombiaOficial/">
                             <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-skype"></i>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-dribble"></i>
                         </a>
                     </li>
 
