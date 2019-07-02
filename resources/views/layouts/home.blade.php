@@ -77,10 +77,10 @@
 
             </div>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-                <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-                <li><a data-toggle="tab" href="#menu3">Menu 3</a></li>
-                <li><a data-toggle="tab" href="#menu4">Menu 4</a></li>
+                <li><a data-toggle="tab" href="#menu1">Martes</a></li>
+                <li><a data-toggle="tab" href="#menu2">Miercoles</a></li>
+                <li><a data-toggle="tab" href="#menu3">Jueves</a></li>
+                <li><a data-toggle="tab" href="#menu4">Viernes</a></li>
             </ul>
 
             <div class="tab-content">
