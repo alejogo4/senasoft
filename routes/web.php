@@ -15,21 +15,23 @@ Route::get('/', function () {
     return view('layouts.home');
 });
 
-
 Route::get("/validar/codigo/{codigo}", "RegistroController@validar_codigo");
 Route::get("/registro/resultados", "RegistroController@show");
 Route::resource('/registro', 'RegistroController');
 
-/*
-Route::get('/home', function () {
-    return view('layouts.home');
-});*/
-Route::resource('/proyecto', 'ProyectoController');
-Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
 Route::post('/proyecto/actualizarTabla','ProyectoController@update');
 Route::get('/proyecto-file/{file}',"ProyectoController@getProjectFile");
-
+Route::resource('/proyecto', 'ProyectoController');
 
 Auth::routes();
 
-Route::get('/dash', 'HomeController@index')->name('dashboard');
+Route::group(['middleware' => ['auth']], function () {
+
+    Route::get('/dash', 'HomeController@index')->name('dashboard');
+
+    Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
+
+    Route::get('/registros/listado', "RegistroController@listar_registros");
+});
+
+

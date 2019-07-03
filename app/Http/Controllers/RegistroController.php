@@ -15,7 +15,6 @@ class RegistroController extends Controller
 {
     public function validar_codigo($codigo)
     {
-
         if ($codigo != null) {
 
             $centro = Centro::select("tbl_centro.*", "tbl_regional.nombre_regional")
@@ -300,20 +299,8 @@ class RegistroController extends Controller
         return false;
     }
 
-    #endregion
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show()
-    {
-        $centro_id = session("id_centro");
-
-        
-
+    public function listar_registros(){
+        return view("app.registro.index");
     }
 
 }
