@@ -169,7 +169,7 @@
                         <div class="col-md-10">
                             <h4>Competencia Aprendices.</h4>
                             <p>Inicia la competencia; <b>Todos los instructores deben asistir a una conferencia en
-                                    auditorio.<b></p>
+                                    auditorio.</b></p>
                         </div>
                     </div>
 
