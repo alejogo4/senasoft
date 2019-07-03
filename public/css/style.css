@@ -896,7 +896,7 @@ ul#countdown li p.timeRefSeconds {
 
 .team-item:hover {
     margin-top: 25px;
-    border-bottom: 3px solid #9561d4;
+    border-bottom: 3px solid #066579;
     transition: all 1s;
 }
 
@@ -922,7 +922,7 @@ ul#countdown li p.timeRefSeconds {
 }
 
 .team-info::after {
-    background: #9561d4;
+    background: #066579;
     display: inline-block;
     vertical-align: middle;
     content: "";
@@ -1080,7 +1080,7 @@ ul.team-icon li a.dribble {
 
 .main-services:hover {
     margin-top: 25px;
-    border-bottom: 3px solid #9561d4;
+    border-bottom: 3px solid #066579;
     transition: all 1s;
 }
 
@@ -2087,7 +2087,7 @@ p.contact_success_box {
     height: 65px;
     background: #fff;
     border: none;
-    color: #9561d4;
+    color: #066579;
     display: inline;
     margin: 0 0 0 -5px;
     -moz-border-radius: 0 5px 5px 0;
@@ -2482,7 +2482,7 @@ a.btn-lyla:focus {
 
 .panel-group .panel-heading+.panel-collapse>.panel-body,
 .panel-group .panel-heading+.panel-collapse>.list-group {
-    border-top: 3px solid #9561d4;
+    border-top: 3px solid #066579;
 }
 
 
@@ -2786,4 +2786,8 @@ ul.partners-mentions li img:hover {
     bottom: 15px;
     left: 0px;
     right: 0px;
+}
+
+.team-item>p {
+    text-align: justify;
 }

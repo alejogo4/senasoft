@@ -938,8 +938,8 @@
                     </div>
 
                     <div class="text_align_right">
-                        <h4>Puntaje Obtenido</h4>
-                        <p>Puedes conocer el rendimiento que ha obtenido durante la competencia.</p>
+                        <h4>Conoce los proyectos ganadores</h4>
+                        <p>Puedes conocer los 20 proyectos ganadores.</p>
                     </div>
 
                 </div>
@@ -968,7 +968,7 @@
                     </div>
 
                     <div class="text_align_left">
-                        <h4>Conocer a tu pareja</h4>
+                        <h4>Conocer a tu equipo</h4>
                         <p>Acceder a la información de tu compañero de competencia para estar siempre comunicados.</p>
                     </div>
 
