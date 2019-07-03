@@ -2780,3 +2780,11 @@ ul.partners-mentions li img:hover {
     line-height: 20px;
     text-align: justify;
 }
+
+.content-category button,
+.owl-item button {
+    position: absolute;
+    bottom: 15px;
+    left: 0px;
+    right: 0px;
+}

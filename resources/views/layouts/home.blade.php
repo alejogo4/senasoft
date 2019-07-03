@@ -249,8 +249,7 @@
 
                 <h2 class="section-title white">Categorías de participación</h2>
 
-                <p class="section-subtitle white">There are many variations of passages of Lorem Ipsum available, but
-                    the majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+                <p class="section-subtitle white">Listado de categorías que con las que se estará compitiendo para Senasoft 2019.</p>
 
             </div>
             <!--end col md 12 -->
@@ -262,16 +261,16 @@
                 <div id="owl2" class="owl-carousel owl-theme">
 
                     <div>
-                        <img src="/images/categorias/algoritmos.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/algoritmos_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Algoritmos</h3>
                             <p>Plantear soluciones algorítmicas a diferentes situaciones planteadas y que aporten valor
                                 a la empresa. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
 
                     <div>
@@ -279,11 +278,12 @@
                         <div class="content-category">
                             <h3>Animación 3D</h3>
                             <p>Diseñar, modelar y animar un personaje con su escenario. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
+
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
 
                     <div>
@@ -292,11 +292,12 @@
                             <h3>Producción de Medios Audiovisuales Digitales</h3>
                             <p>Realizar una solución audiovisual, teniendo en cuenta las fases de producción y los
                                 requerimientos del cliente. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
+
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
 
                     <div>
@@ -304,85 +305,90 @@
                         <div class="content-category">
                             <h3>Bases de Datos</h3>
                             <p>Construir sentencias SQL a partir de un diseño de base de datos. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
+
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
 
                     <div>
-                        <img src="/images/categorias/ideatic.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/ideatic_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Ideatic</h3>
                             <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de
                                 cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy,
                                 Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
+
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
 
                     <div>
-                        <img src="/images/categorias/moviles.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/moviles_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Desarrollo de Aplicaciones <br> Móviles</h3>
+                            <h3>Desarrollo de <br> Aplicaciones Móviles</h3>
                             <p>Desarrollo de software para dispositivos móviles (APP) a través de tecnologías nativas o
                                 híbridas teniendo en cuenta la experiencia de usuario (UX/UI). </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
+
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
                     <div>
-                        <img src="/images/categorias/multimedia.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/multimedia_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Producción de Multimedia</h3>
+                            <h3>Producción de <br>Multimedia</h3>
                             <p>Diseñar e implementar soluciones de comunicación visual e interactiva. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
+
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
                     <div>
-                        <img src="/images/categorias/redes.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/redes_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Redes y Mantenimiento</h3>
+                            <h3>Redes<br> y Mantenimiento</h3>
                             <p>Video, voz, datos y Tv, Redes Convergentes, todo en una infraestructura de Hardware y
                                 Software que ofrece servicios, aplicaciones y utilidades con el propósito de brindar
                                 seguridad, integridad y disponibilidad. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
                     <div>
-                        <img src="/images/categorias/videojuegos.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/videojuegos_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Videojuegos</h3>
                             <p>Desarrollar la lógica y mecánicas de un videojuego. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
                     <div>
-                        <img src="/images/categorias/web.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/web_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Desarrollo Web</h3>
                             <p>Desarrollar aplicaciones web funcionales, de acuerdo con necesidades del sector
                                 productivo. </p>
-                            <button class="section-lyla btn btn-formato">
-                                Lineamientos
-                                <span class="fa fa-download"></span>
-                            </button>
+
                         </div>
+                        <button class="section-lyla btn btn-formato">
+                            Lineamientos
+                            <span class="fa fa-download"></span>
+                        </button>
                     </div>
                 </div>
                 <!--end owl carousel -->
@@ -422,8 +428,7 @@
 
                     <h2 class="section-title">Historial Senasoft 2019</h2>
 
-                    <p class="section-subtitle">There are many variations of passages of Lorem Ipsum available, but the
-                        majority<br>have suffered alteration, by injected humour, or new randomised words.</p>
+                    <p class="section-subtitle">Desde 2008 inicio Senasoft en la ciudad de Medellín, hoy tenemos un histórico <br>del evento que se ha realizado por mas de 10 años.</p>
 
                 </div>
                 <!--end col-md-12 -->
@@ -447,15 +452,6 @@
                                 doscientos (200) aprendices de Software de 18 regionales del SENA</p>
 
                             <ul class="team-icon">
-
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -485,15 +481,6 @@
                             </p>
 
                             <ul class="team-icon">
-
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -521,15 +508,6 @@
                                 .Net, Desarrollo de Aplicaciones Móviles, Multimedia y Animación 3D.</p>
 
                             <ul class="team-icon">
-
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -562,15 +540,6 @@
                                 Medios Audiovisuales.</p>
 
                             <ul class="team-icon">
-
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -605,15 +574,6 @@
                             </p>
 
                             <ul class="team-icon">
-
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -644,15 +604,6 @@
                                 Operativos, Sistemas Operativos de Red y Proyectos Ágiles con SCRUM.</p>
 
                             <ul class="team-icon">
-
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -688,14 +639,6 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -727,14 +670,6 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -763,15 +698,6 @@
                                 red.</p>
 
                             <ul class="team-icon">
-
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
                             </ul>
 
                         </div>
@@ -938,8 +864,7 @@
             <!--end col-md-4 -->
 
             <!--begin col-md-4 -->
-            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s"
-                style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
+            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
 
                 <img src="images/features-iphone.png" alt="App Senasoft 2019" class="width-100">
 
@@ -1019,9 +944,7 @@
 
                 <h4>Ubicación del evento</h4>
 
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco"
-                    width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <!--<h5>Centro de Servicios y Gestión Empresarial</h5>
 
                 <p class="contact-info">
@@ -1050,8 +973,7 @@
 
                             <h4 class="panel-title">
 
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <i class="icon icon-rocket panel-icon"></i> ¿Qué herramientas se van a utilizar en
                                     cada una de las categorías?
                                 </a>
@@ -1060,8 +982,7 @@
 
                         </div>
 
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-                            aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -1081,8 +1002,7 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     <i class="icon icon-prize-award panel-icon"></i> ¿Cuántas personas se deben
                                     inscribir para cada una de las categorías?
                                 </a>
@@ -1091,8 +1011,7 @@
 
                         </div>
 
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-                            aria-labelledby="headingTwo">
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -1112,8 +1031,7 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     <i class="icon icon-present-gift panel-icon"></i> ¿Dónde podemos encontrar el
                                     cronograma del evento?
                                 </a>
@@ -1122,8 +1040,7 @@
 
                         </div>
 
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-                            aria-labelledby="headingThree">
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -1143,8 +1060,7 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
-                                    href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     <i class="icon icon-present-gift panel-icon"></i> ¿Cuál es la manera más fácil de
                                     llegar al centro de formación?
                                 </a>
@@ -1153,8 +1069,7 @@
 
                         </div>
 
-                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
-                            aria-labelledby="headingFour">
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
