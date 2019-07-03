@@ -26,7 +26,7 @@
 <section class="home-section" id="home">
 
     <div class="home-section-overlay">
-        <video id="bg_video" title="Centro de servicios y gestión empresarial" autoplay="true" muted="muted">
+        <video id="bg_video" title="Centro de servicios y gestión empresarial" autoplay="true" loop muted="muted">
             <source src="{{asset('files/videos/metas 2018.mp4')}}" type="video/mp4">
         </video>
     </div>
@@ -41,7 +41,8 @@
             <div class="col-md-10 col-md-offset-1 text-center">
                 <img src="images/logo_sena.png" alt="Logo SENA" class="logo-sena">
                 <h1>SENASOFT 2019 | MEDELLÍN</h1>
-                <p class="parrafo">En Medellín estamos preparando el evento SenaSoft 2019, el mayor encuentro tecnológico organizado por
+                <p class="parrafo">En Medellín estamos preparando el evento SenaSoft 2019, el mayor encuentro
+                    tecnológico organizado por
                     el SENA </p>
 
                 @yield('countdown',View::make('layouts.components.countdown'))
@@ -84,7 +85,7 @@
             </ul>
 
             <div class="tab-content">
-        
+
                 <div id="menu1" class="tab-pane fade in active">
                     <h3>Menu 1</h3>
                     <div class="row schedule-item justify-content-center">
@@ -218,11 +219,13 @@
                 </div>
                 <div id="menu3" class="tab-pane fade">
                     <h3>Menu 3</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                        explicabo.</p>
                 </div>
                 <div id="menu4" class="tab-pane fade">
                     <h3>Menu 3</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                        explicabo.</p>
                 </div>
             </div>
             <!--end col-md-12 -->
@@ -259,10 +262,11 @@
                 <div id="owl2" class="owl-carousel owl-theme">
 
                     <div>
-                        <img src="images/categorias/algoritmos.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/algoritmos.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Algoritmos</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <p>Plantear soluciones algorítmicas a diferentes situaciones planteadas y que aporten valor
+                                a la empresa. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -271,10 +275,10 @@
                     </div>
 
                     <div>
-                        <img src="images/categorias/animacion3d.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/animacion3d.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Animación 3D</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <p>Diseñar, modelar y animar un personaje con su escenario. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -283,10 +287,11 @@
                     </div>
 
                     <div>
-                        <img src="images/categorias/audiovisuales.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/audiovisuales.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Audiovisuales</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <h3>Producción de Medios Audiovisuales Digitales</h3>
+                            <p>Realizar una solución audiovisual, teniendo en cuenta las fases de producción y los
+                                requerimientos del cliente. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -295,10 +300,10 @@
                     </div>
 
                     <div>
-                        <img src="images/categorias/basesdedatos.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/basesdedatos.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Bases de datos</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <h3>Bases de Datos</h3>
+                            <p>Construir sentencias SQL a partir de un diseño de base de datos. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -307,10 +312,12 @@
                     </div>
 
                     <div>
-                        <img src="images/categorias/ideatic.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/ideatic.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Ideatic</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de
+                                cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy,
+                                Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -319,10 +326,11 @@
                     </div>
 
                     <div>
-                        <img src="images/categorias/moviles.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/moviles.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Móviles</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <h3>Desarrollo de Aplicaciones <br> Móviles</h3>
+                            <p>Desarrollo de software para dispositivos móviles (APP) a través de tecnologías nativas o
+                                híbridas teniendo en cuenta la experiencia de usuario (UX/UI). </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -330,10 +338,10 @@
                         </div>
                     </div>
                     <div>
-                        <img src="images/categorias/multimedia.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/multimedia.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Multimedia</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <h3>Producción de Multimedia</h3>
+                            <p>Diseñar e implementar soluciones de comunicación visual e interactiva. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -341,10 +349,12 @@
                         </div>
                     </div>
                     <div>
-                        <img src="images/categorias/redes.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/redes.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Redes</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <h3>Redes y Mantenimiento</h3>
+                            <p>Video, voz, datos y Tv, Redes Convergentes, todo en una infraestructura de Hardware y
+                                Software que ofrece servicios, aplicaciones y utilidades con el propósito de brindar
+                                seguridad, integridad y disponibilidad. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -352,10 +362,10 @@
                         </div>
                     </div>
                     <div>
-                        <img src="images/categorias/videojuegos.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/videojuegos.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Videojuegos</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <p>Desarrollar la lógica y mecánicas de un videojuego. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -363,10 +373,11 @@
                         </div>
                     </div>
                     <div>
-                        <img src="images/categorias/web.png" alt="showcase" class="gallery-show">
+                        <img src="/images/categorias/web.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
-                            <h3>Web</h3>
-                            <p>Con el objetivo de promover el trabajo en equipo y fomentar las capacidades de cooperación, creatividad e innovación, requeridas por los entornos laborales de hoy, Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
+                            <h3>Desarrollo Web</h3>
+                            <p>Desarrollar aplicaciones web funcionales, de acuerdo con necesidades del sector
+                                productivo. </p>
                             <button class="section-lyla btn btn-formato">
                                 Lineamientos
                                 <span class="fa fa-download"></span>
@@ -417,305 +428,357 @@
                 </div>
                 <!--end col-md-12 -->
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
+                <div class="row">
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                    <div class="team-item">
+                        <div class="team-item">
 
-                        <img src="/logosenasoft/2008.jpg" class="team-img" alt="pic">
+                            <img src="/logosenasoft/2008.jpg" class="team-img" alt="pic">
 
-                        <h3>2008</h3>
+                            <h3>2008</h3>
 
-                        <div class="team-info">
-                            <p>MEDELLÍN</p>
+                            <div class="team-info">
+                                <p>MEDELLÍN</p>
+                            </div>
+
+                            <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de
+                                Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron
+                                doscientos (200) aprendices de Software de 18 regionales del SENA</p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de
-                            Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron
-                            doscientos (200) aprendices de Software de 18 regionales del SENA</p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
+                    <!--end team-item -->
 
-                </div>
-                <!--end team-item -->
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
+                        <div class="team-item">
 
-                    <div class="team-item">
+                            <img src="/logosenasoft/2009.jpg" class="team-img" alt="pic">
 
-                        <img src="/logosenasoft/2009.jpg" class="team-img" alt="pic">
+                            <h3>2009</h3>
 
-                        <h3>2009</h3>
+                            <div class="team-info">
+                                <p>CAUCA</p>
+                            </div>
 
-                        <div class="team-info">
-                            <p>CAUCA</p>
+                            <p>Entre el 1 y 3 de julio 2009, siendo esta la segunda versión, tuvo como sede a la ciudad
+                                de Popayán en el departamento del Cauca.
+                                En Senasoft cauca se congregaron cerca de 60 instructores y 400 aprendices de 30
+                                regionales a nivel país, lo cual hizo notar el interés que ha despertado este evento de
+                                desarrollo de software en el SENA acrecentando el desarrollo de esta estructura en la
+                                institución.
+                            </p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Graduating with a degree in Spanish, English and French, Alexandra has always loved writing.
-                        </p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
+                    <!--end team-item -->
 
-                </div>
-                <!--end team-item -->
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
+                        <div class="team-item">
 
-                    <div class="team-item">
+                            <img src="/logosenasoft/2010.jpg" class="team-img" alt="pic">
 
-                        <img src="/logosenasoft/2010.jpg" class="team-img" alt="pic">
+                            <h3>2010</h3>
 
-                        <h3>2010</h3>
+                            <div class="team-info">
+                                <p>MEDELLÍN</p>
+                            </div>
 
-                        <div class="team-info">
-                            <p>MEDELLÍN</p>
+                            <p>El 12 y 13 de Octubre de 2010, se llevó a cabo la tercera versión de Senasoft. Para dicha
+                                versión, se contó con la participación de 520 aprendices, quienes compitieron en las
+                                categorías de Algoritmia, Análisis y Diseño Orientado a Objetos, Bases de Datos, PHP,
+                                Java,
+                                .Net, Desarrollo de Aplicaciones Móviles, Multimedia y Animación 3D.</p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Andres fell in love with marketing at the university and looks forward to being part of this
-                            industry for many years.</p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
-
+                    <!--end team-item -->
                 </div>
-                <!--end team-item -->
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
 
-                    <div class="team-item">
+                <div class="row">
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                        <img src="/logosenasoft/2013.jpg" class="team-img" alt="pic">
+                        <div class="team-item">
 
-                        <h3>2013</h3>
+                            <img src="/logosenasoft/2013.jpg" class="team-img" alt="pic">
 
-                        <div class="team-info">
-                            <p>CAUCA</p>
+                            <h3>2013</h3>
+
+                            <div class="team-info">
+                                <p>CAUCA</p>
+                            </div>
+
+                            <p>Para la cuarta versión de Senasoft Cauca la cual se llevó a cabo del 21 al 24 de Octubre,
+                                asistieron 650 aprendices de 31 regionales, quienes participaron en las categorías de:
+                                Análisis y Diseño Orientado a Objetos, Bases de Datos (SQL - Oracle), Desarrollo de
+                                Aplicaciones en Java Web, Desarrollo de Aplicaciones en C# .Net, Desarrollo de
+                                Aplicaciones con PHP, Desarrollo de Aplicaciones Móviles con Android, Proyecto
+                                Multimedial, Animación 3D, Desarrollo de Videojuegos, Redes de Datos y Producción de
+                                Medios Audiovisuales.</p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de
-                            Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron
-                            doscientos (200) aprendices de Software de 18 regionales del SENA</p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
+                    <!--end team-item -->
 
-                </div>
-                <!--end team-item -->
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
+                        <div class="team-item">
 
-                    <div class="team-item">
+                            <img src="/logosenasoft/2014.jpg" class="team-img" alt="pic">
 
-                        <img src="/logosenasoft/2014.jpg" class="team-img" alt="pic">
+                            <h3>2014</h3>
 
-                        <h3>2014</h3>
+                            <div class="team-info">
+                                <p>HUILA</p>
+                            </div>
 
-                        <div class="team-info">
-                            <p>HUILA</p>
+                            <p>Durante los días 14, 15, 16 y 17 de octubre del 2014 se desarrolló en la capital del
+                                Huila el
+                                evento Nacional “SenaSoft” el cual contó con la participación de expertos en tecnología
+                                e
+                                información de Argentina, Japón, Chile, México y Colombia; De esta manera 1.000
+                                integrantes del Sena de todo el país pertenecientes a las 32 regionales de esta
+                                institución
+                                se concentraron en Neiva para el intercambio de conocimientos. Así mismo 772
+                                aprendices concursaron en 14 categorías en específico como Diseño Orientado a Objetos,
+                                Animación 3D, Aplicaciones Móviles, Producción de Multimedia y Videojuegos, entre
+                                otras.
+                            </p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Graduating with a degree in Spanish, English and French, Alexandra has always loved writing.
-                        </p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
+                    <!--end team-item -->
 
-                </div>
-                <!--end team-item -->
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
+                        <div class="team-item">
 
-                    <div class="team-item">
+                            <img src="/logosenasoft/2015.JPG" class="team-img" alt="pic">
 
-                        <img src="/logosenasoft/2015.JPG" class="team-img" alt="pic">
+                            <h3>2015</h3>
 
-                        <h3>2015</h3>
+                            <div class="team-info">
+                                <p>SANTANDER</p>
+                            </div>
 
-                        <div class="team-info">
-                            <p>SANTANDER</p>
+                            <p>Del 23 al 26 de noviembre se dieron cita 1500 personas, entre aprendices, instructores,
+                                expertos, empresarios y público en general, para participar de Senasoft. En esa
+                                oportunidad, los aprendices participaron en las siguientes categorías: Algoritmia,
+                                Diseño
+                                Orientado a Objetos, Bases de Datos, Java Web, Aplicaciones .Net, Aplicaciones Web PHP,
+                                Aplicaciones Móviles con Android, Producción de Multimedia, Videojuegos, Animación 3D,
+                                Producción de Medios Audiovisuales, Redes de Datos, Instalación y Hardening de Sistemas
+                                Operativos, Sistemas Operativos de Red y Proyectos Ágiles con SCRUM.</p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Andres fell in love with marketing at the university and looks forward to being part of this
-                            industry for many years.</p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
+                    <!--end team-item -->
 
                 </div>
-                <!--end team-item -->
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
 
-                    <div class="team-item">
+                <div class="row">
 
-                        <img src="/logosenasoft/2016.jpg" class="team-img" alt="pic">
 
-                        <h3>2016</h3>
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                        <div class="team-info">
-                            <p>QUINDIO</p>
+                        <div class="team-item">
+
+                            <img src="/logosenasoft/2016.jpg" class="team-img" alt="pic">
+
+                            <h3>2016</h3>
+
+                            <div class="team-info">
+                                <p>QUINDIO</p>
+                            </div>
+
+                            <p>En la ciudad de Armenia del 24 al 28 de Octubre, se reunieron 400 aprendices de todo el
+                                país para participar en las categorías de Algoritmia, Animación 3D, Aplicaciones Móviles
+                                Android, Aplicaciones Web PHP, Aplicaciones .Net, Bases de Datos, Diseño Orientado a
+                                Objetos, Instalación y Hardening de Sistemas Operativos, Java Web, Producción de Medios
+                                Audiovisuales, Producción de Multimedia, Proyectos Ágiles con Scrum, Redes de Datos,
+                                Sistemas Operativos de Red y Videojuegos.</p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de
-                            Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron
-                            doscientos (200) aprendices de Software de 18 regionales del SENA</p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
+                    <!--end team-item -->
 
-                </div>
-                <!--end team-item -->
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
+                        <div class="team-item">
 
-                    <div class="team-item">
+                            <img src="/logosenasoft/2017.jpg" class="team-img" alt="pic">
 
-                        <img src="/logosenasoft/2017.jpg" class="team-img" alt="pic">
+                            <h3>2017</h3>
 
-                        <h3>2017</h3>
+                            <div class="team-info">
+                                <p>VALLE</p>
+                            </div>
 
-                        <div class="team-info">
-                            <p>VALLE</p>
+                            <p>Entre el 24 y el 28 de julio se llevó a cabo en la ciudad de Cartago, la octava versión
+                                de
+                                Senasoft. En dicha oportunidad, los aprendices participaron en las categorías de:
+                                Algoritmia, Animación 3D, Aplicaciones. Net, Aplicaciones Móviles Android, Aplicaciones
+                                WEB con PHP y SCRUM, Base de Datos, Instalación y Hardening de Sistemas Operativos,
+                                Producción de Medios Audiovisuales, Producción de Multimedia, Redes de Datos,
+                                Videojuegos, Video Maping y Emprendimiento Digital.
+                            </p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Graduating with a degree in Spanish, English and French, Alexandra has always loved writing.
-                        </p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
+                    <!--end team-item -->
 
-                </div>
-                <!--end team-item -->
+                    <!--begin team-item -->
+                    <div class="col-sm-12 col-md-4">
 
-                <!--begin team-item -->
-                <div class="col-sm-12 col-md-4">
+                        <div class="team-item">
 
-                    <div class="team-item">
+                            <img src="/logosenasoft/2018.jpg" class="team-img" alt="pic">
 
-                        <img src="/logosenasoft/2018.jpg" class="team-img" alt="pic">
+                            <h3>2018</h3>
 
-                        <h3>2018</h3>
+                            <div class="team-info">
+                                <p>ATLÁNTICO</p>
+                            </div>
 
-                        <div class="team-info">
-                            <p>ATLÁNTICO</p>
+                            <p>Durante los días 19 y 20 de septiembre, se realizó en la ciudad de Barranquilla la novena
+                                versión de Senasoft. 406 jóvenes de 28 departamentos de Colombia midieron su talento
+                                y conocimiento en las categorías de animación 3D, videojuegos, producción de medios
+                                audiovisuales, producción de multimedia, redes de datos, desarrollo de aplicaciones
+                                móviles y web, emprendimiento digital, algoritmia y hardening de sistemas operativos de
+                                red.</p>
+
+                            <ul class="team-icon">
+
+                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+
+                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
+
+                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+
+                            </ul>
+
                         </div>
 
-                        <p>Andres fell in love with marketing at the university and looks forward to being part of this
-                            industry for many years.</p>
-
-                        <ul class="team-icon">
-
-                            <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
-
-                            <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                            <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                            <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
-
-                        </ul>
-
                     </div>
-
+                    <!--end team-item -->
                 </div>
-                <!--end team-item -->
 
             </div>
             <!--end row-->
@@ -783,7 +846,8 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <a href="{{asset('files/Reglamento SENASOFT 2019.docx')}}}" class="btn btn-reglamento">Descargar Reglamento
+                    <a href="{{asset('files/Reglamento SENASOFT 2019.docx')}}}" class="btn btn-reglamento">Descargar
+                        Reglamento
                         <span class="fa fa-download"></span>
                     </a>
 
@@ -874,7 +938,8 @@
             <!--end col-md-4 -->
 
             <!--begin col-md-4 -->
-            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
+            <div class="col-md-4 wow slideInUp" data-wow-delay="0.5s"
+                style="visibility: visible; animation-delay: 0.5s; animation-name: bounceIn;">
 
                 <img src="images/features-iphone.png" alt="App Senasoft 2019" class="width-100">
 
@@ -954,7 +1019,9 @@
 
                 <h4>Ubicación del evento</h4>
 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco" width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15864.255925231375!2d-75.5746813!3d6.2553016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6687d0d29c14ce12!2sCentro+De+Servicios+y+Gesti%C3%B3n+Empresarial+Sede+Administrativa!5e0!3m2!1ses!2sco!4v1557771437403!5m2!1ses!2sco"
+                    width="80%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
                 <!--<h5>Centro de Servicios y Gestión Empresarial</h5>
 
                 <p class="contact-info">
@@ -983,7 +1050,8 @@
 
                             <h4 class="panel-title">
 
-                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
                                     <i class="icon icon-rocket panel-icon"></i> ¿Qué herramientas se van a utilizar en
                                     cada una de las categorías?
                                 </a>
@@ -992,7 +1060,8 @@
 
                         </div>
 
-                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                            aria-labelledby="headingOne">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -1012,7 +1081,8 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     <i class="icon icon-prize-award panel-icon"></i> ¿Cuántas personas se deben
                                     inscribir para cada una de las categorías?
                                 </a>
@@ -1021,7 +1091,8 @@
 
                         </div>
 
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingTwo">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -1041,7 +1112,8 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     <i class="icon icon-present-gift panel-icon"></i> ¿Dónde podemos encontrar el
                                     cronograma del evento?
                                 </a>
@@ -1050,7 +1122,8 @@
 
                         </div>
 
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingThree">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
@@ -1070,7 +1143,8 @@
 
                             <h4 class="panel-title">
 
-                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     <i class="icon icon-present-gift panel-icon"></i> ¿Cuál es la manera más fácil de
                                     llegar al centro de formación?
                                 </a>
@@ -1079,7 +1153,8 @@
 
                         </div>
 
-                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingFour">
 
                             <div class="panel-body">
                                 <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
