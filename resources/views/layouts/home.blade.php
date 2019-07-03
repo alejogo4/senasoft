@@ -71,7 +71,7 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center">
 
-                <h2 class="section-title">Itinerario del evento</h2>
+                <h2 class="section-title">Cronograma del evento</h2>
 
                 <p class="section-subtitle">El cronograma del evento estará sujeto a modificaciones, este es un
                     cronograma inicial de las participación Senasoft 2019</p>
@@ -842,7 +842,7 @@
 
 
 <!--begin newsletter section -->
-<section class="section-lyla-shape" id="newsletter-section">
+<section class="section-lyla-shape" id="reglamento">
 
     <!--begin container -->
     <div class="container">
