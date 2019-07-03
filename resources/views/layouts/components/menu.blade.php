@@ -18,9 +18,10 @@
     <ul class="nav navbar-nav navbar-right">
 
         <li><a href="#home">Inicio</a></li>
-        <li><a href="#schedule">Senasoft 2019</a></li>
+        <li><a href="#schedule">Cronograma</a></li>
         <li><a href="#category">Categorias</a></li>
         <li><a href="#history">Histórico</a></li>
+        <li><a href="#reglamento">Reglamento</a></li>
         <li><a href="#app">App</a></li>
         <li><a href="#pqr">PQR</a></li>
         <li class="dropdown">

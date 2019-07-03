@@ -71,7 +71,7 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center">
 
-                <h2 class="section-title">Itinerario del evento</h2>
+                <h2 class="section-title">Cronograma del evento</h2>
 
                 <p class="section-subtitle">El cronograma del evento estará sujeto a modificaciones, este es un
                     cronograma inicial de las participación Senasoft 2019</p>
@@ -842,7 +842,7 @@
 
 
 <!--begin newsletter section -->
-<section class="section-lyla-shape" id="newsletter-section">
+<section class="section-lyla-shape" id="reglamento">
 
     <!--begin container -->
     <div class="container">
@@ -938,8 +938,8 @@
                     </div>
 
                     <div class="text_align_right">
-                        <h4>Puntaje Obtenido</h4>
-                        <p>Puedes conocer el rendimiento que ha obtenido durante la competencia.</p>
+                        <h4>Conoce los proyectos ganadores</h4>
+                        <p>Puedes conocer los 20 proyectos ganadores.</p>
                     </div>
 
                 </div>
@@ -968,7 +968,7 @@
                     </div>
 
                     <div class="text_align_left">
-                        <h4>Conocer a tu pareja</h4>
+                        <h4>Conocer a tu equipo</h4>
                         <p>Acceder a la información de tu compañero de competencia para estar siempre comunicados.</p>
                     </div>
 
