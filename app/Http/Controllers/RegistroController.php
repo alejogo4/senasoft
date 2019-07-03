@@ -94,36 +94,38 @@ class RegistroController extends Controller
                     'eps' => $input["eps"],
                     'arl' => $input["arl"],
                     'tipo_contrato' => $input["tipo_contrato"],
+                    'programa_formacion' => $input["programa_formacion"],
                     'ciudad' => $input["ciudad"],
-                    'ciudad_desplazamiento_aereo' => $input["ciudad_desplazamiento"],
+                    'ciudad_desplazamiento_aereo' => $input["aeropuerto_desplazamiento"],
                     'tipo_alimentacion' => $input["tipo_alimentacion"],
                     'alergias' => $input["alergias"],
                     'enfermedades' => $input["enfermedades"],
                     'medicamento_consume' => $input["medicamentos"],
                     'tipo_persona' => 1,
-                    'centro_id' => $centro_id,
-                    'tour' => isset($input["tour"]) ? true : false,
+                    'centro_id' => $centro_id
                 ]);
 
                 $c_aprendices = 0;
+
                 foreach ($datos_guardar as $value) {
+
                     if ($this->validar_cupo($value[0])) {
                         
                         if ($this->guardar_aprendiz($value)) {
 
-                            $archivo_doc = array_value(array_filter($documentos, function(){
+                            $archivo_doc = array_values(array_filter($documentos, function($item) use ($value){
                                 return $item->getClientOriginalName() == $value[2] . "_doc.pdf";
                             }));
 
-                            $archivo_eps = array_value(array_filter($eps, function(){
+                            $archivo_eps = array_values(array_filter($eps, function($item) use ($value){
                                 return $item->getClientOriginalName() == $value[2] . "_eps.pdf";
                             }));
 
-                            $archivo_cert = array_value(array_filter($certificados, function(){
+                            $archivo_cert = array_values(array_filter($certificados, function($item) use ($value){
                                 return $item->getClientOriginalName() == $value[2] . "_cert.pdf";
                             }));
 
-                            $archivo_fotos = array_value(array_filter($fotos, function(){
+                            $archivo_fotos = array_values(array_filter($fotos, function($item) use ($value){
                                 return $item->getClientOriginalName() == $value[2] . "_foto.jpg";
                             }));
 
@@ -133,32 +135,33 @@ class RegistroController extends Controller
                             $this->guardar_archivo($archivo_fotos[0], "fotos");
 
                             $centro_id = session("id_centro");
-                            $categoria_id = Categoria::where("nombre_categoria", $categoria)->first();
+                            $categoria_id = Categoria::where("nombre_categoria", $value[0])->first();
                     
                             $cupo = Cupo::where("centro_id", $centro_id)
                                 ->where("categoria_id", $categoria_id->id)
                                 ->first();
                             
-                            $cupo->update("n_cupos_disponibles", $cupo->n_Cupos_disponibles-=1);
+                            $cupo->update(["n_cupos_utilizados" => $cupo->n_cupos_utilizados-=1]);
 
                             $c_aprendices++;
-                            
+
                         }else{
-                            throw new Exception('Los datos de los aprendices en el excel no se encuentra completos.');
+                            throw new \Exception('Los datos de los aprendices en el excel no se encuentra completos.');
                         }
                     }
                 }
 
                 if ($c_aprendices == 0) {
-                    throw new Exception('No se registraron los aprendices');
+                    throw new \Exception('No se registraron los aprendices');
                 }
 
                 $c = Centro::find($centro_id);
                 $c->update(["estado_registros"=>1]);
 
+                DB::commit();
+
                 return response()->json(["ok"=>true, "mensaje"=>"El registro se realizo de manera correcta"]);
 
-                DB::commit();
             } catch (\Exception $e) {
                 DB::rollBack();
                 return response()->json(["ok" => false, "mensaje" => $e->getMessage()]);
@@ -194,11 +197,9 @@ class RegistroController extends Controller
         !empty($datos[11]) &&
         !empty($datos[12]) &&
         !empty($datos[13]) &&
-        !empty($datos[14]) &&
-        !empty($datos[15]) &&
-        !empty($datos[16]) &&
-        !empty($datos[20])){
-            Personal::create([
+        !empty($datos[14])){
+
+            Persona::create([
                 'tipo_documento' => $datos[1],
                 'documento' => $datos[2],
                 'nombres' => $datos[3],
@@ -210,22 +211,20 @@ class RegistroController extends Controller
                 'telefono' => $datos[8],
                 'otro_telefono' => $datos[9],
                 'ciudad' => $datos[10],
-                'ciudad_desplazamiento_aereo' => $datos[11],
-                'ficha' => $datos[12],
-                'rh' => $datos[13],
-                'eps' => $datos[14],
-                'talla_camisa' => $datos[15],
-                'tipo_alimentacion' => $datos[16],
-                'enfermedades' => $datos[17],
-                'alergias' => $datos[18],
-                'medicamento_consume' => $datos[19],
+                'ficha' => $datos[11],
+                'rh' => $datos[12],
+                'eps' => $datos[13],
+                'talla_camisa' => $datos[14],
+                'tipo_alimentacion' => $datos[15],
+                'enfermedades' => $datos[16],
+                'alergias' => $datos[17],
+                'medicamento_consume' => $datos[18],
                 'arhivo_documento' => $datos[2]."_doc.pdf",
                 'arhivo_certificado_eps' => $datos[2]."_eps.pdf",
                 'arhivo_constancia_estudio' => $datos[2]."_cert.pdf",
                 'categoria_id' => $categoria_id->id,
                 'centro_id' => $centro_id,
-                'tipo_persona' => 2,
-                'tour' => $datos[20] == "Si"  ? true : false,
+                'tipo_persona' => 2
             ]);
             return true;
         }else{

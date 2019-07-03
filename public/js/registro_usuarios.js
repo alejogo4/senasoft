@@ -5,8 +5,8 @@ var dropZoneFoto = null;
 
 function loading(){
 Swal.fire({
-  title: 'Registrando',
-  timer: 5000,
+  title: 'Registrando...',
+  timer: 10000,
   onBeforeOpen: () => {
     Swal.showLoading()
   }
@@ -89,8 +89,6 @@ Swal.fire({
             return form.valid();
         },
         onFinished: function (event, currentIndex) {
-
-
             guardar();
         },
         onStepChanged: function (event, currentIndex, priorIndex) {
@@ -162,12 +160,22 @@ $(function () {
         $("#ciudad").empty();
         $("#ciudad").append("<option value=''>Seleccione</option>");
 
-        $("#ciudad_desplazamiento").empty();
-        $("#ciudad_desplazamiento").append("<option value=''>Seleccione</option>");
-
         e.forEach(v => {
             $("#ciudad").append(`<option value='${v.Departamento+"-"+v.Ciudad}'>${v.Departamento+"-"+v.Ciudad}</option>`);
-            $("#ciudad_desplazamiento").append(`<option value='${v.Departamento+"-"+v.Ciudad}'>${v.Departamento+"-"+v.Ciudad}</option>`);
+        })
+    })
+
+
+    $.ajax({
+        url: "/aeropuertos.json",
+        dataType: 'json'
+    }).done(e => {
+        $("#aeropuerto_desplazamiento").empty();
+        $("#aeropuerto_desplazamiento").append("<option value='No Aplica'>No Aplica</option>");
+
+        e.forEach(v => {
+            let valor = v.nombre.toUpperCase()+"-"+v.departamento.toUpperCase();
+            $("#aeropuerto_desplazamiento").append(`<option value='${valor}'>${valor}</option>`);
         })
     })
 })
@@ -187,6 +195,7 @@ function guardar() {
     let foto = dropZoneFoto.getAcceptedFiles();
 
     if (eps.length > 0 && documentos.length > 0 && certificado.length > 0 && foto.length > 0) {
+        loading();
 
         let form = $("#form").serializeArray();
 

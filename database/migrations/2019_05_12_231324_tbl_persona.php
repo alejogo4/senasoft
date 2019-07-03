@@ -18,7 +18,7 @@ class TblPersona extends Migration
             
             $table->bigIncrements('id');
             $table->char('documento', 20)->nullable();
-            $table->char('tipo_documento', 10)->nullable();
+            $table->char('tipo_documento', 60)->nullable();
             $table->char('nombres', 100)->nullable();
             $table->char('apellidos', 100)->nullable();
             $table->char('fecha_nacimiento', 100)->nullable();

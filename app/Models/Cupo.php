@@ -8,5 +8,7 @@ class Cupo extends Model
 {
     public $table = "tbl_cupo";
 
-    protected $timestamps = false;
+    protected $fillable = ['n_cupos_utilizados'];
+
+    public $timestamps = false;
 }

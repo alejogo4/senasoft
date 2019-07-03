@@ -207,7 +207,7 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <label for="text" class="form-label">Programa de Formación que Orienta <b class="text-danger">*</b></label>
+                                    <label for="text" class="form-label">Programa de Formación que Imparte <b class="text-danger">*</b></label>
                                     <select name="programa_formacion" id="programa_formacion" required>
                                         <option value="">Seleccione</option>
                                         <option value="TG. EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN">TG. EN
@@ -229,9 +229,9 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="text" class="form-label">Ciudad de Origen Desplazamiento Aéreo <b class="text-danger">*</b></label>
-                                    <select name="ciudad_desplazamiento" id="ciudad_desplazamiento" required>
-                                        <option value="">Seleccione</option>
+                                    <label for="text" class="form-label">Aeropuerto de Origen <b class="text-danger">*</b></label>
+                                    <select name="aeropuerto_desplazamiento" id="aeropuerto_desplazamiento" required>
+                                        <option value="No Aplica">No Aplica</option>
                                     </select>
                                 </div>
                             </div>
@@ -307,7 +307,7 @@
                             </div>
 
 
-                            <div class="row">
+                            <!-- <div class="row">
                                 <div class="col-md-12 text-center">
                                     <h4 for="">Desea participar en el tour por la ciudad de Medellín el 12 de Septiembre de 8pm a 11pm.
                                         <br>
@@ -319,7 +319,7 @@
 
 
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </fieldset>

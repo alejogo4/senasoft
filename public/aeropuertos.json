@@ -1,0 +1,354 @@
+﻿[
+    {
+        "nombre": "Aeropuerto Internacional El Edén",
+        "departamento": "Quindío"
+    },
+    {
+        "nombre": "Aeropuerto Internacional Ernesto Cortissoz",
+        "departamento": "Atlántico"
+    },
+    {
+        "nombre": "Aeropuerto Internacional El Dorado",
+        "departamento": "Distrito Capital"
+    },
+    {
+        "nombre": "Aeropuerto Internacional Palonegro",
+        "departamento": "Santander"
+    },
+    {
+        "nombre": "Aeropuerto Internacional Alfonso Bonilla Aragón",
+        "departamento": "Valle del Cauca"
+    },
+    {
+        "nombre": "Aeropuerto Internacional Rafael Núñez",
+        "departamento": "Bolívar"
+    },
+    {
+        "nombre": "Aeropuerto Internacional José María Córdova",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto Internacional Matecaña",
+        "departamento": "Risaralda"
+    },
+    {
+        "nombre": "Aeropuerto Internacional Gustavo Rojas Pinilla",
+        "departamento": "San Andrés y Providencia"
+    },
+    {
+        "nombre": "Aeropuerto Internacional Simón Bolívar",
+        "departamento": "Magdalena"
+    },
+    {
+        "nombre": "Aeropuerto Antonio Roldán Betancourt",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto Santiago Pérez Quiroz",
+        "departamento": "Arauca"
+    },
+    {
+        "nombre": "Aeropuerto José Celestino Mutis",
+        "departamento": "Chocó"
+    },
+    {
+        "nombre": "Aeropuerto Yariguíes",
+        "departamento": "Santander"
+    },
+    {
+        "nombre": "Aeropuerto Guaymaral",
+        "departamento": "Distrito Capital"
+    },
+    {
+        "nombre": "Aeropuerto Juan H. White",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto Camilo Daza",
+        "departamento": "Norte de Santander"
+    },
+    {
+        "nombre": "Aeropuerto Gustavo Artunduaga",
+        "departamento": "Caquetá"
+    },
+    {
+        "nombre": "Aeropuerto Juan Casiano",
+        "departamento": "Cauca"
+    },
+    {
+        "nombre": "Aeropuerto Perales",
+        "departamento": "Tolima"
+    },
+    {
+        "nombre": "Aeropuerto San Luis",
+        "departamento": "Nariño"
+    },
+    {
+        "nombre": "Aeropuerto Alfredo Vázquez Cobo",
+        "departamento": "Amazonas"
+    },
+    {
+        "nombre": "Aeropuerto Javier Noreña Valencia",
+        "departamento": "Meta"
+    },
+    {
+        "nombre": "Aeropuerto La Nubia",
+        "departamento": "Caldas"
+    },
+    {
+        "nombre": "Aeropuerto Enrique Olaya Herrera",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto los Garzones",
+        "departamento": "Córdoba"
+    },
+    {
+        "nombre": "Aeropuerto de Villagarzón",
+        "departamento": "Putumayo"
+    },
+    {
+        "nombre": "Aeropuerto Jorge Isaacs",
+        "departamento": "La Guajira"
+    },
+    {
+        "nombre": "Aeropuerto Fabio Alberto León Bentley",
+        "departamento": "Vaupés"
+    },
+    {
+        "nombre": "Aeropuerto Benito Salas",
+        "departamento": "Huila"
+    },
+    {
+        "nombre": "Aeropuerto Reyes Murillo",
+        "departamento": "Chocó"
+    },
+    {
+        "nombre": "Aeropuerto Antonio Nariño",
+        "departamento": "Nariño"
+    },
+    {
+        "nombre": "Aeropuerto Contador",
+        "departamento": "Huila"
+    },
+    {
+        "nombre": "Aeropuerto Guillermo León Valencia",
+        "departamento": "Cauca"
+    },
+    {
+        "nombre": "Aeropuerto El Embrujo",
+        "departamento": "San Andrés y Providencia"
+    },
+    {
+        "nombre": "Aeropuerto Tres de Mayo",
+        "departamento": "Putumayo"
+    },
+    {
+        "nombre": "Aeropuerto Morelia",
+        "departamento": "Meta"
+    },
+    {
+        "nombre": "Aeropuerto César Gaviria Trujillo",
+        "departamento": "Guainía"
+    },
+    {
+        "nombre": "Aeropuerto Caucaya",
+        "departamento": "Putumayo"
+    },
+    {
+        "nombre": "Aeropuerto Germán Olano",
+        "departamento": "Vichada"
+    },
+    {
+        "nombre": "Aeropuerto El Caraño",
+        "departamento": "Chocó"
+    },
+    {
+        "nombre": "Aeropuerto Almirante Padilla",
+        "departamento": "La Guajira"
+    },
+    {
+        "nombre": "Aeropuerto Jorge Enrique González",
+        "departamento": "Guaviare"
+    },
+    {
+        "nombre": "Aeropuerto Los Colonizadores",
+        "departamento": "Arauca"
+    },
+    {
+        "nombre": "Aeropuerto Las Brujas",
+        "departamento": "Sucre"
+    },
+    {
+        "nombre": "Aeropuerto La Florida",
+        "departamento": "Nariño"
+    },
+    {
+        "nombre": "Aeropuerto Puerto Bolívar",
+        "departamento": "La Guajira"
+    },
+    {
+        "nombre": "Aeropuerto Alfonso López Pumarejo",
+        "departamento": "Cesar"
+    },
+    {
+        "nombre": "Aeropuerto Vanguardia",
+        "departamento": "Meta"
+    },
+    {
+        "nombre": "Aeropuerto El Alcaraván",
+        "departamento": "Casanare"
+    },
+    {
+        "nombre": "Aeropuerto Alcides Fernández",
+        "departamento": "Chocó"
+    },
+    {
+        "nombre": "Aeropuerto Gerardo Tobar López",
+        "departamento": "Valle del Cauca"
+    },
+    {
+        "nombre": "Aeropuerto Santa Ana",
+        "departamento": "Valle del Cauca"
+    },
+    {
+        "nombre": "Aeropuerto Narcisa Navas",
+        "departamento": "Chocó"
+    },
+    {
+        "nombre": "Aeropuerto Mandinga",
+        "departamento": "Chocó"
+    },
+    {
+        "nombre": "Aeropuerto Cumaribo",
+        "departamento": "Vichada"
+    },
+    {
+        "nombre": "Aeropuerto El Tomin",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto Santiago Vila",
+        "departamento": "Cundinamarca/Tolima"
+    },
+    {
+        "nombre": "Aeropuerto de La Chorrera",
+        "departamento": "Amazonas"
+    },
+    {
+        "nombre": "Aeropuerto El Pindo",
+        "departamento": "Córdoba"
+    },
+    {
+        "nombre": "Aeropuerto Aguas Claras",
+        "departamento": "Norte de Santander"
+    },
+    {
+        "nombre": "Aeropuerto de Otú",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto Eduardo Falla Solano",
+        "departamento": "Caquetá"
+    },
+    {
+        "nombre": "Aeropuerto Alberto Lleras Camargo",
+        "departamento": "Boyacá"
+    },
+    {
+        "nombre": "Aeropuerto de Araracuara",
+        "departamento": "Caquetá"
+    },
+    {
+        "nombre": "Aeropuerto Gabriel Vargas Santos",
+        "departamento": "Arauca"
+    },
+    {
+        "nombre": "Aeropuerto Golfo de Morrosquillo",
+        "departamento": "Sucre"
+    },
+    {
+        "nombre": "Aeropuerto Heriberto Gil Martínez",
+        "departamento": "Valle del Cauca"
+    },
+    {
+        "nombre": "Aeropuerto Juan José Rondón",
+        "departamento": "Boyacá"
+    },
+    {
+        "nombre": "Aeropuerto Hacaritama",
+        "departamento": "Cesar"
+    },
+    {
+        "nombre": "Aeropuerto de Juanchaco",
+        "departamento": "Valle del Cauca"
+    },
+    {
+        "nombre": "Aeropuerto Jaime Ortís Betancur",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto Cravo Norte",
+        "departamento": "Arauca"
+    },
+    {
+        "nombre": "Aeropuerto El Charco",
+        "departamento": "Nariño"
+    },
+    {
+        "nombre": "Aeropuerto Guillermo Gaviria Correa",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto Baracoa",
+        "departamento": "Bolívar"
+    },
+    {
+        "nombre": "Aeropuerto La Majayura",
+        "departamento": "La Guajira"
+    },
+    {
+        "nombre": "Aeropuerto José Celestino Mútis",
+        "departamento": "Tolima"
+    },
+    {
+        "nombre": "Aeropuerto de Necoclí",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto de Pizarro",
+        "departamento": "Chocó"
+    },
+    {
+        "nombre": "Aeropuerto de Puerto Rico",
+        "departamento": "Caquetá"
+    },
+    {
+        "nombre": "Aeropuerto El Triunfo",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto Los Pozos",
+        "departamento": "Santander"
+    },
+    {
+        "nombre": "Aeropuerto San Pedro de Urabá",
+        "departamento": "Antioquia"
+    },
+    {
+        "nombre": "Aeropuerto La Arrobleda",
+        "departamento": "Cauca"
+    },
+    {
+        "nombre": "Aeropuerto Gustavo Rojas Pinilla de Tunja",
+        "departamento": "Boyacá"
+    },
+    {
+        "nombre": "Aeropuerto de Timbiquí",
+        "departamento": "Cauca"
+    },
+    {
+        "nombre": "Aeropuerto Gonzalo Mejía",
+        "departamento": "Antioquia"
+    }
+]
