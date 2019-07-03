@@ -78,18 +78,18 @@
 
             </div>
             <ul class="nav nav-tabs">
-                <li><a data-toggle="tab" href="#menu1">Martes</a></li>
-                <li><a data-toggle="tab" href="#menu2">Miercoles</a></li>
-                <li><a data-toggle="tab" href="#menu3">Jueves</a></li>
-                <li><a data-toggle="tab" href="#menu4">Viernes</a></li>
+                <li class="col-md-3 col-sm-12 col-xs-12"><a data-toggle="tab" href="#menu1">Martes</a></li>
+                <li class="col-md-3 col-sm-12 col-xs-12"><a data-toggle="tab" href="#menu2">Miércoles</a></li>
+                <li class="col-md-3 col-sm-12 col-xs-12"><a data-toggle="tab" href="#menu3">Jueves</a></li>
+                <li class="col-md-3 col-sm-12 col-xs-12"><a data-toggle="tab" href="#menu4">Viernes</a></li>
             </ul>
 
             <div class="tab-content">
 
                 <div id="menu1" class="tab-pane fade in active">
-                    <h3>Menu 1</h3>
+                    <h3>Martes</h3>
                     <div class="row schedule-item justify-content-center">
-                        <div class="col-md-2"><time>06:00 AM</time></div>
+                        <div class="col-md-2"><time>06:00 AM - 02:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Llegada a Medellín.</h4>
                             <p>Traslado a los hoteles desde el aeropuerto o terminal.</p>
@@ -99,21 +99,21 @@
                         </div>
                     </div>
                     <div class="row schedule-item justify-content-center">
-                        <div class="col-md-2"><time>12:00 AM</time></div>
+                        <div class="col-md-2"><time>12:00 AM - 02:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Registro en el hotel.</h4>
                             <p>Se realiza el registro de todos los integrantes.</p>
                         </div>
                     </div>
                     <div class="row schedule-item justify-content-center">
-                        <div class="col-md-2"><time>02:00 PM</time></div>
+                        <div class="col-md-2"><time>02:00 PM - 03:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Traslado desde el hotel a lugar del evento.</h4>
                             <p>Quienes lleguen despues de las 2.00 p.m. al aeropuerto, llegan al lugar del evento.</p>
                         </div>
                     </div>
                     <div class="row schedule-item justify-content-center">
-                        <div class="col-md-2"><time>03:00 PM</time></div>
+                        <div class="col-md-2"><time>03:00 PM - 06:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Registro en el evento y entrega de equipos.</h4>
                             <p>Se reciben todos los equipos que desean registrar.</p>
@@ -121,21 +121,21 @@
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>06:00 PM</time></div>
+                        <div class="col-md-2"><time>06:00 PM - 07:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Inaguración al evento</h4>
                             <p>Se realiza la inaguración de SenaSoft 2019 - Medellín</p>
                         </div>
                     </div>
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>07:00 PM</time></div>
+                        <div class="col-md-2"><time>07:00 PM - 08:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Traslado y cena.</h4>
                             <p>Se regresa al lugar de hospedaje para tomar la cena.</p>
                         </div>
                     </div>
                     <div class="row schedule-item justify-content-center">
-                        <div class="col-md-2"><time>08:00 PM</time></div>
+                        <div class="col-md-2"><time>08:00 PM - 10:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Registro en el evento y entrega de equipos segunda parte.</h4>
                             <p>Se reciben todos los equipos que desean registrar.</p>
@@ -143,9 +143,9 @@
                     </div>
                 </div>
                 <div id="menu2" class="tab-pane fade">
-                    <h3>Menu 2</h3>
+                    <h3>Miércoles</h3>
                     <div class="row schedule-item justify-content-center">
-                        <div class="col-md-2"><time>06:00 AM</time></div>
+                        <div class="col-md-2"><time>06:00 AM - 07:00 AM</time></div>
                         <div class="col-md-10">
                             <h4>Traslado desde el hotel a lugar del evento.</h4>
                             <p>Quienes lleguen despues de las 2.00 p.m. al aeropuerto, llegan al lugar del evento.</p>
@@ -153,7 +153,7 @@
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>07:00 AM</time></div>
+                        <div class="col-md-2"><time>07:00 AM - 09:00 AM</time></div>
                         <div class="col-md-10">
                             <h4>Charla para aprendices e instructores.</h4>
                             <p>Se realiza una charla introductoria en general para todos.</p>
@@ -166,23 +166,31 @@
                         </div>
                     </div>
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>09:00 AM</time></div>
+                        <div class="col-md-2"><time>09:00 AM - 01:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Competencia Aprendices.</h4>
                             <p>Inicia la competencia; <b>Todos los instructores deben asistir a una conferencia en
-                                    auditorio.<b></p>
+                                    auditorio.</b></p>
                         </div>
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>12:00 PM</time></div>
+                        <div class="col-md-2"><time>01:00 PM - 02:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Almuerzo</h4>
                         </div>
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>02:00 PM</time></div>
+                        <div class="col-md-2"><time>02:00 PM - 06:00 PM</time></div>
+                        <div class="col-md-10">
+                            <h4>Competencia Aprendices.</h4>
+                            <p>Segunda Fase</p>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>02:00 PM - 04:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Workshops para los instructores.</h4>
                             <div class="speaker">
@@ -197,11 +205,10 @@
                                 <img src="images/speaker4.jpg" alt="Jack Christiansen">
                             </div>
                             <p>Workshop Contenidos Digitales - Ambiente #3.</p>
-
                         </div>
                     </div>
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>04:00 PM</time></div>
+                        <div class="col-md-2"><time>04:00 PM - 06:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Reunión de Instructores por área.</h4>
                             <p>Software - Ambiente #1.</p>
@@ -218,14 +225,93 @@
                     </div>
                 </div>
                 <div id="menu3" class="tab-pane fade">
-                    <h3>Menu 3</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                        explicabo.</p>
+                    <h3>Jueves</h3>
+                    <div class="row schedule-item justify-content-center">
+                        <div class="col-md-2"><time>07:00 AM - 08:00 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Llegada a la arena</h4>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>08:00 AM - 12:00 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Competencia Aprendices.</h4>
+                            <p>Tercera Fase</p>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>08:00 AM - 12:00 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Certificaciones: Autodesk, Adobe, Microsoft.</h4>
+                            <p>(ambiente #1, ambiente #2 y ambiente #3)</p>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>12:00 AM - 01:00 PM</time></div>
+                        <div class="col-md-10">
+                            <h4>Almuerzo</h4>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>01:00 PM - 04:00 PM</time></div>
+                        <div class="col-md-10">
+                            <h4>Pitch</h4>
+                            <p>Cuarta Fase de la competencia</p>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>04:00 PM - 06:00 PM</time></div>
+                        <div class="col-md-10">
+                            <h4>Entrega de equipos</h4>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>06:00 PM - 08:00 PM</time></div>
+                        <div class="col-md-10">
+                            <h4>Traslado a hoteles y cena.</h4>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>08:00 PM - 11:00 PM</time></div>
+                        <div class="col-md-10">
+                            <h4>Tour Medellín</h4>
+                            <p>Solo para quienes confirmen en el registro</p>
+                        </div>
+                    </div>
                 </div>
                 <div id="menu4" class="tab-pane fade">
-                    <h3>Menu 3</h3>
-                    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                        explicabo.</p>
+                    <h3>Viernes</h3>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>08:00 AM - 10:00 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Transporte de hotel a lugar del evento</h4>
+                            <p>salen con todo: equipaje y equipos</p>
+                        </div>
+                    </div>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>10:00 AM - 12:00 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Clausura</h4>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>12:00 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Regreso a ciudades de origen.</h4>
+                            <p></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--end col-md-12 -->
@@ -448,13 +534,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -486,13 +568,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -522,13 +600,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -563,13 +637,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -606,13 +676,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -645,13 +711,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -688,13 +750,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -727,13 +785,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -764,13 +818,9 @@
 
                             <ul class="team-icon">
 
-                                <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="pinterest"><i class="fa fa-youtube"></i></a></li>
 
-                                <li><a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a></li>
-
-                                <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
-
-                                <li><a href="#" class="dribble"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#" class="facebook"><i class="fa fa-photo"></i></a></li>
 
                             </ul>
 
@@ -815,6 +865,8 @@
                     <li><img src="/logosempresas/gap.png" alt="GAP"></li>
                     <li><img src="/logosempresas/tyj.png" alt="T y J sas"></li>
                     <li><img src="/logosempresas/castor.png" alt="Castor"></li>
+                    <li><img src="/logosempresas/globant.png" alt="Globant"></li>
+                    
                 </ul>
                 <!--end partners-mentions -->
 
