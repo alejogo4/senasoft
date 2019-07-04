@@ -55,24 +55,30 @@
             console.log('onDraw()');
         },
         onSuccess: function(data, textStatus, jqXHR) {
-            console.log('onSuccess(data, textStatus, jqXHR)');
-            console.log(data);
-            console.log(textStatus);
-            console.log(jqXHR);
+
+            Swal.fire({
+                title: 'Muy Bien',
+                text: "Puntaje actualizado con éxito",
+                type: 'success',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+            })
+
         },
         onFail: function(jqXHR, textStatus, errorThrown) {
-            console.log('onFail(jqXHR, textStatus, errorThrown)');
-            console.log(jqXHR);
-            console.log(textStatus);
-            console.log(errorThrown);
+            Swal.hideLoading();
+            Swal.fire({
+                title: 'Espera',
+                text: "Ocurrió un error inesperado, intenta más tarde. En caso de persistir el error contacta al administrador del sitio",
+                type: 'error',
+            })
         },
         onAlways: function() {
-            console.log('onAlways()');
+
         },
         onAjax: function(action, serialize) {
-            console.log('onAjax(action, serialize)');
-            console.log(action);
-            console.log(serialize);
+
         }
     });
 

@@ -77,7 +77,7 @@ $(window).on('load', function() {
     /* ========================================================== */
 
     $("#countdown").countdown({
-            date: "25 july 2019 12:00:00",
+            date: "10 september 2019 08:00:00",
             format: "on"
         },
 

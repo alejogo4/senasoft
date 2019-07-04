@@ -110,12 +110,37 @@ function guardar() {
             contentType: false,
             processData: false,
             method: 'POST',
-            success: data => {
-                console.log(data);
-                if (data.ok) {
-                    location.href = "/";
-                }
+
+        }).done((respuesta) => {
+            Swal.hideLoading();
+            if (respuesta.ok) {
+                Swal.fire({
+                    title: 'Felicidades',
+                    text: respuesta.mensaje,
+                    type: 'success',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.value) {
+                        location.href = "/";
+                    }
+                })
+            } else {
+
+                Swal.fire({
+                    title: 'Espera',
+                    text: "Estamos procesando la solicitud",
+                    type: 'warning',
+                })
             }
+        }).fail((error) => {
+            Swal.hideLoading();
+            Swal.fire({
+                title: 'Espera',
+                text: "Ocurrió un error inesperado, intenta más tarde. En caso de persistir el error contacta al administrador del sitio",
+                type: 'error',
+            })
         });
 
     }

@@ -53,10 +53,6 @@ class ProyectoController extends Controller
 
     public function index_admin(){
         
-       
-        //$proyectos = Proyecto::all();
-        
-        //$proyectos =  Centro::all()->join('tbl_proyecto', 'tbl_centro.id', '=', 'tbl_proyecto.centro_id');
 
         $proyectos = Proyecto::with(['Centro'])->get();
         return view("web.proyecto.list", array(
@@ -111,7 +107,7 @@ class ProyectoController extends Controller
         $c = Centro::find($centro_id);
         $c->update(["estado_proyectos"=>1]);
 
-        return response()->json(["ok"=>true]);
+        return response()->json(["mensaje"=>"El proyecto se ha cargado con éxito.",'ok'=>true]);
     }
 
     public function validateForm(Request $request){

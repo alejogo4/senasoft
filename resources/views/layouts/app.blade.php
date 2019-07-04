@@ -27,6 +27,7 @@
         <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+        
     </head>
     <body id="page-top">
         <!-- Begin Preloader -->
@@ -240,7 +241,7 @@
         <script src="{{asset('admin/vendors/js/base/jquery.min.js')}}"></script>
         <script src="{{asset('admin/vendors/js/base/core.min.js')}}"></script>
         <script src="{{asset('admin/vendors/js/tabledit/jquery.tabledit.min.js')}}"></script>
-        
+        <script src="{{asset('js/sweetalert2@8.js')}}"></script>
         <!-- End Vendor Js -->
         <!-- Begin Page Vendor Js -->
         <script src="{{asset('admin/vendors/js/nicescroll/nicescroll.min.js')}}"></script>
