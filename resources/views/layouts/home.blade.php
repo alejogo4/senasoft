@@ -1006,8 +1006,8 @@
                             <h4 class="panel-title">
 
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <i class="icon icon-rocket panel-icon"></i> ¿Qué herramientas se van a utilizar en
-                                    cada una de las categorías?
+                                    <i class="icon icon-rocket panel-icon"></i>
+                                    ¿Todos los computadores del equipo participante deben tener el mismo software y especificaciones técnicas?
                                 </a>
 
                             </h4>
@@ -1017,9 +1017,7 @@
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 
                             <div class="panel-body">
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
-                                    magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis
-                                    reprehenderit ets quis velit.</p>
+                                <p>SI, estás especificaciones se encuentran establecidas en la ficha técnica de la categoría.</p>
                             </div>
 
                         </div>
@@ -1035,8 +1033,8 @@
                             <h4 class="panel-title">
 
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <i class="icon icon-prize-award panel-icon"></i> ¿Cuántas personas se deben
-                                    inscribir para cada una de las categorías?
+                                    <i class="icon icon-prize-award panel-icon"></i>
+                                    ¿En la categoría puede participar un aprendiz en etapa productiva?
                                 </a>
 
                             </h4>
@@ -1046,9 +1044,7 @@
                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 
                             <div class="panel-body">
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
-                                    magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis
-                                    reprehenderit ets quis velit.</p>
+                                <p>NO, solo participan aprendices en etapa lectiva.</p>
                             </div>
 
                         </div>
@@ -1064,8 +1060,8 @@
                             <h4 class="panel-title">
 
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <i class="icon icon-present-gift panel-icon"></i> ¿Dónde podemos encontrar el
-                                    cronograma del evento?
+                                    <i class="icon icon-present-gift panel-icon"></i>
+                                      ¿Previo al evento, se podrá conocer la conformación de los equipos participantes?
                                 </a>
 
                             </h4>
@@ -1075,9 +1071,7 @@
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 
                             <div class="panel-body">
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
-                                    magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis
-                                    reprehenderit ets quis velit.</p>
+                                <p>SI, una vez conformados, posterior al cierre de las inscripciones. Se darán a conocer los datos de los participantes y la conformación de los equipos.</p>
                             </div>
 
                         </div>
@@ -1093,8 +1087,8 @@
                             <h4 class="panel-title">
 
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    <i class="icon icon-present-gift panel-icon"></i> ¿Cuál es la manera más fácil de
-                                    llegar al centro de formación?
+                                    <i class="icon icon-present-gift panel-icon"></i>
+                                    ¿Un aprendiz de media técnica puede participar?
                                 </a>
 
                             </h4>
@@ -1104,9 +1098,7 @@
                         <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
 
                             <div class="panel-body">
-                                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur netsum loris fugit, sed quia
-                                    magni dolores eos qui ratione sequi nesciunt, neque et quis autem velis
-                                    reprehenderit ets quis velit.</p>
+                                <p>NO. Solo participan aprendices de los programas de tecnólogo.</p>
                             </div>
 
                         </div>

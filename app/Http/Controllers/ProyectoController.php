@@ -28,10 +28,12 @@ class ProyectoController extends Controller
     {
         //
         
-        if(session("codigo") == null){
+        $centro = $this->ObtenerDatosCentroPersona();
+
+        if(session("codigo") == null || $centro == null){
             return redirect("/");
         }
-        $centro = $this->ObtenerDatosCentroPersona();
+        
 
 
 
