@@ -91,12 +91,12 @@
                             <h4>Llegada a Medellín.</h4>
                             <p>Traslado a los hoteles desde el aeropuerto o terminal.</p>
                             <p>10:00 a.m primer transporte.</p>
-                            <p>12:00 a.m segundo transporte.</p>
+                            <p>12:00 m segundo transporte.</p>
                             <p>2:00 p.m tercer transporte.</p>
                         </div>
                     </div>
                     <div class="row schedule-item justify-content-center">
-                        <div class="col-md-2"><time>12:00 AM - 02:00 PM</time></div>
+                        <div class="col-md-2"><time>12:00 M - 02:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Registro en el hotel.</h4>
                             <p>Se realiza el registro de todos los integrantes.</p>
@@ -232,7 +232,7 @@
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>08:00 AM - 12:00 AM</time></div>
+                        <div class="col-md-2"><time>08:00 AM - 12:00 M</time></div>
                         <div class="col-md-10">
                             <h4>Competencia Aprendices.</h4>
                             <p>Tercera Fase</p>
@@ -240,7 +240,7 @@
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>08:00 AM - 12:00 AM</time></div>
+                        <div class="col-md-2"><time>08:00 AM - 12:00 M</time></div>
                         <div class="col-md-10">
                             <h4>Certificaciones: Autodesk, Adobe, Microsoft.</h4>
                             <p>(ambiente #1, ambiente #2 y ambiente #3)</p>
@@ -248,7 +248,7 @@
                     </div>
 
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>12:00 AM - 01:00 PM</time></div>
+                        <div class="col-md-2"><time>12:00 M - 01:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Almuerzo</h4>
                         </div>
@@ -303,7 +303,7 @@
                         </div>
                     </div>
                     <div class="row schedule-item">
-                        <div class="col-md-2"><time>12:00 AM</time></div>
+                        <div class="col-md-2"><time>12:00 M</time></div>
                         <div class="col-md-10">
                             <h4>Regreso a ciudades de origen.</h4>
                             <p></p>
@@ -428,7 +428,7 @@
                         <img src="/images/categorias/multimedia_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Producción de <br>Multimedia</h3>
-                            <p>Diseñar e implementar soluciones de comunicación visual e interactiva. </p>
+                            <p>Desarrollar productos innovadores en términos de diseño gráfico, desarrollo de aplicaciones web y experiencias audiovisuales. </p>
 
                         </div>
                         <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Multimedia.pdf')}}" target="_blank" class="section-lyla btn btn-formato">

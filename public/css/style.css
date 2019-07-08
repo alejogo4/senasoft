@@ -2783,7 +2783,7 @@ ul.partners-mentions li img:hover {
 .content-category a,
 .owl-item a {
     position: absolute;
-    bottom: 15px;
+    bottom: 10px;
     left: 0px;
     right: 0px;
 }
