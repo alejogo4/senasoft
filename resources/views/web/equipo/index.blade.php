@@ -32,6 +32,21 @@
 
 @section('content')
 
+
+<!-- Modal -->
+<div class="modal fade" id="modal_recomen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content" >
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <img src="/images/instructivo_equipos.JPG" alt="Recomendaciones Instructivo" width="100%">
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--begin header -->
 <header class="header">
 
@@ -82,7 +97,7 @@
                                             Para el cargue del registro de equipos el instructor se debera seguir las siguientes indicaciones
                                         </div>
                                         <div class="col-md-4">
-                                            <button type="button" class="section-lyla btn btn-formato btn-lg" data-toggle="modal" data-target="#modal_recomendaciones">
+                                            <button type="button" class="section-lyla btn btn-formato btn-lg" data-toggle="modal" data-target="#modal_recomen">
                                                 Ver
                                             </button>
                                         </div>
