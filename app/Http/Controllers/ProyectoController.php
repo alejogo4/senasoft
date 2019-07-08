@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 use App\Models\Centro;
 use App\Models\Proyecto;
+
 use Symfony\Component\HttpFoundation\Response;
 
 class ProyectoController extends Controller
@@ -22,33 +23,31 @@ class ProyectoController extends Controller
 
     }
 
-    public function validar_codigo($codigo){
-
-        if($codigo != null){
-
-            $centro = Centro::where("codigo", $codigo)
-            ->join("tbl_regional", "tbl_centro.regional_id", "=", "tbl_regional.id")
-            ->first();
-
-            if($centro != null){
-                session(["codigo" => $codigo, "centro"=>$centro->nombre_centro, "regional"=>$centro->nombre_regional]);
-                return response()->json(["ok"=>true]);
-            }else{
-                return response()->json(["ok"=>false, "mensaje"=>"El código no existe en los registros"]);
-            }
-
-        }else{
-            return response()->json(["ok"=>false, "mensaje"=>"Debes ingresar un código"]);
-        }
-    }
-
+    
     public function index()
     {
         //
+        
         if(session("codigo") == null){
             return redirect("/");
         }
-        return view("web.proyecto.index");
+        $centro = $this->ObtenerDatosCentroPersona();
+
+
+
+        return view("web.proyecto.index", array(
+            "persona_centro"=>$centro
+        ));
+
+        
+    }
+
+    public function ObtenerDatosCentroPersona(){
+        $centro = Centro::where("codigo", session('codigo'))
+        ->join("tbl_persona", "tbl_centro.id", "=", "tbl_persona.centro_id")
+        ->first();
+
+        return $centro;
     }
 
     public function index_admin(){
@@ -79,17 +78,12 @@ class ProyectoController extends Controller
      */
     public function store(Request $request)
     {
-        
         //Crear la validacion del código
         $this->validateForm($request);
         
         $centro_id = session("id_centro");
         
         $Proyecto = new Proyecto();
-        $Proyecto->nombres = $request->get('nombre');
-        $Proyecto->apellidos = $request->get('apellido');
-        $Proyecto->correo = $request->get('correo');
-        $Proyecto->telefono = $request->get('telefono');
         $Proyecto->centro_id = $centro_id;
         $file = $request->file('proyecto_file');
         if($file){

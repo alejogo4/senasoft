@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('layouts.home');
-});
+})->name('index');
 
 Route::get("/validar/codigo/{codigo}", "RegistroController@validar_codigo");
 Route::get("/registro/resultados", "RegistroController@show");

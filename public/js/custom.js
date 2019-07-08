@@ -232,6 +232,7 @@ $(".registro").on("click", function() {
 
 
 function confirmar_codigo(url) {
+
     Swal.fire({
         title: 'Ingresa el código',
         input: 'text',
@@ -242,12 +243,12 @@ function confirmar_codigo(url) {
         confirmButtonText: 'Validar',
         showLoaderOnConfirm: true,
         preConfirm: (codigo) => {
-            return fetch(`/validar/codigo/${codigo}`)
+            return fetch(`/validar/codigo/${codigo}?url=${url}`)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error(response.statusText)
                     }
-                    return response.json()
+                    return response.json();
                 }).then(result => {
                     console.log(result);
                     if (result) {

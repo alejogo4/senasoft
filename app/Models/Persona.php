@@ -8,6 +8,7 @@ class Persona extends Model
 {
     public $table = "tbl_persona";
 
+
     protected $fillable = ['documento',
         'tipo_documento',
         'nombres',

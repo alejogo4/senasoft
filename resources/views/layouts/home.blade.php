@@ -145,7 +145,7 @@
                         <div class="col-md-2"><time>06:00 AM - 07:00 AM</time></div>
                         <div class="col-md-10">
                             <h4>Traslado desde el hotel al lugar del evento.</h4>
-                           
+
                         </div>
                     </div>
 
@@ -553,7 +553,7 @@
                                 <p>CAUCA</p>
                             </div>
 
-                            <p>Entre el 1 y 3 de julio de 2009, la segunda versión de Senasoft tuvo como sede a la ciudad de Popayán. Se congregaron cerca de 60 instructores y 400 aprendices de 30 regionales a nivel país, lo cual hizo notar el interés que ha despertado este evento de desarrollo de software en el SENA.  Los aprendices participaron en las categorías de algoritmos, Bases de Datos en SQL, PHP, .Net y Java.
+                            <p>Entre el 1 y 3 de julio de 2009, la segunda versión de Senasoft tuvo como sede a la ciudad de Popayán. Se congregaron cerca de 60 instructores y 400 aprendices de 30 regionales a nivel país, lo cual hizo notar el interés que ha despertado este evento de desarrollo de software en el SENA. Los aprendices participaron en las categorías de algoritmos, Bases de Datos en SQL, PHP, .Net y Java.
                             </p>
 
                             <ul class="team-icon">
@@ -626,7 +626,7 @@
                                 <p>HUILA</p>
                             </div>
 
-                            <p>Durante los días 14 al 17 de octubre del 2014 se desarrolló Senasoft en la capital del Huila, el cual contó con la participación de expertos en tecnología e información; de esta manera 772 aprendices de todo el país pertenecientes a  32 regionales, se concentraron en Neiva para el intercambio de conocimientos, concursando en 14 categorías como Diseño Orientado a Objetos, Animación 3D, Aplicaciones Móviles, Producción de Multimedia y Videojuegos, entre otras.
+                            <p>Durante los días 14 al 17 de octubre del 2014 se desarrolló Senasoft en la capital del Huila, el cual contó con la participación de expertos en tecnología e información; de esta manera 772 aprendices de todo el país pertenecientes a 32 regionales, se concentraron en Neiva para el intercambio de conocimientos, concursando en 14 categorías como Diseño Orientado a Objetos, Animación 3D, Aplicaciones Móviles, Producción de Multimedia y Videojuegos, entre otras.
                             </p>
 
                             <ul class="team-icon">
@@ -773,7 +773,7 @@
                     <li><img src="/logosempresas/tyj.png" alt="T y J sas"></li>
                     <li><img src="/logosempresas/castor.png" alt="Castor"></li>
                     <li><img src="/logosempresas/globant.png" alt="Globant"></li>
-                    
+
                 </ul>
                 <!--end partners-mentions -->
 
@@ -1175,7 +1175,11 @@
 </div>
 <!--end footer -->
 
+
+
+
 @endsection
 
 @section("script")
+
 @endsection

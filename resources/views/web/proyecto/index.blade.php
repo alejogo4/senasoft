@@ -73,7 +73,7 @@
             <div>
                 <h3>Empecemos!</h3>
                 <fieldset class="row">
-                    <h2 class="col-md-12">Proyectos Innovadores de Centro </h2>
+                    <h2 class="col-md-12">Muestras de Proyectos de Innovación </h2>
                     <div class="choose-bank col-md-12">
                         <p class="choose-bank-desc">
                             En la décima versión de SENASOFT se contará con un espacio para que doce (12) centros de
@@ -143,24 +143,24 @@
                         <div class="form-row">
                             <div class="row">
                                 <div class="form-group col-md-6">
-                                    <label for="">Nombres <b class="text-danger">*</b></label>
-                                    <input type="text" name="nombre" id="nombre" required />
+                                    <label for="">Nombres <b class="text-danger"></b></label>
+                                    <input type="text" disabled value="{{$persona_centro->nombres}}" name="nombre" id="nombre" required />
                                 </div>
                                 <div class="form-group col-md-6 ">
-                                    <label for="">Apellidos <b class="text-danger">*</b></label>
-                                    <input type="text" name="apellido" id="apellido" required />
+                                    <label for="">Apellidos <b class="text-danger"></b></label>
+                                    <input type="text" disabled value="{{$persona_centro->apellidos}}" name="apellido" id="apellido" required />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label for="email" class="form-label">Correo Principal <b
-                                            class="text-danger">*</b></label>
-                                    <input type="email" name="correo" id="correo" required />
+                                            class="text-danger"></b></label>
+                                    <input disabled value="{{$persona_centro->correo_principal}}" type="email" name="correo" id="correo" required />
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="telefono" class="form-label">Teléfono <b
-                                            class="text-danger">*</b></label>
-                                    <input type="text" name="telefono" id="telefono" required />
+                                            class="text-danger"></b></label>
+                                    <input disabled value="{{$persona_centro->telefono}}" type="text" name="telefono" id="telefono" required />
                                 </div>
                             </div>
                         </div>
@@ -208,4 +208,7 @@
 <script src="{{asset('js/select2-es.js')}}"></script>
 <script src="{{asset('js/dropzone.js')}}"></script>
 <script src="/js/registro_proyectos.js"></script>
+
 @endsection
+
+

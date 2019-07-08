@@ -17,10 +17,6 @@ class TblProyecto extends Migration
         Schema::create('tbl_proyecto', function (Blueprint $table) {
             
             $table->bigIncrements('id');
-            $table->char('nombres', 100);
-            $table->char('apellidos', 100);
-            $table->char('correo', 150);
-            $table->char('telefono', 20);
             $table->mediumText('arhivo_proyecto_centro');
             $table->integer('puntaje')->default('0');
             $table->integer('estado')->default('0');

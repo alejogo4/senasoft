@@ -8,5 +8,6 @@ class Centro extends Model
 {
     public $table = "tbl_centro";
 
-    protected  $fillable = ['estado_proyectos', 'estado_equipos', 'estado_registros'];
+    //protected  $fillable = ['codigo','estado_proyectos', 'estado_equipos', 'estado_registros'];
+    protected $guarded = ['id'];
 }

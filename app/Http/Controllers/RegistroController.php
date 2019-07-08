@@ -15,16 +15,26 @@ class RegistroController extends Controller
 {
     public function validar_codigo($codigo)
     {
+        $url = $_GET['url'];
+        $estado = $this->nombre_estado($url);
+        
         if ($codigo != null) {
 
             $centro = Centro::select("tbl_centro.*", "tbl_regional.nombre_regional")
                 ->where("codigo", $codigo)
-                ->where("estado_registros", 0)
+                ->where($estado, 0)
                 ->join("tbl_regional", "tbl_centro.regional_id", "=", "tbl_regional.id")
                 ->first();
 
             if ($centro != null) {
                 session(["codigo" => $codigo, "id_centro" => $centro->id, "centro" => $centro->nombre_centro, "regional" => $centro->nombre_regional]);
+                if($_GET['url']=="/proyecto"){
+                    $centroPersona = $this->ObtenerDatosCentroPersona();
+                
+                    if($centroPersona == null){
+                        return response()->json(["ok"=>false, "mensaje"=>"Para registrar un proyecto de centro, primero debes realizar la inscripción de los aprendices."]);
+                    }
+                }
                 return response()->json(["ok" => true]);
             } else {
                 return response()->json(["ok" => false, "mensaje" => "El código no existe o ya fue utilizado"]);
@@ -33,6 +43,25 @@ class RegistroController extends Controller
         } else {
             return response()->json(["ok" => false, "mensaje" => "Debes ingresar un código"]);
         }
+    }
+
+
+    public function nombre_estado($url){
+      
+      $estado = "";
+      switch($url){
+            case '/registro':
+                 $estado = 'estado_registros';
+                 break;
+            case '/proyecto':
+                 $estado = 'estado_proyectos';
+                 break;
+            case '/equipo':
+                 $estado = 'estado_equipos';
+                 break;
+        }
+
+        return $estado;
     }
     /**
      * Display a listing of the resource.
@@ -45,6 +74,14 @@ class RegistroController extends Controller
             return redirect("/");
         }
         return view("web.registro.index");
+    }
+
+    public function ObtenerDatosCentroPersona(){
+        $centro = Centro::where("codigo", session('codigo'))
+        ->join("tbl_persona", "tbl_centro.id", "=", "tbl_persona.centro_id")
+        ->first();
+
+        return $centro;
     }
 
     /**
