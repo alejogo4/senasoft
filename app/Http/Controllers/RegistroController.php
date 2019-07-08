@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\AprendicesImport;
+use App\Imports\ExcelImport;
 use App\Models\Categoria;
 use App\Models\Centro;
 use App\Models\Cupo;
@@ -66,7 +66,7 @@ class RegistroController extends Controller
         $eps = $request->file('archio_eps');
         $certificados = $request->file('archio_certificado');
 
-        $aprendices = Excel::toArray(new AprendicesImport, $request->file('aprendices'));
+        $aprendices = Excel::toArray(new ExcelImport, $request->file('aprendices'));
 
         $datos_guardar = $this->validar_excel($aprendices, $documentos, $fotos, $eps, $certificados);
 

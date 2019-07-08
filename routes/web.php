@@ -23,6 +23,9 @@ Route::post('/proyecto/actualizarTabla','ProyectoController@update');
 Route::get('/proyecto-file/{file}',"ProyectoController@getProjectFile");
 Route::resource('/proyecto', 'ProyectoController');
 
+Route::post('/registrar_equipo', 'EquipoController@store');
+Route::resource('/equipo' , 'EquipoController');
+
 Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
@@ -33,6 +36,3 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/registros/listado', "RegistroController@listar_registros");
 });
-
-Route::resource('/equipo' , 'EquipoController');
-Route::post('/registrar_equipo', 'EquipoController@');
