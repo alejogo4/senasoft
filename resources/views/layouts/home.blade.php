@@ -377,7 +377,7 @@
                                 requerimientos del cliente. </p>
 
                         </div>
-                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Algoritmos.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Producción Medios Audiovisuales.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
                             <span class="fa fa-eye"></span>
                         </a>
