@@ -8,7 +8,7 @@
     <meta name="description" content="Sitio Web - Senasoft 2019">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>@yield('title')</title>
+    <title>SenaSoft 2019</title>
 
     <!--Librerias del head que usa la plantilla-->
     @yield('librariesTop',View::make('layouts.components.librariesTop'))
