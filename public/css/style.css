@@ -2780,8 +2780,8 @@ ul.partners-mentions li img:hover {
     text-align: justify;
 }
 
-.content-category button,
-.owl-item button {
+.content-category a,
+.owl-item a {
     position: absolute;
     bottom: 15px;
     left: 0px;

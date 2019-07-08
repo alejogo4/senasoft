@@ -350,10 +350,10 @@
                             <p>Plantear soluciones algorítmicas a diferentes situaciones planteadas y que aporten valor
                                 a la empresa. </p>
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Algoritmos.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
 
                     <div>
@@ -363,10 +363,10 @@
                             <p>Diseñar, modelar y animar un personaje con su escenario. </p>
 
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Animación 3D.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
 
                     <div>
@@ -377,10 +377,10 @@
                                 requerimientos del cliente. </p>
 
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Algoritmos.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
 
                     <div>
@@ -390,10 +390,10 @@
                             <p>Construir sentencias SQL a partir de un diseño de base de datos. </p>
 
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Bases de Datos.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
 
                     <div>
@@ -405,10 +405,10 @@
                                 Senasoft 2019, incluye una nueva modalidad de participación denominada Ideatic. </p>
 
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica IDEATIC.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
 
                     <div>
@@ -419,10 +419,10 @@
                                 híbridas teniendo en cuenta la experiencia de usuario (UX/UI). </p>
 
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Desarrollo Móvil.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
                     <div>
                         <img src="/images/categorias/multimedia_color.png" alt="showcase" class="gallery-show">
@@ -431,10 +431,10 @@
                             <p>Diseñar e implementar soluciones de comunicación visual e interactiva. </p>
 
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Multimedia.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
                     <div>
                         <img src="/images/categorias/redes_color.png" alt="showcase" class="gallery-show">
@@ -444,10 +444,10 @@
                                 Software que ofrece servicios, aplicaciones y utilidades con el propósito de brindar
                                 seguridad, integridad y disponibilidad. </p>
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Gestion de Redes y Mantenimiento.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
                     <div>
                         <img src="/images/categorias/videojuegos_color.png" alt="showcase" class="gallery-show">
@@ -455,10 +455,10 @@
                             <h3>Videojuegos</h3>
                             <p>Desarrollar la lógica y mecánicas de un videojuego. </p>
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría de Videojuegos.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
                     <div>
                         <img src="/images/categorias/web_color.png" alt="showcase" class="gallery-show">
@@ -468,10 +468,10 @@
                                 productivo. </p>
 
                         </div>
-                        <button class="section-lyla btn btn-formato">
+                        <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Desarrollo Web.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
                             Ficha técnica
-                            <span class="fa fa-download"></span>
-                        </button>
+                            <span class="fa fa-eye"></span>
+                        </a>
                     </div>
                 </div>
                 <!--end owl carousel -->
@@ -805,7 +805,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <a href="{{asset('files/Reglamento SENASOFT 2019.docx')}}}" class="btn btn-reglamento">Descargar
+                    <a href="{{asset('files/Reglamento SENASOFT 2019 Medellin.pdf')}}" download class="btn btn-reglamento">Descargar
                         Reglamento
                         <span class="fa fa-download"></span>
                     </a>
