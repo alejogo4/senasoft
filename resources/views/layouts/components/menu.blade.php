@@ -29,7 +29,7 @@
                 aria-expanded="false" id="dropdownMenuButton" data-toggle="dropdown">Registro</a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li><a class="registro" url="/registro" href="#">Registrar Participantes</a></li>
-                <li><a class="registro" href="#">Registrar Equipos</a></li>
+                <li><a class="registro" url="/equipo">Registrar Equipos</a></li>
                 <li><a class="registro" url="/proyecto" href="#">Registrar Proyectos</a></li>
             </ul>
         </li>

@@ -34,4 +34,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/registros/listado', "RegistroController@listar_registros");
 });
 
-
+Route::resource('/equipo' , 'EquipoController');
+Route::post('/registrar_equipo', 'EquipoController@');
