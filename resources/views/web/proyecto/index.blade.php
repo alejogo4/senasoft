@@ -73,6 +73,9 @@
             <div>
                 <h3>Empecemos!</h3>
                 <fieldset class="row">
+                    <h2 class="col-md-12 text-uppercase">Bienvenido(a) instructor del <span class="color-tittle">{{session("centro")}} </span>de la Regional
+                        <span class="color-tittle">{{session("regional")}}</span>
+                    </h2>
                     <h2 class="col-md-12">Muestras de Proyectos de Innovación </h2>
                     <div class="choose-bank col-md-12">
                         <p class="choose-bank-desc">
