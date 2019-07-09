@@ -2791,3 +2791,30 @@ ul.partners-mentions li img:hover {
 .team-item>p {
     text-align: justify;
 }
+
+@media (max-width:480px) {
+    #logo {
+        position: absolute;
+        width: 50%;
+        right: 0px;
+    }
+    .parrafo {
+        padding: 0px 5px;
+    }
+    .mascota {
+        bottom: -59px;
+        width: 46%;
+    }
+    .nav-tabs li {
+        margin-top: 10px;
+    }
+    #schedule .tab-content {
+        padding: 0px 20px;
+    }
+    #history {
+        padding: 0px 15px;
+    }
+    .home-section img {
+        margin: 20px auto;
+    }
+}
