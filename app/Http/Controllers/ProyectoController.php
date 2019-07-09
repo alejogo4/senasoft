@@ -30,12 +30,10 @@ class ProyectoController extends Controller
         
         $centro = $this->ObtenerDatosCentroPersona();
 
-        if(session("codigo") == null || $centro == null){
+        if(session("estado_proyectos") == 1 || $centro == null){
             return redirect("/");
         }
         
-
-
 
         return view("web.proyecto.index", array(
             "persona_centro"=>$centro
@@ -153,7 +151,7 @@ class ProyectoController extends Controller
        
         $proyecto = Proyecto::find($request->id);
         $proyecto->puntaje = $request->puntaje;
-        $proyecto->juicio = $request->estado;
+        $proyecto->estado = $request->estado;
         $proyecto->update();
     
        return  response()->json(["ok"=>true]);;
