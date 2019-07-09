@@ -332,7 +332,7 @@
 
                 <h2 class="section-title white">Categorías</h2>
 
-                <p class="section-subtitle white">Listado de categorías que con las que se estará compitiendo para Senasoft 2019.</p>
+                <p class="section-subtitle white">Listado de categorías para Senasoft 2019.</p>
 
             </div>
             <!--end col md 12 -->
