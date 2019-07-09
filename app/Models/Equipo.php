@@ -8,6 +8,14 @@ class Equipo extends Model
 {
     public $table = "tbl_equipo";
 
+    public function Centro () {
+        return $this->hasOne('App\Models\Centro','id');
+    }
+
+    public function regional () {
+        return $this->hasOne('App\Models\Regional','id');
+    }
+
     protected $fillable = [
         'equipo',
         'descripcion',
@@ -20,3 +28,4 @@ class Equipo extends Model
         'categoria_id',
         'centro_id'];
 }
+

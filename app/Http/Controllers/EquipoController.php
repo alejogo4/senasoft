@@ -108,14 +108,25 @@ class EquipoController extends Controller
         return false;
     }
 
+    public function index_admin(){
+        
 
+        $equipos = Equipo::with(['Centro' , 'Regional'])->get();
+        return view("web.equipo.list", array(
+            "equipos"=>$equipos
+        ));
+    }
 
 
     public function index()
     {
-        return view('web.equipo.index');
+        if(session("estado_equipos") == 1)
+        return redirect('/');
     }
 
+
+
+  
     /**
      * Show the form for creating a new resource.
      *
