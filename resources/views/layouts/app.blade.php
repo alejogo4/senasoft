@@ -159,16 +159,14 @@
                             @can('read proyectos')
                              <li><a href="{{route('proyecto_list')}}"><i class="la la-at"></i><span>Evaluar Proyectos</span></a></li>
                             @endcan
-                            <li><a href="#dropdown" aria-expanded="false" data-toggle="collapse"><i class="la la-puzzle-piece"></i><span>Dropdown</span></a>
-                                <ul id="dropdown" class="collapse list-unstyled pt-0">
-                                    <li><a href="javascript:void(0);">Link</a></li>
-                                    <li><a href="javascript:void(0);">Link</a></li>
-                                    <li><a href="javascript:void(0);">Link</a></li>
-                                    <li><a href="javascript:void(0);">Link</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <span class="heading">Title</span>
+                            </ul>
+                            <ul class="list-unstyled">
+                            @can('read equipos')
+                            <li><a href="{{route('equipo_list')}}" ><i class="la la-at"></i><span>Equipos</span></a></li>
+                            @endcan
+                            </ul>
+                       
+                       
                         <ul class="list-unstyled">
                             <li class="active"><a href="#dropdown-db" aria-expanded="true" data-toggle="collapse"><i class="la la-columns"></i><span>Active</span></a>
                                 <ul id="dropdown-db" class="collapse list-unstyled show pt-0">
@@ -225,7 +223,7 @@
                     <footer class="main-footer fixed-footer">
                         <div class="row">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
-                                <p class="text-gradient-02">Desarrollado por : Juan David Ramirrez - Alejandro Giraldo Duque | Instructores SENA - CESGE</p>
+                                <p class="text-gradient-02">Desarrollado por : Juan David Ramirez - Alejandro Giraldo Duque - Hector Dario Maya | Instructores SENA - CESGE</p>
                             </div>
                         
                         </div>

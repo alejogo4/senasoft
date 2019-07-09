@@ -35,4 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
 
     Route::get('/registros/listado', "RegistroController@listar_registros");
+
+    Route::get('/equipo_list',"EquipoController@index_admin")->name('equipo_list');
+
 });

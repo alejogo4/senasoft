@@ -23,6 +23,13 @@ class RolesYpermisos extends Seeder
         Permission::create(['name' => 'update proyectos']);
         Permission::create(['name' => 'delete proyectos']);
 
+        //Equipo
+        Permission::create(['name' => 'create equipos']);
+        Permission::create(['name' => 'read equipos']);
+        Permission::create(['name' => 'update equipos']);
+        Permission::create(['name' => 'delete equipos']);
+   
+
         //Usuarios
         Permission::create(['name' => 'create user']);
         Permission::create(['name' => 'read users']);
@@ -55,6 +62,8 @@ class RolesYpermisos extends Seeder
 
         //========Administradores===============
         $role = Role::create(['name' => 'super-admin']);
+        $role->givePermissionTo('read equipos');
+        $role->givePermissionTo('update equipos');
         $role->givePermissionTo(Permission::all());
         
 
