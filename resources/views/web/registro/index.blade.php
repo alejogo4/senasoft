@@ -116,6 +116,15 @@
                                         </div>
                                     </div>
                                 </li>
+                                @if(session("ideatic") != null)
+                                <li class="list-group-item warning">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            El aprendiz que van a registar en la categoria IDEATIC, solo puede ser de del programa de formación {{session("ideatic")}}
+                                        </div>
+                                    </div>
+                                </li>
+                                @endif
                                 <li class="list-group-item">
                                     <div class="row">
                                         <div class="col-md-8">
