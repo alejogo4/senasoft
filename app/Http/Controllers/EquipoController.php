@@ -120,8 +120,10 @@ class EquipoController extends Controller
 
     public function index()
     {
-        if(session("estado_equipos") == 1)
-        return redirect('/');
+        if(session("estado_equipos") == 1){
+            return redirect('/');
+        }
+        return view("web.equipo.index"); 
     }
 
 
