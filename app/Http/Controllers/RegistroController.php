@@ -79,7 +79,9 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        if (session("estado_registros") == null || session("estado_registros") == 1) {
+        $estado = session("estado_registros");
+
+        if (is_null($estado) || $estado == 1) {
             return redirect("/");
         }
         return view("web.registro.index");
