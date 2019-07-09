@@ -2817,4 +2817,14 @@ ul.partners-mentions li img:hover {
     .home-section img {
         margin: 20px auto;
     }
+    .content-category {
+        top: 50%;
+        padding: 0px 55px 0px 53px;
+    }
+    .content-category h3 {
+        font-size: 16px;
+    }
+    .content-category p {
+        font-size: 14px;
+    }
 }

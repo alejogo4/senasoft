@@ -29,7 +29,7 @@ class RegistroController extends Controller
             if ($centro != null) {
 
                 if($_GET['url']=="/proyecto"){
-                    $centroPersona = $this->ObtenerDatosCentroPersona();
+                    $centroPersona = $this->ObtenerDatosCentroPersona($codigo);
                 
                     if($centroPersona == null){
                         return response()->json(["ok"=>false, "mensaje"=>"Para registrar un proyecto de centro, primero debes realizar la inscripción de los aprendices."]);
@@ -87,8 +87,8 @@ class RegistroController extends Controller
         return view("web.registro.index");
     }
 
-    public function ObtenerDatosCentroPersona(){
-        $centro = Centro::where("codigo", session('codigo'))
+    public function ObtenerDatosCentroPersona($codigo){
+        $centro = Centro::where("codigo", $codigo)
         ->join("tbl_persona", "tbl_centro.id", "=", "tbl_persona.centro_id")
         ->first();
 
