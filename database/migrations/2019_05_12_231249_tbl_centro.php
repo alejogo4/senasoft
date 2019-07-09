@@ -25,6 +25,8 @@ class TblCentro extends Migration
             $table->boolean('estado_registros');
             $table->boolean('estado_proyectos');
             $table->boolean('estado_equipos');
+            $table->integer('ideatic');
+
             $table->timestamps();
 
             $table->foreign('regional_id')->references('id')->on('tbl_regional')->onDelete('cascade');

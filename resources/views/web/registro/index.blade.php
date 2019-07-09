@@ -210,20 +210,13 @@
                                     <label for="text" class="form-label">Programa de Formación que Imparte <b class="text-danger">*</b></label>
                                     <select name="programa_formacion" id="programa_formacion" required>
                                         <option value="">Seleccione</option>
-                                        <option value="TG. EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN">TG. EN
-                                            ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN</option>
-                                        <option value="TG. EN PRODUCCIÓN DE MULTIMEDIA">TG. EN PRODUCCIÓN DE MULTIMEDIA
-                                        </option>
-                                        <option value="TG. EN GESTIÓN DE REDES DE DATOS">TG. EN GESTIÓN DE REDES DE
-                                            DATOS</option>
-                                        <option value="TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO ESTRUCTURADO">
-                                            TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO
-                                            ESTRUCTURADO</option>
+                                        <option value="TG. EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN">TG. EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN</option>
+                                        <option value="TG. EN PRODUCCIÓN DE MULTIMEDIA">TG. EN PRODUCCIÓN DE MULTIMEDIA                                        </option>
+                                        <option value="TG. EN GESTIÓN DE REDES DE DATOS">TG. EN GESTIÓN DE REDES DE DATOS</option>
+                                        <option value="TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO ESTRUCTURADO">TG. EN MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO ESTRUCTURADO</option>
                                         <option value="TG. EN ANIMACIÓN 3D">TG. EN ANIMACIÓN 3D</option>
-                                        <option value="TG. EN DESARROLLO DE VIDEOJUEGOS">TG. EN DESARROLLO DE
-                                            VIDEOJUEGOS</option>
-                                        <option value="TG. EN PRODUCCIÓN DE MEDIOS AUDIOVISUALES DIGITALES">TG. EN
-                                            PRODUCCIÓN DE MEDIOS AUDIOVISUALES DIGITALES</option>
+                                        <option value="TG. EN DESARROLLO DE VIDEOJUEGOS">TG. EN DESARROLLO DE VIDEOJUEGOS</option>
+                                        <option value="TG. EN PRODUCCIÓN DE MEDIOS AUDIOVISUALES DIGITALES">TG. EN PRODUCCIÓN DE MEDIOS AUDIOVISUALES DIGITALES</option>
                                     </select>
                                 </div>
                             </div>

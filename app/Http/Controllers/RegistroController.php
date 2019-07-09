@@ -27,7 +27,7 @@ class RegistroController extends Controller
                 ->first();
 
             if ($centro != null) {
-                session(["codigo" => $codigo, "id_centro" => $centro->id, "centro" => $centro->nombre_centro, "regional" => $centro->nombre_regional]);
+
                 if($_GET['url']=="/proyecto"){
                     $centroPersona = $this->ObtenerDatosCentroPersona();
                 
@@ -35,6 +35,15 @@ class RegistroController extends Controller
                         return response()->json(["ok"=>false, "mensaje"=>"Para registrar un proyecto de centro, primero debes realizar la inscripción de los aprendices."]);
                     }
                 }
+                session([
+                    "codigo" => $codigo, 
+                    "id_centro" => $centro->id,
+                    "centro" => $centro->nombre_centro, 
+                    "regional" => $centro->nombre_regional,
+                    "ideatic" => $centro->ideatic,
+                    $estado => $centro->$estado
+                ]);
+                
                 return response()->json(["ok" => true]);
             } else {
                 return response()->json(["ok" => false, "mensaje" => "El código no existe o ya fue utilizado"]);
@@ -70,7 +79,7 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        if (session("codigo") == null) {
+        if (session("estado_registros") == null || session("estado_registros") == 1) {
             return redirect("/");
         }
         return view("web.registro.index");
