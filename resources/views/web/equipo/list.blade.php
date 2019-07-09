@@ -21,13 +21,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                               <?php $equipos = $equipos[0] ?>
+                               
                                 @foreach($equipos as $equipo)
                                
                                 <tr>
-                                <td>{{$equipos->regional->nombre_regional}}</td>
-                                <td>{{$equipos->centro->nombre_centro}}</td>
-                                <td>{{$equipos->id}}</td>  
+                                <td>{{$equipo->regional->nombre_regional}}</td>
+                                <td>{{$equipo->centro->nombre_centro}}</td>
+                                <td>{{$equipo->id}}</td>  
                                 <td><div class="col-md-3">
                                             <button type="button" class="section-lyla btn btn-formato btn-lg" data-toggle="modal" data-target="#modal_recomen">
                                                 Ver
