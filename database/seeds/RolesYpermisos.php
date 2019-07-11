@@ -62,8 +62,6 @@ class RolesYpermisos extends Seeder
 
         //========Administradores===============
         $role = Role::create(['name' => 'super-admin']);
-        $role->givePermissionTo('read equipos');
-        $role->givePermissionTo('update equipos');
         $role->givePermissionTo(Permission::all());
         
 

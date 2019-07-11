@@ -351,4 +351,15 @@ class RegistroController extends Controller
         return view("app.registro.index");
     }
 
+    public function index_admin(){
+        
+        //$proyectos = Proyecto::with(['Centro'])->get();
+
+        $personas = Persona::where('tipo_persona','Instructor');
+        dd($personas);
+        return view("web.registro.list", array(
+            
+        ));
+    }
+
 }

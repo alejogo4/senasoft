@@ -49,7 +49,7 @@ class UserController extends Controller
             $user = Auth::user();
             // the $user->createToken('appName')->accessToken generates the JWT token that we can use 
             return response()->json([
-                'ok' => false,
+                'ok' => true,
                 'user'  =>  $user, // <- we're sending the user info for frontend usage
                 'token' =>  $user->createToken('senasoft')->accessToken // <- token is generated and sent back to the front end
             ]);

@@ -159,12 +159,13 @@
                             @can('read proyectos')
                              <li><a href="{{route('proyecto_list')}}"><i class="la la-at"></i><span>Evaluar Proyectos</span></a></li>
                             @endcan
-                            </ul>
-                            <ul class="list-unstyled">
                             @can('read equipos')
                             <li><a href="{{route('equipo_list')}}" ><i class="la la-at"></i><span>Equipos</span></a></li>
                             @endcan
-                            </ul>
+                            @can('read registros')
+                            <li><a href="{{route('registro_list')}}" ><i class="la la-at"></i><span>Registros</span></a></li>
+                            @endcan
+                        </ul>
                        
                        
                         <ul class="list-unstyled">
