@@ -48,9 +48,8 @@ class ProyectoController extends Controller
 
     public function index_admin()
     {
-
         $proyectos = Proyecto::with(['Centro'])->get();
-        return view("web.proyecto.list", array(
+        return view("app.proyecto.list", array(
             "proyectos" => $proyectos,
         ));
     }
@@ -116,27 +115,6 @@ class ProyectoController extends Controller
         return $this->validate($request, $rules, $customMessages);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -157,16 +135,6 @@ class ProyectoController extends Controller
         return response()->json(["ok" => true]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 
     public function getProjectFile($file)
     {

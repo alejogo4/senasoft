@@ -373,9 +373,8 @@ class RegistroController extends Controller
     public function index_admin(){
         
         $personas = Persona::where('tipo_persona','1')->get();
-        dd($personas);
 
-        return view("web.registro.list", array());
+        return view("web.registro.list", compact("personas"));
     }
 
 
