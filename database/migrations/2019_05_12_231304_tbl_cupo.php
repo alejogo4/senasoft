@@ -15,7 +15,7 @@ class TblCupo extends Migration
     {
         //
         Schema::create('tbl_cupo', function (Blueprint $table) {
-            
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->integer('n_cupos_disponibles');
             $table->integer('n_cupos_utilizados');
