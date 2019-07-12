@@ -203,10 +203,10 @@ class RegistroController extends Controller
                             $c_aprendices++;
 
                         }else{
-                            throw new \Exception('Los datos de los aprendices en el excel no se encuentra completos, corrije y vuelve a intentar');
+                            throw new \Exception('Los datos de los aprendices en el excel no se encuentra completos, corrige y vuelve a intentar');
                         }
                     }else{
-                        throw new \Exception('Se excedieron los cupos por las categorias, corrije y vuelve a intentar');
+                        throw new \Exception('Se excedieron los cupos en las categorías, corrige y vuelve a intentar');
                     }
                 }
 
