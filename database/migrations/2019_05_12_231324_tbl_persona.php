@@ -15,7 +15,7 @@ class TblPersona extends Migration
     {
         //
         Schema::create('tbl_persona', function (Blueprint $table) {
-            
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->char('documento', 20)->nullable();
             $table->char('tipo_documento', 60)->nullable();
