@@ -46,6 +46,16 @@ class RegistroController extends Controller
                 
                 return response()->json(["ok" => true]);
             } else {
+
+                session([
+                    "codigo" => null, 
+                    "id_centro" => null,
+                    "centro" => null, 
+                    "regional" => null,
+                    "ideatic" => null,
+                    $estado => null
+                ]);
+
                 return response()->json(["ok" => false, "mensaje" => "El código no existe o ya fue utilizado"]);
             }
 
@@ -109,10 +119,10 @@ class RegistroController extends Controller
 
         $foto = $request->file('foto');
 
-        $fotos = $request->file('archio_foto');
-        $documentos = $request->file('archio_documentos');
-        $eps = $request->file('archio_eps');
-        $certificados = $request->file('archio_certificado');
+        $fotos = $request->file('archivo_foto');
+        $documentos = $request->file('archivo_documentos');
+        $eps = $request->file('archivo_eps');
+        $certificados = $request->file('archivo_certificado');
 
         $aprendices = Excel::toArray(new ExcelImport, $request->file('aprendices'));
 
@@ -193,8 +203,10 @@ class RegistroController extends Controller
                             $c_aprendices++;
 
                         }else{
-                            throw new \Exception('Los datos de los aprendices en el excel no se encuentra completos.');
+                            throw new \Exception('Los datos de los aprendices en el excel no se encuentra completos, corrije y vuelve a intentar');
                         }
+                    }else{
+                        throw new \Exception('Se excedieron los cupos por las categorias, corrije y vuelve a intentar');
                     }
                 }
 
@@ -204,6 +216,11 @@ class RegistroController extends Controller
 
                 $c = Centro::find($centro_id);
                 $c->update(["estado_registros"=>1]);
+
+                session([
+                    "codigo" => null,
+                    "estado_registros" => null
+                ]);
 
                 DB::commit();
 
@@ -290,7 +307,7 @@ class RegistroController extends Controller
             ->first();
 
         if ($cupo != null) {
-            if ($cupo->n_cupos_disponibles > 0) {
+            if ($cupo->n_cupos_utilizados > 0) {
                 return true;
             }
         }
@@ -347,19 +364,20 @@ class RegistroController extends Controller
         return false;
     }
 
+    /************************** Admin ****************************/
+
     public function listar_registros(){
         return view("app.registro.index");
     }
 
     public function index_admin(){
         
-        //$proyectos = Proyecto::with(['Centro'])->get();
-
-        $personas = Persona::where('tipo_persona','Instructor');
+        $personas = Persona::where('tipo_persona','1')->get();
         dd($personas);
-        return view("web.registro.list", array(
-            
-        ));
+
+        return view("web.registro.list", array());
     }
+
+
 
 }

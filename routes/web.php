@@ -32,13 +32,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/dash', 'HomeController@index')->name('dashboard');
 
-    Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
-
     Route::get('/registros/listado', "RegistroController@listar_registros");
+
+    Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
 
     Route::get('/equipo_list',"EquipoController@index_admin")->name('equipo_list');
 
-    Route::get('/registro_list',"EquipoController@index_admin")->name('registro_list');
+    Route::get('/registro_list',"RegistroController@index_admin")->name('registro_list');
 
 });
 

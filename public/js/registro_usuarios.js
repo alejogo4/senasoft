@@ -207,19 +207,19 @@ function guardar() {
         data.append("aprendices", $("#aprendices")[0].files[0]);
 
         eps.forEach((e, i) => {
-            data.append("archio_eps[]", e);
+            data.append("archivo_eps[]", e);
         });
 
         documentos.forEach((e, i) => {
-            data.append("archio_documentos[]", e);
+            data.append("archivo_documentos[]", e);
         });
 
         certificado.forEach((e, i) => {
-            data.append("archio_certificado[]", e);
+            data.append("archivo_certificado[]", e);
         });
 
         foto.forEach((e, i) => {
-            data.append("archio_foto[]", e);
+            data.append("archivo_foto[]", e);
         });
 
         jQuery.ajax({

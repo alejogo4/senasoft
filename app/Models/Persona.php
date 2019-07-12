@@ -41,4 +41,6 @@ class Persona extends Model
         'centro_id',
         'tipo_persona',
         'tour'];
+
+        
 }
