@@ -12,10 +12,12 @@ class Equipo extends Model
         return $this->hasOne('App\Models\Centro','id');
     }
 
-    public function regional () {
+    public function Regional () {
         return $this->hasOne('App\Models\Regional','id');
     }
-
+    public function Categoria () {
+        return $this->hasOne('App\Models\Categoria', 'id');
+    }
     protected $fillable = [
         'equipo',
         'descripcion',

@@ -6,12 +6,21 @@ use App\Imports\ExcelImport;
 use App\Models\Categoria;
 use App\Models\Centro;
 use App\Models\Equipo;
+use App\Models\Cupo;
 use DB;
 use Excel;
 use Illuminate\Http\Request;
 
 class EquipoController extends Controller
 {
+
+    public function index()
+    {
+        if (session("estado_equipos") == 1) {
+            return redirect('/');
+        }
+        return view("web.equipo.index");
+    }
     /**
      * Display a listing of the resource.
      *
@@ -37,6 +46,7 @@ class EquipoController extends Controller
             try {
 
                 $cont = 0;
+                
 
                 foreach ($datos_equipos as $value) {
 
@@ -49,7 +59,7 @@ class EquipoController extends Controller
                         !empty($value[5]) &&
                         !empty($value[6]) &&
                         !empty($value[7])) {
-
+                        
                         Equipo::create([
                             'placa_sena' => $value[1],
                             'serial' => $value[2],
@@ -68,6 +78,7 @@ class EquipoController extends Controller
                         throw new \Exception('Faltan datos por registrar en excel.');
                     }
                 }
+                
                 if ($cont == count($datos_equipos)) {
 
                     $c = Centro::find($centro_id);
@@ -106,20 +117,36 @@ class EquipoController extends Controller
         return false;
     }
 
+
+
+    /**************************Admin ***************/
+
     public function index_admin()
     {
-        $equipos = Equipo::with(['Centro', 'Regional'])->get();
+        $equipos = Centro::select("tbl_centro.id", "tbl_centro.nombre_centro", "tbl_regional.nombre_regional", DB::raw("count(tbl_equipo.id) as numero"))
+        ->distinct()
+        ->join("tbl_equipo", "tbl_equipo.centro_id", "=", "tbl_centro.id")
+        ->join("tbl_regional", "tbl_regional.id", "=", "tbl_centro.regional_id")
+        ->groupBy("tbl_centro.id", "tbl_centro.nombre_centro", "tbl_regional.nombre_regional")
+        ->get();
+
         return view("app.equipo.list", array(
             "equipos" => $equipos,
         ));
     }
 
-    public function index()
-    {
-        if (session("estado_equipos") == 1) {
-            return redirect('/');
-        }
-        return view("web.equipo.index");
+    public function obtener_equipos($id_centro){
+
+        $categorias = Cupo::with("Categoria")
+        ->where("centro_id", $id_centro)
+        ->get();
+
+        $equipo = Equipo::where("centro_id", $id_centro)
+        ->get();
+
+        return response()->json(["ok"=>true, "categorias"=>$categorias, "equipos"=>$equipo]);
     }
+
+
 
 }

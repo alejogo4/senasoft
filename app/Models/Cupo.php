@@ -11,4 +11,8 @@ class Cupo extends Model
     protected $fillable = ['n_cupos_utilizados'];
 
     public $timestamps = false;
+
+    public function Categoria() {
+        return $this->hasOne(Categoria::class, 'id');
+    }
 }

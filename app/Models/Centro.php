@@ -10,4 +10,8 @@ class Centro extends Model
 
     //protected  $fillable = ['codigo','estado_proyectos', 'estado_equipos', 'estado_registros'];
     protected $guarded = ['id'];
+
+    public function Regional() {
+        return $this->hasOne(Regional::class,'id');
+    }
 }
