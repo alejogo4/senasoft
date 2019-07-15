@@ -106,7 +106,7 @@
                                             13 de Julio
                                         </div>
                                         <div class="col-md-5">
-                                            <a href="{{asset('files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx')}}"
+                                            <a href="{{asset('files/Ficha Muestra de Proyectos.xlsx')}}"
                                                 class="section-lyla btn btn-formato">Descargar Formato
                                                 <span class="fa fa-download"></span></a>
                                         </div>
