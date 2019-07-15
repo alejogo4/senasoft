@@ -42,5 +42,8 @@ class Persona extends Model
         'tipo_persona',
         'tour'];
 
-        
+
+        public function Centro() {
+            return $this->hasOne(Centro::class,'id');
+        }
 }

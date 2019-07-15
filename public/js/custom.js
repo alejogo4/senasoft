@@ -232,9 +232,11 @@ $(".registro").on("click", function() {
 
 $(".formato").on("click", function() {
     url = "files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx";
-    name = "Evaluación Proyectos SenaSoft 2019_May 30";
 
-    downloadURI(url, name);
+    location.href = url;
+    //name = "Evaluación Proyectos SenaSoft 2019_May 30";
+
+    //downloadURI(url, name);
 
 })
 

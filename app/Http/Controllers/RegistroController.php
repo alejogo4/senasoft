@@ -376,7 +376,4 @@ class RegistroController extends Controller
 
         return view("web.registro.list", compact("personas"));
     }
-
-
-
 }
