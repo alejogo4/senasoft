@@ -66,7 +66,7 @@
                                 <td>{{$equipo->numero}}</td>
                                 <td>
                                     <div class="col-md-3">
-                                        <button type="button" class="section-lyla btn btn-formato btn-lg" onclick="mostrar_equipo({{$ ->id}})">
+                                        <button type="button" class="section-lyla btn btn-formato btn-lg" onclick="mostrar_equipo({{$equipo->id}})">
                                             Ver
                                         </button>
                                     </div>
