@@ -27,10 +27,13 @@
         <li class="dropdown">
             <a href="#" class="discover-btn btn-alert dropdown-toggle" role="button" aria-haspopup="true"
                 aria-expanded="false" id="dropdownMenuButton" data-toggle="dropdown">Registro</a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" class="list-group">
+                <li class="list-group-item disabled" aria-disabled="true">Registros</li>
                 <li><a class="registro" url="/registro" href="#">Registrar Participantes</a></li>
                 <li><a class="registro" url="/equipo" href="#">Registrar Equipos</a></li>
                 <li><a class="registro" url="/proyecto" href="#">Registrar Proyectos</a></li>
+                <li class="list-group-item disabled" aria-disabled="true">Formatos</li>
+                <li><a href="{{asset('files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx')}}" download>Descargar Formato de Proyectos</a></li>
             </ul>
         </li>
 

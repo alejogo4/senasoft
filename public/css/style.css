@@ -2792,6 +2792,10 @@ ul.partners-mentions li img:hover {
     text-align: justify;
 }
 
+.dropdown-menu {
+    border-radius: 12px !important;
+}
+
 @media (max-width:480px) {
     #logo {
         position: absolute;

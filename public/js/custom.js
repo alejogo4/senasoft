@@ -233,6 +233,7 @@ $(".registro").on("click", function() {
 
 function confirmar_codigo(url) {
 
+
     Swal.fire({
         title: 'Ingresa el código',
         input: 'text',
