@@ -230,6 +230,22 @@ $(".registro").on("click", function() {
     confirmar_codigo(url);
 })
 
+$(".formato").on("click", function() {
+    url = "files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx";
+    name = "Evaluación Proyectos SenaSoft 2019_May 30";
+
+    downloadURI(url, name);
+
+})
+
+
+function downloadURI(uri, name) {
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    link.click();
+}
+
 
 function confirmar_codigo(url) {
 

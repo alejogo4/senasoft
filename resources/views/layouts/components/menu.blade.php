@@ -33,7 +33,7 @@
                 <li><a class="registro" url="/equipo" href="#">Registrar Equipos</a></li>
                 <li><a class="registro" url="/proyecto" href="#">Registrar Proyectos</a></li>
                 <li class="list-group-item disabled" aria-disabled="true">Formatos</li>
-                <li><a href="{{asset('files/Evaluación Proyectos SenaSoft 2019_May 30.xlsx')}}" download>Descargar Formato de Proyectos</a></li>
+                <li><a href="#"" class="formato">Descargar Formato de Proyectos</a></li>
             </ul>
         </li>
 
