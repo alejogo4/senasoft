@@ -10,6 +10,8 @@ use App\Models\Persona;
 use DB;
 use Excel;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Yajra\Datatables\Datatables;
 
 class RegistroController extends Controller
 {
@@ -372,8 +374,23 @@ class RegistroController extends Controller
 
     public function index_admin(){
         
-        $personas = Persona::where('tipo_persona','1')->get();
-
-        return view("web.registro.list", compact("personas"));
+        return view("app.registro.index");
     }
+
+    public function obtener_registros(){
+        $personas = Persona::with(["Centro", "Centro.Regional"])->where('tipo_persona','1')->get();
+
+        return Datatables::of($personas)->make(true);
+    }
+
+    public function obtener_documento($carpeta, $archivo){
+        $storage = \Storage::disk($carpeta);
+
+        $file = $storage->get($archivo);
+        $type =  $storage->mimeType($archivo);
+
+        return new Response($file, 200, ["Content-Type"=> $type]);
+    }
+
+
 }

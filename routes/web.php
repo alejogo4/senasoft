@@ -33,14 +33,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dash', 'HomeController@index')->name('dashboard');
 
     Route::get('/registros/listado', "RegistroController@listar_registros");
+    Route::get('/registro_list',"RegistroController@index_admin")->name('registro_list');
+    Route::get('/registros/obtener',"RegistroController@obtener_registros");
+    Route::get('/archivos/{carpeta}/{archivo}',"RegistroController@obtener_documento");
 
     Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
 
     Route::get('/equipo_list',"EquipoController@index_admin")->name('equipo_list');
     Route::get('/equipo/obtener/{id}', 'EquipoController@obtener_equipos');
     Route::get('/ejemplo',"EquipoController@generatePDF");
-
-    Route::get('/registro_list',"RegistroController@index_admin")->name('registro_list');
-
 });
 
