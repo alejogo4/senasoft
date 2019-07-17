@@ -9,6 +9,7 @@ use App\Models\Equipo;
 use App\Models\Cupo;
 use DB;
 use Excel;
+use PDF;
 use Illuminate\Http\Request;
 
 class EquipoController extends Controller
@@ -147,6 +148,12 @@ class EquipoController extends Controller
         return response()->json(["ok"=>true, "categorias"=>$categorias, "equipos"=>$equipo]);
     }
 
-
+    public function generatePDF()
+    {
+        $data = ['title' => 'Welcome to HDTuto.com'];
+        $pdf = PDF::loadView('app.equipo.myPDF', $data);
+  
+        return $pdf->download('itsolutionstuff.pdf');
+    }
 
 }

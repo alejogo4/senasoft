@@ -25,9 +25,22 @@
                                             <th>Descripción Actual</th>
                                             <th>Atributos</th>
                                             <th>Especificaciones técnicas</th>
+                                           
+                                           
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -54,6 +67,8 @@
                                 <th>Centro</th>
                                 <th>Equipo</th>
                                 <th>Ver Equipos</th>
+                                <th>Codigo QR</th>
+                                <th>PDF</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -71,6 +86,12 @@
                                         </button>
                                     </div>
                                 </td>
+                                <td><div class="title m-b-md">
+   {!!QrCode::size(100)->generate("hola Alejo soy un Codigo QR") !!}
+</div></td>
+<td><div>
+  <a href="/ejemplo">PDF</a>
+</div></td>
                             </tr>
                             @endforeach
                         </tbody>
@@ -95,6 +116,9 @@
                 dataType: 'json',
                 type: 'get'
             }).done((respuesta)=>{
+
+
+                $("#modal_registro").modal()                
                 
             })
         }
