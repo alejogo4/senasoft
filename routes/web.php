@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/registros/obtener',"RegistroController@obtener_registros");
     Route::get('/registros/obtener/aprendices/{id}',"RegistroController@obtener_registros_aprendiz");
     Route::get('/registros/modificar/revision/{id}/{estado}',"RegistroController@modificar_estado_revision");
+    Route::get('/registros/exportar/excel',"RegistroController@exportar_excel");
     Route::get('/archivos/{carpeta}/{archivo}',"RegistroController@obtener_documento");
     Route::get('/notificaciones', 'RegistroController@notificaciones');
 

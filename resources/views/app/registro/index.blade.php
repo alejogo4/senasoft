@@ -38,7 +38,7 @@ Registros de Instructores y Aprendices
 @endsection
 
 @section('opciones')
-<button class="btn btn-success"><i style="font-size: 24px" class="la la-file-excel-o"></i>Descargar</button>
+<a tarde="_blank" href="/registros/exportar/excel" class="btn btn-success"><i style="font-size: 24px" class="la la-file-excel-o"></i>Descargar</a>
 @endsection
 
 @section('content')

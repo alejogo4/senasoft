@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Imports\ExcelImport;
+use App\Exports\PersonasExport;
 use App\Models\Categoria;
 use App\Models\Centro;
 use App\Models\Cupo;
@@ -461,5 +462,9 @@ class RegistroController extends Controller
         } catch (\Exception $e) {
             return new Response(null, 404);
         }
+    }
+
+    public function exportar_excel(){
+        return Excel::download(new PersonasExport, 'registros.xlsx');
     }
 }
