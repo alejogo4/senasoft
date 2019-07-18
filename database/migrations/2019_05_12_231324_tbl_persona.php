@@ -48,7 +48,7 @@ class TblPersona extends Migration
             $table->unsignedBigInteger('categoria_id')->nullable();
             $table->unsignedBigInteger('centro_id')->nullable();
             $table->unsignedBigInteger('tipo_persona')->nullable();
-            $table->boolean('tour')->nullable();
+            $table->boolean('revision')->default(0);
             $table->timestamps();
 
             $table->foreign('categoria_id')->references('id')->on('tbl_categoria')->onDelete('cascade');

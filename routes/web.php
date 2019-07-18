@@ -35,7 +35,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/registros/listado', "RegistroController@listar_registros");
     Route::get('/registro_list',"RegistroController@index_admin")->name('registro_list');
     Route::get('/registros/obtener',"RegistroController@obtener_registros");
+    Route::get('/registros/obtener/aprendices/{id}',"RegistroController@obtener_registros_aprendiz");
+    Route::get('/registros/modificar/revision/{id}/{estado}',"RegistroController@modificar_estado_revision");
     Route::get('/archivos/{carpeta}/{archivo}',"RegistroController@obtener_documento");
+    Route::get('/notificaciones', 'RegistroController@notificaciones');
 
     Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
 

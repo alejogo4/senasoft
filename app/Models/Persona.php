@@ -40,10 +40,14 @@ class Persona extends Model
         'categoria_id',
         'centro_id',
         'tipo_persona',
-        'tour'];
+        'revision'];
 
 
         public function Centro() {
             return $this->hasOne(Centro::class,'id');
+        }
+
+        public function Categoria() {
+            return $this->hasOne(Categoria::class,'id');
         }
 }
