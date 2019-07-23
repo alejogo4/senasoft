@@ -141,12 +141,12 @@ Registros de Instructores y Aprendices
                     name: 'id'
                 },
                 {
-                    data: 'centro.nombre_centro',
-                    name: 'centro.nombre_centro'
-                },
-                {
                     data: 'centro.regional.nombre_regional',
                     name: 'centro.regional.nombre_regional'
+                },
+                {
+                    data: 'centro.nombre_centro',
+                    name: 'centro.nombre_centro'
                 },
                 {
                     data: 'documento',

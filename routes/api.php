@@ -28,7 +28,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 |
 */
 Route::post('login', 'API\UserController@login');
-Route::post('proyectos', 'API\ProyectoController@seleccionarTopGanadores');
+Route::get('proyectos', 'API\ProyectoController@seleccionarTopGanadores');
 
 Route::group(['middleware' => 'auth:api'], function(){
    

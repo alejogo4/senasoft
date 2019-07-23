@@ -132,7 +132,7 @@ function guardar() {
     
                     Swal.fire({
                         title: 'Espera',
-                        text: "Ocurrió un error inesperado, intenta más tarde. En caso de persistir el error contacta al administrador del sitio",
+                        text: respuesta.mensaje,
                         type: 'warning',
                     })
                 }

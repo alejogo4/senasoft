@@ -511,7 +511,7 @@
 
                     <h2 class="section-title">Historial Senasoft 2019</h2>
 
-                    <p class="section-subtitle">Desde 2008 inicio Senasoft en la ciudad de Medellín, hoy tenemos un histórico <br>del evento que se ha realizado por mas de 10 años.</p>
+                    <p class="section-subtitle">En el año 2008 inició Senasoft en la ciudad de Medellín, hoy tenemos un histórico <br>del evento que se ha realizado durante 10 años.</p>
 
                 </div>
                 <!--end col-md-12 -->
@@ -854,7 +854,7 @@
 
                     <div class="text_align_right">
                         <h4>Horarios de alimentación</h4>
-                        <p>En la aplicación puedes tener acceso a todos los horarios de alimentación.</p>
+                        <p>Información de los horarios de alimentación durante los días de competencia.</p>
                     </div>
 
                 </div>
@@ -871,7 +871,7 @@
 
                     <div class="text_align_right">
                         <h4>Horarios de los workshop</h4>
-                        <p>Además acceso a los workshops que se estarán presentando.</p>
+                        <p>Información y control de asistencia a los workshops que se desarrollarán para instructores.</p>
                     </div>
 
                 </div>
@@ -884,8 +884,8 @@
                     </div>
 
                     <div class="text_align_right">
-                        <h4>Conoce los proyectos ganadores</h4>
-                        <p>Puedes conocer los 20 proyectos ganadores.</p>
+                        <h4>Proyectos seleccionados</h4>
+                        <p>Listado de los proyectos que se presentarán en la muestra.</p>
                     </div>
 
                 </div>
@@ -914,8 +914,8 @@
                     </div>
 
                     <div class="text_align_left">
-                        <h4>Conocer a tu equipo</h4>
-                        <p>Acceder a la información de tu compañero de competencia para estar siempre comunicados.</p>
+                        <h4>Conoce a tu equipo</h4>
+                        <p>Accede a la información de tu compañero(s) de competencia para estar siempre comunicado.</p>
                     </div>
 
                 </div>
@@ -930,7 +930,7 @@
 
                     <div class="text_align_left">
                         <h4>Confirmar asistencia</h4>
-                        <p>Confirmar asistencia a los workshop y asi controlar la asistencia de los instructores.</p>
+                        <p>El instructor que acompañará a los aprendices, confirmara la asistencia de los participantes una vez lleguen a la terminar aerea o terrestre.</p>
                     </div>
 
                 </div>
@@ -944,7 +944,7 @@
 
                     <div class="text_align_left">
                         <h4>Información a la mano</h4>
-                        <p>Esta y otras características permitirán que estés enterado de toda la competencia.</p>
+                        <p>Información relacionada con hotel y rutas de transporte.</p>
                     </div>
 
                 </div>
@@ -1136,6 +1136,8 @@
             <div class="col-md-12 text-center">
 
                 <p>Copyright © 2019 SENA.</p>
+                <p>Desarrollado por : Juan David Ramirez - Alejandro Giraldo Duque
+                                - Hector Dario Maya | Instructores SENA - CESGE</p>
 
                 <!--begin footer_social -->
                 <ul class="footer_social">

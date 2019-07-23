@@ -11,6 +11,7 @@ use DB;
 use Excel;
 use PDF;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class EquipoController extends Controller
 {
@@ -53,9 +54,10 @@ class EquipoController extends Controller
 
                     $categoria_id = Categoria::where("nombre_categoria", $value[0])->first();
 
+                    
                     if (!empty($categoria_id) &&
                         !empty($value[1]) &&
-                        !empty($value[2]) &&
+                        !empty($value[3]) &&
                         !empty($value[4]) &&
                         !empty($value[5]) &&
                         !empty($value[6]) &&
@@ -124,6 +126,11 @@ class EquipoController extends Controller
 
     public function index_admin()
     {
+        return view("app.equipo.list");
+    }
+
+    public function obtener_registros_equipos_centros()
+    {
         $equipos = Centro::select("tbl_centro.id", "tbl_centro.nombre_centro", "tbl_regional.nombre_regional", DB::raw("count(tbl_equipo.id) as numero"))
         ->distinct()
         ->join("tbl_equipo", "tbl_equipo.centro_id", "=", "tbl_centro.id")
@@ -131,9 +138,8 @@ class EquipoController extends Controller
         ->groupBy("tbl_centro.id", "tbl_centro.nombre_centro", "tbl_regional.nombre_regional")
         ->get();
 
-        return view("app.equipo.list", array(
-            "equipos" => $equipos,
-        ));
+        return Datatables::of($equipos)
+            ->make(true);
     }
 
     public function obtener_equipos($id_centro){

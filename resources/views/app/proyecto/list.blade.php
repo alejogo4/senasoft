@@ -41,6 +41,8 @@
                 </div>
             </div>
         </div>
-        
+@endsection
 
+@section("script")
+<script src="{{asset('admin/js/components/tabledit/tabledit.js')}}"></script>
 @endsection

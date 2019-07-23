@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('titulo')
+Equipos
+@endsection
+
+@section("style")
+<link rel="stylesheet" href="{{asset('admin/css/datatables/datatables.min.css')}}">
+@endsection
+
 @section('content')
 <!-- Modal -->
 <div class="modal fade" id="modal_registro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -25,22 +33,9 @@
                                             <th>Descripción Actual</th>
                                             <th>Atributos</th>
                                             <th>Especificaciones técnicas</th>
-                                           
-                                           
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -56,47 +51,22 @@
         <!-- Example 01 -->
         <div class="widget has-shadow">
             <div class="widget-header bordered no-actions d-flex align-items-center">
-                <h4>Equipos Registrados</h4>
+                <h4>Listado de centros que han registrado equipos</h4>
             </div>
             <div class="widget-body">
-                <div class="table-responsive">
-                    <table id="tabla_equipo" class="table mb-0">
-                        <thead>
-                            <tr>
-                                <th>Regional</th>
-                                <th>Centro</th>
-                                <th>Equipo</th>
-                                <th>Ver Equipos</th>
-                                <th>Codigo QR</th>
-                                <th>PDF</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                <table id="tabla_equipos" class="table mb-0">
+                    <thead>
+                        <tr>
+                            <th>Regional</th>
+                            <th>Centro</th>
+                            <th>Número de Equipos</th>
+                            <th>Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                            @foreach($equipos as $equipo)
-
-                            <tr>
-                                <td>{{$equipo->nombre_regional}}</td>
-                                <td>{{$equipo->nombre_centro}}</td>
-                                <td>{{$equipo->numero}}</td>
-                                <td>
-                                    <div class="col-md-3">
-                                        <button type="button" class="section-lyla btn btn-formato btn-lg" onclick="mostrar_equipo({{$equipo->id}})">
-                                            Ver
-                                        </button>
-                                    </div>
-                                </td>
-                                <td><div class="title m-b-md">
-   {!!QrCode::size(100)->generate("hola Alejo soy un Codigo QR") !!}
-</div></td>
-<td><div>
-  <a href="/ejemplo">PDF</a>
-</div></td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
@@ -106,23 +76,58 @@
 @endsection
 
 @section("script")
+<script src="{{ asset('admin/vendors/js/datatables/datatables.min.js') }}"></script>
+<script>
+    $(function () {
+        $('#tabla_equipos').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+            },
+            processing: true,
+            serverSide: true,
+            ajax: '/equipos/obtener',
+            columns: [{
+                    data: 'nombre_regional',
+                    name: 'nombre_regional'
+                },
+                {
+                    data: 'nombre_centro',
+                    name: 'nombre_centro'
+                },
+                {
+                    data: 'numero',
+                    name: 'numero'
+                },
+                {
+                    data: 'id',
+                    name: 'id'
+                }
+            ],
+            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                var opciones = $('td:eq(3)', nRow);
+                html = ` <button type="button" class="btn btn-primary" onclick="mostrar_equipo(${aData.id})">
+                        Ver Equipos
+                    </button>`;
+                opciones.html(html);
+            }
+        });
+    });
 
-    <script>
-        
-        function mostrar_equipo(id){
+    function mostrar_equipo(id) {
 
-            $.ajax({
-                url: '/equipo/obtener/'+id,
-                dataType: 'json',
-                type: 'get'
-            }).done((respuesta)=>{
+        $.ajax({
+            url: '/equipos/obtener/' + id,
+            dataType: 'json',
+            type: 'get'
+        }).done(function (respuesta) {
 
+            console.log('====================================');
+            $('#modal_registro').modal();
+            console.log('====================================');
 
-                $("#modal_registro").modal()                
-                
-            })
-        }
-    
-    </script>
+        })
+    }
+
+</script>
 
 @endsection

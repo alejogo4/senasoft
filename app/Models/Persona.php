@@ -52,6 +52,6 @@ class Persona extends Model
         }
 
         public function TipoPersona() {
-            return $this->hasOne(TipoPersona::class,'id');
+            return $this->hasOne(TipoPersona::class,'id', 'tipo_persona');
         }
 }

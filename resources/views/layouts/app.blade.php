@@ -122,24 +122,20 @@
                 <nav class="side-navbar box-scroll sidebar-scroll">
                     <!-- Begin Main Navigation -->
                     <ul class="list-unstyled">
-                        @can('read proyectos')
-                        <li><a href="{{route('proyecto_list')}}"><i class="la la-at"></i><span>Evaluar
-                                    Proyectos</span></a></li>
-                        @endcan
-                        @can('read equipos')
-                        <li><a href="{{route('equipo_list')}}"><i class="la la-at"></i><span>Equipos</span></a></li>
-                        @endcan
-                        @can('read registros')
-                        <li><a href="{{route('registro_list')}}"><i class="la la-at"></i><span>Registros</span></a></li>
-                        @endcan
-                    </ul>
-
-
-                    <ul class="list-unstyled">
-                        <li class="active"><a href="#dropdown-db" aria-expanded="true" data-toggle="collapse"><i
-                                    class="la la-columns"></i><span>Active</span></a>
-                            <ul id="dropdown-db" class="collapse list-unstyled show pt-0">
-                                <li><a class="active" href="javascript:void(0);">Active</a></li>
+                        <span class="heading">SENASOFT</span>
+                        
+                        <li><a href="/dash"><i class="la la-home"></i><span>Dashboard</span></a></li>
+                        <li><a href="{{route('registro_list')}}"><i class="la la-users"></i><span>Registros</span></a></li>
+                        <li><a href="{{route('equipo_list')}}"><i class="la la-keyboard-o"></i><span>Equipos</span></a></li>
+                        <li><a href="{{route('proyecto_list')}}"><i class="la la-clipboard"></i><span>Proyectos</span></a></li>
+                        
+                        <span class="heading">EVALUACIÓN</span>
+                        <li>
+                            <a href="#dropdown-db" data-toggle="collapse">
+                                <i class="la la-columns"></i><span>Active</span>
+                            </a>
+                            <ul id="dropdown-db" class="collapse list-unstyled pt-0">
+                                <li><a href="javascript:void(0);">Active</a></li>
                                 <li><a href="javascript:void(0);">Link</a></li>
                                 <li><a href="javascript:void(0);">Link</a></li>
                                 <li><a href="javascript:void(0);">Link</a></li>
@@ -203,16 +199,16 @@
     <!-- Begin Vendor Js -->
     <script src="{{asset('admin/vendors/js/base/jquery.min.js')}}"></script>
     <script src="{{asset('admin/vendors/js/base/core.min.js')}}"></script>
-    <script src="{{asset('admin/vendors/js/tabledit/jquery.tabledit.min.js')}}"></script>
+    <script src="{{asset('admin/vendors/js/tabledit/jquery.tabledit.min.js')}}"></script>}
     <script src="{{asset('js/sweetalert2@8.js')}}"></script>
     <!-- End Vendor Js -->
     <!-- Begin Page Vendor Js -->
     <script src="{{asset('admin/vendors/js/nicescroll/nicescroll.min.js')}}"></script>
     <script src="{{asset('admin/vendors/js/app/app.min.js')}}"></script>
+    
     <!-- End Page Vendor Js -->
-    <script src="{{asset('admin/js/components/tabledit/tabledit.js')}}"></script>
     <script src="{{asset('admin/js/app/app.js')}}"></script>
-    <!-- End Page Vendor Js -->
+
     @yield("script")
 </body>
 

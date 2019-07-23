@@ -15,8 +15,6 @@ class PersonasExport implements FromView
         ->orderBy("tipo_persona")
         ->get();
 
-        // dd($persona);
-
         return view('app.registro.excel', [
             'datos' => $persona
         ]);

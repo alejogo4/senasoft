@@ -1,38 +1,66 @@
 <table>
     <thead>
         <tr>
-            <th>Regional</th>
-            <th>Centro de Formación</th>
-            <th>Categoria</th>
-            <th>Tipo Documento</th>
-            <th>Documento</th>
-            <th>Nombre</th>
-            <th>Fecha de Nacimiento</th>
-            <th>Ficha</th>
-            <th>Ciudad</th>
-            <th>Aeropuerto de Origen</th>
-            <th>Tipo de Contrato</th>
-            <th>Correo</th>
-            <th>Correo Alterno</th>
-            <th>Teléfono</th>
-            <th>Teléfono Alterno</th>
-            <th>Programa de Formación</th>
-            <th>RH</th>
-            <th>EPS</th>
-            <th>ARL</th>
-            <th>Talla de Camisa</th>
-            <th>Tipo de Alimentación</th>
-            <th>Alergias</th>
-            <th>Enfermedades</th>
-            <th>Medicamentos</th>
-            <th>Tipo de Persona</th>
-            <th>Fecha de Creación</th>
+            <th><b>Regional</b></th>
+            <th><b>Centro de Formación</b></th>
+            <th><b>Categoria</b></th>
+            <th><b>Tipo Documento</b></th>
+            <th><b>Documento</b></th>
+            <th><b>Nombre</b></th>
+            <th><b>Apellidos</b></th>
+            <th><b>Fecha de Nacimiento</b></th>
+            <th><b>Ficha</b></th>
+            <th><b>Ciudad</b></th>
+            <th><b>Aeropuerto de Origen</b></th>
+            <th><b>Tipo de Contrato</b></th>
+            <th><b>Correo</b></th>
+            <th><b>Correo Alterno</b></th>
+            <th><b>Teléfono</b></th>
+            <th><b>Teléfono Alterno</b></th>
+            <th><b>Programa de Formación</b></th>
+            <th><b>RH</b></th>
+            <th><b>EPS</b></th>
+            <th><b>ARL</b></th>
+            <th><b>Talla de Camisa</b></th>
+            <th><b>Tipo de Alimentación</b></th>
+            <th><b>Alergias</b></th>
+            <th><b>Enfermedades</b></th>
+            <th><b>Medicamentos</b></th>
+            <th><b>Tipo de Persona</b></th>
+            <th><b>Fecha de Creación</b></th>
         </tr>
     </thead>
     <tbody>
         @foreach($datos as $value)
-            <?php echo "<pre>"; print($value); echo "</pre>"; ?>
-            
+            <tr>
+                <td>{{$value->Centro->Regional->nombre_regional}}</td>
+                <td>{{$value->Centro->nombre_centro}}</td>
+                <td>{{$value->Categoria->nombre_categoria}}</td>
+                <td>{{$value->tipo_documento}}</td>
+                <td>{{$value->documento}}</td>
+                <td>{{$value->nombres}}</td>
+                <td>{{$value->apellidos}}</td>
+                <td>{{$value->fecha_nacimiento}}</td>
+                <td>{{$value->ficha}}</td>
+                <td>{{$value->ciudad}}</td>
+                <td>{{$value->ciudad_desplazamiento_aereo}}</td>
+                <td>{{$value->tipo_contrato}}</td>
+                <td>{{$value->correo_principal}}</td>
+                <td>{{$value->correo_alterno}}</td>
+                <td>{{$value->telefono}}</td>
+                <td>{{$value->otro_telefono}}</td>
+                <td>{{$value->programa_formacion}}</td>
+                <td>{{$value->rh}}</td>
+                <td>{{$value->eps}}</td>
+                <td>{{$value->arl}}</td>
+                <td>{{$value->talla_camisa}}</td>
+                <td>{{$value->tipo_alimentacion}}</td>
+                <td>{{$value->alergias}}</td>
+                <td>{{$value->enfermedades}}</td>
+                <td>{{$value->medicamento_consume}}</td>
+                <td>{{$value->TipoPersona->descripcion_tipo_persona}}</td>
+                <td>{{$value->created_at}}</td>
+            </tr>
         @endforeach
     </tbody>
 </table>
