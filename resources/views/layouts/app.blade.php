@@ -36,6 +36,44 @@
 </head>
 
 <body id="page-top">
+    <!-- Modal -->
+<div class="modal fade bd-example-modal-sm" tabindex="-1" id="modal_equipo" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                <div class="widget-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table id="tabla_equipo" class="table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Categoría</th>
+                                            <th>Placa</th>
+                                            <th>Serial</th>
+                                            <th>Modelo</th>
+                                            <th>Descripción</th>
+                                            <th>Descripción Actual</th>
+                                            <th>Atributos</th>
+                                            <th>Especificaciones técnicas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+  </div>
+</div>
+
     <!-- Begin Preloader -->
     <div id="preloader">
         <div class="canvas">
