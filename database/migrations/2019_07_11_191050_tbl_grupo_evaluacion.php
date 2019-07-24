@@ -14,7 +14,7 @@ class TblGrupoEvaluacion extends Migration
     public function up()
     {
         Schema::create('tbl_grupo_evaluacion', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+            // $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->char('cumple');            
             $table->unsignedBigInteger('criterio_id');

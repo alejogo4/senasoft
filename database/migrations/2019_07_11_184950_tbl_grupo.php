@@ -14,6 +14,7 @@ class TblGrupo extends Migration
     public function up()
     {
         Schema::create('tbl_grupo', function (Blueprint $table) {
+            // $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->char('nombre' , 45);
 

@@ -8,17 +8,7 @@ class Equipo extends Model
 {
     public $table = "tbl_equipo";
 
-    public function Centro () {
-        return $this->hasOne('App\Models\Centro','id');
-    }
-
-    public function Regional () {
-        return $this->hasOne('App\Models\Regional','id');
-    }
-    public function Categoria () {
-        return $this->hasOne('App\Models\Categoria', 'id');
-    }
-    protected $fillable = [
+     protected $fillable = [
         'equipo',
         'descripcion',
         'descripcion_actual',
@@ -29,5 +19,16 @@ class Equipo extends Model
         'esp_tecnica',
         'categoria_id',
         'centro_id'];
+
+        public function Centro() {
+            return $this->hasOne('App\Models\Centro','id');
+        }
+    
+        public function Regional() {
+            return $this->hasOne('App\Models\Regional','id');
+        }
+        public function Categoria() {
+            return $this->hasOne('App\Models\Categoria', 'id');
+        }
 }
 

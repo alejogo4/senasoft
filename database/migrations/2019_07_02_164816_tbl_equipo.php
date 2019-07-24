@@ -14,7 +14,7 @@ class TblEquipo extends Migration
     public function up()
     {
         Schema::create('tbl_equipo', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+            // $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->char('descripcion' , 45);
             $table->longText('descripcion_actual' , 200);

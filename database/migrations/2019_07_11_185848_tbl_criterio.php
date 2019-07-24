@@ -14,9 +14,10 @@ class TblCriterio extends Migration
     public function up()
     {
         Schema::create('tbl_criterio', function (Blueprint $table) {
+            // $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->char('factor', 45);
-            $table->float('porcentaje');
+            $table->float('porcentaje' , 0);
             $table->longtext('observaciones', 200);
             $table->unsignedBigInteger('fase_id');
 

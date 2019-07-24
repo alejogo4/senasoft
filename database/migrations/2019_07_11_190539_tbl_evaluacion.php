@@ -14,7 +14,7 @@ class TblEvaluacion extends Migration
     public function up()
     {
         Schema::create('tbl_evaluacion', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+            // $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->timestamp('fecha');
             $table->char('nombre_lider');
