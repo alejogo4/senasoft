@@ -22,17 +22,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($proyectos as $proyecto)
-                                    <tr>
-                                        <td>{{$proyecto->centro->id}}</td>
-                                        <td>{{$proyecto->centro->nombre_centro}}</td>
-                                        <td><a href="{{url('/proyecto-file/'.$proyecto->arhivo_proyecto_centro)}}" download>{{$proyecto->arhivo_proyecto_centro}}</a></td>
-                                        <td>{{$proyecto->puntaje}}</td>
-                                        <td>
-                                            {{ $proyecto->juicio == 0 ? "Aprobado" : "No Aprobado" }}
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                    @foreach($proyectos as $proyecto)
+                                        <tr>
+                                            <td>{{$proyecto->id}}</td>
+                                            <td>{{$proyecto->nombre_centro}}</td>
+                                            <td><a href="{{url('/proyecto-file/'.$proyecto->arhivo_proyecto_centro)}}" download>{{$proyecto->arhivo_proyecto_centro}}</a></td>
+                                            <td>{{$proyecto->puntaje}}</td>
+                                        </tr>
+                                    @endforeach
                                     
                                 </tbody>
                             </table>

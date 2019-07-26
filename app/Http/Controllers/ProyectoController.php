@@ -48,9 +48,14 @@ class ProyectoController extends Controller
 
     public function index_admin()
     {
-        $proyectos = Proyecto::with(['Centro'])->get();
+        
+        $proyectos = Centro::select("tbl_proyecto.*", "tbl_centro.*")
+        ->join("tbl_proyecto", "tbl_proyecto.centro_id", "=", "tbl_centro.id")
+        ->get();
+
+        
         return view("app.proyecto.list", array(
-            "proyectos" => $proyectos,
+            "proyectos" => $proyectos
         ));
     }
 
