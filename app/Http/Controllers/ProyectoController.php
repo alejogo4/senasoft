@@ -7,7 +7,7 @@ use App\Models\Proyecto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\Response;
-
+use DB;
 class ProyectoController extends Controller
 {
     /**
@@ -49,7 +49,7 @@ class ProyectoController extends Controller
     public function index_admin()
     {
         
-        $proyectos = Centro::select("tbl_proyecto.*", "tbl_centro.*")
+        $proyectos = Centro::select("tbl_proyecto.*", "tbl_centro.*", DB::raw("tbl_proyecto.id as id_proyecto"))
         ->join("tbl_proyecto", "tbl_proyecto.centro_id", "=", "tbl_centro.id")
         ->get();
 
@@ -131,12 +131,14 @@ class ProyectoController extends Controller
     public function update(Request $request)
     {
         //
-
+    
         $proyecto = Proyecto::find($request->id);
         $proyecto->puntaje = $request->puntaje;
         $proyecto->estado = $request->estado;
-        $proyecto->update();
 
+        
+        $proyecto->update();
+        
         return response()->json(["ok" => true]);
     }
 

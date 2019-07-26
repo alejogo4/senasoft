@@ -55,7 +55,7 @@
             console.log('onDraw()');
         },
         onSuccess: function(data, textStatus, jqXHR) {
-
+            console.log(data);
             Swal.fire({
                 title: 'Muy Bien',
                 text: "Puntaje actualizado con éxito",

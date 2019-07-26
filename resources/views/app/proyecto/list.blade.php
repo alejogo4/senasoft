@@ -24,7 +24,7 @@
                                 <tbody>
                                     @foreach($proyectos as $proyecto)
                                         <tr>
-                                            <td>{{$proyecto->id}}</td>
+                                            <td>{{$proyecto->id_proyecto}}</td>
                                             <td>{{$proyecto->nombre_centro}}</td>
                                             <td><a href="{{url('/proyecto-file/'.$proyecto->arhivo_proyecto_centro)}}" download>{{$proyecto->arhivo_proyecto_centro}}</a></td>
                                             <td>{{$proyecto->puntaje}}</td>

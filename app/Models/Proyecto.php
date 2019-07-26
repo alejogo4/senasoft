@@ -9,9 +9,6 @@ class Proyecto extends Model
     //
     public $table = "tbl_proyecto";
 
-    public function Centro () {
-        return $this->hasOne('App\Models\Centro','id');
-    }
 
     public $timestamps = true;
 }
