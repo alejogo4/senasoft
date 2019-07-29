@@ -8,7 +8,9 @@ class Proyecto extends Model
 {
     //
     public $table = "tbl_proyecto";
-
-
     public $timestamps = true;
+
+    public function Centro() {
+        return $this->hasOne(Centro::class,'id', 'centro_id');
+    }
 }

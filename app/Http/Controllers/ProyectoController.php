@@ -7,7 +7,9 @@ use App\Models\Proyecto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpFoundation\Response;
+use Yajra\Datatables\Datatables;
 use DB;
+
 class ProyectoController extends Controller
 {
     /**
@@ -18,13 +20,11 @@ class ProyectoController extends Controller
     public function __construct()
     {
         $this->middleware('auth')->except(['store', 'validar', 'index']);
-
     }
 
     public function index()
     {
         //
-
         $centro = $this->ObtenerDatosCentroPersona();
 
         if (session("estado_proyectos") == 1 || $centro == null) {
@@ -46,18 +46,6 @@ class ProyectoController extends Controller
         return $centro;
     }
 
-    public function index_admin()
-    {
-        
-        $proyectos = Centro::select("tbl_proyecto.*", "tbl_centro.*", DB::raw("tbl_proyecto.id as id_proyecto"))
-        ->join("tbl_proyecto", "tbl_proyecto.centro_id", "=", "tbl_centro.id")
-        ->get();
-
-        
-        return view("app.proyecto.list", array(
-            "proyectos" => $proyectos
-        ));
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -120,34 +108,37 @@ class ProyectoController extends Controller
         return $this->validate($request, $rules, $customMessages);
     }
 
+    
+    public function index_admin()
+    {
+        return view("app.proyecto.list");
+    }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    public function obtener_registros()
+    {
+        $proyectos = Proyecto::with(["Centro", "Centro.Regional"])
+        ->select("tbl_proyecto.*", "tbl_centro.*", DB::raw("tbl_proyecto.id as id_proyecto"))
+        ->join("tbl_centro", "tbl_proyecto.centro_id", "=", "tbl_centro.id")
+        ->get();
+
+        return Datatables::of($proyectos)
+            ->make(true);
+    }
+
     public function update(Request $request)
     {
         //
-    
         $proyecto = Proyecto::find($request->id);
         $proyecto->puntaje = $request->puntaje;
         $proyecto->estado = $request->estado;
-
-        
         $proyecto->update();
-        
         return response()->json(["ok" => true]);
     }
 
-
     public function getProjectFile($file)
     {
-
         $file = \Storage::disk('proyectos')->get($file);
         return new Response($file, 200);
-
     }
+    
 }
