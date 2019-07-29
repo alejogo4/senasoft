@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="{{asset('admin/css/datatables/datatables.min.css')}}">
 @endsection
 
-@section('content')
+@section("modal")
 <!-- Modal -->
-<div class="modal fade" id="modal_registro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="modal_registro_equipo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -273,6 +273,10 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('content')
+
 <div class="row">
     <div class="col-xl-12">
         <!-- Example 01 -->
@@ -382,7 +386,7 @@
         }).done((respuesta) => {
 
 
-            $("#modal_registro").modal()
+            $("#modal_registro_equipo").modal()
 
         })
     }

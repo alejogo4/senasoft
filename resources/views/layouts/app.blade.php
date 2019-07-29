@@ -234,6 +234,7 @@
         </div>
         <!-- End Page Content -->
     </div>
+
     <!-- Begin Vendor Js -->
     <script src="{{asset('admin/vendors/js/base/jquery.min.js')}}"></script>
     <script src="{{asset('admin/vendors/js/base/core.min.js')}}"></script>
@@ -248,6 +249,8 @@
     <script src="{{asset('admin/js/app/app.js')}}"></script>
 
     @yield("script")
+
+    @yield("modal")
 </body>
 
 </html>
