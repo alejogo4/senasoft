@@ -1,0 +1,32 @@
+select r.nombre_regional, c.nombre_centro, 
+CASE
+    WHEN p.nombres is null THEN "Sin registro"
+    WHEN p.nombres is not null THEN "Registrado" END as registro,
+CASE
+    WHEN p.revision = 0 THEN "Sin revisar"
+    WHEN p.revision = 1 THEN "En revisión"    
+ 	WHEN p.revision = 2 THEN "Aprobado" END as estado   
+from tbl_centro c 
+inner join tbl_regional r on r.id = c.regional_id
+left join tbl_persona p on c.id = p.centro_id and p.tipo_persona = 1
+order by r.id
+
+
+
+SELECT count(*) FROM `tbl_persona` WHERE tipo_persona = 1
+50
+
+SELECT count(*) FROM `tbl_persona` WHERE tipo_contrato = 'PLANTA'
+21
+
+SELECT count(*) FROM `tbl_persona` WHERE tipo_contrato = 'CONTRATISTA'
+29
+
+
+SELECT count(*) FROM `tbl_persona` WHERE tipo_persona = 2
+260
+
+
+select ct.nombre_categoria, sum(cupo.n_cupos_disponibles) as cupos, (select count(*) from tbl_persona where tbl_persona.categoria_id = ct.id) as utilizados from tbl_cupo cupo inner join tbl_categoria ct on cupo.categoria_id = ct.id group by ct.nombre_categoria
+
+

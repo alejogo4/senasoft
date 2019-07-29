@@ -3,14 +3,21 @@ var dropZoneDocumentos = null;
 var dropZoneCertificado = null;
 var dropZoneFoto = null;
 
-function loading(){
-Swal.fire({
-  title: 'Registrando...',
-  timer: 10000,
-  onBeforeOpen: () => {
-    Swal.showLoading()
-  }
-})
+function loading() {
+    // Swal.fire({
+    //     title: 'Registrando...',
+    //     timer: 10000,
+    //     onBeforeOpen: () => {
+    //         Swal.showLoading()
+    //     }
+    // })
+    Swal.fire({
+        imageUrl: '/loading.gif',
+        imageAlt: 'Registrando...',
+        showCloseButton: false,
+        showCancelButton: false,
+        showConfirmlButton: false,
+    })
 }
 
 (function ($) {
@@ -89,7 +96,17 @@ Swal.fire({
             return form.valid();
         },
         onFinished: function (event, currentIndex) {
+            event.preventDefault();
+            Swal.fire({
+                imageUrl: '/loading.gif',
+                imageAlt: 'Registrando...',
+                text: 'Registrando...',
+                showCloseButton: false,
+                showCancelButton: false,
+                showConfirmButton: false,
+            })
             guardar();
+            return false;
         },
         onStepChanged: function (event, currentIndex, priorIndex) {
 
@@ -101,6 +118,7 @@ Swal.fire({
 
 
 $(function () {
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -126,15 +144,22 @@ $(function () {
         autoProcessQueue: false,
         parallelUploads: 20,
         uploadMultiple: true,
-        addRemoveLinks: true
+        addRemoveLinks: true,
+        maxFilesize: 2
     });
+
+    // dropZoneEps.on("error", function (file) {
+    //     this.removeFile(file);
+    // });
+
     dropZoneDocumentos = new Dropzone("div#cedulas", {
         acceptedFiles: "application/pdf",
         url: "/",
         autoProcessQueue: false,
         parallelUploads: 20,
         uploadMultiple: true,
-        addRemoveLinks: true
+        addRemoveLinks: true,
+        maxFilesize: 2
     });
     dropZoneCertificado = new Dropzone("div#certificado", {
         acceptedFiles: "application/pdf",
@@ -142,7 +167,8 @@ $(function () {
         autoProcessQueue: false,
         parallelUploads: 20,
         uploadMultiple: true,
-        addRemoveLinks: true
+        addRemoveLinks: true,
+        maxFilesize: 2
     });
     dropZoneFoto = new Dropzone("div#foto", {
         acceptedFiles: "image/jpeg",
@@ -150,8 +176,11 @@ $(function () {
         autoProcessQueue: false,
         parallelUploads: 20,
         uploadMultiple: true,
-        addRemoveLinks: true
+        addRemoveLinks: true,
+        maxFilesize: 1
     });
+
+
 
     $.ajax({
         url: "/ciudades.json",
@@ -174,7 +203,7 @@ $(function () {
         $("#aeropuerto_desplazamiento").append("<option value='No Aplica'>No Aplica</option>");
 
         e.forEach(v => {
-            let valor = v.nombre.toUpperCase()+"-"+v.departamento.toUpperCase();
+            let valor = v.nombre.toUpperCase() + "-" + v.departamento.toUpperCase();
             $("#aeropuerto_desplazamiento").append(`<option value='${valor}'>${valor}</option>`);
         })
     })
@@ -195,7 +224,6 @@ function guardar() {
     let foto = dropZoneFoto.getAcceptedFiles();
 
     if (eps.length > 0 && documentos.length > 0 && certificado.length > 0 && foto.length > 0) {
-        loading();
 
         let form = $("#form").serializeArray();
 
@@ -230,7 +258,8 @@ function guardar() {
             processData: false,
             method: 'POST'
         }).done((respuesta) => {
-            Swal.hideLoading();
+            // Swal.hideLoading();
+            Swal.close()
             if (respuesta.ok) {
                 Swal.fire({
                     title: 'Felicidades',
@@ -244,7 +273,7 @@ function guardar() {
                         location.href = "/";
                     }
                 })
-            }else{
+            } else {
 
                 Swal.fire({
                     title: 'Espera',
@@ -253,7 +282,8 @@ function guardar() {
                 })
             }
         }).fail((error) => {
-            Swal.hideLoading();
+            // Swal.hideLoading();
+            Swal.close()
             Swal.fire({
                 title: 'Espera',
                 text: "Ocurrió un error inesperado, intenta más tarde. En caso de persistir el error contacta al administrador del sitio",

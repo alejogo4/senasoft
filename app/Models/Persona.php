@@ -44,11 +44,11 @@ class Persona extends Model
 
 
         public function Centro() {
-            return $this->hasOne(Centro::class,'id');
+            return $this->hasOne(Centro::class,'id', 'centro_id');
         }
 
         public function Categoria() {
-            return $this->hasOne(Categoria::class,'id');
+            return $this->hasOne(Categoria::class,'id', 'categoria_id');
         }
 
         public function TipoPersona() {

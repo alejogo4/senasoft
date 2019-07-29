@@ -329,17 +329,17 @@ Registros de Instructores y Aprendices
 
                 var opciones = $('td:eq(17)', nRow);
                 html =
-                    `<a href="#" onclick="abrir_documento('${aData.arhivo_documento}', 'documentos')" class="btn btn-primary"><i style="margin:0" class="la la-download"></i></a>`;
+                    `<a href="javascript:abrir_documento('${aData.arhivo_documento}', 'documentos')"  class="btn btn-primary"><i style="margin:0" class="la la-download"></i></a>`;
                 opciones.html(html);
 
                 var opciones = $('td:eq(18)', nRow);
                 html =
-                    `<a href="#" onclick="abrir_documento('${aData.arhivo_certificado_eps}', 'eps')" class="btn btn-primary"><i style="margin:0" class="la la-download"></i></a>`;
+                    `<a href="javascript:abrir_documento('${aData.arhivo_certificado_eps}', 'eps')" class="btn btn-primary"><i style="margin:0" class="la la-download"></i></a>`;
                 opciones.html(html);
 
                 var opciones = $('td:eq(19)', nRow);
                 html =
-                    `<a href="#" onclick="abrir_documento('${aData.arhivo_constancia_estudio}', 'certificados')" class="btn btn-primary"><i style="margin:0" class="la la-download"></i></a>`;
+                    `<a href="javascript:abrir_documento('${aData.arhivo_constancia_estudio}', 'certificados')" class="btn btn-primary"><i style="margin:0" class="la la-download"></i></a>`;
                 opciones.html(html);
 
                 var opciones = $(nRow);

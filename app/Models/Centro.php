@@ -12,6 +12,6 @@ class Centro extends Model
     protected $guarded = ['id'];
 
     public function Regional() {
-        return $this->hasOne(Regional::class,'id');
+        return $this->hasOne(Regional::class,'id', 'regional_id');
     }
 }

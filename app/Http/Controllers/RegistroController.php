@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Imports\ExcelImport;
 use App\Exports\PersonasExport;
+use App\Imports\ExcelImport;
 use App\Models\Categoria;
 use App\Models\Centro;
 use App\Models\Cupo;
@@ -267,13 +267,15 @@ class RegistroController extends Controller
             !empty($datos[13]) &&
             !empty($datos[14])) {
 
+            $fecha = \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($datos[5]);
+
             Persona::create([
                 'tipo_documento' => strtoupper($datos[1]),
                 'documento' => $datos[2],
                 'nombres' => strtoupper($datos[3]),
                 'apellidos' => strtoupper($datos[4]),
-                'fecha_nacimiento' => $datos[5],
-                'foto' => $datos[2] . "_foto.png",
+                'fecha_nacimiento' => $fecha->format("Y-m-d"),
+                'foto' => $datos[2] . "_foto.jpg",
                 'correo_principal' => strtoupper($datos[6]),
                 'correo_alterno' => strtoupper($datos[7]),
                 'telefono' => $datos[8],
@@ -380,13 +382,14 @@ class RegistroController extends Controller
         return view("app.registro.index");
     }
 
-    public function notificaciones(){
+    public function notificaciones()
+    {
 
         $personas = Persona::with(["Centro", "Centro.Regional"])
-        ->where("tipo_persona", "1")
-        ->where("revision", 0)
-        ->orderBy("created_at")
-        ->get();
+            ->where("tipo_persona", "1")
+            ->where("revision", 0)
+            ->orderBy("created_at")
+            ->get();
 
         return response()->json($personas);
     }
@@ -394,8 +397,8 @@ class RegistroController extends Controller
     public function obtener_registros()
     {
         $personas = Persona::with(["Centro", "Centro.Regional"])
-                    ->where('tipo_persona', '1')
-                    ->get();
+            ->where('tipo_persona', '1')
+            ->get();
 
         return Datatables::of($personas)
             ->editColumn("nombres", function ($persona) {
@@ -418,15 +421,16 @@ class RegistroController extends Controller
             ->make(true);
     }
 
-    public function validar_estado_instructor($id_centro){
+    public function validar_estado_instructor($id_centro)
+    {
         $registros = Persona::where("centro_id", $id_centro)
-        ->where("tipo_persona", 2)
-        ->count();
+            ->where("tipo_persona", 2)
+            ->count();
 
         $aprobados = Persona::where("centro_id", $id_centro)
-        ->where("tipo_persona", 2)
-        ->where("revision", 1)
-        ->count();
+            ->where("tipo_persona", 2)
+            ->where("revision", 1)
+            ->count();
 
         return $registros == $aprobados ? 1 : 2;
     }
@@ -434,19 +438,19 @@ class RegistroController extends Controller
     public function modificar_estado_revision($id, $estado)
     {
         $personas = Persona::find($id);
-        if($personas == null){
-            return response()->json(["ok"=>false]);
+        if ($personas == null) {
+            return response()->json(["ok" => false]);
         }
-        
+
         $instructor = Persona::where("centro_id", $personas->centro_id)->where("tipo_persona", 1);
 
-        $personas->update(["revision"=>$estado]);
+        $personas->update(["revision" => $estado]);
 
         $estado_instructor = $this->validar_estado_instructor($personas->centro_id);
 
-        $instructor->update(["revision"=>$estado_instructor]);
+        $instructor->update(["revision" => $estado_instructor]);
 
-        return response()->json(["ok"=>true]);
+        return response()->json(["ok" => true]);
     }
 
     public function obtener_documento($carpeta, $archivo)
@@ -464,7 +468,8 @@ class RegistroController extends Controller
         }
     }
 
-    public function exportar_excel(){
+    public function exportar_excel()
+    {
         return Excel::download(new PersonasExport, 'registros.xlsx');
     }
 }

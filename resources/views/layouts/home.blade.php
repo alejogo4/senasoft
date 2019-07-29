@@ -773,6 +773,9 @@
                     <li><img src="/logosempresas/tyj.png" alt="T y J sas"></li>
                     <li><img src="/logosempresas/castor.png" alt="Castor"></li>
                     <li><img src="/logosempresas/globant.png" alt="Globant"></li>
+                    <li><img src="/logosempresas/intergrupo.png" alt="Intergrupo"></li>
+                    <li><img src="/logosempresas/panduit.png" alt="Panduit"></li>
+                    <li><img src="/logosempresas/sigma.png" alt="Sigma"></li>
 
                 </ul>
                 <!--end partners-mentions -->

@@ -35,7 +35,7 @@
             <tr>
                 <td>{{$value->Centro->Regional->nombre_regional}}</td>
                 <td>{{$value->Centro->nombre_centro}}</td>
-                <td>{{$value->Categoria->nombre_categoria}}</td>
+                <td>{{$value->Categoria == null? "" : $value->Categoria->nombre_categoria}}</td>
                 <td>{{$value->tipo_documento}}</td>
                 <td>{{$value->documento}}</td>
                 <td>{{$value->nombres}}</td>

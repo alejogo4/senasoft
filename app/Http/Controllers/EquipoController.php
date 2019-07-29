@@ -11,6 +11,7 @@ use DB;
 use Excel;
 use PDF;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class EquipoController extends Controller
 {
@@ -83,11 +84,11 @@ class EquipoController extends Controller
                 if ($cont == count($datos_equipos)) {
 
                     $c = Centro::find($centro_id);
-                    $c->update(["estado_registros" => 1]);
+                    $c->update(["estado_equipos" => 1]);
 
                     session([
                         "codigo" => null,
-                        "estado_registros" => null
+                        "estado_equipos" => null
                     ]);
 
                     DB::commit();
@@ -122,7 +123,13 @@ class EquipoController extends Controller
 
     /**************************Admin ***************/
 
+
     public function index_admin()
+    {
+        return view("app.equipo.list");
+    }
+
+    public function obtener_registros_equipos_centros()
     {
         $equipos = Centro::select("tbl_centro.id", "tbl_centro.nombre_centro", "tbl_regional.nombre_regional", DB::raw("count(tbl_equipo.id) as numero"))
         ->distinct()
@@ -131,9 +138,8 @@ class EquipoController extends Controller
         ->groupBy("tbl_centro.id", "tbl_centro.nombre_centro", "tbl_regional.nombre_regional")
         ->get();
 
-        return view("app.equipo.list", array(
-            "equipos" => $equipos,
-        ));
+        return Datatables::of($equipos)
+            ->make(true);
     }
 
     public function obtener_equipos($id_centro){
