@@ -80,11 +80,16 @@ Listado de proyectos para la muestra
                 }
             ],
             "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                
                 var opciones = $('td:eq(2)', nRow);
                 html = `<a href="/proyecto-file/${aData.arhivo_proyecto_centro}" download>${aData.arhivo_proyecto_centro}</a>`;
                 opciones.html(html);
             }
         });
+
+        function actulizar(){
+
+        }
 
     </script>
 
