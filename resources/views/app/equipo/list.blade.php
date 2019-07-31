@@ -33,8 +33,6 @@
                                                     <th>Descripción Actual</th>
                                                     <th>Atributos</th>
                                                     <th>Especificaciones técnicas</th>
-
-
                                                 </tr>
                                             </thead>
                                             <tbody id="table-1">
@@ -386,7 +384,7 @@
         }).done((respuesta) => {
 
 
-            $("#modal_registro_equipo").modal()
+            $("#modal_registro_equipo").modal('show');
 
         })
     }

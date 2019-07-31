@@ -45,6 +45,14 @@ class UsuariosPrimarios extends Seeder
 
         $superAdmin2->assignRole('super-admin');
 
+        $superAdmin3 = User::create([
+            'name' => 'Claudia Marcela Porras',
+            'email' => 'clapor@sena.edu.co',
+            'password' => Hash::make('mayis.2019')
+        ]);
+
+        $superAdmin3->assignRole('super-admin');
+
         
     }
 }
