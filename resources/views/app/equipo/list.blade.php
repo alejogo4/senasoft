@@ -7,9 +7,10 @@
 @section("modal")
 <!-- Modal -->
 <div class="modal fade" id="modal_registro_equipo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg" style="max-width: 90%;" role="document">
         <div class="modal-content">
             <div class="modal-header">
+                Listado de equipos
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
             </div>
@@ -19,7 +20,7 @@
 
                     </ul>
                     <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show " id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                        <div class="tab-pane fade " id="tab-1" role="tabpanel" aria-labelledby="tab-1">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
@@ -33,8 +34,6 @@
                                                     <th>Descripción Actual</th>
                                                     <th>Atributos</th>
                                                     <th>Especificaciones técnicas</th>
-
-
                                                 </tr>
                                             </thead>
                                             <tbody id="table-1">
@@ -270,6 +269,9 @@
                 </div>
 
             </div>
+            <div class="modal-footer">
+                <button class="btn btn-default float-right pull-right" data-dismiss="modal" aria-label="Close">Cerrar</button>
+            </div>
         </div>
     </div>
 </div>
@@ -339,7 +341,7 @@
             ],
             "fnRowCallback": function (nRow, aData, iDisplayIndex) {
                 var opciones = $('td:eq(3)', nRow);
-                html = ` <button type="button" class="btn btn-primary" onclick="mostrar_equipo(${aData.id})">
+                html = ` <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_registro_equipo"  onclick="mostrar_equipo(${aData.id})">
                         Ver Equipos
                     </button>`;
                 opciones.html(html);
@@ -352,41 +354,40 @@
         $.ajax({
             url: '/equipo/obtener/' + id,
             dataType: 'json',
-            type: 'get',
-            success: function (respuesta) {
-                console.log(respuesta);
-                respuesta.categorias.forEach(function (element, indice) {
+            type: 'get'
+        }).done((respuesta) => {
+            console.log(respuesta);
+            $("#myTab").empty();
+            respuesta.categorias.forEach(function (element, indice) {
 
-                    console.log(element.nombre_categoria);
-                    $("#myTab").append('<li class="nav-item">' +
-                        '<a class="nav-link " id="' + element.nombre_categoria +
-                        '-tab" data-toggle="tab" href="#tab-' + element.categoria_id +
-                        '" role="tab" aria-controls="tab-' + element.categoria_id +
-                        '" aria-selected="true">' + element.nombre_categoria + '</a>' +
-                        '</li>');
-                });
-                respuesta.equipos.forEach(function (element, indice) {
-                    $("#table-" + element.categoria_id).html("");
-                    $("#table-" + element.categoria_id).append('<tr>' +
-                        '<th>' + element.placa_sena + '</th>' +
-                        '<th>' + element.serial + '</th>' +
-                        '<th>' + element.modelo + '</th>' +
-                        '<th>' + element.descripcion + '</th>' +
-                        '<th>' + element.descripcion_actual + '</th>' +
-                        '<th>' + element.atributos + '</th>' +
-                        '<th>' + element.esp_tecnica + '</th>' +
+                let show = indice == 0 ? 'show active' : '';
+
+                $("#myTab").append('<li class="nav-item">' +
+                    '<a class="nav-link '+show+'" id="' + element.nombre_categoria +
+                    '-tab" data-toggle="tab" href="#tab-' + element.categoria_id +
+                    '" role="tab" aria-controls="tab-' + element.categoria_id +
+                    '" aria-selected="true">' + element.nombre_categoria + '</a>' +
+                    '</li>');
+
+                $("#tab-" + element.categoria_id).addClass(show);
+
+                let categorias = respuesta.equipos.filter(e=>e.categoria_id == element.categoria_id);
+                
+                $("#table-" + element.categoria_id).empty();
+                categorias.forEach(function (e, i) {
+                    
+                    $("#table-" + e.categoria_id).append('<tr>' +
+                        '<th>' + e.placa_sena + '</th>' +
+                        '<th>' + e.serial + '</th>' +
+                        '<th>' + e.modelo + '</th>' +
+                        '<th>' + e.descripcion + '</th>' +
+                        '<th>' + e.descripcion_actual + '</th>' +
+                        '<th>' + e.atributos + '</th>' +
+                        '<th>' + e.esp_tecnica + '</th>' +
                         '</tr>');
                 });
 
-                // $("#myTab").append('<li class="nav-item">'+
-                //                         '<a class="nav-link " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"></a>'+
-                //                     '</li>');
-
-            }
-        }).done((respuesta) => {
-
-
-            $("#modal_registro_equipo").modal()
+            });
 
         })
     }
