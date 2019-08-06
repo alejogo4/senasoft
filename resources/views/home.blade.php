@@ -7,7 +7,6 @@ Dashboard
 @section("style")
 <link rel="stylesheet" href="{{asset('admin/css/datatables/datatables.min.css')}}">
 @endsection
-
 @section('content')
 
 <div class="row">
