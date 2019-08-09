@@ -67,29 +67,97 @@ Listado de proyectos para la muestra
                     name: 'nombre_centro'
                 },
                 {
-                    data: 'id',
-                    name: 'id'
+                    data: 'puntaje',
+                    name: 'puntaje'
                 },
                 {
                     data: 'puntaje',
                     name: 'puntaje'
                 },
                 {
-                    data: 'id',
-                    name: 'id'
+                    data: 'puntaje',
+                    name: 'puntaje'
                 }
+                
             ],
             "fnRowCallback": function (nRow, aData, iDisplayIndex) {
-                
+               
                 var opciones = $('td:eq(2)', nRow);
                 html = `<a href="/proyecto-file/${aData.arhivo_proyecto_centro}" download>${aData.arhivo_proyecto_centro}</a>`;
                 opciones.html(html);
+
+                var puntaje = $('td:eq(3)', nRow);
+                puntaje.attr("contenteditable",true);
+                puntaje.addClass("point");
+
+                if(aData.puntaje != 0){
+                    var buttons = $('td:eq(4)', nRow);
+                    if(aData.estado ==  1){
+                        buttons.html(`<span class="badge badge-success">Success</span>`);
+                    }else{
+                        buttons.html(`<span class="badge badge-danger">Danger</span>`);
+                    }
+                    
+                }else{
+                    var buttons = $('td:eq(4)', nRow);
+                    buttons.html(`<div class="btn-group" role="group" aria-label="Basic example">
+                                    <button onclick="revisar(${aData.id_proyecto}, 1,this)" type="button" class="btn btn-success">Aprobar</button>
+                                    <button onclick="revisar(${aData.id_proyecto}, 2,this)" type="button" class="btn btn-danger">Rechazar</button>
+                                    </div>`);
+                }
+               
             }
         });
 
-        function actulizar(){
+        function revisar(id,estado,element){
 
+            var row = element.parentElement.parentElement.parentElement;
+            var puntaje = $(row).find(".point").html();
+          
+            var data = new FormData();
+            data.append('id',id);
+            data.append('estado',estado);
+            data.append('puntaje',puntaje);
+
+            jQuery.ajax({
+            url: '/proyecto/actualizarTabla',
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            method: 'POST',
+        
+
+            }).done((respuesta) => {
+                if (respuesta.ok) {
+                    Swal.fire({
+                        title: 'Felicidades',
+                        text: respuesta.mensaje,
+                        type: 'success',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+                } else {
+    
+                    Swal.fire({
+                        title: 'Espera',
+                        text: respuesta.mensaje,
+                        type: 'warning',
+                    })
+                }
+                
+            }).fail((error) => {
+                Swal.hideLoading();
+                Swal.fire({
+                    title: 'Espera',
+                    text: "Ocurrió un error inesperado, intenta más tarde. En caso de persistir el error contacta al administrador del sitio",
+                    type: 'error',
+                })
+            });
+    
         }
+        
 
     </script>
 

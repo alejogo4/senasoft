@@ -127,12 +127,13 @@ class ProyectoController extends Controller
 
     public function update(Request $request)
     {
+   
         //
         $proyecto = Proyecto::find($request->id);
         $proyecto->puntaje = $request->puntaje;
         $proyecto->estado = $request->estado;
         $proyecto->update();
-        return response()->json(["ok" => true]);
+        return response()->json(["ok" => true,"mensaje"=>"Proyecto Actualizado con Éxito"]);
     }
 
     public function getProjectFile($file)
