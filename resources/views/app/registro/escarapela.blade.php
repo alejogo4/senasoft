@@ -21,7 +21,6 @@
         .escarapela{
             width: 50%;
             height: 50vh;
-            background: blue;
             float:left;
             overflow: auto;
             background: url('/images/escarapela.jpg')  no-repeat;
@@ -34,13 +33,11 @@
 <body>
 
     <div class="container">
-       
             <div class="escarapela"></div>
             <div class="escarapela"></div>
             <div class="escarapela"></div>
             <div class="escarapela"></div>
     </div>
-
     <div class="container">
             <div class="escarapela"></div>
             <div class="escarapela"></div>
