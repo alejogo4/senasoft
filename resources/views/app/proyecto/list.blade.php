@@ -87,8 +87,7 @@ Listado de proyectos para la muestra
                 opciones.html(html);
 
                 var puntaje = $('td:eq(3)', nRow);
-                puntaje.attr("contenteditable",true);
-                puntaje.addClass("point");
+                
                 var buttons = $('td:eq(4)', nRow);
                 if(aData.puntaje != 0){
                     
@@ -99,7 +98,8 @@ Listado de proyectos para la muestra
                     }
                     
                 }else{
-                    
+                    puntaje.attr("contenteditable",true);
+                    puntaje.addClass("point");
                     buttons.html(`<div class="btn-group" role="group" aria-label="Basic example">
                                     <button onclick="revisar(${aData.id_proyecto}, 1,this)" type="button" class="btn btn-success">Aprobar</button>
                                     <button onclick="revisar(${aData.id_proyecto}, 2,this)" type="button" class="btn btn-danger">Rechazar</button>
