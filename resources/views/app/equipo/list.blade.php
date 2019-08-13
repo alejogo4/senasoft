@@ -10,7 +10,7 @@
     <div class="modal-dialog modal-lg" style="max-width: 90%;" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h1>Listado de equipos</h1>
+                <h2>Listado de equipos</h2>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
             </div>
@@ -270,6 +270,7 @@
 
             </div>
             <div class="modal-footer">
+                <button id="descargarBarras" onclick="descargar()" class="btn btn-success float-right pull-right">Descargar Códigos QR</button>
                 <button class="btn btn-default float-right pull-right" data-dismiss="modal" aria-label="Close">Cerrar</button>
             </div>
         </div>
@@ -349,14 +350,26 @@
         });
     });
 
+    function descargar(){
+        let id_centro = $("#descargarBarras").attr("data-id");
+        window.open("/equipos/generar/qr/"+id_centro);
+    }
+
     function mostrar_equipo(id) {
+
+        $("#descargarBarras").attr("data-id", id);
+
         $('#myTab').html('');
         $.ajax({
             url: '/equipo/obtener/' + id,
             dataType: 'json',
             type: 'get'
         }).done((respuesta) => {
-            console.log(respuesta);
+
+            for (let index = 1; index <= 10 ; index++) {
+                $("#tab-" + index).removeClass("show active");
+            }
+            
             $("#myTab").empty();
             respuesta.categorias.forEach(function (element, indice) {
 

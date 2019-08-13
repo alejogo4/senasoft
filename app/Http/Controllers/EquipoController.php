@@ -161,12 +161,21 @@ class EquipoController extends Controller
 
     }
 
-    public function generatePDF()
+    public function generatePDF($id_centro)
     {
-        $data = ['title' => 'Welcome to HDTuto.com'];
-        $pdf = PDF::loadView('app.equipo.myPDF', $data);
+        $equipos = Equipo::with("Categoria")
+        ->where("centro_id", $id_centro)
+        ->orderBy("categoria_id")
+        ->get();
+
+        // return view('app.equipo.myPDF', compact('equipos'));
+
+        $pdf = PDF::loadView('app.equipo.myPDF', compact('equipos'));
+
+        $customPaper = array(0,0,500,380);
+        $pdf->setPaper($customPaper);
   
-        return $pdf->download('itsolutionstuff.pdf');
+        return $pdf->stream('itsolutionstuff.pdf');
     }
 
 }

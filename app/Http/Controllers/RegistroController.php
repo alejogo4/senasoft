@@ -13,6 +13,7 @@ use Excel;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\Datatables\Datatables;
+use PDF;
 
 class RegistroController extends Controller
 {
@@ -471,5 +472,23 @@ class RegistroController extends Controller
     public function exportar_excel()
     {
         return Excel::download(new PersonasExport, 'registros.xlsx');
+    }
+
+    public function generarPDF($id_centro)
+    {
+        $personas = Persona::with("Categoria")
+        ->where("centro_id", $id_centro)
+        ->orderBy("categoria_id")
+        ->get();
+
+        return view('app.registro.escarapela', compact('personas'));
+
+        $pdf = PDF::loadView('app.registro.escarapela', compact('personas'));
+
+        // $customPaper = array(0,0,500,380);
+        $pdf->setPaper("A4", "portrait");
+        $pdf->setOptions(["dpi" => "150"]);
+  
+        return $pdf->stream('itsolutionstuff.pdf');
     }
 }

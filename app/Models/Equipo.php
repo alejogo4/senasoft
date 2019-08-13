@@ -21,14 +21,14 @@ class Equipo extends Model
         'centro_id'];
 
         public function Centro() {
-            return $this->hasOne('App\Models\Centro','id');
+            return $this->hasOne('App\Models\Centro','id', 'centro_id');
         }
     
         public function Regional() {
             return $this->hasOne('App\Models\Regional','id');
         }
         public function Categoria() {
-            return $this->hasOne('App\Models\Categoria', 'id');
+            return $this->hasOne('App\Models\Categoria', 'id', 'categoria_id');
         }
 }
 
