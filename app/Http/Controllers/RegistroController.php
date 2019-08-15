@@ -13,6 +13,7 @@ use Excel;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\Datatables\Datatables;
+use MPDF;
 use PDF;
 
 class RegistroController extends Controller
@@ -481,7 +482,7 @@ class RegistroController extends Controller
         ->orderBy("categoria_id")
         ->get();
 
-        return view('app.registro.escarapela', compact('personas'));
+        // return view('app.registro.escarapela', compact('personas'));
 
         $pdf = PDF::loadView('app.registro.escarapela', compact('personas'));
 
