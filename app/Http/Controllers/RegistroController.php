@@ -13,7 +13,7 @@ use Excel;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Yajra\Datatables\Datatables;
-use MPDF;
+// use MPDF;
 use PDF;
 
 class RegistroController extends Controller

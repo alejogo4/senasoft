@@ -186,7 +186,7 @@ return [
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
-        Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class
+        // Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class
     ],
 
     /*
@@ -241,7 +241,7 @@ return [
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
 
-        'MPDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class
+        // 'MPDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class
     ],
 
 ];
