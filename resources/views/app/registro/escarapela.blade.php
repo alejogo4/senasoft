@@ -50,6 +50,7 @@
         .escarapela h3 {
             font-size: 12px;
         }
+
     </style>
 </head>
 
@@ -66,9 +67,7 @@
             border-collapse: collapse;
         }
 
-        .tftable tr {
-            
-        }
+        .tftable tr {}
 
         .tftable td {
             font-size: 12px;
@@ -76,48 +75,50 @@
             border-style: solid;
             background: url('/images/escarapela_blank.png') no-repeat;
             background-size: 100%;
-            
+
         }
-       
+
+        .page-break {
+            page-break-after: always;
+        }
+
     </style>
 
-    <table class="tftable" border="1">
-        <tbody>
-            <tr>
-                <td height="49%">
-                  
-                </td>
-                <td height="49%">Row:1 Cell:2</td>
-            </tr>
-            <tr>
-                <td height="49%">Row:1 Cell:1</td>
-                <td height="49%">Row:1 Cell:2</td>
-            </tr>
-        </tbody>
-
-    </table>
     <?php $cont = 0 ?>
     @foreach($personas as $key => $value)
-    @if(($key+1)%4 == 0 || $key+1 == 1)
-    <div class="container">
-        <?php $cont = 0 ?>
-        @endif
-        <?php $cont++ ?>
-        <div class="escarapela">
-            <div class="text">
-                <h2 class="name">{{$value->nombres}}</h2>
-                <h3 class="lastname">{{$value->apellidos}}</h3>
-                <p>No. Doc {{$value->documento}}</p>
-                <h3></h3>
-            </div>
-        </div>
 
-        @if($cont == 4)
-    </div>
+    @if(($key+1)%4 == 0)
+    <table class="tftable" border="0">
+    <tbody>
+    <?php $cont = 0 ?>
     @endif
+
+    
+    <?php $cont++ ?>
+    <?php if($cont == 3): ?>
+    <tr>
+    <?php endif; ?>
+    <td height="49%">
+        <div class="text">
+            <h2 class="name">{{$value->nombres}}</h2>
+            <h3 class="lastname">{{$value->apellidos}}</h3>
+            <p>No. Doc {{$value->documento}}</p>
+            <h3></h3>
+        </div>
+    </td>
+    <?php if($cont == 5): ?>
+    </tr>
+    <?php endif; ?>
+
+
+    @if($cont == 4)
+    </tbody>
+    </table>
+    <div class="page-break"></div>
+    @endif
+
+
     @endforeach
-
-
 </body>
 
 </html>
