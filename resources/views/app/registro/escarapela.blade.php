@@ -13,51 +13,6 @@
             padding: 0;
         }
 
-        .container {
-            width: 100%;
-            height: 100vh;
-        }
-
-
-        .escarapela {
-            width: 50%;
-            height: 50vh;
-            float: left;
-            overflow: auto;
-            background: url('/images/escarapela_blank.jpg') no-repeat;
-            background-size: contain;
-            background-position: center center;
-            box-sizing: border-box;
-            text-align: center;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            color: white;
-            position: relative;
-        }
-
-        .escarapela .text {
-            position: absolute;
-            left: 0px;
-            right: 0px;
-            width: 80%;
-            top: 90px;
-        }
-
-        .escarapela .name {
-            margin-top: 15%;
-            font-size: 15px;
-        }
-
-        .escarapela h3 {
-            font-size: 12px;
-        }
-
-    </style>
-</head>
-
-<body>
-
-
-    <style type="text/css">
         .tftable {
             font-size: 12px;
             color: #333333;
@@ -82,42 +37,67 @@
             page-break-after: always;
         }
 
+        .text{
+            text-align: center;
+            color: white;
+            line-height: 90px;
+            height: 80px;
+            overflow: auto;
+            
+        }
+
+        .name{
+            margin-top: 180px;
+        }
+
+        .lastname{
+            margin-top: 220px;
+        }
+
     </style>
+</head>
 
-    <?php $cont = 0 ?>
-    @foreach($personas as $key => $value)
+<body>
 
-    @if(($key+1)%4 == 0)
-    <table class="tftable" border="0">
-    <tbody>
-    <?php $cont = 0 ?>
-    @endif
 
     
-    <?php $cont++ ?>
-    <?php if($cont == 3): ?>
-    <tr>
-    <?php endif; ?>
-    <td height="49%">
-        <div class="text">
-            <h2 class="name">{{$value->nombres}}</h2>
-            <h3 class="lastname">{{$value->apellidos}}</h3>
-            <p>No. Doc {{$value->documento}}</p>
-            <h3></h3>
-        </div>
-    </td>
-    <?php if($cont == 5): ?>
-    </tr>
-    <?php endif; ?>
+    <?php $contTb = 0 ; $contTd = 0;  /*   t->tb->1      */ ?>
+    @foreach($personas as $key => $value)
 
+        @if($contTb == 0)
+            <table class="tftable" border="0">
+            <tbody>
+        @endif
 
-    @if($cont == 4)
-    </tbody>
-    </table>
-    <div class="page-break"></div>
-    @endif
+        @if($contTd == 0)
+        <tr>
+        @endif
+        
+            <td height="49%">
+                <div class="text name">
+                    <h2 class="name">{{$value->nombres}}</h2>
+                </div>
+                <div class="text lastname">
+                     <h3>{{$value->apellidos}}</h3>
+                </div>
+            </td>
+            
+        
+        <?php $contTb++; $contTd++ ?>
 
+        @if($contTd == 2)
+        </tr>
+        <?php $contTd = 0; ?>
+        @endif
 
+        @if($contTb == 4 )
+            </tbody>
+            </table>
+            <?php $contTb = 0; ?>
+            <div class="page-break"></div>
+        @endif  
+
+ 
     @endforeach
 </body>
 
