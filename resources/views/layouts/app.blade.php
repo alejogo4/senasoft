@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -31,7 +32,6 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
-    
     @yield("style")
 </head>
 
@@ -170,14 +170,14 @@
                         <span class="heading">EVALUACIÓN</span>
                         <li>
                             <a href="#dropdown-db" data-toggle="collapse">
-                                <i class="la la-columns"></i><span>Active</span>
+                                <i class="la la-columns"></i><span>Configuración Fases</span>
                             </a>
                             <ul id="dropdown-db" class="collapse list-unstyled pt-0">
-                                <li><a href="javascript:void(0);">Active</a></li>
-                                <li><a href="javascript:void(0);">Link</a></li>
-                                <li><a href="javascript:void(0);">Link</a></li>
-                                <li><a href="javascript:void(0);">Link</a></li>
-                                <li><a href="javascript:void(0);">Link</a></li>
+                            <li><a href="{{route('fase_config')}}"><i class="la la-keyboard-o"></i><span>Activación de Fases</span></a></li>
+                                <li><a href="{{route('fase_carga')}}">Cargar Fases</a></li>
+                                <li><a href="{{route('fase_uno')}}">Fase 1</a></li>
+                                <!-- <li><a href="javascript:void(0);">Fase 3</a></li>
+                                <li><a href="javascript:void(0);">Fase 4</a></li> -->
                             </ul>
                         </li>
                     </ul>
@@ -234,6 +234,7 @@
         </div>
         <!-- End Page Content -->
     </div>
+
     <!-- Begin Vendor Js -->
     <script src="{{asset('admin/vendors/js/base/jquery.min.js')}}"></script>
     <script src="{{asset('admin/vendors/js/base/core.min.js')}}"></script>
@@ -248,6 +249,8 @@
     <script src="{{asset('admin/js/app/app.js')}}"></script>
 
     @yield("script")
+
+    @yield("modal")
 </body>
 
 </html>

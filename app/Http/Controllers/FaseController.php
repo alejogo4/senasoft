@@ -14,9 +14,21 @@ class FaseController extends Controller
      */
     public function index()
     {
-        //
+        return view("app.fase.index");
+        
     }
 
+    public function index_carga()
+    {
+        return view("app.fase.carga");
+        
+    }
+
+    public function index_uno()
+    {
+        return view("app.fase.uno");
+        
+    }
     /**
      * Show the form for creating a new resource.
      *

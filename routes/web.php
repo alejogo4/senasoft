@@ -49,5 +49,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/equipos/obtener',"EquipoController@obtener_registros_equipos_centros");
     Route::get('/equipo/obtener/{id}', 'EquipoController@obtener_equipos');
     Route::get('/equipos/generar/qr/{id_centro}',"EquipoController@generatePDF");
+
+    Route::get('/fase',"FaseController@index")->name('fase_config');
+    Route::get('/faseCarga',"FaseController@index_carga")->name('fase_carga');
+    Route::get('/fase1',"FaseController@index_uno")->name('fase_uno');
+    // Route::get('/fase3',"FaseController@index_tres")->name('fase_tres');
+    // Route::get('/fase4',"FaseController@index_cuatro")->name('fase_cuarto');
 });
 

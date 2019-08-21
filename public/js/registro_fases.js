@@ -1,5 +1,5 @@
 var dropZoneDocumento = null;
-
+Dropzone.autoDiscover = false;
 (function($) {
     var form = $("#form");
     form.validate({
@@ -54,7 +54,7 @@ $(function() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-
+    
     Dropzone.prototype.defaultOptions.dictDefaultMessage = "Arrastra los archivos aquí para subirlos";
     Dropzone.prototype.defaultOptions.dictFallbackMessage = "Su navegador no admite la carga de archivos con arrastrar y soltar.";
     Dropzone.prototype.defaultOptions.dictFallbackText = "Utilice el formulario de reserva a continuación para cargar sus archivos como en los días anteriores.";
@@ -66,10 +66,9 @@ $(function() {
     Dropzone.prototype.defaultOptions.dictRemoveFile = "Remover archivo";
     Dropzone.prototype.defaultOptions.dictMaxFilesExceeded = "No puedes subir más archivos.";
 
-    Dropzone.autoDiscover = false;
 
 
-    dropZoneDocumento = new Dropzone("div#equipo", {
+    dropZoneDocumento = new Dropzone("div#cargaFase", {
         acceptedFiles: ".xls, .xlsx",
         url: "/",
         autoProcessQueue: false,
