@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     <title>Escarapelas</title>
 
     <style>
@@ -22,7 +23,10 @@
             border-collapse: collapse;
         }
 
-        .tftable tr {}
+        .tftable tr {
+            width: 50%;
+            border: 
+        }
 
         .tftable td {
             font-size: 12px;
@@ -40,19 +44,21 @@
         .text{
             text-align: center;
             color: white;
-            line-height: 90px;
-            height: 80px;
-            overflow: auto;
+            font-family: 'Work Sans', sans-serif;
+            
             
         }
 
-        .name{
-            margin-top: 180px;
+        .text span{
+            display: block;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            margin-top: 240px;
+            font-size: 25px;
+            
         }
 
-        .lastname{
-            margin-top: 220px;
-        }
 
     </style>
 </head>
@@ -65,7 +71,7 @@
     @foreach($personas as $key => $value)
 
         @if($contTb == 0)
-            <table class="tftable" border="0">
+            <table class="tftable" border="1">
             <tbody>
         @endif
 
@@ -73,12 +79,26 @@
         <tr>
         @endif
         
-            <td height="49%">
-                <div class="text name">
-                    <h2 class="name">{{$value->nombres}}</h2>
-                </div>
-                <div class="text lastname">
-                     <h3>{{$value->apellidos}}</h3>
+            <td height="49%" width="50%" style="overflow: hidden">
+                <div class="text">
+                    <br><br>
+                    <span style="font-size: 22px">{{$value->nombres}}</span>
+                    <br><br>
+                    <span style="font-size: 18px">{{$value->apellidos}}</span>
+                    <br><br>
+                    <span style="font-size: 16px">No. Doc {{$value->documento}}</span>
+                    <br><br>
+                    <span style="font-size: 16px">{{$value->programa_formacion}}</span>
+                    <br><br>
+                    <br><br>
+                    <br><br>
+                    <span class="photo">
+                        <img style="margin-top: 40px; margin-left: 50px;" src="images/<?php echo $value->documento; ?>_foto.jpg" width="200px">
+                        <br>
+                        <img style="margin-left: 370px; margin-top: 125px;" width="200"
+                        src="data:image/png;base64, {!!base64_encode(QrCode::encoding('UTF-8')->format('png')->size(200)->generate($value->documento))!!}"
+                        alt="">
+                    </span>
                 </div>
             </td>
             
@@ -97,8 +117,14 @@
             <div class="page-break"></div>
         @endif  
 
- 
     @endforeach
+
+    @if($contTd == 1)
+        <td></td>
+        </tr>
+        </tbody>
+        </table>
+    @endif
 </body>
 
 </html>
