@@ -49,5 +49,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/equipos/obtener',"EquipoController@obtener_registros_equipos_centros");
     Route::get('/equipo/obtener/{id}', 'EquipoController@obtener_equipos');
     Route::get('/equipos/generar/qr/{id_centro}',"EquipoController@generatePDF");
+
+    //Invitados
+    Route::get('/invitados','InvitadosController@index')->name('invitados');
 });
 

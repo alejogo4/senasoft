@@ -180,6 +180,18 @@
                                 <li><a href="javascript:void(0);">Link</a></li>
                             </ul>
                         </li>
+
+                        <span class="heading">REGISTRAR INVITADOS</span>
+                        <li>
+                            <a href="#dropdown-invitados" data-toggle="collapse">
+                                <i class="la la-user-plus"></i><span>Registrar</span>
+                            </a>
+                            <ul id="dropdown-invitados" class="collapse list-unstyled pt-0">
+                                <li><a href="{{route('invitados')}}">Invitado</a></li>
+                                <li><a href="javascript:void(0);">Empresa</a></li>
+                              
+                            </ul>
+                        </li>
                     </ul>
                     <!-- End Main Navigation -->
                 </nav>
