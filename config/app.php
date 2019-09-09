@@ -185,8 +185,6 @@ return [
         Barryvdh\Cors\ServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-
-        // Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class
     ],
 
     /*
@@ -240,8 +238,6 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
-
-        // 'MPDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class
     ],
 
 ];

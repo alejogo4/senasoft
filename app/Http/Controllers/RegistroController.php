@@ -7,14 +7,16 @@ use App\Imports\ExcelImport;
 use App\Models\Categoria;
 use App\Models\Centro;
 use App\Models\Cupo;
+use App\Models\Grupo;
+use App\Models\GrupoPersonas;
 use App\Models\Persona;
 use DB;
 use Excel;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Yajra\Datatables\Datatables;
-// use MPDF;
 use PDF;
+use Symfony\Component\HttpFoundation\Response;
+// use MPDF;
+use Yajra\Datatables\Datatables;
 
 class RegistroController extends Controller
 {
@@ -478,18 +480,262 @@ class RegistroController extends Controller
     public function generarPDF($id_centro)
     {
         $personas = Persona::with("Categoria")
-        ->where("centro_id", $id_centro)
-        ->orderBy("categoria_id")
-        ->get();
+            ->where("centro_id", $id_centro)
+            ->orderBy("categoria_id")
+            ->get();
 
-       // return view('app.registro.escarapela', compact('personas'));
+        // return view('app.registro.escarapela', compact('personas'));
 
         $pdf = PDF::loadView('app.registro.escarapela', compact('personas'));
 
         // $customPaper = array(0,0,500,380);
         $pdf->setPaper("A4", "portrait");
         $pdf->setOptions(["dpi" => "150"]);
-  
-        return $pdf->stream('itsolutionstuff.pdf');
+
+        return $pdf->stream('escarapela.pdf');
+    }
+
+    public function generarGrupos()
+    {
+
+        $categorias = Categoria::all();
+
+        foreach ($categorias as $key => $value) {
+            if ($value->id == 1) {
+                $this->generarGrupoAlgoritmia($value->nombre_categoria, $value->id);
+            } else if ($value->id == 5) {
+                $this->generarGrupoRedesMantenimiento($value->nombre_categoria, $value->id);
+            } else if ($value->id == 10) {
+                $this->generarGrupoIDEATIC($value->nombre_categoria, $value->id);
+            } else {
+                $this->generarGrupoCategoria($value->nombre_categoria, $value->id);
+            }
+        }
+
+    }
+
+    public function generarGrupoCategoria($nombre, $id)
+    {
+
+        $personasCategoria = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id")
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->where("categoria_id", $id)
+            ->where("tipo_persona", 2)
+            ->orderBy("tbl_centro.regional_id")
+            ->orderBy("tbl_centro.id")
+            ->get()
+            ->toArray();
+
+        $i = 0;
+        $grupos = 1;
+
+        while (count($personasCategoria) > 0) {
+
+            if (isset($personasCategoria[$i])) {
+
+                $indexpareja = 0;
+                $per1 = $personasCategoria[$i];
+
+                $controlaciclo = 0;
+                while (true) {
+                    $pareja = rand(1, count($personasCategoria) - 1);
+                    $per2 = $personasCategoria[$pareja];
+
+                    if ($per1["regional_id"] != $per2["regional_id"] && $per1["id"] != $per2["id"]) {
+                        $indexpareja = $pareja;
+                        break;
+                    }
+
+                    if ($controlaciclo > count($personasCategoria)) {
+                        $pareja = rand(1, count($personasCategoria) - 1);
+                        $per2 = $personasCategoria[$pareja];
+
+                        if ($per1["id"] != $per2["id"] && $per1["centro_id"] != $per2["centro_id"]) {
+                            $indexpareja = $pareja;
+                            break;
+                        }
+                    }
+
+                    $controlaciclo++;
+                }
+                dump($grupos);
+
+                $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
+                GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $per1["id"]]);
+                GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria[$indexpareja]["id"]]);
+
+                unset($personasCategoria[$indexpareja]);
+                unset($personasCategoria[$i]);
+
+                $personasCategoria = array_values($personasCategoria);
+                $grupos++;
+            }
+        }
+    }
+
+    public function generarGrupoAlgoritmia($nombre, $id)
+    {
+        $personasCategoria = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id")
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->where("categoria_id", $id)
+            ->where("tipo_persona", 2)
+            ->orderBy("tbl_centro.regional_id")
+            ->orderBy("tbl_centro.id")
+            ->get()
+            ->toArray();
+
+
+        foreach ($personasCategoria as $key => $value) {
+            $grupo = Grupo::create(["nombre" => $nombre . " " . ($key + 1), "categoria_id" => $id]);
+            GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $value["id"]]);
+        }
+    }
+
+    public function generarGrupoRedesMantenimiento($nombre, $id)
+    {
+        $programa1 = "MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO ESTRUCTURADO";
+        $programa2 = "GESTIÓN DE REDES DE DATOS";
+
+        $personasCategoria = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id", "tbl_persona.programa_formacion")
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->where("categoria_id", $id)
+            ->where("tipo_persona", 2)
+            ->orderBy("tbl_centro.regional_id")
+            ->orderBy("tbl_centro.id")
+            ->get()
+            ->toArray();
+
+        $i = 0;
+        $grupos = 1;
+
+        while (count($personasCategoria) > 0) {
+
+            if (isset($personasCategoria[$i])) {
+
+                $indexpareja = 0;
+                $per1 = $personasCategoria[$i];
+                $programaPareja = "";
+                if ($per1["programa_formacion"] == $programa1) {
+                    $programaPareja = $programa2;
+                } else {
+                    $programaPareja = $programa1;
+                }
+
+                $controlaciclo = 0;
+                while (true) {
+                    $pareja = rand(1, count($personasCategoria) - 1);
+                    $per2 = $personasCategoria[$pareja];
+
+                    if ($per1["regional_id"] != $per2["regional_id"] && $per1["id"] != $per2["id"] && $programaPareja == $per2["programa_formacion"]) {
+                        $indexpareja = $pareja;
+                        break;
+                    }
+
+                    if ($controlaciclo > count($personasCategoria)) {
+                        $pareja = rand(1, count($personasCategoria) - 1);
+                        $per2 = $personasCategoria[$pareja];
+
+                        if ($per1["id"] != $per2["id"] && $per1["centro_id"] != $per2["centro_id"] && $programaPareja == $per2["programa_formacion"]) {
+                            $indexpareja = $pareja;
+                            break;
+                        }
+                    }
+
+                    $controlaciclo++;
+                }
+
+                $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
+                GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $per1["id"]]);
+                GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria[$indexpareja]["id"]]);
+
+                unset($personasCategoria[$indexpareja]);
+                unset($personasCategoria[$i]);
+
+                $personasCategoria = array_values($personasCategoria);
+                $grupos++;
+            }
+        }
+    }
+
+    public function generarGrupoIDEATIC($nombre, $id)
+    {
+
+        $programa1 = "ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN";
+        $programa2 = "PRODUCCIÓN DE MEDIOS AUDIOVISUALES DIGITALES";
+        $programa3 = "PRODUCCIÓN DE MULTIMEDIA";
+
+        $personasCategoria1 = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id", "tbl_persona.programa_formacion")
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->where("categoria_id", $id)
+            ->where("tipo_persona", 2)
+            ->where("programa_formacion", $programa1)
+            ->get()
+            ->toArray();
+
+        $personasCategoria2 = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id", "tbl_persona.programa_formacion")
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->where("categoria_id", $id)
+            ->where("tipo_persona", 2)
+            ->where("programa_formacion", $programa2)
+            ->get()
+            ->toArray();
+
+        $personasCategoria3 = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id", "tbl_persona.programa_formacion")
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->where("categoria_id", $id)
+            ->where("tipo_persona", 2)
+            ->where("programa_formacion", $programa3)
+            ->get()
+            ->toArray();
+
+        $grupos = 0;
+        while (count($personasCategoria1) > 0 && count($personasCategoria2) > 0 && count($personasCategoria3) > 0) {
+
+            $pareja1 = $this->aleatorioIdeatic($personasCategoria1, 0);
+            $pareja2 = $this->aleatorioIdeatic($personasCategoria2, $personasCategoria1[$pareja1]["regional_id"]);
+            $pareja3 = $this->aleatorioIdeatic($personasCategoria2, $personasCategoria2[$pareja2]["regional_id"]);
+
+            $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
+            GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria1[$pareja1]["id"]]);
+            GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria2[$pareja2]["id"]]);
+            GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria3[$pareja3]["id"]]);
+
+            unset($personasCategoria1[$i]);
+            unset($personasCategoria2[$i]);
+            unset($personasCategoria3[$i]);
+
+            $personasCategoria1 = array_values($personasCategoria1);
+            $personasCategoria2 = array_values($personasCategoria2);
+            $personasCategoria3 = array_values($personasCategoria3);
+
+            $grupos++;
+        }
+    }
+
+    public function aleatorioIdeatic($personas, $regional_id)
+    {
+        $controlaciclo = 0;
+        $indexpareja = 0;
+        while (true) {
+            $pareja = rand(0, count($personas) - 1);
+            $per2 = $personas[$pareja];
+
+            if ($regional_id != $per2["regional_id"]) {
+                $indexpareja = $pareja;
+                break;
+            }
+
+            if ($controlaciclo > count($personas)) {
+
+                $pareja = rand(0, count($personas) - 1);
+                $per2 = $personas[$pareja];
+
+                $indexpareja = $pareja;
+                break;
+            }
+
+            $controlaciclo++;
+        }
+        return $indexpareja;
     }
 }

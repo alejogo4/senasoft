@@ -30,3 +30,5 @@ SELECT count(*) FROM `tbl_persona` WHERE tipo_persona = 2
 select ct.nombre_categoria, sum(cupo.n_cupos_disponibles) as cupos, (select count(*) from tbl_persona where tbl_persona.categoria_id = ct.id) as utilizados from tbl_cupo cupo inner join tbl_categoria ct on cupo.categoria_id = ct.id group by ct.nombre_categoria
 
 
+
+select `tbl_categoria`.`nombre_categoria`, sum(tbl_cupo.n_cupos_disponibles) as cupos, (select count(*) from tbl_persona where tbl_persona.categoria_id = tbl_categoria.id) as utilizados from `tbl_categoria` inner join `tbl_cupo` on `tbl_categoria`.`id` = `tbl_cupo`.`categoria_id` group by `nombre_categoria`)
