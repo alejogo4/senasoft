@@ -558,7 +558,6 @@ class RegistroController extends Controller
 
                     $controlaciclo++;
                 }
-                dump($grupos);
 
                 $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
                 GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $per1["id"]]);
