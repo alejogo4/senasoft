@@ -160,6 +160,16 @@
             text-transform: capitalize;
         }
 
+        .text p{
+            display: block;
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            margin-top: 270px;
+            font-size: 28px;
+            text-transform: capitalize;
+        }
+
         .text b{
             display: block;
             width: 100%;
@@ -222,9 +232,9 @@
             <td class="<?= $class ?>" height="49%" width="50%" style="overflow: hidden">
                 <div class="text">
                     <br><br>
-                    <b style="font-style: bold; font-size: 30px; text-transform:capitalize"><?php echo strtoupper($value->nombres) ?></b>
+                    <b style="font-style: bold; font-size: 30px;"><?php echo $value->nombres ?></b>
                     <br><br>
-                    <span style="font-size: 28px; text-transform:capitalize"><?php echo strtoupper($value->apellidos) ?></span>
+                    <p style="font-size: 28px;"><?php echo $value->apellidos ?></p>
                     <br><br>
                     <span style="font-size: 20px">No. Doc {{$value->documento}}</span>
                     <!-- <span style="font-size: 18px"><?php echo __DIR__ ?></span> -->

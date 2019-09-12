@@ -479,7 +479,14 @@ class RegistroController extends Controller
 
     public function generarPDF($id_centro)
     {
-        $personas = Persona::with("Categoria")
+        $personas = Persona::select(
+            "categoria_id",
+            "tipo_persona",
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombres), 1)), SUBSTRING(LCASE(nombres), 2)) as nombres"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(apellidos), 1)), SUBSTRING(LCASE(apellidos), 2)) as apellidos"),
+            "documento",
+            "foto"
+        )
             ->where("centro_id", $id_centro)
             ->orderBy("categoria_id")
             ->get();
@@ -495,25 +502,26 @@ class RegistroController extends Controller
         return $pdf->stream('escarapela.pdf');
     }
 
-
-    public function ggrupos(){
+    public function ggrupos()
+    {
 
         return view("app.registro.grupos");
     }
 
-    public function listarGrupos(){
+    public function listarGrupos()
+    {
 
         $categorias = Categoria::all();
         $resultados = [];
 
         foreach ($categorias as $key => $value) {
-            $datos = Grupo::select("tbl_grupo.nombre", "tbl_persona.programa_formacion",  "tbl_persona.nombres", "tbl_persona.apellidos", "tbl_centro.*", "tbl_regional.*")
-            ->join("tbl_grupo_persona", "tbl_grupo_persona.grupo_id", "=", "tbl_grupo.id")
-            ->join("tbl_persona", "tbl_grupo_persona.persona_id", "=", "tbl_persona.id")
-            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
-            ->join("tbl_regional", "tbl_regional.id", "=", "tbl_centro.regional_id")
-            ->where("tbl_grupo.categoria_id", $value->id)
-            ->get();
+            $datos = Grupo::select("tbl_grupo.nombre", "tbl_persona.programa_formacion", "tbl_persona.nombres", "tbl_persona.apellidos", "tbl_centro.*", "tbl_regional.*")
+                ->join("tbl_grupo_persona", "tbl_grupo_persona.grupo_id", "=", "tbl_grupo.id")
+                ->join("tbl_persona", "tbl_grupo_persona.persona_id", "=", "tbl_persona.id")
+                ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+                ->join("tbl_regional", "tbl_regional.id", "=", "tbl_centro.regional_id")
+                ->where("tbl_grupo.categoria_id", $value->id)
+                ->get();
 
             $resultado[$value->nombre_categoria] = [$datos, $value->tipo_agrupacion];
         }
@@ -537,7 +545,7 @@ class RegistroController extends Controller
             }
         }
 
-        return response()->json(["ok"=>true]);
+        return response()->json(["ok" => true]);
     }
 
     public function generarGrupoCategoria($nombre, $id)
@@ -704,7 +712,7 @@ class RegistroController extends Controller
                     $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
                     $grupo_detalle1 = GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $per1["id"]]);
                     $grupo_detalle2 = GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria[$indexpareja]["id"]]);
-                    
+
                     $paraeliminar[] = $grupo_detalle1->id;
                     $paraeliminar[] = $grupo_detalle2->id;
 
