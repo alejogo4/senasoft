@@ -149,6 +149,7 @@
             font-family: 'Work Sans', sans-serif;
         }
 
+
         .text span{
             display: block;
             width: 100%;
