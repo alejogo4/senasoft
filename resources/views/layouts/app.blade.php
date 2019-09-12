@@ -164,6 +164,7 @@
                         
                         <li><a href="/dash"><i class="la la-home"></i><span>Dashboard</span></a></li>
                         <li><a href="{{route('registro_list')}}"><i class="la la-users"></i><span>Registros</span></a></li>
+                        <li><a href="/registros/grupos"><i class="la la-group"></i><span>Grupos</span></a></li>
                         <li><a href="{{route('equipo_list')}}"><i class="la la-keyboard-o"></i><span>Equipos</span></a></li>
                         <li><a href="{{route('proyecto_list')}}"><i class="la la-clipboard"></i><span>Proyectos</span></a></li>
                         
