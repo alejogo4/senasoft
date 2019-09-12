@@ -42,7 +42,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/archivos/{carpeta}/{archivo}',"RegistroController@obtener_documento");
     Route::get('/notificaciones', 'RegistroController@notificaciones');
 
+    Route::get('/registros/grupos', "RegistroController@ggrupos");
     Route::get('/registros/generar/grupos', "RegistroController@generarGrupos");
+    Route::get('/registros/listar/grupos', "RegistroController@listarGrupos");
 
     Route::get('/proyecto_list',"ProyectoController@index_admin")->name('proyecto_list');
     Route::get('/proyectos/obtener/registros',"ProyectoController@obtener_registros");

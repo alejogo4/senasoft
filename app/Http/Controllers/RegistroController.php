@@ -495,9 +495,34 @@ class RegistroController extends Controller
         return $pdf->stream('escarapela.pdf');
     }
 
+
+    public function ggrupos(){
+
+        return view("app.registro.grupos");
+    }
+
+    public function listarGrupos(){
+
+        $categorias = Categoria::all();
+        $resultados = [];
+
+        foreach ($categorias as $key => $value) {
+            $datos = Grupo::select("tbl_grupo.nombre", "tbl_persona.programa_formacion",  "tbl_persona.nombres", "tbl_persona.apellidos", "tbl_centro.*", "tbl_regional.*")
+            ->join("tbl_grupo_persona", "tbl_grupo_persona.grupo_id", "=", "tbl_grupo.id")
+            ->join("tbl_persona", "tbl_grupo_persona.persona_id", "=", "tbl_persona.id")
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->join("tbl_regional", "tbl_regional.id", "=", "tbl_centro.regional_id")
+            ->where("tbl_grupo.categoria_id", $value->id)
+            ->get();
+
+            $resultado[$value->nombre_categoria] = [$datos, $value->tipo_agrupacion];
+        }
+
+        return response()->json($resultado);
+    }
+
     public function generarGrupos()
     {
-
         $categorias = Categoria::all();
 
         foreach ($categorias as $key => $value) {
@@ -512,12 +537,13 @@ class RegistroController extends Controller
             }
         }
 
+        return response()->json(["ok"=>true]);
     }
 
     public function generarGrupoCategoria($nombre, $id)
     {
 
-        $personasCategoria = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id")
+        $personasCt = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id")
             ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
             ->where("categoria_id", $id)
             ->where("tipo_persona", 2)
@@ -526,8 +552,12 @@ class RegistroController extends Controller
             ->get()
             ->toArray();
 
+        $personasCategoria = $personasCt;
+
         $i = 0;
         $grupos = 1;
+
+        $paraeliminar = [];
 
         while (count($personasCategoria) > 0) {
 
@@ -537,11 +567,12 @@ class RegistroController extends Controller
                 $per1 = $personasCategoria[$i];
 
                 $controlaciclo = 0;
+                $fallos = 0;
                 while (true) {
                     $pareja = rand(1, count($personasCategoria) - 1);
                     $per2 = $personasCategoria[$pareja];
 
-                    if ($per1["regional_id"] != $per2["regional_id"] && $per1["id"] != $per2["id"]) {
+                    if ($per1["regional_id"] != $per2["regional_id"]) {
                         $indexpareja = $pareja;
                         break;
                     }
@@ -550,24 +581,41 @@ class RegistroController extends Controller
                         $pareja = rand(1, count($personasCategoria) - 1);
                         $per2 = $personasCategoria[$pareja];
 
-                        if ($per1["id"] != $per2["id"] && $per1["centro_id"] != $per2["centro_id"]) {
+                        if ($per1["centro_id"] != $per2["centro_id"]) {
                             $indexpareja = $pareja;
                             break;
+                        } else {
+                            $fallos++;
                         }
                     }
-
+                    if ($fallos == 3) {
+                        break;
+                    }
                     $controlaciclo++;
                 }
 
-                $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
-                GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $per1["id"]]);
-                GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria[$indexpareja]["id"]]);
+                if ($fallos < 3) {
+                    $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
+                    $grupo_detalle1 = GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $per1["id"]]);
+                    $grupo_detalle2 = GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria[$indexpareja]["id"]]);
 
-                unset($personasCategoria[$indexpareja]);
-                unset($personasCategoria[$i]);
+                    $paraeliminar[] = $grupo_detalle1->id;
+                    $paraeliminar[] = $grupo_detalle2->id;
 
-                $personasCategoria = array_values($personasCategoria);
-                $grupos++;
+                    unset($personasCategoria[$indexpareja]);
+                    unset($personasCategoria[$i]);
+
+                    $personasCategoria = array_values($personasCategoria);
+                    $grupos++;
+
+                } else {
+
+                    Grupo::where("categoria_id", $id)->delete();
+                    GrupoPersonas::whereIn("id", $paraeliminar)->delete();
+                    $grupos = 1;
+                    $personasCategoria = $personasCt;
+                    $paraeliminar = [];
+                }
             }
         }
     }
@@ -583,7 +631,6 @@ class RegistroController extends Controller
             ->get()
             ->toArray();
 
-
         foreach ($personasCategoria as $key => $value) {
             $grupo = Grupo::create(["nombre" => $nombre . " " . ($key + 1), "categoria_id" => $id]);
             GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $value["id"]]);
@@ -595,7 +642,7 @@ class RegistroController extends Controller
         $programa1 = "MANTENIMIENTO DE EQUIPOS DE CÓMPUTO, DISEÑO E INSTALACIÓN DE CABLEADO ESTRUCTURADO";
         $programa2 = "GESTIÓN DE REDES DE DATOS";
 
-        $personasCategoria = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id", "tbl_persona.programa_formacion")
+        $personasCt = Persona::select("tbl_persona.id", "tbl_centro.regional_id", "tbl_persona.centro_id", "tbl_persona.programa_formacion")
             ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
             ->where("categoria_id", $id)
             ->where("tipo_persona", 2)
@@ -604,8 +651,11 @@ class RegistroController extends Controller
             ->get()
             ->toArray();
 
+        $personasCategoria = $personasCt;
+
         $i = 0;
         $grupos = 1;
+        $paraeliminar = [];
 
         while (count($personasCategoria) > 0) {
 
@@ -621,37 +671,57 @@ class RegistroController extends Controller
                 }
 
                 $controlaciclo = 0;
+                $fallos = 0;
                 while (true) {
                     $pareja = rand(1, count($personasCategoria) - 1);
                     $per2 = $personasCategoria[$pareja];
 
-                    if ($per1["regional_id"] != $per2["regional_id"] && $per1["id"] != $per2["id"] && $programaPareja == $per2["programa_formacion"]) {
+                    if ($per1["regional_id"] != $per2["regional_id"] && $programaPareja == $per2["programa_formacion"]) {
                         $indexpareja = $pareja;
                         break;
                     }
 
                     if ($controlaciclo > count($personasCategoria)) {
+
                         $pareja = rand(1, count($personasCategoria) - 1);
                         $per2 = $personasCategoria[$pareja];
 
-                        if ($per1["id"] != $per2["id"] && $per1["centro_id"] != $per2["centro_id"] && $programaPareja == $per2["programa_formacion"]) {
+                        if ($per1["centro_id"] != $per2["centro_id"] && $programaPareja == $per2["programa_formacion"]) {
                             $indexpareja = $pareja;
                             break;
+                        } else {
+                            $fallos++;
                         }
                     }
 
+                    if ($fallos == 3) {
+                        break;
+                    }
                     $controlaciclo++;
                 }
 
-                $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
-                GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $per1["id"]]);
-                GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria[$indexpareja]["id"]]);
+                if ($fallos < 3) {
+                    $grupo = Grupo::create(["nombre" => $nombre . " " . $grupos, "categoria_id" => $id]);
+                    $grupo_detalle1 = GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $per1["id"]]);
+                    $grupo_detalle2 = GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria[$indexpareja]["id"]]);
+                    
+                    $paraeliminar[] = $grupo_detalle1->id;
+                    $paraeliminar[] = $grupo_detalle2->id;
 
-                unset($personasCategoria[$indexpareja]);
-                unset($personasCategoria[$i]);
+                    unset($personasCategoria[$indexpareja]);
+                    unset($personasCategoria[$i]);
 
-                $personasCategoria = array_values($personasCategoria);
-                $grupos++;
+                    $personasCategoria = array_values($personasCategoria);
+                    $grupos++;
+
+                } else {
+
+                    Grupo::where("categoria_id", $id)->delete();
+                    GrupoPersonas::whereIn("id", $paraeliminar)->delete();
+                    $grupos = 1;
+                    $personasCategoria = $personasCt;
+                    $paraeliminar = [];
+                }
             }
         }
     }
@@ -687,7 +757,8 @@ class RegistroController extends Controller
             ->get()
             ->toArray();
 
-        $grupos = 0;
+        $grupos = 1;
+        $i = 0;
         while (count($personasCategoria1) > 0 && count($personasCategoria2) > 0 && count($personasCategoria3) > 0) {
 
             $pareja1 = $this->aleatorioIdeatic($personasCategoria1, 0);
@@ -699,9 +770,9 @@ class RegistroController extends Controller
             GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria2[$pareja2]["id"]]);
             GrupoPersonas::create(["grupo_id" => $grupo->id, "persona_id" => $personasCategoria3[$pareja3]["id"]]);
 
-            unset($personasCategoria1[$i]);
-            unset($personasCategoria2[$i]);
-            unset($personasCategoria3[$i]);
+            unset($personasCategoria1[$pareja1]);
+            unset($personasCategoria2[$pareja2]);
+            unset($personasCategoria3[$pareja3]);
 
             $personasCategoria1 = array_values($personasCategoria1);
             $personasCategoria2 = array_values($personasCategoria2);
