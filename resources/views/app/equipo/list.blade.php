@@ -4,6 +4,10 @@
 <link rel="stylesheet" href="{{asset('admin/css/datatables/datatables.min.css')}}">
 @endsection
 
+@section('titulo')
+Registro Equipos
+@endsection
+
 @section("modal")
 <!-- Modal -->
 <div class="modal fade" id="modal_registro_equipo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
