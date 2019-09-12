@@ -8,7 +8,6 @@ class Grupo extends Model
 {
     public $table = "tbl_grupo";
 
-    protected $fillable = [
-        'nombre'];
+    protected $fillable = ['nombre', 'categoria_id'];
 
 }

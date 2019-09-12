@@ -21,7 +21,7 @@
         <li><a href="#schedule">Cronograma</a></li>
         <li><a href="#category">Categorías</a></li>
         <li><a href="#history">Histórico</a></li>
-        <li><a href="#reglamento">Reglamento</a></li>
+        <li><a href="#reglamento">Documentos</a></li>
         <li><a href="#app">App</a></li>
         <li><a href="#pqr">PQR</a></li>
         <li class="dropdown">

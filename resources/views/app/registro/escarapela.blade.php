@@ -54,8 +54,8 @@
             width: 100%;
             height: 40px;
             text-align: center;
-            margin-top: 240px;
-            font-size: 25px;
+            margin-top: 270px;
+            font-size: 28px;
             
         }
 
@@ -82,18 +82,18 @@
             <td height="49%" width="50%" style="overflow: hidden">
                 <div class="text">
                     <br><br>
-                    <span style="font-size: 22px">{{$value->nombres}}</span>
+                    <span style="font-size: 24px">{{$value->nombres}}</span>
                     <br><br>
-                    <span style="font-size: 18px">{{$value->apellidos}}</span>
+                    <span style="font-size: 20px">{{$value->apellidos}}</span>
                     <br><br>
-                    <span style="font-size: 16px">No. Doc {{$value->documento}}</span>
+                    <span style="font-size: 18px">No. Doc {{$value->documento}}</span>
                     <br><br>
-                    <span style="font-size: 16px">{{$value->programa_formacion}}</span>
+                    <span style="font-size: 18px">{{$value->programa_formacion}}</span>
                     <br><br>
                     <br><br>
                     <br><br>
                     <span class="photo">
-                        <img style="margin-top: 40px; margin-left: 50px;" src="images/<?php echo $value->documento; ?>_foto.jpg" width="200px">
+                        <img style="margin-top: 40px; margin-left: 50px;" src="D:\Escritorio\SENA 2019\SENASOFT\senasoft\storage\app\fotos/{{$value->foto}}" width="200px">
                         <br>
                         <img style="margin-left: 370px; margin-top: 125px;" width="200"
                         src="data:image/png;base64, {!!base64_encode(QrCode::encoding('UTF-8')->format('png')->size(200)->generate($value->documento))!!}"

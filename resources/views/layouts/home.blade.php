@@ -41,7 +41,7 @@
             <div class="col-md-10 col-md-offset-1 text-center">
                 <img src="images/logo_sena.png" alt="Logo SENA" class="logo-sena">
                 <h1>SENASOFT 2019 | MEDELLÍN</h1>
-                <p class="parrafo">El Centro de Servicios y Gestión Empresarial de la Regional Antioquia está organizando la décima versión de Senasoft a realizarse del 10 al 13 de Septiembre de 2019. </p>
+                <p class="parrafo">El Centro de Servicios y Gestión Empresarial de la Regional Antioquia está organizando la décima versión de Senasoft a realizarse del 22 al 25 de Octubre de 2019. </p>
 
                 @yield('countdown',View::make('layouts.components.countdown'))
 
@@ -772,7 +772,7 @@
                     <li><img src="/logosempresas/gap.png" alt="GAP"></li>
                     <li><img src="/logosempresas/tyj.png" alt="T y J sas"></li>
                     <li><img src="/logosempresas/castor.png" alt="Castor"></li>
-                    <li><img src="/logosempresas/globant.png" alt="Globant"></li>
+                    <li><img src="/logosempresas/Dreamhouse.png" style="width: 70%;" alt="Dream House"></li>
                     <li><img src="/logosempresas/intergrupo.png" alt="Intergrupo"></li>
                     <li><img src="/logosempresas/panduit.png" alt="Panduit"></li>
                     <li><img src="/logosempresas/sigma.png" alt="Sigma"></li>
@@ -803,14 +803,21 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center padding-top-60 padding-bottom-20">
 
-                <h3 class="white-text">Descargar reglamento para la competencia Senasoft 2019.</h3>
+                <h3 class="white-text">Descargar reglamento y otros documentos de apoyo, para la competencia Senasoft 2019.</h3>
 
             </div>
             <div class="row">
-                <div class="col-md-4 col-md-offset-4">
+                <div class="col-md-4 col-xs-6 col-md-offset-2">
                     <a href="{{asset('files/Reglamento SENASOFT 2019 Medellin.pdf')}}" download class="btn btn-reglamento">Descargar
                         Reglamento
                         <span class="fa fa-download"></span>
+                    </a>
+
+                    </a>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                    <a target="_blank" href="https://drive.google.com/open?id=1F6chpn19GcT1QaNeyDJ2hXtqHQLHrV2C" download class="btn btn-reglamento">Histórico de pruebas
+                        <span class="fa fa-files-o"></span>
                     </a>
 
                     </a>
@@ -1020,7 +1027,7 @@
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 
                             <div class="panel-body">
-                                <p>SI, estás especificaciones se encuentran establecidas en la ficha técnica de la categoría.</p>
+                                <p>Si, estás especificaciones se encuentran establecidas en la ficha técnica de la categoría.</p>
                             </div>
 
                         </div>
