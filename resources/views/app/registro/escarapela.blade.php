@@ -32,7 +32,7 @@
             font-size: 12px;
             border-width: 1px;
             border-style: solid;
-            background: url('/images/escarapela_blank.png') no-repeat;
+            background: url('/images/escarapelas/escarapelas_produccion_medios.png') no-repeat;
             background-size: 100%;
 
         }
@@ -88,14 +88,14 @@
                     <br><br>
                     <span style="font-size: 18px">No. Doc {{$value->documento}}</span>
                     <br><br>
-                    <span style="font-size: 18px">{{$value->programa_formacion}}</span>
+                    <!--<span style="font-size: 18px">{{$value->programa_formacion}}</span>-->
                     <br><br>
                     <br><br>
                     <br><br>
                     <span class="photo">
                         <img style="margin-top: 40px; margin-left: 50px;" src="D:\Escritorio\SENA 2019\SENASOFT\senasoft\storage\app\fotos/{{$value->foto}}" width="200px">
                         <br>
-                        <img style="margin-left: 370px; margin-top: 125px;" width="200"
+                        <img style="margin-left: 350px" width="250"
                         src="data:image/png;base64, {!!base64_encode(QrCode::encoding('UTF-8')->format('png')->size(200)->generate($value->documento))!!}"
                         alt="">
                     </span>
