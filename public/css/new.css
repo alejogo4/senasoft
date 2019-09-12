@@ -1,0 +1,32 @@
+.cargaF {
+     
+    width: 100%;
+    padding-left: 400px;
+
+
+}
+
+.btn-formato,
+.btn-reglamento {
+    display: block;
+    width: 50%;
+    height: 45px;
+    margin: 0 auto;
+    padding: 2px;
+    color: white;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+h3 {
+    padding-left: 34px;
+}
+
+.hm {
+
+    border-left-width: 13px;
+    
+    padding-left: 38px;
+
+
+}

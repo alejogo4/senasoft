@@ -83,7 +83,7 @@ Dashboard
                 <h2>Aprendices</h2>
             </div>
 
-            <div class="widget-body">
+            <div class="widget-body" style="height:642.2px">
                 <div class="row m-0 align-items-center">
                     <div class="col-xl-4 col-lg-4 col-md-4 text-center">
                         <div class="current-weather">

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use App\Models\Fase;
+use App\Models\Grupo;
 
 class FaseController extends Controller
 {
@@ -15,19 +17,23 @@ class FaseController extends Controller
     public function index()
     {
         return view("app.fase.index");
-        
     }
 
     public function index_carga()
     {
-        return view("app.fase.carga");
-        
+        $categorias = Categoria::all();
+        return view("app.fase.carga", compact("categorias"));
+    }
+
+    public function grupos_x_categoria($id_categoria){
+        $grupos = Grupo::where("categoria_id", $id_categoria)->get();
+
+        return response()->json($grupos);
     }
 
     public function index_uno()
     {
         return view("app.fase.uno");
-        
     }
     /**
      * Show the form for creating a new resource.
@@ -52,11 +58,9 @@ class FaseController extends Controller
 
     public function consultarFase($id)
     {
-        
+
         $fase = Fase::where("categoria_id", $id)->get();
         return response()->json($fase);
-
-        
     }
     /**
      * Display the specified resource.
@@ -65,9 +69,7 @@ class FaseController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-
-    }
+    { }
 
     /**
      * Show the form for editing the specified resource.
