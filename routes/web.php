@@ -55,5 +55,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/fase1',"FaseController@index_uno")->name('fase_uno');
     // Route::get('/fase3',"FaseController@index_tres")->name('fase_tres');
     // Route::get('/fase4',"FaseController@index_cuatro")->name('fase_cuarto');
+
+    //Invitados
+    Route::get('/invitados','InvitadosController@index')->name('invitados');
+
 });
 
