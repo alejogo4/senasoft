@@ -6,26 +6,9 @@ use App\Models\Persona;
 use App\Models\Refrigerio;
 use App\Models\TipoRefrigerio;
 use App\Models\Usref;
-class userController extends Controller
+class RefrigerioController extends Controller
 {
-    function getUser(Request $request){
-        $user = tbl_usuario::all();
-        return response()->json([
-            'mensaje'=> $user
-        ]);
-    }
-    function getInfoUser(Request $request){
-     
-        // $currentTime = date('Y-m-d H:i:s');
-        $user = Persona::select('tbl_persona.*')->where('tbl_persona.cedula', $request->cedula)->first();
-           
-        $refrigerio = Refrigerio::select('tbl_refrigerio.*')->whereRaw('? between fecha_inicial AND fecha_final', [now()])->first();
-        
-        return response()->json([
-            'info' => $user,
-            'tipo Refri' => $refrigerio
-        ]);
-    }
+    
     function comprobarRefrigerio(Request $request){
         //Obtener usuario y refrigerio
         $user = Persona::select('tbl_usuario.*')->where('cedula', $request->cedula)->first();
