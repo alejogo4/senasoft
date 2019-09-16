@@ -484,9 +484,13 @@ class RegistroController extends Controller
             "tipo_persona",
             DB::raw("CONCAT(UCASE(LEFT(LCASE(nombres), 1)), SUBSTRING(LCASE(nombres), 2)) as nombres"),
             DB::raw("CONCAT(UCASE(LEFT(LCASE(apellidos), 1)), SUBSTRING(LCASE(apellidos), 2)) as apellidos"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombre_centro), 1)), SUBSTRING(LCASE(nombre_centro), 2)) as nombre_centro"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombre_regional), 1)), SUBSTRING(LCASE(nombre_regional), 2)) as nombre_regional"),
             "documento",
             "foto"
         )
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->join("tbl_regional", "tbl_regional.id", "=", "tbl_centro.regional_id")
             ->where("centro_id", $id_centro)
             ->orderBy("categoria_id")
             ->get();

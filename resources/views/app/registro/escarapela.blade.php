@@ -150,22 +150,12 @@
         }
 
 
-        .text span{
-            display: block;
-            width: 100%;
-            height: 40px;
-            text-align: center;
-            margin-top: 270px;
-            font-size: 28px;
-            text-transform: capitalize;
-        }
-
         .text p{
             display: block;
             width: 100%;
             height: 40px;
             text-align: center;
-            margin-top: 270px;
+            
             font-size: 28px;
             text-transform: capitalize;
         }
@@ -175,7 +165,7 @@
             width: 100%;
             height: 40px;
             text-align: center;
-            margin-top: 270px;
+            
             font-size: 28px;
             text-transform: capitalize;
         }
@@ -216,7 +206,7 @@
                         $class = "muestra";
                     }
                 }else if($value->tipo_persona == 1){
-                    $class = "basedatos";
+                    $class = "organizador";
                 }
             ?>
 
@@ -231,24 +221,22 @@
             
             <td class="<?= $class ?>" height="49%" width="50%" style="overflow: hidden">
                 <div class="text">
-                    <br><br>
-                    <b style="font-style: bold; font-size: 30px;"><?php echo $value->nombres ?></b>
-                    <br><br>
-                    <p style="font-size: 28px;"><?php echo $value->apellidos ?></p>
-                    <br><br>
-                    <span style="font-size: 20px">No. Doc {{$value->documento}}</span>
-                    <!-- <span style="font-size: 18px"><?php echo __DIR__ ?></span> -->
-                    <br><br>
-                    <!--<span style="font-size: 18px">{{$value->programa_formacion}}</span>-->
-                    <br><br>
-                    <br><br>
-                    <br><br>
+                    <p style="font-size: 18px; margin-top:170px"><?php echo $value->nombre_centro ?></p>
+                    <br>
+                    <p style="font-size: 16px; margin-top:10px"><?php echo $value->nombre_regional ?></p>
+                    <br>
+                    <b style="font-style: bold; font-size: 30px; margin-top:100px"><?php echo $value->nombres ?></b>
+                    <br>
+                    <p style="font-size: 28px; margin-top:114px"><?php echo $value->apellidos ?></p>
+                    <br>
+                    <p style="font-size: 20px; margin-top:129px">No. Doc {{$value->documento}}</p>
+                    <!-- <span style="font-size: 18px"></span> -->
                     <span class="photo">
-                        <div style="position: absolute; margin-top: 350px;overflow:hidden; margin-left: 50px; width:250px; height:250px;">
+                        <div style="position: absolute; margin-top: 376px;overflow:hidden; margin-left: 50px; width:250px; height:250px;">
                             <img src="D:\Escritorio\SENA 2019\SENASOFT\senasoft\storage\app\fotos/{{$value->foto}}" width="100%">
                         </div>
                         <br>
-                        <img style="margin-left: 350px; margin-top:-50px" width="250"
+                        <img style="margin-left: 350px; margin-top: 290px" width="250"
                         src="data:image/png;base64, {!!base64_encode(QrCode::encoding('UTF-8')->format('png')->size(300)->generate($value->documento))!!}"
                         alt="">
                     </span>
