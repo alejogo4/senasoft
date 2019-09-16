@@ -60,7 +60,7 @@
             border-width: 1px;
             border-style: solid;
             background-size: 100%;
-            background: url('/images/escarapelas/escarapelas_web.png') no-repeat;
+            background: url('/images/escarapelas/escarapelas_redes.png') no-repeat;
         }
 
         .tftable td.movil {
@@ -248,7 +248,7 @@
                             <img src="D:\Escritorio\SENA 2019\SENASOFT\senasoft\storage\app\fotos/{{$value->foto}}" width="100%">
                         </div>
                         <br>
-                        <img style="margin-left: 350px; margin-top:-50px" width="250"
+                        <img style="margin-left: 350px; margin-top:-50px; border:none !important" width="250"
                         src="data:image/png;base64, {!!base64_encode(QrCode::encoding('UTF-8')->format('png')->size(300)->generate($value->documento))!!}"
                         alt="">
                     </span>
