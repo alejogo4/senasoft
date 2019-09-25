@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Models\User; 
+use App\Models\Persona; 
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\Validator;
 
@@ -36,21 +37,20 @@ class UserController extends Controller
             ]); 
         }
    
-       
         $data = [
             'email' => $request->get('email'),
             'password'  =>  $request->get('password')
         ];
 
-       
-
         if(Auth::attempt($data))
         {
             $user = Auth::user();
+            $persona = Persona::where("documento", $user->documento)->first();
             // the $user->createToken('appName')->accessToken generates the JWT token that we can use 
             return response()->json([
                 'ok' => true,
                 'user'  =>  $user, // <- we're sending the user info for frontend usage
+                'persona' => $persona,
                 'token' =>  $user->createToken('senasoft')->accessToken // <- token is generated and sent back to the front end
             ]);
         }

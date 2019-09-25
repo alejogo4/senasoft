@@ -1,0 +1,1 @@
+ALTER TABLE `users` ADD `documento` VARCHAR(50) NULL AFTER `id`;
