@@ -39,5 +39,5 @@ Route::post('/equipaje/salida', 'API\EquipajeController@salida_equipaje');
 
 
 Route::group(['middleware' => 'auth:api'], function(){
-   
+    
 });
