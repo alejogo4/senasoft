@@ -19,7 +19,8 @@ class UsuariosSeeders extends Seeder
                 "documento" => $value->documento,
                 "name" => $nombre,
                 "email"=> strtolower($value->correo_principal),
-                "password"=> bcrypt($value->documento)
+                "password"=> bcrypt($value->documento),
+                "rol"=>$value->tipo_persona
             ]);
         }
     }

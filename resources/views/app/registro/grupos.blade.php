@@ -1,7 +1,7 @@
 @extends("layouts.app")
 
 @section("titulo")
-Registro de grupos
+Sorteo de grupos
 @endsection
 
 @section('content')
@@ -42,7 +42,7 @@ ul.timeline > li:before {
         <!-- Example 01 -->
         <div class="widget has-shadow" id="instructores">
             <div class="widget-header bordered no-actions d-flex align-items-center">
-                <h4>Instructores registrados</h4>
+                <h4>Generar grupos</h4>
             </div>
             <div id="contenido" class="widget-body text-center">
                 <button style="display: none" id="btnGenerar" class="btn btn-success btn-lg">Generar Grupos</button>

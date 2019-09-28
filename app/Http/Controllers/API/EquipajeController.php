@@ -9,6 +9,7 @@ use App\Http\Controllers\API\Transformers\APITransformer;
 
 class EquipajeController extends Controller
 {
+
     public function validar_ingreso($documento)
     {
         $equipaje = Equipaje::where("documento", $documento)
@@ -49,7 +50,7 @@ class EquipajeController extends Controller
 
             $equipaje->update(["fecha_salida" => date("Y-m-d H:i:s")]);
             
-            return (new APITransformer)->transform(["ok" => true, "mensaje" => "Se realizo la salida correctamente"]);
+            return (new APITransformer)->transform(["ok" => true, "mensaje" => "Se realizo la salida correctamente", "datos"=>$equipaje]);
         } else {
             return (new APITransformer)->transform(["ok" => false, "mensaje" => "La persona no cuenta con equipaje guardado"]);
         }
