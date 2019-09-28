@@ -1,6 +1,5 @@
 @extends('layouts.master')
 
-
 @section('content')
 
 <!--begin header -->
@@ -41,7 +40,8 @@
             <div class="col-md-10 col-md-offset-1 text-center">
                 <img src="images/logo_sena.png" alt="Logo SENA" class="logo-sena">
                 <h1>SENASOFT 2019 | MEDELLÍN</h1>
-                <p class="parrafo">El Centro de Servicios y Gestión Empresarial de la Regional Antioquia está organizando la décima versión de Senasoft a realizarse del 22 al 25 de Octubre de 2019. </p>
+                <p class="parrafo">El Centro de Servicios y Gestión Empresarial de la Regional Antioquia está
+                    organizando la décima versión de Senasoft a realizarse del 22 al 25 de Octubre de 2019. </p>
 
                 @yield('countdown',View::make('layouts.components.countdown'))
 
@@ -113,7 +113,8 @@
                         <div class="col-md-2"><time>03:00 PM - 06:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Registro en el evento y entrega de equipos.</h4>
-                            <p>Todos los participantes hacen entrega de los equipos registrados previamente para la participación de las diferentes categorías.</p>
+                            <p>Todos los participantes hacen entrega de los equipos registrados previamente para la
+                                participación de las diferentes categorías.</p>
                         </div>
                     </div>
 
@@ -135,7 +136,8 @@
                         <div class="col-md-2"><time>08:00 PM - 10:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Registro en el evento y entrega de equipos segunda parte.</h4>
-                            <p>Para los instructores y aprendices que lleguen despues de las 6:00pm podran hacer entrega de los equipos en esta franja.</p>
+                            <p>Para los instructores y aprendices que lleguen despues de las 6:00pm podran hacer entrega
+                                de los equipos en esta franja.</p>
                         </div>
                     </div>
                 </div>
@@ -166,7 +168,8 @@
                         <div class="col-md-2"><time>09:00 AM - 01:00 PM</time></div>
                         <div class="col-md-10">
                             <h4>Competencia Aprendices.</h4>
-                            <p>Primera fase de la competencia; <b>Todos los instructores deben asistir a una conferencia en
+                            <p>Primera fase de la competencia; <b>Todos los instructores deben asistir a una conferencia
+                                    en
                                     auditorio.</b></p>
                         </div>
                     </div>
@@ -428,7 +431,8 @@
                         <img src="/images/categorias/multimedia_color.png" alt="showcase" class="gallery-show">
                         <div class="content-category">
                             <h3>Producción de <br>Multimedia</h3>
-                            <p>Desarrollar productos innovadores en términos de diseño gráfico, desarrollo de aplicaciones web y experiencias audiovisuales. </p>
+                            <p>Desarrollar productos innovadores en términos de diseño gráfico, desarrollo de
+                                aplicaciones web y experiencias audiovisuales. </p>
 
                         </div>
                         <a href="{{asset('files/fichas_tecnicas/Ficha Técnica Categoría Multimedia.pdf')}}" target="_blank" class="section-lyla btn btn-formato">
@@ -511,7 +515,8 @@
 
                     <h2 class="section-title">Historial Senasoft 2019</h2>
 
-                    <p class="section-subtitle">En el año 2008 inició Senasoft en la ciudad de Medellín, hoy tenemos un histórico <br>del evento que se ha realizado durante 10 años.</p>
+                    <p class="section-subtitle">En el año 2008 inició Senasoft en la ciudad de Medellín, hoy tenemos un
+                        histórico <br>del evento que se ha realizado durante 10 años.</p>
 
                 </div>
                 <!--end col-md-12 -->
@@ -530,7 +535,11 @@
                                 <p>MEDELLÍN</p>
                             </div>
 
-                            <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron doscientos (200) aprendices de Software de 18 regionales del SENA quienes participaron en las categorías de Algoritmia, Análisis y diseño, Bases de Datos, PHP, Java, Punto Net.</p>
+                            <p>Los días 14 y 15 de mayo de 2008, se realizó en la ciudad de Medellín en el Centro de
+                                Servicios y Gestión Empresarial, la primera versión de Senasoft, donde participaron
+                                doscientos (200) aprendices de Software de 18 regionales del SENA quienes participaron
+                                en las categorías de Algoritmia, Análisis y diseño, Bases de Datos, PHP, Java, Punto
+                                Net.</p>
 
                             <ul class="team-icon">
                             </ul>
@@ -553,7 +562,11 @@
                                 <p>CAUCA</p>
                             </div>
 
-                            <p>Entre el 1 y 3 de julio de 2009, la segunda versión de Senasoft tuvo como sede a la ciudad de Popayán. Se congregaron cerca de 60 instructores y 400 aprendices de 30 regionales a nivel país, lo cual hizo notar el interés que ha despertado este evento de desarrollo de software en el SENA. Los aprendices participaron en las categorías de algoritmos, Bases de Datos en SQL, PHP, .Net y Java.
+                            <p>Entre el 1 y 3 de julio de 2009, la segunda versión de Senasoft tuvo como sede a la
+                                ciudad de Popayán. Se congregaron cerca de 60 instructores y 400 aprendices de 30
+                                regionales a nivel país, lo cual hizo notar el interés que ha despertado este evento de
+                                desarrollo de software en el SENA. Los aprendices participaron en las categorías de
+                                algoritmos, Bases de Datos en SQL, PHP, .Net y Java.
                             </p>
 
                             <ul class="team-icon">
@@ -577,7 +590,10 @@
                                 <p>MEDELLÍN</p>
                             </div>
 
-                            <p>El 12 y 13 de Octubre de 2010, se llevó a cabo la tercera versión de Senasoft. Para dicha versión, se contó con la participación de 520 aprendices, quienes compitieron en las categorías de Algoritmia, Análisis y Diseño Orientado a Objetos, Bases de Datos, PHP, Java, .Net, Desarrollo de Aplicaciones Móviles, Multimedia y Animación 3D.</p>
+                            <p>El 12 y 13 de Octubre de 2010, se llevó a cabo la tercera versión de Senasoft. Para dicha
+                                versión, se contó con la participación de 520 aprendices, quienes compitieron en las
+                                categorías de Algoritmia, Análisis y Diseño Orientado a Objetos, Bases de Datos, PHP,
+                                Java, .Net, Desarrollo de Aplicaciones Móviles, Multimedia y Animación 3D.</p>
 
                             <ul class="team-icon">
                             </ul>
@@ -603,7 +619,12 @@
                                 <p>CAUCA</p>
                             </div>
 
-                            <p>Para la cuarta versión de Senasoft Cauca la cual se llevó a cabo del 21 al 24 de Octubre, asistieron 650 aprendices de 31 regionales, participantes en las categorías de: Análisis y Diseño Orientado a Objetos, Bases de Datos, Desarrollo de Aplicaciones en Java Web, Desarrollo de Aplicaciones en C# .Net, Desarrollo de Aplicaciones con PHP, Desarrollo de Aplicaciones Móviles con Android, Proyecto Multimedial, Animación 3D, Desarrollo de Videojuegos, Redes de Datos y Producción de Medios Audiovisuales.</p>
+                            <p>Para la cuarta versión de Senasoft Cauca la cual se llevó a cabo del 21 al 24 de Octubre,
+                                asistieron 650 aprendices de 31 regionales, participantes en las categorías de: Análisis
+                                y Diseño Orientado a Objetos, Bases de Datos, Desarrollo de Aplicaciones en Java Web,
+                                Desarrollo de Aplicaciones en C# .Net, Desarrollo de Aplicaciones con PHP, Desarrollo de
+                                Aplicaciones Móviles con Android, Proyecto Multimedial, Animación 3D, Desarrollo de
+                                Videojuegos, Redes de Datos y Producción de Medios Audiovisuales.</p>
 
                             <ul class="team-icon">
                             </ul>
@@ -626,7 +647,12 @@
                                 <p>HUILA</p>
                             </div>
 
-                            <p>Durante los días 14 al 17 de octubre del 2014 se desarrolló Senasoft en la capital del Huila, el cual contó con la participación de expertos en tecnología e información; de esta manera 772 aprendices de todo el país pertenecientes a 32 regionales, se concentraron en Neiva para el intercambio de conocimientos, concursando en 14 categorías como Diseño Orientado a Objetos, Animación 3D, Aplicaciones Móviles, Producción de Multimedia y Videojuegos, entre otras.
+                            <p>Durante los días 14 al 17 de octubre del 2014 se desarrolló Senasoft en la capital del
+                                Huila, el cual contó con la participación de expertos en tecnología e información; de
+                                esta manera 772 aprendices de todo el país pertenecientes a 32 regionales, se
+                                concentraron en Neiva para el intercambio de conocimientos, concursando en 14 categorías
+                                como Diseño Orientado a Objetos, Animación 3D, Aplicaciones Móviles, Producción de
+                                Multimedia y Videojuegos, entre otras.
                             </p>
 
                             <ul class="team-icon">
@@ -650,7 +676,13 @@
                                 <p>SANTANDER</p>
                             </div>
 
-                            <p>Del 23 al 26 de noviembre se dieron cita 1500 personas, entre aprendices, instructores, expertos, empresarios y público en general, para participar de Senasoft. Los aprendices participaron en las siguientes categorías: Algoritmia, Diseño Orientado a Objetos, Bases de Datos, Java Web, Aplicaciones .Net, Aplicaciones Web PHP, Aplicaciones Móviles con Android, Producción de Multimedia, Videojuegos, Animación 3D, Producción de Medios Audiovisuales, Redes de Datos, Instalación y Hardening de Sistemas Operativos, Sistemas Operativos de Red y Proyectos Ágiles con SCRUM.</p>
+                            <p>Del 23 al 26 de noviembre se dieron cita 1500 personas, entre aprendices, instructores,
+                                expertos, empresarios y público en general, para participar de Senasoft. Los aprendices
+                                participaron en las siguientes categorías: Algoritmia, Diseño Orientado a Objetos, Bases
+                                de Datos, Java Web, Aplicaciones .Net, Aplicaciones Web PHP, Aplicaciones Móviles con
+                                Android, Producción de Multimedia, Videojuegos, Animación 3D, Producción de Medios
+                                Audiovisuales, Redes de Datos, Instalación y Hardening de Sistemas Operativos, Sistemas
+                                Operativos de Red y Proyectos Ágiles con SCRUM.</p>
 
                             <ul class="team-icon">
                             </ul>
@@ -679,7 +711,12 @@
                                 <p>QUINDIO</p>
                             </div>
 
-                            <p>En la ciudad de Armenia del 24 al 28 de Octubre, se reunieron 400 aprendices de todo el país para participar en las categorías de Algoritmia, Animación 3D, Aplicaciones Móviles Android, Aplicaciones Web PHP, Aplicaciones .Net, Bases de Datos, Diseño Orientado a Objetos, Instalación y Hardening de Sistemas Operativos, Java Web, Producción de Medios Audiovisuales, Producción de Multimedia, Proyectos Ágiles con Scrum, Redes de Datos, Sistemas Operativos de Red y Videojuegos.</p>
+                            <p>En la ciudad de Armenia del 24 al 28 de Octubre, se reunieron 400 aprendices de todo el
+                                país para participar en las categorías de Algoritmia, Animación 3D, Aplicaciones Móviles
+                                Android, Aplicaciones Web PHP, Aplicaciones .Net, Bases de Datos, Diseño Orientado a
+                                Objetos, Instalación y Hardening de Sistemas Operativos, Java Web, Producción de Medios
+                                Audiovisuales, Producción de Multimedia, Proyectos Ágiles con Scrum, Redes de Datos,
+                                Sistemas Operativos de Red y Videojuegos.</p>
 
                             <ul class="team-icon">
                             </ul>
@@ -702,7 +739,12 @@
                                 <p>VALLE</p>
                             </div>
 
-                            <p>Del 24 y el 28 de julio se llevó a cabo en la ciudad de Cartago, la octava versión de Senasoft. En dicha oportunidad, los aprendices participaron en las categorías de: Algoritmia, Animación 3D, Aplicaciones. Net, Aplicaciones Móviles Android, Aplicaciones WEB con PHP y SCRUM, Base de Datos, Instalación y Hardening de Sistemas Operativos, Producción de Medios Audiovisuales, Producción de Multimedia, Redes de Datos, Videojuegos, Video Maping y Emprendimiento Digital.
+                            <p>Del 24 y el 28 de julio se llevó a cabo en la ciudad de Cartago, la octava versión de
+                                Senasoft. En dicha oportunidad, los aprendices participaron en las categorías de:
+                                Algoritmia, Animación 3D, Aplicaciones. Net, Aplicaciones Móviles Android, Aplicaciones
+                                WEB con PHP y SCRUM, Base de Datos, Instalación y Hardening de Sistemas Operativos,
+                                Producción de Medios Audiovisuales, Producción de Multimedia, Redes de Datos,
+                                Videojuegos, Video Maping y Emprendimiento Digital.
                             </p>
 
                             <ul class="team-icon">
@@ -726,7 +768,12 @@
                                 <p>ATLÁNTICO</p>
                             </div>
 
-                            <p>Durante los días 19 y 20 de septiembre, se realizó en la ciudad de Barranquilla la novena versión de Senasoft. 406 jóvenes de 28 departamentos de Colombia midieron su talento y conocimiento en las categorías de animación 3D, videojuegos, producción de medios audiovisuales, producción de multimedia, redes de datos, desarrollo de aplicaciones móviles y web, emprendimiento digital, algoritmia y hardening de sistemas operativos de red.</p>
+                            <p>Durante los días 19 y 20 de septiembre, se realizó en la ciudad de Barranquilla la novena
+                                versión de Senasoft. 406 jóvenes de 28 departamentos de Colombia midieron su talento y
+                                conocimiento en las categorías de animación 3D, videojuegos, producción de medios
+                                audiovisuales, producción de multimedia, redes de datos, desarrollo de aplicaciones
+                                móviles y web, emprendimiento digital, algoritmia y hardening de sistemas operativos de
+                                red.</p>
 
                             <ul class="team-icon">
                             </ul>
@@ -803,7 +850,8 @@
             <!--begin col-md-12 -->
             <div class="col-md-12 text-center padding-top-60 padding-bottom-20">
 
-                <h3 class="white-text">Descargar reglamento y otros documentos de apoyo, para la competencia Senasoft 2019.</h3>
+                <h3 class="white-text">Descargar reglamento y otros documentos de apoyo, para la competencia Senasoft
+                    2019.</h3>
 
             </div>
             <div class="row">
@@ -847,7 +895,8 @@
                 <h2 class="section-title">Aplicación Móvil</h2>
 
                 <p class="section-subtitle">
-                    Para la estrategia de Senasoft 2019, se ha desarrollado una aplicación móvil para facilitar el acceso a la información. <br>Esta posee unas grandes características como: </p>
+                    Para la estrategia de Senasoft 2019, se ha desarrollado una aplicación móvil para facilitar el
+                    acceso a la información. <br>Esta posee unas grandes características como: </p>
 
             </div>
             <!--end col-md-12 -->
@@ -881,7 +930,8 @@
 
                     <div class="text_align_right">
                         <h4>Horarios de los workshop</h4>
-                        <p>Información y control de asistencia a los workshops que se desarrollarán para instructores.</p>
+                        <p>Información y control de asistencia a los workshops que se desarrollarán para instructores.
+                        </p>
                     </div>
 
                 </div>
@@ -940,7 +990,8 @@
 
                     <div class="text_align_left">
                         <h4>Confirmar asistencia</h4>
-                        <p>El instructor que acompañará a los aprendices, confirmara la asistencia de los participantes una vez lleguen a la terminar aerea o terrestre.</p>
+                        <p>El instructor que acompañará a los aprendices, confirmara la asistencia de los participantes
+                            una vez lleguen a la terminar aerea o terrestre.</p>
                     </div>
 
                 </div>
@@ -1017,7 +1068,8 @@
 
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <i class="icon icon-rocket panel-icon"></i>
-                                    ¿Todos los computadores del equipo participante deben tener el mismo software y especificaciones técnicas?
+                                    ¿Todos los computadores del equipo participante deben tener el mismo software y
+                                    especificaciones técnicas?
                                 </a>
 
                             </h4>
@@ -1027,7 +1079,8 @@
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 
                             <div class="panel-body">
-                                <p>Si, estás especificaciones se encuentran establecidas en la ficha técnica de la categoría.</p>
+                                <p>Si, estás especificaciones se encuentran establecidas en la ficha técnica de la
+                                    categoría.</p>
                             </div>
 
                         </div>
@@ -1081,7 +1134,8 @@
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 
                             <div class="panel-body">
-                                <p>SI, una vez conformados, posterior al cierre de las inscripciones. Se darán a conocer los datos de los participantes y la conformación de los equipos.</p>
+                                <p>SI, una vez conformados, posterior al cierre de las inscripciones. Se darán a conocer
+                                    los datos de los participantes y la conformación de los equipos.</p>
                             </div>
 
                         </div>
@@ -1147,7 +1201,7 @@
 
                 <p>Copyright © 2019 SENA.</p>
                 <p>Desarrollado por : Juan David Ramirez - Alejandro Giraldo Duque
-                                - Hector Dario Maya | Instructores SENA - CESGE</p>
+                    - Hector Dario Maya | Instructores SENA - CESGE</p>
 
                 <!--begin footer_social -->
                 <ul class="footer_social">
@@ -1179,11 +1233,103 @@
 </div>
 <!--end footer -->
 
-
-
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg"  role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Sorteo de grupos</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5>A continuación, encontraran el vídeo donde se evidencia el sorteo, y en la parte de abajo se muestran los grupos generados.</h5>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <video class="embed-responsive-item" controls>
+                                <source src="/video/grupos.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center">Grupos por categoría</h1>
+                        <h5>Para obtener mayor información de los compañeros de grupo, los invitamos a que descarguen la aplicación que pronto les estará llegando al correo.</h5>
+                        <div id="contenido" class="widget-body text-center"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
 
 @section("script")
+<script>
+    $(function() {
+        $("#myModal").modal();
+        consultarGrupos();
+    })
 
+    function toogle(e) {
+        $(`#${e}`).fadeToggle("fast", "linear");
+
+        if ($(`#icon${e}`).hasClass("fa fa-plus")) {
+            $(`#icon${e}`).removeAttr("class");
+            $(`#icon${e}`).attr("class", "fa fa-minus")
+        } else {
+            $(`#icon${e}`).removeAttr("class");
+            $(`#icon${e}`).attr("class", "fa fa-plus")
+        }
+    }
+
+    function consultarGrupos() {
+        $.ajax({
+            url: '/api/listar/grupos',
+            dataType: 'json'
+        }).done(respuesta => {
+
+            $("#btnGenerar").hide();
+            let key = Object.keys(respuesta);
+
+            key.map((ee, i) => {
+                let contenido =
+                    `<ul class="timeline"><h3 style="cursor:pointer; color:#0e8481" onclick="toogle('${ee.replace(" ", "-").replace(" ", "-").replace(" ", "-")}')">${ee} <i id="icon${ee.replace(" ", "-").replace(" ", "-").replace(" ", "-")}" class="fa fa-plus" aria-hidden="true"></i></h3><div style="display:none" id="${ee.replace(" ", "-").replace(" ", "-").replace(" ", "-")}">`;
+                let anterior = "";
+                let cont = 0;
+                respuesta[ee][0].map(e => {
+
+                    if (e.nombre != anterior) {
+                        contenido += `<li><a href="#" >${e.nombre}</a><div class="row">`;
+                        cont = 0;
+                    }
+
+                    contenido += `
+                                <div class="col-md-${respuesta[ee][1] == 1 ? "12" : (respuesta[ee][1] == 2)? "6" : "4"}">
+                                <b>${e.nombre_regional}</b><br>
+                                <span>${e.nombre_centro}</span><br>
+                                <span>${e.programa_formacion}</span>
+                                </div>
+                                `;
+
+                    cont++;
+                    anterior = e.nombre;
+                    if (cont == respuesta[ee][1]) {
+                        contenido += "</div></li><hr>";
+                    }
+                })
+                contenido += `</div></ul>`;
+
+                $("#contenido").append(contenido);
+            });
+        })
+    }
+</script>
 @endsection

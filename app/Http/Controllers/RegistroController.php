@@ -544,7 +544,7 @@ class RegistroController extends Controller
                 $this->generarGrupoRedesMantenimiento($value->nombre_categoria, $value->id);
             } else if ($value->id == 10) {
                 $this->generarGrupoIDEATIC($value->nombre_categoria, $value->id);
-            } else {
+            } else if($value->id != 11) {
                 $this->generarGrupoCategoria($value->nombre_categoria, $value->id);
             }
         }

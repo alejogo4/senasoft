@@ -31,6 +31,8 @@ Route::post('login', 'API\UserController@login');
 Route::get('proyectos', 'API\ProyectoController@seleccionarTopGanadores');
 Route::post('/registrosRefrigerio', 'API\RefrigerioController@comprobarRefrigerio');
 
+Route::get('/listar/grupos', "RegistroController@listarGrupos");
+
 Route::post('/grupos', 'API\RegistroController@grupos');
 
 Route::get('/equipaje/cantidad', 'API\EquipajeController@cantidad_equipaje_guardado');
