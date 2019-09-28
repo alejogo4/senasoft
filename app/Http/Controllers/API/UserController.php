@@ -72,6 +72,7 @@ class UserController extends Controller
             $user = Auth::user();
             $persona = Persona::where("documento", $user->documento)
             ->join("tbl_centro", "tbl_persona.centro_id", "=", "tbl_centro.id")
+            ->join("tbl_categoria", "tbl_persona.categoria_id", "=", "tbl_categoria.id")
             ->join("tbl_regional", "tbl_centro.regional_id", "=", "tbl_regional.id")
             ->first();
 
