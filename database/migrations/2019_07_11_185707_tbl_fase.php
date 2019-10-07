@@ -17,15 +17,9 @@ class TblFase extends Migration
             // $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->char('nombre' , 45);
-            $table->integer('porcentaje')->default(0);
-            $table->unsignedBigInteger('categoria_id');
-
-
-            $table->foreign('categoria_id')->references('id')->on('tbl_categoria')->onDelete('cascade');
-
-
-
-
+            $table->boolean('estado')->defualt(0);
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin');
             
             $table->timestamps();
         });

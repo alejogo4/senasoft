@@ -60,7 +60,7 @@
 
 @endsection
 @section('titulo')
-Cargar Fases a Evaluadas
+Consultar Fases a Evaluadas
 @endsection
 
 @section('content')
@@ -70,14 +70,14 @@ Cargar Fases a Evaluadas
     <!-- Example 01 -->
     <div class="widget has-shadow" id="cargaFases">
       <div class="widget-header bordered no-actions d-flex align-items-center">
-        <h4>Carga de Archivo</h4>
+        <h4>Consulta de Fases</h4>
       </div>
       <form action="" id="#form" enctype="multipart/form-data" class="widget-body form-control">
         <div class="fieldset-content">
           <div class="form-row">
-            <div class="row">
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="" class="col-md-4 col-form-label">Categoria<b class="text-danger">*</b></label>
+            <div class="row col-md-12">
+              <div class="form-group col-md-4 col-sm-4">
+                <label for="" class="col-md-2 col-form-label">Categoria<b class="text-danger">*</b></label>
                 <select onchange="listar_grupos(this)" class="form-control" name="categoria" id="" required style="height: 52px">
                   <option value="">Seleccione</option>
 
@@ -86,8 +86,8 @@ Cargar Fases a Evaluadas
                   @endforeach
                 </select>
               </div>
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="" class="col-md-4 col-form-label">Fases<b class="text-danger">*</b></label>
+              <div class="form-group col-md-4 col-sm-4">
+                <label for="" class="col-md-2 col-form-label">Fases<b class="text-danger">*</b></label>
                 <select class="form-control" name="tipo_documento" id="" required style="height: 52px ">
                   <option value="">Seleccione</option>
                   <option value="fase1">Fase 1</option>
@@ -96,38 +96,42 @@ Cargar Fases a Evaluadas
                   <option value="fase4">Fase 4</option>
                 </select>
               </div>
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="" class="col-md-4 col-form-label">Grupos<b class="text-danger">*</b></label>
+              <div class="form-group col-md-4 col-sm-4">
+                <label for="" class="col-md-2 col-form-label">Grupos<b class="text-danger">*</b></label>
                 <select class="form-control" name="grupos" id="grupos" required style="height: 52px">
                   
                 </select>
               </div>
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="" class="col-md-4 col-form-label">Calificación Fase<b class="text-danger">*</b></label>
-                <input type="number" class="form-control" name="tipo_documento" id="" required>
-              </div>
-              <div class="row">
-                <h3>Cargar el Formato<b class="text-danger">*</b></h3>
-                <div class="col-md-12 hm">
-                  <div class="panel panel-info" style="width: 1011px">
-                    <div class="panel-heading cargaF">
-                      <h5>Adjuntar el archivo PDF</h5>
-                    </div>
-                    <div class="panel-body dropzone" id="cargaFase">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade " id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table id="tabla_equipo" class="table mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Fase</th>
+                                                    <th>Categoria</th>
+                                                    <th>Grupos</th>
+                                                    <th>Archivo Adjunto</th>
+                                                    <th>Opciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="">
+                                                <th>No hay equipos.</th>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
             </div>
           </div>
         </div>
       </form>
-      <br>
-
       <div class="col-md-12" style="text-align: center;">
-        <button type="button" class="section-lyla btn btn-formato btn-lg btn-primary " onclick="getValues()">Cargar
+        <button type="button" class="section-lyla btn btn-formato btn-lg btn-primary " onclick="getValues()">Consultar
           Fase Evaluada</button>
       </div>
       <br>
@@ -147,7 +151,7 @@ Cargar Fases a Evaluadas
       <script src="{{asset('js/select2.min.js')}}"></script>
       <script src="{{asset('js/select2-es.js')}}"></script>
       <script src="{{asset('js/dropzone.js')}}"></script>
-      <script src="/js/registro_fases.js"></script>
+      <script src="/js/consulta_fases.js"></script>
 
       <script>
         function listar_grupos(e){

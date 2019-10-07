@@ -25,16 +25,25 @@ class FaseController extends Controller
         return view("app.fase.carga", compact("categorias"));
     }
 
-    public function grupos_x_categoria($id_categoria){
+    public function grupos_x_categoria($id_categoria)
+    {
         $grupos = Grupo::where("categoria_id", $id_categoria)->get();
 
         return response()->json($grupos);
     }
 
-    public function index_uno()
+    public function index_consulta()
     {
-        return view("app.fase.uno");
+        $categorias = Categoria::all();
+        return view("app.fase.consulta", compact("categorias"));
     }
+
+    public function grupos_x_categorias($id_categoria){
+        $grupos = Grupo::where("categoria_id", $id_categoria)->get();
+
+        return response()->json($grupos);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

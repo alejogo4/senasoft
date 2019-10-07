@@ -176,7 +176,7 @@
                             <ul id="dropdown-db" class="collapse list-unstyled pt-0">
                             <li><a href="{{route('fase_config')}}"><i class="la la-keyboard-o"></i><span>Activación de Fases</span></a></li>
                                 <li><a href="{{route('fase_carga')}}">Cargar Fases</a></li>
-                                <li><a href="{{route('fase_uno')}}">Fase 1</a></li>
+                                <li><a href="{{route('fase_consulta')}}">Consultar Fases</a></li>
                                 <!-- <li><a href="javascript:void(0);">Fase 3</a></li>
                                 <li><a href="javascript:void(0);">Fase 4</a></li> -->
                             </ul>
@@ -251,7 +251,7 @@
     <!-- Begin Vendor Js -->
     <script src="{{asset('admin/vendors/js/base/jquery.min.js')}}"></script>
     <script src="{{asset('admin/vendors/js/base/core.min.js')}}"></script>
-    <script src="{{asset('admin/vendors/js/tabledit/jquery.tabledit.min.js')}}"></script>}
+    <script src="{{asset('admin/vendors/js/tabledit/jquery.tabledit.min.js')}}"></script>
     <script src="{{asset('js/sweetalert2@8.js')}}"></script>
     <!-- End Vendor Js -->
     <!-- Begin Page Vendor Js -->
