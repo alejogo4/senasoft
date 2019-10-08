@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Persona;
 use App\Models\Centro;
 use App\Models\Categoria;
+use App\Models\Fase;
 use DB;
 
 class HomeController extends Controller
@@ -57,6 +58,7 @@ class HomeController extends Controller
 
         $user = Auth::user();
         $rol = $user->roles->implode('name',',');
+        $fases = Fase::all();
         //dd($user->roles);
         return view('home', [
             "rol"=>$rol,
@@ -68,6 +70,7 @@ class HomeController extends Controller
             "total_a"=>$total_a,
             "total_planta"=>$total_planta,
             "contratistas"=>$contratistas,
+            "fases"=>$fases
             ]);
     }
 }
