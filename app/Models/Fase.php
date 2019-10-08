@@ -9,5 +9,9 @@ class Fase extends Model
     public $table = "tbl_fase";
 
     protected $fillable = [
-        'nombre'];
+        'nombre',
+        'estado',
+        'fecha_inicio',
+        'fecha_fin'
+    ];
 }

@@ -38,7 +38,8 @@ class FaseController extends Controller
         return view("app.fase.consulta", compact("categorias"));
     }
 
-    public function grupos_x_categorias($id_categoria){
+    public function grupos_x_categorias($id_categoria)
+    {
         $grupos = Grupo::where("categoria_id", $id_categoria)->get();
 
         return response()->json($grupos);
@@ -112,5 +113,28 @@ class FaseController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function activatePhases(Request $request)
+    {
+        $input = $request->all();
+        try {
+            foreach ($input['data'] as $key => $value) {
+                $dates =  explode(" - ", $value);
+                $phase = Fase::create([
+                    'nombre' => 'Fase ' . ($key + 1),
+                    'fecha_inicio' => $dates[0].':00',
+                    'fecha_fin' => $dates[1].':00'
+                ]);
+            }
+            return response()->json([
+                'ok'=>true,
+                'message'=>'Fases activadas con éxito'
+            ]); 
+        } catch (\Throwable $th) {
+            return response()->json([
+                'ok'=>false,
+                'error'=>$th->getMessage()
+            ]);
+        }
     }
 }
