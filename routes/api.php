@@ -28,18 +28,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 |
 */
 Route::post('login', 'API\UserController@login');
-Route::get('proyectos', 'API\ProyectoController@seleccionarTopGanadores');
-Route::post('/registrosRefrigerio', 'API\RefrigerioController@comprobarRefrigerio');
 
-Route::get('/listar/grupos', "RegistroController@listarGrupos");
-
-Route::post('/grupos', 'API\RegistroController@grupos');
-
-Route::get('/equipaje/cantidad', 'API\EquipajeController@cantidad_equipaje_guardado');
-Route::post('/equipaje/ingreso', 'API\EquipajeController@ingreso_equipaje');
-Route::post('/equipaje/salida', 'API\EquipajeController@salida_equipaje');
-
-
-Route::group(['middleware' => 'auth:api'], function(){
+Route::group(['middleware' => 'auth:api'], function () {
     
+    Route::get('proyectos', 'API\ProyectoController@seleccionarTopGanadores');
+
+    Route::post('/registrosRefrigerio', 'API\RefrigerioController@comprobarRefrigerio');
+
+    Route::post('/grupos', 'API\RegistroController@grupos');
+    Route::get('/listar/grupos', "RegistroController@listarGrupos");
+
+    Route::get('/equipaje/cantidad', 'API\EquipajeController@cantidad_equipaje_guardado');
+    Route::post('/equipaje/ingreso', 'API\EquipajeController@ingreso_equipaje');
+    Route::post('/equipaje/salida', 'API\EquipajeController@salida_equipaje');
 });

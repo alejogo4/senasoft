@@ -519,7 +519,7 @@ class RegistroController extends Controller
         $resultados = [];
 
         foreach ($categorias as $key => $value) {
-            $datos = Grupo::select("tbl_grupo.nombre", "tbl_persona.programa_formacion", "tbl_persona.nombres", "tbl_persona.apellidos", "tbl_centro.*", "tbl_regional.*")
+            $datos = Grupo::select("tbl_grupo.nombre", "tbl_persona.programa_formacion", "tbl_persona.nombres", "tbl_persona.apellidos", "tbl_persona.correo_principal", "tbl_centro.*", "tbl_regional.*")
                 ->join("tbl_grupo_persona", "tbl_grupo_persona.grupo_id", "=", "tbl_grupo.id")
                 ->join("tbl_persona", "tbl_grupo_persona.persona_id", "=", "tbl_persona.id")
                 ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")

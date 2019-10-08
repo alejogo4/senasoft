@@ -28,6 +28,15 @@
             border: 
         }
 
+        
+
+        .tftable td.instructor {
+            font-size: 12px;
+            border-width: 1px;
+            border-style: solid;
+            background-size: 100%;
+            background: url('/images/escarapelas/escarapelas_instructor.png') no-repeat;
+        }
 
 
         .tftable td.organizador {
@@ -76,7 +85,7 @@
             border-width: 1px;
             border-style: solid;
             background-size: 100%;
-            background: url('/images/escarapelas/escarapelas_animacion_3d.png') no-repeat;
+            background: url('/images/escarapelas/escarapelas_redes.png') no-repeat;
         }
 
         .tftable td.multimedia {
@@ -126,7 +135,7 @@
             border-width: 1px;
             border-style: solid;
             background-size: 100%;
-            background: url('/images/escarapelas/escarapelas_ideatic.png') no-repeat;
+            background: url('/images/escarapelas/escarapelas_muestraProyectos.png') no-repeat;
         }
 
 
@@ -135,7 +144,7 @@
             border-width: 1px;
             border-style: solid;
             background-size: 100%;
-            background: url('/images/escarapelas/escarapelas_animacion_3d.png') no-repeat;
+            background: url('/images/escarapelas/escarapela_blank.png') no-repeat;
         }
 
 
@@ -206,7 +215,7 @@
                         $class = "muestra";
                     }
                 }else if($value->tipo_persona == 1){
-                    $class = "organizador";
+                    $class = "instructor";
                 }
             ?>
 
@@ -233,7 +242,8 @@
                     <!-- <span style="font-size: 18px"></span> -->
                     <span class="photo">
                         <div style="position: absolute; margin-top: 376px;overflow:hidden; margin-left: 50px; width:250px; height:250px;">
-                            <img src="D:\Escritorio\SENA 2019\SENASOFT\senasoft\storage\app\fotos/{{$value->foto}}" width="100%">
+                            <img src="C:\Inetpub\vhosts\gidpi.com\appsenasoft\storage\app\fotos/{{$value->foto}}" width="100%">
+                            <!-- <img src="D:\Escritorio\SENA 2019\SENASOFT\senasoft\storage\app\fotos/{{$value->foto}}" width="100%"> -->
                         </div>
                         <br>
                         <img style="margin-left: 350px; margin-top: 290px" width="250"
