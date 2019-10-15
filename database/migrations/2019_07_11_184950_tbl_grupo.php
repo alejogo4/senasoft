@@ -17,8 +17,10 @@ class TblGrupo extends Migration
             // $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->char('nombre' , 45);
-
+            $table->unsignedBigInteger('categoria_id');
             $table->timestamps();
+
+            // $table->foreign('categoria_id')->references('id')->on('tbl_categoria');
         });
     }
 

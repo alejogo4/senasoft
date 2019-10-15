@@ -1,66 +1,11 @@
 @extends('layouts.app')
 
+@section("titulo")
+Listado de Fases Evaluadas
+@endsection
+
 @section("style")
 <link rel="stylesheet" href="{{asset('admin/css/datatables/datatables.min.css')}}">
-<link rel="stylesheet" href="/admin/js/components/lightbox2/css/lightbox.min.css">
-<link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
-<link rel="stylesheet" href="/vendor/nouislider/nouislider.min.css">
-<link rel="stylesheet" href="{{asset('css/select2.min.css')}}">
-<link rel="stylesheet" href="{{asset('css/dropzone.css')}}">
-<link rel="stylesheet" href="{{asset('css/new.css')}}">
-<!-- <link rel="stylesheet" href="{{asset('css/style.css')}}"> -->
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<style>
-  td.details-control {
-    cursor: pointer;
-    display: inline-block;
-    font: normal normal normal 24px/1 "LineAwesome";
-    font-size: inherit;
-    text-decoration: inherit;
-    text-rendering: optimizeLegibility;
-    text-transform: none;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-smoothing: antialiased;
-    margin-top: 50%;
-  }
-
-  td.details-control::before {
-    content: "\f2c3";
-    color: green;
-    font-size: 24px;
-  }
-
-  tr.details td.details-control::before {
-    content: "\f343";
-    color: red;
-    font-size: 24px;
-  }
-</style>
-<link rel="stylesheet" href="/css/wizard.css">
-
-<style>
-  .section-white {
-    padding: 0;
-  }
-
-  .section-white.no-padding-bottom,
-  .section-grey.no-padding-bottom {
-    padding: 0;
-  }
-
-  .select2 {
-    width: 100% !important;
-  }
-
-  .select2-selection {
-    height: 50px !important;
-  }
-</style>
-
-@endsection
-@section('titulo')
-Consultar Fases a Evaluadas
 @endsection
 
 @section('content')
@@ -68,109 +13,155 @@ Consultar Fases a Evaluadas
 <div class="row">
   <div class="col-xl-12">
     <!-- Example 01 -->
-    <div class="widget has-shadow" id="cargaFases">
+    <div class="widget has-shadow">
       <div class="widget-header bordered no-actions d-flex align-items-center">
-        <h4>Consulta de Fases</h4>
+        <h4>Listado Fases Evaluadas</h4>
       </div>
-      <form action="" id="#form" enctype="multipart/form-data" class="widget-body form-control">
-        <div class="fieldset-content">
-          <div class="form-row">
-            <div class="row col-md-12">
-              <div class="form-group col-md-4 col-sm-4">
-                <label for="" class="col-md-2 col-form-label">Categoria<b class="text-danger">*</b></label>
-                <select onchange="listar_grupos(this)" class="form-control" name="categoria" id="" required style="height: 52px">
-                  <option value="">Seleccione</option>
-
-                  @foreach( $categorias as $value)
-                  <option value='{{ $value->id }}'>{{ $value->nombre_categoria }}</option>
-                  @endforeach
-                </select>
-              </div>
-              <div class="form-group col-md-4 col-sm-4">
-                <label for="" class="col-md-2 col-form-label">Fases<b class="text-danger">*</b></label>
-                <select class="form-control" name="tipo_documento" id="" required style="height: 52px ">
-                  <option value="">Seleccione</option>
-                  <option value="fase1">Fase 1</option>
-                  <option value="fase2">Fase 2</option>
-                  <option value="fase3">Fase 3</option>
-                  <option value="fase4">Fase 4</option>
-                </select>
-              </div>
-              <div class="form-group col-md-4 col-sm-4">
-                <label for="" class="col-md-2 col-form-label">Grupos<b class="text-danger">*</b></label>
-                <select class="form-control" name="grupos" id="grupos" required style="height: 52px">
-                  
-                </select>
-              </div>
-              <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade " id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="table-responsive">
-                                        <table id="tabla_equipo" class="table mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th>Fase</th>
-                                                    <th>Categoria</th>
-                                                    <th>Grupos</th>
-                                                    <th>Archivo Adjunto</th>
-                                                    <th>Opciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody id="">
-                                                <th>No hay equipos.</th>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-            </div>
-          </div>
+      <div class="widget-body">
+        <div class="table-responsive">
+          <table id="tabla_registro_proyectos" class="table mb-0">
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Grupos</th>
+                <th>Fases</th>
+                <th>Puntaje</th>
+                <th>Archivo Adjunto</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
-      </form>
-      <div class="col-md-12" style="text-align: center;">
-        <button type="button" class="section-lyla btn btn-formato btn-lg btn-primary " onclick="getValues()">Consultar
-          Fase Evaluada</button>
       </div>
-      <br>
-      <br>
+    </div>
+  </div>
+</div>
+@endsection
 
+@section("script")
+<script src="{{ asset('admin/vendors/js/datatables/datatables.min.js') }}"></script>
 
-      @endsection
+<!-- <script>
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        })
 
-      @section('script')
-      <script src="/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-      <script src="/vendor/jquery-validation/dist/additional-methods.min.js"></script>
-      <script src="{{asset('js/validate-es.min.js')}}"></script>
-      <script src="/vendor/jquery-steps/jquery.steps.min.js"></script>
-      <script src="/vendor/minimalist-picker/dobpicker.js"></script>
-      <script src="/vendor/nouislider/nouislider.min.js"></script>
-      <script src="/vendor/wnumb/wNumb.js"></script>
-      <script src="{{asset('js/select2.min.js')}}"></script>
-      <script src="{{asset('js/select2-es.js')}}"></script>
-      <script src="{{asset('js/dropzone.js')}}"></script>
-      <script src="/js/consulta_fases.js"></script>
+        $('#tabla_registro_proyectos').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
+            },
+            processing: true,
+            serverSide: true,
+            ajax: '/proyectos/obtener/registros',
+            columns: [{
+                    data: 'centro.regional.nombre_regional',
+                    name: 'centro.regional.nombre_regional'
+                },
+                {
+                    data: 'nombre_centro',
+                    name: 'nombre_centro'
+                },
+                {
+                    data: 'puntaje',
+                    name: 'puntaje'
+                },
+                {
+                    data: 'puntaje',
+                    name: 'puntaje'
+                },
+                {
+                    data: 'puntaje',
+                    name: 'puntaje'
+                }
+                
+            ],
+            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+               
+                var opciones = $('td:eq(2)', nRow);
+                html = `<a href="/proyecto-file/${aData.arhivo_proyecto_centro}" download>${aData.arhivo_proyecto_centro}</a>`;
+                opciones.html(html);
 
-      <script>
-        function listar_grupos(e){
-          let id_categoria = $(e).val();
-
-          $.ajax({
-            url: '/fase/grupo/'+id_categoria,
-            dateType:'json',
-            type:'get'
-          }).done(respuesta=>{
-            $("#grupos").empty();
-            $("#grupos").append('<option value="">Seleccione</option>');
-
-            for(let item of respuesta)  {
-              $("#grupos").append(`<option value="${item.id}">${item.nombre}</option>`);
+                var puntaje = $('td:eq(3)', nRow);
+                
+                var buttons = $('td:eq(4)', nRow);
+                if(aData.puntaje != 0){
+                    
+                    if(aData.estado ==  1){
+                        buttons.html(`<span class="badge badge-success">Aprobado</span>`);
+                    }else{
+                        buttons.html(`<span class="badge badge-danger">No Aprobado</span>`);
+                    }
+                    
+                }else{
+                    puntaje.attr("contenteditable",true);
+                    puntaje.addClass("point");
+                    buttons.html(`<div class="btn-group" role="group" aria-label="Basic example">
+                                    <button onclick="revisar(${aData.id_proyecto}, 1,this)" type="button" class="btn btn-success">Aprobar</button>
+                                    <button onclick="revisar(${aData.id_proyecto}, 2,this)" type="button" class="btn btn-danger">Rechazar</button>
+                                    </div>`);
+                }
+               
             }
+        });
 
-          })
+        function revisar(id,estado,element){
+
+            var row = element.parentElement.parentElement.parentElement;
+            var puntaje = $(row).find(".point").html();
+          
+            var data = new FormData();
+            data.append('id',id);
+            data.append('estado',estado);
+            data.append('puntaje',puntaje);
+
+            jQuery.ajax({
+            url: '/proyecto/actualizarTabla',
+            data: data,
+            cache: false,
+            contentType: false,
+            processData: false,
+            method: 'POST',
+        
+
+            }).done((respuesta) => {
+                if (respuesta.ok) {
+                    Swal.fire({
+                        title: 'Felicidades',
+                        text: respuesta.mensaje,
+                        type: 'success',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    })
+
+                    
+                } else {
+    
+                    Swal.fire({
+                        title: 'Espera',
+                        text: respuesta.mensaje,
+                        type: 'warning',
+                    })
+                }
+                
+            }).fail((error) => {
+                Swal.hideLoading();
+                Swal.fire({
+                    title: 'Espera',
+                    text: "Ocurrió un error inesperado, intenta más tarde. En caso de persistir el error contacta al administrador del sitio",
+                    type: 'error',
+                })
+            });
+    
         }
-      
-      </script>
-      @endsection
+
+    </script>
+         -->
+
+
+@endsection

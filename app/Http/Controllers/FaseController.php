@@ -22,7 +22,8 @@ class FaseController extends Controller
     public function index_carga()
     {
         $categorias = Categoria::all();
-        return view("app.fase.carga", compact("categorias"));
+        $fases=Fase::where('estado',0)->get();
+        return view("app.fase.carga", compact("categorias",'fases'));
     }
 
     public function grupos_x_categoria($id_categoria)
@@ -117,24 +118,31 @@ class FaseController extends Controller
     public function activatePhases(Request $request)
     {
         $input = $request->all();
-        try {
-            foreach ($input['data'] as $key => $value) {
-                $dates =  explode(" - ", $value);
-                $phase = Fase::create([
-                    'nombre' => 'Fase ' . ($key + 1),
-                    'fecha_inicio' => $dates[0].':00',
-                    'fecha_fin' => $dates[1].':00'
-                ]);
-            }
-            return response()->json([
-                'ok'=>true,
-                'message'=>'Fases activadas con éxito'
-            ]); 
-        } catch (\Throwable $th) {
+        if (count(Fase::all())>0) {
             return response()->json([
                 'ok'=>false,
-                'error'=>$th->getMessage()
+                'error'=>'Las fases ya estaban activas'
             ]);
+        } else {
+            try {
+                foreach ($input['data'] as $key => $value) {
+                    $dates =  explode(" - ", $value);
+                    $phase = Fase::create([
+                        'nombre' => 'Fase ' . ($key + 1),
+                        'fecha_inicio' => $dates[0].':00',
+                        'fecha_fin' => $dates[1].':00'
+                    ]);
+                }
+                return response()->json([
+                    'ok'=>true,
+                    'message'=>'Fases activadas con éxito'
+                ]); 
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'ok'=>false,
+                    'error'=>$th->getMessage()
+                ]);
+            }
         }
     }
 }

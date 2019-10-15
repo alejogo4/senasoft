@@ -49,7 +49,7 @@ Dashboard
         <div class="widget widget-25 has-shadow">
 
             <div class="widget-header d-flex align-items-center">
-                <h2>Fases</h2>
+                <h2>Fase Activa</h2>
                 <i class="la la-hourglass-2" style="font-size: 32px; "></i>
             </div>
 
@@ -58,7 +58,7 @@ Dashboard
                     <div class="col-md-12">
                         <ul>
                             @foreach($fases as $f)
-                            <li>{{$f->nombre}} {!! $f->estado==0?'':'<span class="float-right" style="color: #005c7c;border: #005c7c solid 1px;padding: 0.1rem;width: 70px;text-align: center;border-radius: 1000px;">Activa</span>' !!}</li>
+                            <li class="mt-4">{{$f->nombre}} {!! $f->estado==0?'':'<span class="float-right" style="color: #005c7c;border: #005c7c solid 1px;padding: 0.1rem;width: 70px;text-align: center;border-radius: 1000px;">Activa</span>' !!}</li>
                             @endforeach
                         </ul>
                     </div>

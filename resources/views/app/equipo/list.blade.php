@@ -38,6 +38,7 @@ Registro Equipos
                                                     <th>Descripción Actual</th>
                                                     <th>Atributos</th>
                                                     <th>Especificaciones técnicas</th>
+                                                    <th>Adjuntar Archivo</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="table-1">

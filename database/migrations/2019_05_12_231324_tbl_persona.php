@@ -29,14 +29,14 @@ class TblPersona extends Migration
             $table->char('telefono', 20)->nullable();
             $table->char('otro_telefono', 20)->nullable();
             $table->char('cargo', 60)->nullable();
-            $table->char('programa_formacion', 80)->nullable();
+            $table->string('programa_formacion', 250)->nullable();
             $table->char('rh', 3)->nullable();
             $table->char('talla_camisa', 3)->nullable();
-            $table->char('eps', 45)->nullable();
+            $table->char('eps', 80)->nullable();
             $table->char('arl', 60)->nullable();
             $table->char('tipo_contrato', 15)->nullable();
-            $table->char('ciudad', 60)->nullable();
-            $table->char('ciudad_desplazamiento_aereo', 60)->nullable();
+            $table->string('ciudad', 250)->nullable();
+            $table->string('ciudad_desplazamiento_aereo', 250)->nullable();
             $table->char('empresa', 80)->nullable();
             $table->mediumText('tipo_alimentacion', 20)->nullable();
             $table->mediumText('alergias')->nullable();
@@ -51,9 +51,9 @@ class TblPersona extends Migration
             $table->boolean('revision')->default(0);
             $table->timestamps();
 
-            $table->foreign('categoria_id')->references('id')->on('tbl_categoria')->onDelete('cascade');
-            $table->foreign('centro_id')->references('id')->on('tbl_centro')->onDelete('cascade');
-            $table->foreign('tipo_persona')->references('id')->on('tbl_tipo_persona')->onDelete('cascade');
+            // $table->foreign('categoria_id')->references('id')->on('tbl_categoria')->onDelete('cascade');
+            // $table->foreign('centro_id')->references('id')->on('tbl_centro')->onDelete('cascade');
+            // $table->foreign('tipo_persona')->references('id')->on('tbl_tipo_persona')->onDelete('cascade');
         });
     }
 
