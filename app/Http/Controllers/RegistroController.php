@@ -506,6 +506,55 @@ class RegistroController extends Controller
         return $pdf->stream('escarapela.pdf');
     }
 
+
+    public function generarPDFEqupos($id_centro)
+    {
+        $p = Persona::select(
+            "nombre_categoria",
+            "categoria_id",
+            "tipo_persona",
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombres), 1)), SUBSTRING(LCASE(nombres), 2)) as nombres"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(apellidos), 1)), SUBSTRING(LCASE(apellidos), 2)) as apellidos"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombre_centro), 1)), SUBSTRING(LCASE(nombre_centro), 2)) as nombre_centro"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombre_regional), 1)), SUBSTRING(LCASE(nombre_regional), 2)) as nombre_regional"),
+            "documento", 
+            "tipo_documento"
+        )
+            ->join("tbl_categoria", "tbl_categoria.id", "=", "tbl_persona.categoria_id")
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->join("tbl_regional", "tbl_regional.id", "=", "tbl_centro.regional_id")
+            ->where("centro_id", $id_centro)
+            ->where("tipo_persona", 2)
+            ->orderBy("categoria_id")
+            ->get();
+        
+        $personas = $this->duplicar_registros_equipos($p);
+
+        // return view('app.registro.equipos', compact('personas'));
+
+        $pdf = PDF::loadView('app.registro.equipos', compact('personas'));
+
+        // $customPaper = array(0,0,500,380);
+        $pdf->setPaper("A4", "portrait");
+        $pdf->setOptions(["dpi" => "150"]);
+
+        return $pdf->stream('equipos.pdf');
+    }
+
+    public function duplicar_registros_equipos($personas){
+        $duplicar = [2,2,2,4,10,2,2,3,3,2];
+        $resultado = [];
+
+        foreach($personas as $value){
+            for($i = 0; $i < $duplicar[$value->categoria_id-1]; $i++){
+                $resultado[] = $value;
+            }
+        }
+
+        return $resultado;
+    }
+
+
     public function ggrupos()
     {
 

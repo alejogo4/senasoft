@@ -43,6 +43,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/notificaciones', 'RegistroController@notificaciones');
 
     Route::get('/registros/grupos', "RegistroController@ggrupos");
+    Route::get('/registros/equipos/{centro_id}', "RegistroController@generarPDFEqupos");
     Route::get('/registros/generar/grupos', "RegistroController@generarGrupos");
     Route::get('/registros/listar/grupos', "RegistroController@listarGrupos");
 

@@ -181,7 +181,8 @@ Registros de Instructores y Aprendices
                     `<a href="#" onclick="ver_aprendices(` + aData.centro_id + `, '` + aData.centro
                     .nombre_centro +
                     `')" class="btn btn-primary"><i style="margin:0" class="la la-users"></i></a> 
-                    <a target="_blank" href="/registros/escarapela/${aData.centro_id}" class="btn btn-info"><i style="margin:0" class="la la-file-pdf-o"></i></a>`;
+                    <a target="_blank" href="/registros/escarapela/${aData.centro_id}" class="btn btn-info"><i style="margin:0" class="la la-file-pdf-o"></i></a>
+                    <a target="_blank" href="/registros/equipos/${aData.centro_id}" class="btn btn-primary"><i style="margin:0" class="la la-desktop"></i></a>`;
                 opciones.html(html);
 
                 var opciones = $('td:eq(7)', nRow);
