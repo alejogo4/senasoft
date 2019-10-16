@@ -507,6 +507,37 @@ class RegistroController extends Controller
     }
 
 
+    public function generarPDFCategoria($categoria_id)
+    {
+        $personas = Persona::select(
+            "categoria_id",
+            "tipo_persona",
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombres), 1)), SUBSTRING(LCASE(nombres), 2)) as nombres"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(apellidos), 1)), SUBSTRING(LCASE(apellidos), 2)) as apellidos"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombre_centro), 1)), SUBSTRING(LCASE(nombre_centro), 2)) as nombre_centro"),
+            DB::raw("CONCAT(UCASE(LEFT(LCASE(nombre_regional), 1)), SUBSTRING(LCASE(nombre_regional), 2)) as nombre_regional"),
+            "documento",
+            "foto"
+        )
+            ->join("tbl_centro", "tbl_centro.id", "=", "tbl_persona.centro_id")
+            ->join("tbl_regional", "tbl_regional.id", "=", "tbl_centro.regional_id")
+            ->where("categoria_id", $categoria_id)
+            ->orderBy("categoria_id")
+            ->get();
+
+        // return view('app.registro.escarapela', compact('personas'));
+
+        $pdf = PDF::loadView('app.registro.escarapela', compact('personas'));
+
+        // $customPaper = array(0,0,500,380);
+        $pdf->setPaper("A4", "portrait");
+        $pdf->setOptions(["dpi" => "150"]);
+
+        return $pdf->stream('escarapela.pdf');
+    }
+
+
+
     public function generarPDFEqupos($id_centro)
     {
         $p = Persona::select(
