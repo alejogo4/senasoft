@@ -8,8 +8,8 @@
     <title>Document</title>
     <style>
         .st {
-            width: 300px;
-            height: 230px;
+            width: 400px;
+            height: 307px;
             background: url(/images/equipos.jpg) no-repeat;
             position: relative;
             float: left;
@@ -19,11 +19,12 @@
         * {
             margin: 0;
             padding: 0;
+            font-family: 'Work Sans', sans-serif;
         }
 
         
         .tftable {
-            font-size: 14px;
+            font-size: 20px;
             color: #333333;
             width: 100%;
             border-width: 1px;
@@ -53,18 +54,23 @@
         @if($contTd == 0)
         <tr>
         @endif
-        <td class="st" style="overflow: hidden">
+        <td class="st" style="overflow: hidden;">
+            <br>
+            <br>
             <p><b>{{$value->nombre_categoria}}</b></p>
             <p>{{$value->nombres}} {{$value->apellidos}}</p>
+            <br>
+            <p><b>{{$value->nombre_regional}}</b></p>
+            <p style="padding-left: 4%; padding-right: 4%: font-size: 14px !important">{{$value->nombre_centro}}</p>
         </td>
         <?php $contTb++; $contTd++ ?>
 
-        @if($contTd == 4)
+        @if($contTd == 3)
         </tr>
         <?php $contTd = 0; ?>
         @endif
 
-    @if($contTb == 28 )
+    @if($contTb == 18 )
             </tbody>
         </table>
         <?php $contTb = 0; ?>
@@ -73,7 +79,9 @@
 
     @endforeach
 
-    @if($contTd < 28)
+    @if($contTd < 19)
+    <!-- <td class="st" style="overflow: hidden;">
+    </td> -->
     </tr>
     </tbody>
     </table>

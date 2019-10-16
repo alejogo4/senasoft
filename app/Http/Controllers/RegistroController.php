@@ -525,6 +525,7 @@ class RegistroController extends Controller
             ->join("tbl_regional", "tbl_regional.id", "=", "tbl_centro.regional_id")
             ->where("centro_id", $id_centro)
             ->where("tipo_persona", 2)
+            ->where("categoria_id", "<", 11)
             ->orderBy("categoria_id")
             ->get();
         
