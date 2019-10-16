@@ -6,6 +6,14 @@ use App\Models\Categoria;
 use Illuminate\Http\Request;
 use App\Models\Fase;
 use App\Models\Grupo;
+use App\Models\GrupoEvaluacion;
+use App\Models\GrupoPersonas;
+use App\Models\Porcentaje;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class FaseController extends Controller
 {
@@ -18,14 +26,66 @@ class FaseController extends Controller
     {
         return view("app.fase.index");
     }
+    public function finalistas()
+    {
+        $button = false;
+        $this->validateFase();
+        if(Fase::find(4)->estado==1){
+            $button = true;
+        }
+        return view("app.fase.finalistas",compact('button'));
+    }
+    public function getFinalistas()
+    {
+        $categorias = Categoria::all();
 
+        $groups=[];
+
+        foreach ($categorias as $key => $value) {
+            $data = Grupo::select('tbl_grupo.nombre','tbl_grupo.categoria_id','tbl_grupo_evaluacion.puntaje','tbl_grupo_evaluacion.fase_id','tbl_grupo_evaluacion.categoria_id')
+            ->join('tbl_grupo_evaluacion','tbl_grupo_evaluacion.grupo_id','tbl_grupo.id')
+            ->where('tbl_grupo.categoria_id',$value->id)
+            ->get();
+            // $data = Porcentaje::select('tbl_grupo.nombre','tbl_grupo.categoria_id',DB::raw('SUM( (tbl_grupo_evaluacion.puntaje/100)*tbl_porcentaje.porcentaje  ) as total_puntos'))
+            // ->join('tbl_grupo','tbl_grupo.id',)
+            foreach ($data as $value) {
+                $porcentaje=Porcentaje::where('fase_id',$value->fase_id)->where('categoria_id',$value->categoria_id)->first();
+                $value->total_puntos= ($value->puntaje/100)*$porcentaje->porcentaje;
+
+            }
+            dd($data->sortByDesc('total_puntos')->splice(10,(count($data)-10)));
+            $data->orderBy('total_puntos','DESC')->take(10);
+            foreach ($data as $key => $value) {
+                array_push($groups,$value);
+            }
+            
+        }
+
+        return response()->json([
+            'categorias'=>$categorias,
+            'grupos'=>$groups
+        ]);
+    }
     public function index_carga()
     {
         $categorias = Categoria::all();
-        $fases=Fase::where('estado',0)->get();
-        return view("app.fase.carga", compact("categorias",'fases'));
+        $this->validateFase();
+        $fases = Fase::where('estado', 1)->get();
+        return view("app.fase.carga", compact("categorias", 'fases'));
     }
+    private function validateFase()
+    {
+        $fases = Fase::all();
 
+        foreach ($fases as $key => $value) {
+            $date = Carbon::now()->isoFormat('YYYY-MM-DD HH:mm') . ':00';
+            if ($date > $value->fecha_inicio && $date < $value->fecha_fin) {
+                $value->update(['estado' => 1]);
+            } else {
+                $value->update(['estado' => 0]);
+            }
+        }
+    }
     public function grupos_x_categoria($id_categoria)
     {
         $grupos = Grupo::where("categoria_id", $id_categoria)->get();
@@ -36,7 +96,8 @@ class FaseController extends Controller
     public function index_consulta()
     {
         $categorias = Categoria::all();
-        return view("app.fase.consulta", compact("categorias"));
+        $evaluacion = GrupoEvaluacion::all();
+        return view("app.fase.consulta", compact("categorias", "evaluacion"));
     }
 
     public function grupos_x_categorias($id_categoria)
@@ -64,9 +125,54 @@ class FaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $input = $request->all();
+        $validation = Validator::make($input, [
+            'nombre_jurado' => 'required|string|max:45',
+            'categoria_id' => 'required',
+            'grupo_id' => 'required',
+            'puntaje' => 'required|integer|gt:-1|lt:101',
+            'adjunto' => 'mimes:jpg,png,jpeg,pdf,docx'
+        ]);
+        $val = GrupoEvaluacion::where('grupo_id',$input['grupo_id'])->where('fase_id',$input['fase_id'])->get();
+        if ($validation->fails()) {
+            return response()->json([
+                'ok' => false,
+                'messages' => $validation->messages()
+            ]);
+        } if(count($val)>0){
+            return response()->json([
+                'ok'=>false,
+                'mensaje'=>'Este grupo ya ha sido evaluado en esta fase'
+            ]);
+        }else {
+            try {
+                $fileName = time() . $input['adjunto']->getClientOriginalName();
+                Storage::disk('fases')->put($fileName, File::get($input['adjunto']));
+                $input['adjunto'] = $fileName;
 
+                $faseCarga = GrupoEvaluacion::create($input);
+
+                return response()->json([
+                    'ok' => true,
+                    'message' => 'Calificación subida con éxito'
+                ]);
+            } catch (\Throwable $th) {
+                return response()->json([
+                    'ok' => false,
+                    'error' => $th->getMessage()
+                ]);
+            }
+        }
+    }
+    public function getTeam($id)
+    {
+        $group = GrupoPersonas::with('Persona')->where('grupo_id', $id)->get();
+
+        return response()->json([
+            'ok' => true,
+            'data' => $group
+        ]);
+    }
     public function consultarFase($id)
     {
 
@@ -118,29 +224,29 @@ class FaseController extends Controller
     public function activatePhases(Request $request)
     {
         $input = $request->all();
-        if (count(Fase::all())>0) {
+        if (Fase::where('estado',0)->first() == null) {
             return response()->json([
-                'ok'=>false,
-                'error'=>'Las fases ya estaban activas'
+                'ok' => false,
+                'error' => 'Las fases ya estaban activas'
             ]);
         } else {
             try {
                 foreach ($input['data'] as $key => $value) {
                     $dates =  explode(" - ", $value);
-                    $phase = Fase::create([
-                        'nombre' => 'Fase ' . ($key + 1),
-                        'fecha_inicio' => $dates[0].':00',
-                        'fecha_fin' => $dates[1].':00'
+                    $fase = Fase::find($key+1);
+                    $fase->update([
+                        'fecha_inicio' => $dates[0] . ':00',
+                        'fecha_fin' => $dates[1] . ':00'
                     ]);
                 }
                 return response()->json([
-                    'ok'=>true,
-                    'message'=>'Fases activadas con éxito'
-                ]); 
+                    'ok' => true,
+                    'message' => 'Fases activadas con éxito'
+                ]);
             } catch (\Throwable $th) {
                 return response()->json([
-                    'ok'=>false,
-                    'error'=>$th->getMessage()
+                    'ok' => false,
+                    'error' => $th->getMessage()
                 ]);
             }
         }

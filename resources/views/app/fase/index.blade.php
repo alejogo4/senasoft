@@ -116,27 +116,31 @@ Activación de Fases
   $(function() {
     $('.date').daterangepicker({
       timePicker: true,
-      timePicker24Hour:true,
+      timePicker24Hour: true,
       startDate: "2019/10/22",
-      endDate: "2019/10/25",
+      endDate: "2019/10/2",
       minDate: "2019/10/22",
-      maxDate: "2019/10/25",
+      maxDate: "2019/10/26",
       locale: {
         format: "YYYY-MM-DD H:mm",
+        "applyLabel": "Aplicar",
+        "cancelLabel": "Cancelar",
         "applyLabel": "Aplicar",
         "cancelLabel": "Cancelar",
       }
     });
   });
+
   function getValues() {
     let data = []
-    $("#fase-1").val()==''? '' : data.push($("#fase-1").val())
-    $("#fase-2").val()==''? '' : data.push($("#fase-2").val())
-    $("#fase-3").val()==''? '' : data.push($("#fase-3").val())
-    $("#fase-4").val()==''? '' : data.push($("#fase-4").val())
+    $("#fase-1").val() == '' ? '' : data.push($("#fase-1").val())
+    $("#fase-2").val() == '' ? '' : data.push($("#fase-2").val())
+    $("#fase-3").val() == '' ? '' : data.push($("#fase-3").val())
+    $("#fase-4").val() == '' ? '' : data.push($("#fase-4").val())
 
     return data
   }
+
   function activate() {
     $.ajax({
       headers: {
@@ -145,12 +149,19 @@ Activación de Fases
       url: '/activate/phases',
       type: 'post',
       data: {
-        'data':getValues()
+        'data': getValues()
       },
       dataType: 'json',
       success: function(r) {
         if (r.ok) {
-          alert(r.message)
+          Swal.fire({
+            title: 'Éxito',
+            text: r.message,
+            type: 'success',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK'
+          })
         } else {
           alert(r.error)
         }

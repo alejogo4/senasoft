@@ -77,34 +77,6 @@ Cargar Fases a Evaluadas
           <div class="form-row">
             <div class="row">
               <div class="form-group col-md-6 col-sm-6">
-                <label for="categorias=" class="col-md-4 col-form-label">Categoria <b class="text-danger">*</b></label>
-                <select onchange="listar_grupos(this)" class="form-control" name="categoria" id="categoria" required
-                  style="height: 52px">
-                  <option value="">Seleccione</option>
-                  @foreach( $categorias as $value)
-                  <option value='{{ $value->id }}'>{{ $value->nombre_categoria }}</option>
-                  @endforeach
-                </select>
-              </div>
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="nombre_jurado" class="col-md-4 col-form-label">Jurado<b class="text-danger">*</b></label>
-                <input type="text" class="form-control" name="nombre_jurado" id="nombre_jurado" required>
-              </div>
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="fecha" class="col-md-4 col-form-label">Fecha<b class="text-danger">*</b></label>
-                <input type="date" class="form-control" name="fecha" id="fecha" required>
-              </div>
-              <div class="form-group col-md-6 col-sm-6">
-                <label for="categorias" class="col-md-4 col-form-label">Categoria <b class="text-danger">*</b></label>
-                <select onchange="listar_grupos(this)" class="form-control" name="categoria" id="categoria_id" required
-                  style="height: 52px">
-                  <option value="">Seleccione</option>
-                  @foreach( $categorias as $value)
-                  <option value='{{ $value->id }}'>{{ $value->nombre_categoria }}</option>
-                  @endforeach
-                </select>
-              </div>
-              <div class="form-group col-md-6 col-sm-6">
                 <label for="" class="col-md-4 col-form-label">Fase<b class="text-danger">*</b></label>
                 <select class="form-control" name="fase_id" id="fase_id" required style="height: 52px ">
                   @if(count($fases)>0)
@@ -118,8 +90,21 @@ Cargar Fases a Evaluadas
                 </select>
               </div>
               <div class="form-group col-md-6 col-sm-6">
-                <label for="grupo_id" class="col-md-4 col-form-label">Grupos<b class="text-danger">*</b></label>
-                <select class="form-control" name="grupo_id" id="grupo_id" required style="height: 52px">
+                <label for="categorias=" class="col-md-4 col-form-label">Categoria <b class="text-danger">*</b></label>
+                <select onchange="listar_grupos(this)" class="form-control" name="categoria_id" id="categoria_id" required style="height: 52px">
+                  <option value="">Seleccione</option>
+                  @foreach( $categorias as $value)
+                  <option value='{{ $value->id }}'>{{ $value->nombre_categoria }}</option>
+                  @endforeach
+                </select>
+              </div>
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="nombre_jurado" class="col-md-4 col-form-label">Jurado<b class="text-danger">*</b></label>
+                <input type="text" class="form-control" name="nombre_jurado" id="nombre_jurado" required>
+              </div>
+              <div class="form-group col-md-6 col-sm-6">
+                <label for="grupo_id" class="col-md-4 col-form-label">Grupo<b class="text-danger">*</b></label>
+                <select class="form-control" name="grupo_id" id="grupo_id" required style="height: 52px" onchange="getTeam(value)">
 
                 </select>
               </div>
@@ -131,6 +116,11 @@ Cargar Fases a Evaluadas
                 <label for="" class="col-md-4 col-form-label">Adjunto<b class="text-danger">*</b></label>
                 <input type="file" class="form-control" name="adjunto" id="adjunto" required>
               </div>
+              <div class="form-group col-md-6 col-sm-6">
+                <br>
+                <ul id="listTeam">
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -138,7 +128,7 @@ Cargar Fases a Evaluadas
       <br>
 
       <div class="col-md-12" style="text-align: center;">
-        <button type="button" class="section-lyla btn btn-formato btn-lg btn-primary ">Cargar
+        <button type="button" class="section-lyla btn btn-formato btn-lg btn-primary " onclick="guardar()">Cargar
           Fase Evaluada</button>
       </div>
       <br>

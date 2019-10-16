@@ -17,9 +17,9 @@ class TblFase extends Migration
             // $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->char('nombre' , 45);
-            $table->boolean('estado')->defualt(0);
-            $table->dateTime('fecha_inicio');
-            $table->dateTime('fecha_fin');
+            $table->boolean('estado')->default(0);
+            $table->dateTime('fecha_inicio')->nullable();
+            $table->dateTime('fecha_fin')->nullable();
             
             $table->timestamps();
         });

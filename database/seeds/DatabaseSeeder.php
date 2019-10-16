@@ -14,5 +14,7 @@ class DatabaseSeeder extends Seeder
          $this->call(RolesYpermisos::class);
          $this->call(UsuariosPrimarios::class);
          $this->call(UsuariosSeeders::class);
+         $this->call(CategoriaSeeder::class);
+         $this->call(PorcentajeSeeder::class);
     }
 }

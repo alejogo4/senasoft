@@ -8,6 +8,8 @@ use App\Models\Persona;
 use App\Models\Centro;
 use App\Models\Categoria;
 use App\Models\Fase;
+use Illuminate\Support\Carbon;
+
 use DB;
 
 class HomeController extends Controller
@@ -58,6 +60,7 @@ class HomeController extends Controller
 
         $user = Auth::user();
         $rol = $user->roles->implode('name',',');
+        $this->validateFase();
         $fases = Fase::all();
         //dd($user->roles);
         return view('home', [
@@ -72,5 +75,19 @@ class HomeController extends Controller
             "contratistas"=>$contratistas,
             "fases"=>$fases
             ]);
+    }
+    private function validateFase()
+    {
+        $fases = Fase::all();
+
+        foreach ($fases as $key => $value) {
+            $date = Carbon::now()->isoFormat('YYYY-MM-DD HH:mm').':00';
+            if ($date>$value->fecha_inicio&&$date<$value->fecha_fin) {
+                $value->update(['estado'=>1]);
+            } else {
+                $value->update(['estado'=>0]);
+            }
+            
+        }
     }
 }

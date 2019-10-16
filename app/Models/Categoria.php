@@ -9,7 +9,10 @@ class Categoria extends Model
     public $table = "tbl_categoria";
 
     protected $guarded = [];
-    protected $fillable = [];
+    protected $fillable = [
+        'nombre_categoria',
+        'tipo_agrupacion'
+    ];
 
         
 }

@@ -7,21 +7,29 @@ use Illuminate\Database\Eloquent\Model;
 class GrupoEvaluacion extends Model
 {
     public $table = "tbl_grupo_evaluacion";
-    
+
     protected $fillable = [
-        'cumple',
-        'criterio_id',
-        'evaluacion_id'];
+        'nombre_jurado',
+        'categoria_id',
+        'grupo_id',
+        'fase_id',
+        'puntaje',
+        'adjunto'
+    ];
 
 
-        public function Criterio() {
-            return $this->hasOne('App\Models\Criterio','id');
-        }
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class, 'categoria_id');
+    }
+    public function grupo()
+    {
+        return $this->belongsTo(Grupo::class, 'grupo_id');
+    }
+    public function fase()
+    {
+        return $this->belongsTo(Fase::class, 'fase_id');
+    }
+
     
-        public function Evaluacion() {
-            return $this->hasOne('App\Models\Evaluacion','id');
-        }
-        
 }
-
-

@@ -9,7 +9,7 @@ class GrupoPersonas extends Model
     public $table = "tbl_grupo_persona";
 
     public function Persona() {
-        return $this->hasOne('App\Models\Persona', 'id');
+        return $this->belongsTo('App\Models\Persona', 'persona_id');
     }
     public function Grupo() {
         return $this->hasOne('App\Models\Grupo', 'id');
@@ -17,6 +17,7 @@ class GrupoPersonas extends Model
 
     protected $fillable = [
         'persona_id',
-        'grupo_id'];
+        'grupo_id'
+    ];
 
 }

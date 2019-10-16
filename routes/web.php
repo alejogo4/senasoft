@@ -60,6 +60,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/faseConsulta',"FaseController@index_consulta")->name('fase_consulta');
     Route::post('/activate/phases',"FaseController@activatePhases");
     Route::get('/fase3',"FaseController@index_tres")->name('fase_tres');
+    Route::get('/finalistas',"FaseController@finalistas")->name('finalistas');
+    Route::get('/get/finalistas',"FaseController@getFinalistas")->name('getFinalistas');
+    Route::get('/get/team/{id}',"FaseController@getTeam")->name('getTeam');
     // Route::get('/fase4',"FaseController@index_cuatro")->name('fase_cuarto');
     Route::resource('/fases',"FaseController");
 

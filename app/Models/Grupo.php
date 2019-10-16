@@ -10,4 +10,13 @@ class Grupo extends Model
 
     protected $fillable = ['nombre', 'categoria_id'];
 
+    public function grupoxpersonas()
+    {
+        return $this->hasMany(GrupoPersonas::class,'grupo_id');
+    }
+    public function fases()
+    {
+        return $this->hasMany(GrupoEvaluacion::class,'grupo_id');
+    }
+
 }

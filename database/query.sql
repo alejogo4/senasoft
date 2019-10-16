@@ -106,16 +106,16 @@ INSERT INTO `tbl_centro` (`id`, `nombre_centro`, `regional_id`, `codigo`, `estad
 (75, 'CENTRO DE TECNOLOGIAS AGROINDUSTRIALES', 27, 'COD8643', 0, 0, 0, 'TG. EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN', '2019-07-08 05:00:00', '2019-07-08 05:00:00');
 
 
-INSERT INTO tbl_categoria VALUES (null, 'Algoritmia', 1, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'Bases de Datos', 2, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'Desarrollo Web', 2, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'Desarrollo Móvil', 2, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'Redes y Mantenimiento', 2, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'Producción de Multimedia', 2, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'Videojuegos', 2, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'Animación 3D', 2, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'Produción de Medios Audiovisuales', 2, CURRENT_DATE, CURRENT_DATE);	
-INSERT INTO tbl_categoria VALUES (null, 'IDEATIC', 3, CURRENT_DATE, CURRENT_DATE);
+-- INSERT INTO Categoria VALUES (null, 'Algoritmia', 1, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'Bases de Datos', 2, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'Desarrollo Web', 2, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'Desarrollo Móvil', 2, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'Redes y Mantenimiento', 2, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'Producción de Multimedia', 2, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'Videojuegos', 2, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'Animación 3D', 2, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'Produción de Medios Audiovisuales', 2, CURRENT_DATE, CURRENT_DATE);	
+-- INSERT INTO Categoria VALUES (null, 'IDEATIC', 3, CURRENT_DATE, CURRENT_DATE);
 
 INSERT INTO `tbl_tipo_persona` (`id`, `descripcion_tipo_persona`, `created_at`, `updated_at`) VALUES 
 (NULL, 'Instructor', '2019-06-24 03:05:03', '2019-06-24 03:05:03'), 
