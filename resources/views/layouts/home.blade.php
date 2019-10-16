@@ -1235,30 +1235,42 @@
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog modal-lg"  role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Sorteo de grupos</h4>
+                <h4 class="modal-title" id="myModalLabel">Itinerario Vuelos SENASOFT</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-12">
-                        <h5>A continuación, encontraran el vídeo donde se evidencia el sorteo, y en la parte de abajo se muestran los grupos generados.</h5>
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <video class="embed-responsive-item" controls>
-                                <source src="/video/grupos.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="text-center">Grupos por categoría</h1>
-                        <h5>Para obtener mayor información de los compañeros de grupo, los invitamos a que descarguen la aplicación que pronto les estará llegando al correo.</h5>
-                        <div id="contenido" class="widget-body text-center"></div>
+                        <h5>Los tiquetes aéreos de las regionales que se trasladaran a la ciudad de Medellín están dispuestos en la carpeta compartida que puede ingresar haciendo clic <a target="_blank" href="https://drive.google.com/drive/folders/1Ur63fybjEUnh8bLvGrOae5ENvQrTZFmi">aquí</a>, se encuentran organizados desde la ciudad de origen del aeropuerto, en el archivo TIQUETES SENASOFT 2019.pdf podrán encontrar la solicitud del tiquetes, regional y ciudad de origen de cada pasajero; las regionales con solicitud de tiquetes aéreo son las siguientes:</h5>
+                        ATLÁNTICO <br>
+                        BOLÍVAR <br>
+                        BOYACÁ <br>
+                        CALDAS <br>
+                        CAQUETÁ <br>
+                        CAUCA,<br>
+                        CESAR <br>
+                        CHOCÓ <br>
+                        CÓRDOBA <br>
+                        CUNDINAMARCA <br>
+                        DISTRITO CAPITAL <br>
+                        GUAINÍA <br>
+                        GUAJIRA <br>
+                        HUILA <br>
+                        MAGDALENA <br>
+                        META <br>
+                        NARIÑO <br>
+                        NORTE DE SANTANDER <br>
+                        PUTUMAYO <br>
+                        QUINDÍO <br>
+                        RISARALDA <br>
+                        SANTANDER <br>
+                        SAN ANDRÉS <br>
+                        SUCRE <br>
+                        TOLIMA <br>
+                        VALLE <br>
                     </div>
                 </div>
             </div>
@@ -1275,7 +1287,7 @@
 <script>
     $(function() {
         $("#myModal").modal();
-        consultarGrupos();
+        // consultarGrupos();
     })
 
     function toogle(e) {
