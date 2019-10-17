@@ -41,26 +41,28 @@ class FaseController extends Controller
 
         $groups=[];
 
-        foreach ($categorias as $key => $value) {
-            $data = Grupo::select('tbl_grupo.nombre','tbl_grupo.categoria_id','tbl_grupo_evaluacion.puntaje','tbl_grupo_evaluacion.fase_id','tbl_grupo_evaluacion.categoria_id')
-            ->join('tbl_grupo_evaluacion','tbl_grupo_evaluacion.grupo_id','tbl_grupo.id')
-            ->where('tbl_grupo.categoria_id',$value->id)
+        foreach ($categorias as $e) {
+            $data = Grupo::where('categoria_id',$e->id)
+            ->with('fases')
             ->get();
-            // $data = Porcentaje::select('tbl_grupo.nombre','tbl_grupo.categoria_id',DB::raw('SUM( (tbl_grupo_evaluacion.puntaje/100)*tbl_porcentaje.porcentaje  ) as total_puntos'))
-            // ->join('tbl_grupo','tbl_grupo.id',)
-            foreach ($data as $value) {
-                $porcentaje=Porcentaje::where('fase_id',$value->fase_id)->where('categoria_id',$value->categoria_id)->first();
-                $value->total_puntos= ($value->puntaje/100)*$porcentaje->porcentaje;
+            foreach ($data as $g) {
+                $total = 0;
+                foreach ($g->fases as $i => $el) {
 
+                    $porcentaje = Porcentaje::where('categoria_id',$g->categoria_id)->where('fase_id',$el->fase_id)->first();
+                    $cal=($el->puntaje/100)*$porcentaje->porcentaje;
+                    $total=$total+$cal;
+                }
+                $g->total_puntos=$total;
             }
-            dd($data->sortByDesc('total_puntos')->splice(10,(count($data)-10)));
-            $data->orderBy('total_puntos','DESC')->take(10);
-            foreach ($data as $key => $value) {
-                array_push($groups,$value);
+            // dd($data);
+            $new = $data->sortByDesc('total_puntos');
+            $new->splice(10,(count($data) - 10));
+            foreach ($new as $n) {
+                array_push($groups,$n);
             }
-            
         }
-
+        
         return response()->json([
             'categorias'=>$categorias,
             'grupos'=>$groups

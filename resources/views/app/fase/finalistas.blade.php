@@ -72,7 +72,7 @@ Fase 4
                 r.grupos.forEach(function(e, i) {
                     $(`#cat_${e.categoria_id} > table > tbody`).append(`<tr>
                                                                             <td>${e.nombre}</td>
-                                                                            <td>${e.total_puntos}</td>
+                                                                            <td><b>${e.total_puntos}</b> pts</td>
                                                                             <td><button>...</button></td>
                                                                         </tr>`)
                 })
