@@ -38,7 +38,7 @@ class InvitadosController extends Controller
                 return $persona->nombres . " " . $persona->apellidos;
             })
             ->addColumn("qr", function($persona){
-                return "data:image/png;base64, ".base64_encode(QrCode::encoding('UTF-8')->format('png')->size(300)->generate($persona->documento));
+                return "data:image/png;base64, ".base64_encode(\QrCode::encoding('UTF-8')->format('png')->size(300)->generate($persona->documento));
             })
             ->make(true);
     }

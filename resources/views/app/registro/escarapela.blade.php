@@ -147,6 +147,14 @@
             background: url('/images/escarapelas/escarapela_blank.png') no-repeat;
         }
 
+        .tftable td.subdirector {
+            font-size: 12px;
+            border-width: 1px;
+            border-style: solid;
+            background-size: 100%;
+            background: url('/images/escarapelas/subdirector.jpg') no-repeat;
+        }
+
 
         .page-break {
             page-break-after: always;
@@ -221,6 +229,8 @@
             $class = "";
         }else if ($value->categoria_id == 24) {
             $class = "";
+        }else if ($value->categoria_id == 25) {
+            $class = "subdirector";
         }else{
             $class = "instructor";
         }
