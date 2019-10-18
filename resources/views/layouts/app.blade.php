@@ -177,6 +177,7 @@
                             <li><a href="{{route('fase_config')}}"><i class="la la-keyboard-o"></i><span>Activación de Fases</span></a></li>
                                 <li><a href="{{route('fase_carga')}}">Cargar Fases</a></li>
                                 <li><a href="{{route('fase_consulta')}}">Consultar Fases</a></li>
+                                <li><a href="{{route('totalPoints')}}">Grupos por categoría</a></li>
                                 <li><a href="{{route('finalistas')}}">Finalistas</a></li>
                                 <!-- <li><a href="javascript:void(0);">Fase 3</a></li>
                                 <li><a href="javascript:void(0);">Fase 4</a></li> -->

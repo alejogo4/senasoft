@@ -30,43 +30,43 @@ class FaseController extends Controller
     {
         $button = false;
         $this->validateFase();
-        if(Fase::find(4)->estado==1){
+        if (Fase::find(4)->estado == 1) {
             $button = true;
         }
-        return view("app.fase.finalistas",compact('button'));
+        return view("app.fase.finalistas", compact('button'));
     }
     public function getFinalistas()
     {
         $categorias = Categoria::all();
 
-        $groups=[];
+        $groups = [];
 
         foreach ($categorias as $e) {
-            $data = Grupo::where('categoria_id',$e->id)
-            ->with('fases')
-            ->get();
+            $data = Grupo::where('categoria_id', $e->id)
+                ->with('fases')
+                ->get();
             foreach ($data as $g) {
                 $total = 0;
                 foreach ($g->fases as $i => $el) {
 
-                    $porcentaje = Porcentaje::where('categoria_id',$g->categoria_id)->where('fase_id',$el->fase_id)->first();
-                    $cal=($el->puntaje/100)*$porcentaje->porcentaje;
-                    $total=$total+$cal;
+                    $porcentaje = Porcentaje::where('categoria_id', $g->categoria_id)->where('fase_id', $el->fase_id)->first();
+                    $cal = ($el->puntaje / 100) * $porcentaje->porcentaje;
+                    $total = $total + $cal;
                 }
-                $g->total_puntos=$total;
+                $g->total_puntos = $total;
             }
             // dd($data);
             $new = $data->sortByDesc('total_puntos');
-            $new->splice(15,(count($data) - 15));
-            foreach ($new as $i=>$n) {
-                $n->pos=$i+1;
-                array_push($groups,$n);
+            $new->splice(15, (count($data) - 15));
+            foreach ($new as $i => $n) {
+                $n->pos = $i + 1;
+                array_push($groups, $n);
             }
         }
-        
+
         return response()->json([
-            'categorias'=>$categorias,
-            'grupos'=>$groups
+            'categorias' => $categorias,
+            'grupos' => $groups
         ]);
     }
     public function index_carga()
@@ -76,6 +76,38 @@ class FaseController extends Controller
         $fases = Fase::where('estado', 2)->get();
         return view("app.fase.carga", compact("categorias", 'fases'));
     }
+    public function totalPoints()
+    {
+        $categorias = Categoria::all();
+        return view('app.fase.totalpuntos',compact('categorias'));
+    }
+    public function getPoints($id)
+    {
+        $groups = [];
+        $data = Grupo::where('categoria_id', $id)
+            ->with('fases')
+            ->get();
+        foreach ($data as $g) {
+            $total = 0;
+            foreach ($g->fases as $i => $el) {
+
+                $porcentaje = Porcentaje::where('categoria_id', $g->categoria_id)->where('fase_id', $el->fase_id)->first();
+                $cal = ($el->puntaje / 100) * $porcentaje->porcentaje;
+                $total = $total + $cal;
+            }
+            $g->total_puntos = $total;
+        }
+        // dd($data);
+        $new = $data->sortByDesc('total_puntos');
+        $new->splice(15, (count($data) - 15));
+        foreach ($new as $i => $n) {
+            $n->pos = $i + 1;
+            array_push($groups, $n);
+        }
+        return response()->json([
+            'data' => $groups
+        ]);
+    }
     private function validateFase()
     {
         $fases = Fase::all();
@@ -84,9 +116,9 @@ class FaseController extends Controller
             $date = Carbon::now()->isoFormat('YYYY-MM-DD HH:mm') . ':00';
             if ($date > $value->fecha_inicio && $date < $value->fecha_fin) {
                 $value->update(['estado' => 1]);
-            } else if($date< $value->fecha_inicio){
+            } else if ($date < $value->fecha_inicio) {
                 $value->update(['estado' => 0]);
-            }else if($date>$value->fecha_fin){
+            } else if ($date > $value->fecha_fin) {
                 $value->update(['estado' => 2]);
             }
         }
@@ -138,18 +170,19 @@ class FaseController extends Controller
             'puntaje' => 'required|integer|gt:-1|lt:101',
             'adjunto' => 'mimes:jpg,png,jpeg,pdf,docx'
         ]);
-        $val = GrupoEvaluacion::where('grupo_id',$input['grupo_id'])->where('fase_id',$input['fase_id'])->get();
+        $val = GrupoEvaluacion::where('grupo_id', $input['grupo_id'])->where('fase_id', $input['fase_id'])->get();
         if ($validation->fails()) {
             return response()->json([
                 'ok' => false,
                 'messages' => $validation->messages()
             ]);
-        } if(count($val)>0){
+        }
+        if (count($val) > 0) {
             return response()->json([
-                'ok'=>false,
-                'mensaje'=>'Este grupo ya ha sido evaluado en esta fase'
+                'ok' => false,
+                'mensaje' => 'Este grupo ya ha sido evaluado en esta fase'
             ]);
-        }else {
+        } else {
             try {
                 $fileName = time() . $input['adjunto']->getClientOriginalName();
                 Storage::disk('fases')->put($fileName, File::get($input['adjunto']));
@@ -229,7 +262,7 @@ class FaseController extends Controller
     public function activatePhases(Request $request)
     {
         $input = $request->all();
-        if (Fase::where('estado',0)->first() == null) {
+        if (Fase::where('estado', 0)->first() == null) {
             return response()->json([
                 'ok' => false,
                 'error' => 'Las fases ya estaban activas'
@@ -238,7 +271,7 @@ class FaseController extends Controller
             try {
                 foreach ($input['data'] as $key => $value) {
                     $dates =  explode(" - ", $value);
-                    $fase = Fase::find($key+1);
+                    $fase = Fase::find($key + 1);
                     $fase->update([
                         'fecha_inicio' => $dates[0] . ':00',
                         'fecha_fin' => $dates[1] . ':00'
