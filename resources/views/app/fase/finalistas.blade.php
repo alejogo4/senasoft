@@ -56,7 +56,8 @@ Fase 4
                                                             <table class="table mb-0">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th width="60%">Nombre</th>
+                                                                        <th width="10%">#</th>
+                                                                        <th width="50%">Nombre</th>
                                                                         <th width="20%">Puntos</th>
                                                                         <th width="20%">Opciones</th>
                                                                     </tr>
@@ -70,7 +71,16 @@ Fase 4
 
                 console.log(r.grupos)
                 r.grupos.forEach(function(e, i) {
+                    if (e.pos==11) {
+                        $(`#cat_${e.categoria_id} > table > tbody`).append(`<tr>
+                                                                                <td colspan="4"> 
+                                                                                    <hr style="background-color: #005c7c;"> 
+                                                                                </td>
+                                                                            </tr>`)
+                        
+                    }
                     $(`#cat_${e.categoria_id} > table > tbody`).append(`<tr>
+                                                                            <td>${e.pos}</td>
                                                                             <td>${e.nombre}</td>
                                                                             <td><b>${e.total_puntos}</b> pts</td>
                                                                             <td><button>...</button></td>

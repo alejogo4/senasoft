@@ -57,8 +57,9 @@ class FaseController extends Controller
             }
             // dd($data);
             $new = $data->sortByDesc('total_puntos');
-            $new->splice(10,(count($data) - 10));
-            foreach ($new as $n) {
+            $new->splice(15,(count($data) - 15));
+            foreach ($new as $i=>$n) {
+                $n->pos=$i+1;
                 array_push($groups,$n);
             }
         }
@@ -72,7 +73,7 @@ class FaseController extends Controller
     {
         $categorias = Categoria::all();
         $this->validateFase();
-        $fases = Fase::where('estado', 1)->get();
+        $fases = Fase::where('estado', 2)->get();
         return view("app.fase.carga", compact("categorias", 'fases'));
     }
     private function validateFase()
@@ -83,8 +84,10 @@ class FaseController extends Controller
             $date = Carbon::now()->isoFormat('YYYY-MM-DD HH:mm') . ':00';
             if ($date > $value->fecha_inicio && $date < $value->fecha_fin) {
                 $value->update(['estado' => 1]);
-            } else {
+            } else if($date< $value->fecha_inicio){
                 $value->update(['estado' => 0]);
+            }else if($date>$value->fecha_fin){
+                $value->update(['estado' => 2]);
             }
         }
     }
