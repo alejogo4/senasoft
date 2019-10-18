@@ -58,7 +58,12 @@ Dashboard
                     <div class="col-md-12">
                         <ul>
                             @foreach($fases as $f)
-                            <li class="mt-4">{{$f->nombre}} {!! $f->estado==0?'':'<span class="float-right" style="color: #005c7c;border: #005c7c solid 1px;padding: 0.1rem;width: 70px;text-align: center;border-radius: 1000px;">Activa</span>' !!}</li>
+                            <li class="mt-4">{{$f->nombre}} {!! $f->estado==0
+                                                                    ?''
+                                                                    :$f->estado==1
+                                                                        ?'<span class="float-right" style="color: #005c7c;border: #005c7c solid 1px;padding: 0.1rem;width: 70px;text-align: center;border-radius: 1000px;">Activa</span>'
+                                                                        :$f->estado==2
+                                                                            ?'<span class="float-right" style="color: #e86727;border: #e86727 solid 1px;padding: 0.1rem;width: 85px;text-align: center;border-radius: 1000px;">Terminada</span>':'' !!}</li>
                             @endforeach
                         </ul>
                     </div>

@@ -81,13 +81,14 @@ class HomeController extends Controller
         $fases = Fase::all();
 
         foreach ($fases as $key => $value) {
-            $date = Carbon::now()->isoFormat('YYYY-MM-DD HH:mm').':00';
-            if ($date>$value->fecha_inicio&&$date<$value->fecha_fin) {
-                $value->update(['estado'=>1]);
-            } else {
-                $value->update(['estado'=>0]);
+            $date = Carbon::now()->isoFormat('YYYY-MM-DD HH:mm') . ':00';
+            if ($date > $value->fecha_inicio && $date < $value->fecha_fin) {
+                $value->update(['estado' => 1]);
+            } else if($date< $value->fecha_inicio){
+                $value->update(['estado' => 0]);
+            }else if($date>$value->fecha_fin){
+                $value->update(['estado' => 2]);
             }
-            
         }
     }
 }
