@@ -29,7 +29,7 @@ Puntos
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <button type="button" class="section-lyla btn btn-formato btn-lg btn-primary " onclick="list()">Generar listado</button>
+                        <button type="button" class="section-lyla btn btn-formato btn-lg btn-primary " onclick="list()">Generar Listado</button>
                     </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-12">
