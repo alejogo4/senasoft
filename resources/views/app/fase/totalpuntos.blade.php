@@ -61,9 +61,10 @@ Puntos
         let categoria = $("#categoria").val()
         $("#tableBody").html('')
         $.get(`/get/points/${categoria}`, function(r) {
-            r.data.forEach(function(e) {
+            console.log(r.data)
+            r.data.forEach(function(e,i) {
                 $(`#tableBody`).append(`<tr>
-                                    <td>${e.pos}</td>
+                                    <td>${i+1}</td>
                                     <td>${e.nombre}</td>
                                     <td><b>${e.total_puntos}</b> pts</td>
                                     <td><button>...</button></td>
