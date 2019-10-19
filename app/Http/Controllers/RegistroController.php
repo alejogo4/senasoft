@@ -495,6 +495,7 @@ class RegistroController extends Controller
             ->orderBy("categoria_id")
             ->get();
 
+
         // return view('app.registro.escarapela', compact('personas'));
 
         $pdf = PDF::loadView('app.registro.escarapela', compact('personas'));

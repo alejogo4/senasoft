@@ -26,13 +26,13 @@ class EquipajeController extends Controller
 
         if ($this->validar_ingreso($input["documento"]) == null) {
 
-            Equipaje::create([
+            $equipaje = Equipaje::create([
                 "documento" => $input["documento"],
                 "cantidad" => $input["cantidad"],
                 "descripcion" => $input["descripcion"],
                 "fecha_ingreso" => date("Y-m-d H:i:s"),
             ]);
-            return (new APITransformer)->transform(["ok" => true, "mensaje" => "Se realizo el ingreso correctamente"]);
+            return (new APITransformer)->transform(["ok" => true, "mensaje" => "Se realizo el ingreso correctamente", "datos"=>$equipaje]);
         } else {
             return (new APITransformer)->transform(["ok" => false, "mensaje" => "La persona ya tiene un equipaje registrado"]);
         }

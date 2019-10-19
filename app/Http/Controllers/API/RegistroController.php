@@ -5,6 +5,7 @@ use App\Http\Controllers\API\Transformers\APITransformer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Grupo;
+use App\Models\GrupoPersonas;
 
 class RegistroController extends Controller
 {
@@ -33,5 +34,17 @@ class RegistroController extends Controller
         ->get();
 
         return (new APITransformer)->transform(["ok" => true, "datos" => $equipos]);
+    }
+
+
+    public function puntaje($categoria_id){
+
+        $grupos = Grupo::select("*", \DB::raw("0 as puntaje"))
+        ->with("grupoxpersonas", "grupoxpersonas.Persona")
+        ->where("categoria_id", $categoria_id)
+        ->orderBy("tbl_grupo.id")
+        ->get();
+
+        return (new APITransformer)->transform(["ok" => true, "datos" => $grupos]);
     }
 }
