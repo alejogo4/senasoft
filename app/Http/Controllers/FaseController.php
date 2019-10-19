@@ -99,7 +99,6 @@ class FaseController extends Controller
         }
         // dd($data);
         $new = $data->sortByDesc('total_puntos');
-        $new->splice(15, (count($data) - 15));
         foreach ($new as $i => $n) {
             $n->pos = $i + 1;
             array_push($groups, $n);
