@@ -79,7 +79,7 @@ class FaseController extends Controller
     public function totalPoints()
     {
         $categorias = Categoria::all();
-        return view('app.fase.totalpuntos',compact('categorias'));
+        return view('app.fase.totalpuntos', compact('categorias'));
     }
     public function getPoints($id)
     {
@@ -107,6 +107,35 @@ class FaseController extends Controller
             'data' => $groups
         ]);
     }
+    public function setFile(Request $request, $id)
+    {
+        $input = $request->all();
+        $evaluacion = GrupoEvaluacion::find($id);
+        $validation = Validator::make($input, [
+            'file' => 'required|mimes:jpg,png,jpeg,pdf,docx'
+        ]);
+        if ($validation->fails()) {
+            return response()->json([
+                'ok' => false,
+                'error' => $validation->messages()
+            ]);
+        } else {
+            Storage::delete('/fases/' .$evaluacion->adjunto);
+
+            $fileName = time() . $input['file']->getClientOriginalName();
+            Storage::disk('fases')->put($fileName, File::get($input['file']));
+
+            $evaluacion->update([
+                'adjunto' => $fileName
+            ]);
+
+            return response()->json([
+                'ok' => true,
+                'message' => 'Calificación actualizada con éxito'
+            ]);
+        }
+    }
+
     private function validateFase()
     {
         $fases = Fase::all();
