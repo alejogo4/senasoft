@@ -39,10 +39,11 @@ class RegistroController extends Controller
 
     public function puntaje($categoria_id){
 
-        $grupos = Grupo::select("*", \DB::raw("0 as puntaje"))
+        $grupos = Grupo::select("*", \DB::raw("(SELECT SUM(gp.puntaje) FROM tbl_grupo_evaluacion gp WHERE gp.grupo_id = tbl_grupo.id) as puntaje"))
         ->with("grupoxpersonas", "grupoxpersonas.Persona")
         ->where("categoria_id", $categoria_id)
         ->orderBy("tbl_grupo.id")
+        ->orderBy("puntaje")
         ->get();
 
         return (new APITransformer)->transform(["ok" => true, "datos" => $grupos]);
