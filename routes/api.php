@@ -34,6 +34,8 @@ Route::get('/listar/grupos', "RegistroController@listarGrupos");
 
 Route::get('proyectos', 'API\ProyectoController@seleccionarTopGanadores');
 
+Route::get('/obtener/puntaje/{categoria_id}', 'API\RegistroController@puntaje');
+
 Route::group(['middleware' => 'auth:api'], function () {
 
     Route::post('/registrosRefrigerio', 'API\RefrigerioController@comprobarRefrigerio');
@@ -41,4 +43,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::get('/equipaje/cantidad', 'API\EquipajeController@cantidad_equipaje_guardado');
     Route::post('/equipaje/ingreso', 'API\EquipajeController@ingreso_equipaje');
     Route::post('/equipaje/salida', 'API\EquipajeController@salida_equipaje');
+
+    Route::get('/asignacion/hotel/{persona_id}', 'API\HotelController@index');
 });

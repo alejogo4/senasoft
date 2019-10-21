@@ -39,6 +39,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/registros/modificar/revision/{id}/{estado}',"RegistroController@modificar_estado_revision");
     Route::get('/registros/exportar/excel',"RegistroController@exportar_excel");
     Route::get('/registros/escarapela/{centro_id}',"RegistroController@generarPDF");
+    Route::get('/registros/escarapela/categoria/{categoria_id}',"RegistroController@generarPDFCategoria");
     Route::get('/archivos/{carpeta}/{archivo}',"RegistroController@obtener_documento");
     Route::get('/notificaciones', 'RegistroController@notificaciones');
 
@@ -73,5 +74,7 @@ Route::group(['middleware' => ['auth']], function () {
     //Invitados
     Route::get('/invitados','InvitadosController@index')->name('invitados');
 
+    Route::get('/invitados/listado', "InvitadosController@listar_registros");
+    Route::get('/invitados/obtener/{categoria}',"InvitadosController@obtener_registros");
 });
 

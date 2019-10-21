@@ -15,11 +15,10 @@
             google: {
                 "families": ["Montserrat:400,500,600,700", "Noto+Sans:400,700"]
             },
-            active: function () {
+            active: function() {
                 sessionStorage.fonts = true;
             }
         });
-
     </script>
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('admin/img/apple-touch-icon.png')}}">
@@ -37,42 +36,41 @@
 
 <body id="page-top">
     <!-- Modal -->
-<div class="modal fade bd-example-modal-sm" tabindex="-1" id="modal_equipo" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-    <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="widget-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="table-responsive">
-                                <table id="tabla_equipo" class="table mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>Categoría</th>
-                                            <th>Placa</th>
-                                            <th>Serial</th>
-                                            <th>Modelo</th>
-                                            <th>Descripción</th>
-                                            <th>Descripción Actual</th>
-                                            <th>Atributos</th>
-                                            <th>Especificaciones técnicas</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    </tbody>
-                                </table>
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" id="modal_equipo" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="widget-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table id="tabla_equipo" class="table mb-0">
+                                        <thead>
+                                            <tr>
+                                                <th>Categoría</th>
+                                                <th>Placa</th>
+                                                <th>Serial</th>
+                                                <th>Modelo</th>
+                                                <th>Descripción</th>
+                                                <th>Descripción Actual</th>
+                                                <th>Atributos</th>
+                                                <th>Especificaciones técnicas</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
-  </div>
-</div>
 
     <!-- Begin Preloader -->
     <div id="preloader">
@@ -110,9 +108,9 @@
                     <!-- Begin Navbar Menu -->
                     <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right">
                         <!-- Begin Notifications -->
+                        @if(Auth::user()->rol == 0)
                         <li class="nav-item dropdown">
-                            <a id="notificaciones" rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false" class="nav-link">
+                            <a id="notificaciones" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
 
                             </a>
                             <ul aria-labelledby="notifications" class="dropdown-menu notification">
@@ -120,12 +118,11 @@
                                     <div class="notifications-header">
                                         <div class="title">Registros (<span id="n_registros"></span>)</div>
                                         <div class="notifications-overlay"></div>
-                                        <img src="{{asset('admin/img/notifications/01.jpg')}}" alt="..."
-                                            class="img-fluid">
+                                        <img src="{{asset('admin/img/notifications/01.jpg')}}" alt="..." class="img-fluid">
                                     </div>
                                 </li>
                                 <div id="lista_notificaciones">
-                                    
+
                                 </div>
                                 <li>
                                     <a rel="nofollow" href="/registro_list" class="dropdown-item all-notifications text-center">Ver
@@ -133,14 +130,12 @@
                                 </li>
                             </ul>
                         </li>
+                        @endif
                         <!-- End Notifications -->
                         <!-- User -->
                         <li class="nav-item">
-                            <a href="{{ route('logout')}} }}"
-                                onclick="event.preventDefault();  document.getElementById('logout-form').submit();"
-                                class="open-sidebar logout text-center"><i class="ti-power-off"></i>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
+                            <a href="{{ route('logout')}} }}" onclick="event.preventDefault();  document.getElementById('logout-form').submit();" class="open-sidebar logout text-center"><i class="ti-power-off"></i>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
                             </a>
@@ -160,21 +155,23 @@
                 <nav class="side-navbar box-scroll sidebar-scroll">
                     <!-- Begin Main Navigation -->
                     <ul class="list-unstyled">
+                        @if(Auth::user()->rol == 0)
                         <span class="heading">SENASOFT</span>
-                        
+
                         <li><a href="/dash"><i class="la la-home"></i><span>Dashboard</span></a></li>
                         <li><a href="{{route('registro_list')}}"><i class="la la-users"></i><span>Registros</span></a></li>
+                        <li><a href="/invitados/listado"><i class="la la-users"></i><span>Invitados y otros</span></a></li>
                         <li><a href="/registros/grupos"><i class="la la-group"></i><span>Grupos</span></a></li>
                         <li><a href="{{route('equipo_list')}}"><i class="la la-keyboard-o"></i><span>Equipos</span></a></li>
                         <li><a href="{{route('proyecto_list')}}"><i class="la la-clipboard"></i><span>Proyectos</span></a></li>
-                        
+
                         <span class="heading">EVALUACIÓN</span>
                         <li>
                             <a href="#dropdown-db" data-toggle="collapse">
                                 <i class="la la-columns"></i><span>Configuración Fases</span>
                             </a>
                             <ul id="dropdown-db" class="collapse list-unstyled pt-0">
-                            <li><a href="{{route('fase_config')}}"><i class="la la-keyboard-o"></i><span>Activación de Fases</span></a></li>
+                                <li><a href="{{route('fase_config')}}"><i class="la la-keyboard-o"></i><span>Activación de Fases</span></a></li>
                                 <li><a href="{{route('fase_carga')}}">Cargar Fases</a></li>
                                 <li><a href="{{route('fase_consulta')}}">Consultar Fases</a></li>
                                 <li><a href="{{route('totalPoints')}}">Grupos por categoría</a></li>
@@ -191,10 +188,30 @@
                             </a>
                             <ul id="dropdown-invitados" class="collapse list-unstyled pt-0">
                                 <li><a href="">Invitado</a></li>
-                                <li><a href="javascript:void(0);">Empresa</a></li>
-                              
                             </ul>
                         </li>
+                        @elseif(Auth::user()->rol == 5)
+                        <span class="heading">EVALUACIÓN</span>
+                        <li><a href="{{route('fase_carga')}}"><i class="la la-keyboard-o"></i><span>Cargar Fases</span></a></li>
+                        <li><a href="{{route('fase_consulta')}}"><i class="la la-list"></i><span>Consultar Fases</span></a></li>
+                        <li><a href="{{route('totalPoints')}}"><i class="la la-users"></i><span>Grupos por categoría</span></a></li>
+                        <li><a href="{{route('finalistas')}}"><i class="la la-star"></i><span>Finalistas</span></a></li>
+
+                        @elseif(Auth::user()->rol == 6)
+                        <span class="heading">SENASOFT</span>
+                        <li><a href="/invitados/listado"><i class="la la-users"></i><span>Invitados y otros</span></a></li>
+
+                        <span class="heading">REGISTRAR INVITADOS</span>
+                        <li>
+                            <a href="#dropdown-invitados" data-toggle="collapse">
+                                <i class="la la-user-plus"></i><span>Registrar</span>
+                            </a>
+                            <ul id="dropdown-invitados" class="collapse list-unstyled pt-0">
+                                <li><a href="">Invitado</a></li>
+                            </ul>
+                        </li>
+
+                        @endif
                     </ul>
                     <!-- End Main Navigation -->
                 </nav>
@@ -234,8 +251,7 @@
                 <!-- Begin Page Footer-->
                 <footer class="main-footer fixed-footer">
                     <div class="row">
-                        <div
-                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
                             <p class="text-gradient-02">Desarrollado por : Juan David Ramirez - Alejandro Giraldo Duque
                                 - Hector Dario Maya | Instructores SENA - CESGE</p>
                         </div>
@@ -259,7 +275,7 @@
     <!-- Begin Page Vendor Js -->
     <script src="{{asset('admin/vendors/js/nicescroll/nicescroll.min.js')}}"></script>
     <script src="{{asset('admin/vendors/js/app/app.min.js')}}"></script>
-    
+
     <!-- End Page Vendor Js -->
     <script src="{{asset('admin/js/app/app.js')}}"></script>
 

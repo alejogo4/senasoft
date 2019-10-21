@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Persona;
+use Yajra\Datatables\Datatables;
 
 class InvitadosController extends Controller
 {
@@ -15,6 +17,30 @@ class InvitadosController extends Controller
     {
         //
         return view('app.invitado.index');
+    }
+
+
+    public function listar_registros()
+    {
+        return view("app.invitado.invitadosyotros");
+    }
+
+    
+    public function obtener_registros($categoria)
+    {
+        $personas = Persona::with(["Centro", "Centro.Regional"])
+            ->where('tipo_persona', '1')
+            ->where('categoria_id', $categoria)
+            ->get();
+
+        return Datatables::of($personas)
+            ->editColumn("nombres", function ($persona) {
+                return $persona->nombres . " " . $persona->apellidos;
+            })
+            ->addColumn("qr", function($persona){
+                return "data:image/png;base64, ".base64_encode(\QrCode::encoding('UTF-8')->format('png')->size(300)->generate($persona->documento));
+            })
+            ->make(true);
     }
 
     /**
