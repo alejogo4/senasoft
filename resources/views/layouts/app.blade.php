@@ -191,10 +191,9 @@
                         @elseif(Auth::user()->rol == 5)
                         <span class="heading">EVALUACIÓN</span>
                         <li><a href="{{route('fase_carga')}}"><i class="la la-keyboard-o"></i><span>Cargar Fases</span></a></li>
-                        <li><a href="{{route('fase_consulta')}}"><i class="la la-list"></i><<span>Consultar Fases</span></a></li>
-                        <li><a href="{{route('totalPoints')}}"><i class="la la-users"></i><<span>Grupos por categoría</span></a></li>
+                        <li><a href="{{route('fase_consulta')}}"><i class="la la-list"></i><span>Consultar Fases</span></a></li>
+                        <li><a href="{{route('totalPoints')}}"><i class="la la-users"></i><span>Grupos por categoría</span></a></li>
                         <li><a href="{{route('finalistas')}}"><i class="la la-star"></i><span>Finalistas</span></a></li>
-
 
                         @elseif(Auth::user()->rol == 6)
                         <span class="heading">SENASOFT</span>
