@@ -108,6 +108,7 @@
                     <!-- Begin Navbar Menu -->
                     <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center pull-right">
                         <!-- Begin Notifications -->
+                        @if(Auth::user()->rol == 0)
                         <li class="nav-item dropdown">
                             <a id="notificaciones" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link">
 
@@ -129,6 +130,7 @@
                                 </li>
                             </ul>
                         </li>
+                        @endif
                         <!-- End Notifications -->
                         <!-- User -->
                         <li class="nav-item">
