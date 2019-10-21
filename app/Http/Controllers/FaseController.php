@@ -9,10 +9,12 @@ use App\Models\Grupo;
 use App\Models\GrupoEvaluacion;
 use App\Models\GrupoPersonas;
 use App\Models\Porcentaje;
+use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class FaseController extends Controller
@@ -71,10 +73,10 @@ class FaseController extends Controller
     }
     public function index_carga()
     {
-        $categorias = Categoria::all();
         $this->validateFase();
+        $grupos = Grupo::where("categoria_id", Auth::user()->categoria_id)->get();
         $fases = Fase::where('estado', 2)->get();
-        return view("app.fase.carga", compact("categorias", 'fases'));
+        return view("app.fase.carga", compact("grupos", 'fases'));
     }
     public function totalPoints()
     {
@@ -112,7 +114,7 @@ class FaseController extends Controller
         $input = $request->all();
         $evaluacion = GrupoEvaluacion::find($id);
         $validation = Validator::make($input, [
-            'file' => 'required|mimes:jpg,png,jpeg,pdf,docx'
+            'adjunto' => 'required|mimes:jpg,png,jpeg,pdf,docx'
         ]);
         if ($validation->fails()) {
             return response()->json([
@@ -122,8 +124,8 @@ class FaseController extends Controller
         } else {
             Storage::delete('/fases/' .$evaluacion->adjunto);
 
-            $fileName = time() . $input['file']->getClientOriginalName();
-            Storage::disk('fases')->put($fileName, File::get($input['file']));
+            $fileName = time() . $input['adjunto']->getClientOriginalName();
+            Storage::disk('fases')->put($fileName, File::get($input['adjunto']));
 
             $evaluacion->update([
                 'adjunto' => $fileName
@@ -134,6 +136,15 @@ class FaseController extends Controller
                 'message' => 'Calificación actualizada con éxito'
             ]);
         }
+    }
+    public function downloadFile($name)
+    {
+        try {
+            return response()->download(storage_path('app\\fases\\'.$name));
+        } catch (\Throwable $th) {
+           return response()->json($th->getMessage());
+        }
+
     }
 
     private function validateFase()
@@ -193,7 +204,6 @@ class FaseController extends Controller
         $input = $request->all();
         $validation = Validator::make($input, [
             'nombre_jurado' => 'required|string|max:45',
-            'categoria_id' => 'required',
             'grupo_id' => 'required',
             'puntaje' => 'required|integer|gt:-1|lt:101',
             'adjunto' => 'mimes:jpg,png,jpeg,pdf,docx'
@@ -215,6 +225,7 @@ class FaseController extends Controller
                 $fileName = time() . $input['adjunto']->getClientOriginalName();
                 Storage::disk('fases')->put($fileName, File::get($input['adjunto']));
                 $input['adjunto'] = $fileName;
+                $input['categoria_id'] = Auth::user()->categoria_id;
 
                 $faseCarga = GrupoEvaluacion::create($input);
 

@@ -67,7 +67,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/get/team/{id}',"FaseController@getTeam")->name('getTeam');
     Route::get('/totalpoints',"FaseController@totalPoints")->name('totalPoints');
     Route::get('/get/points/{id}',"FaseController@getPoints")->name('getPoints');
-    Route::get('/set/file/{id}',"FaseController@setFile")->name('setFile');
+    Route::post('/set/file/{id}',"FaseController@setFile")->name('setFile');
+    Route::get('/download/file/{name}',"FaseController@downloadFile")->name('downloadFile');
     // Route::get('/fase4',"FaseController@index_cuatro")->name('fase_cuarto');
     Route::resource('/fases',"FaseController");
 

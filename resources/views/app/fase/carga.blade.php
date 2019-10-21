@@ -76,6 +76,10 @@ Cargar Fases a Evaluadas
         <div class="fieldset-content">
           <div class="form-row">
             <div class="row">
+              <div class="col-md-12 col-sm-12">
+                <div id="error" style="display:none;" class="alert alert-danger" role="alert">
+                </div>
+              </div>
               <div class="form-group col-md-6 col-sm-6">
                 <label for="" class="col-md-4 col-form-label">Fase<b class="text-danger">*</b></label>
                 <select class="form-control" name="fase_id" id="fase_id" required style="height: 52px ">
@@ -90,22 +94,15 @@ Cargar Fases a Evaluadas
                 </select>
               </div>
               <div class="form-group col-md-6 col-sm-6">
-                <label for="categorias=" class="col-md-4 col-form-label">Categoria <b class="text-danger">*</b></label>
-                <select onchange="listar_grupos(this)" class="form-control" name="categoria_id" id="categoria_id" required style="height: 52px">
-                  <option value="">Seleccione</option>
-                  @foreach( $categorias as $value)
-                  <option value='{{ $value->id }}'>{{ $value->nombre_categoria }}</option>
-                  @endforeach
-                </select>
-              </div>
-              <div class="form-group col-md-6 col-sm-6">
                 <label for="nombre_jurado" class="col-md-4 col-form-label">Jurado<b class="text-danger">*</b></label>
                 <input type="text" class="form-control" name="nombre_jurado" id="nombre_jurado" required>
               </div>
               <div class="form-group col-md-6 col-sm-6">
                 <label for="grupo_id" class="col-md-4 col-form-label">Grupo<b class="text-danger">*</b></label>
                 <select class="form-control" name="grupo_id" id="grupo_id" required style="height: 52px" onchange="getTeam(value)">
-
+                  @foreach($grupos as $g)
+                  <option value="{{$g->id}}">{{$g->nombre}}</option>
+                  @endforeach
                 </select>
               </div>
               <div class="form-group col-md-6 col-sm-6">
@@ -150,7 +147,7 @@ Cargar Fases a Evaluadas
       <script src="{{asset('js/dropzone.js')}}"></script>
       <script src="{{asset('js/registro_fases.js')}}"></script>
 
-      <script>
+      <!-- <script>
         function listar_grupos(e) {
           let id_categoria = $(e).val();
 
@@ -168,5 +165,5 @@ Cargar Fases a Evaluadas
 
           })
         }
-      </script>
+      </script> -->
       @endsection

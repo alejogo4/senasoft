@@ -40,7 +40,7 @@ Listado de Fases Evaluadas
                 <th>{{$f->puntaje}}</th>
                 <th>
                   <!-- {{$f->adjunto}} -->
-                  <button title="Descargar adjunto" type="button" class="btn btn-outline-info"><i style="width: 14px;" class="ti-download"></i></button>
+                  <a title="Descargar adjunto" role="button" class="btn btn-outline-info" href="{{route('downloadFile',['name' => $f->adjunto])}}"><i style="width: 14px;" class="ti-download"></i></a>
                   <button title="Editar adjunto" type="button" class="btn btn-outline-success" onclick="edit({{$f->id}})" data-toggle="modal" data-target="#modalEdit"><i style="width: 14px;" class="ti-pencil-alt"></i></button>
                 </th>
               </tr>
@@ -48,10 +48,10 @@ Listado de Fases Evaluadas
             </tbody>
           </table>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
+      </button>
+    </button>
+  </button>
+</button>
 
 <div class="modal fade" id="modalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -63,9 +63,12 @@ Listado de Fases Evaluadas
         </button>
       </div>
       <div class="modal-body">
+        <div id="error" style="display:none;" class="alert alert-danger" role="alert">
+          
+        </div>
         <div class="form-group">
-          <label for="file">Nuevo archivo</label>
-          <input id="file" type="file" class="form-control">
+          <label for="newFile">Nuevo archivo</label>
+          <input id="newFile" type="file" class="form-control">
         </div>
       </div>
       <div class="modal-footer">
@@ -79,6 +82,13 @@ Listado de Fases Evaluadas
 
 @section("script")
 <script src="{{ asset('admin/vendors/js/datatables/datatables.min.js') }}"></script>
+<script src="/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+<script src="{{asset('js/validate-es.min.js')}}"></script>
+<script src="/vendor/jquery-steps/jquery.steps.min.js"></script>
+<script src="/vendor/minimalist-picker/dobpicker.js"></script>
+<script src="/vendor/nouislider/nouislider.min.js"></script>
+<script src="/vendor/wnumb/wNumb.js"></script>
 <script>
   $(document).ready(function() {
     $('#tablaEvaluaciones').dataTable()
@@ -92,17 +102,23 @@ Listado de Fases Evaluadas
 
   function update(id) {
     let data = new FormData()
-    data.append('file', $('#file')[0].files[0])
+    data.append('adjunto', $('#newFile')[0].files[0])
 
     $.ajax({
-      type: "get",
+      headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+      },
+      type: "post",
       url: `/set/file/${id}`,
       data: data,
       dataType: "json",
-      contentType: false,
       processData: false,
+      contentType: false,
       success: function(r) {
         if (r.ok) {
+          $("#error").hide()
+          $("#btn-secondary").click()
+          $('#newFile').val('')
           Swal.fire({
             title: 'Éxito',
             text: r.message,
@@ -114,17 +130,27 @@ Listado de Fases Evaluadas
             location.reload();
           });
         } else {
+          $("#error").html(r.error.adjunto[0])
+          $("#error").show()
+        }
+      }
+    });
+  }
+  function download(name) {
+    $.get(`/download/file/${name}`,
+      function (r) {
+        if(r.error){
           Swal.fire({
             title: 'Error',
-            text: r.error.file[0],
+            text: r.error,
             type: 'error',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'OK'
-          });
+          })
         }
       }
-    });
+    );
   }
 </script>
 @endsection

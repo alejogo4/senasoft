@@ -3,7 +3,6 @@ function guardar() {
 
     data.append('nombre_jurado', $("#nombre_jurado").val())
     data.append('fecha', $("#fecha").val())
-    data.append('categoria_id', $("#categoria_id").val())
     data.append('fase_id', $("#fase_id").val())
     data.append('grupo_id', $("#grupo_id").val())
     data.append('puntaje', $("#puntaje").val())
@@ -52,9 +51,12 @@ function guardar() {
                         confirmButtonText: 'OK'
                     })
                 }else {
+                    $("#error").html('')
                     for (var i in r.messages) {
                         if (r.messages.hasOwnProperty(i)) {
-                            console.log(r.messages[i])
+                            
+                            $("#error").append(`${r.messages[i]} <br>`)
+                            $("#error").show()
                         }
                     }
                 }
