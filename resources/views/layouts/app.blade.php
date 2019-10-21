@@ -190,19 +190,11 @@
                         </li>
                         @elseif(Auth::user()->rol == 5)
                         <span class="heading">EVALUACIÓN</span>
-                        <li>
-                            <a href="#dropdown-db" data-toggle="collapse">
-                                <i class="la la-columns"></i><span>Configuración Fases</span>
-                            </a>
-                            <ul id="dropdown-db" class="collapse list-unstyled pt-0">
-                                <li><a href="{{route('fase_carga')}}">Cargar Fases</a></li>
-                                <li><a href="{{route('fase_consulta')}}">Consultar Fases</a></li>
-                                <li><a href="{{route('totalPoints')}}">Grupos por categoría</a></li>
-                                <li><a href="{{route('finalistas')}}">Finalistas</a></li>
-                                <!-- <li><a href="javascript:void(0);">Fase 3</a></li>
-                                <li><a href="javascript:void(0);">Fase 4</a></li> -->
-                            </ul>
-                        </li>
+                        <li><a href="{{route('fase_carga')}}"><i class="la la-keyboard-o"></i><span>Cargar Fases</span></a></li>
+                        <li><a href="{{route('fase_consulta')}}"><i class="la la-list"></i><<span>Consultar Fases</span></a></li>
+                        <li><a href="{{route('totalPoints')}}"><i class="la la-users"></i><<span>Grupos por categoría</span></a></li>
+                        <li><a href="{{route('finalistas')}}"><i class="la la-star"></i><span>Finalistas</span></a></li>
+
 
                         @elseif(Auth::user()->rol == 6)
                         <span class="heading">SENASOFT</span>
