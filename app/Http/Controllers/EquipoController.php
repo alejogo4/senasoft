@@ -105,6 +105,39 @@ class EquipoController extends Controller
             return response()->json(["ok" => false, "mensaje" => "El archivo de excel no cuenta con los datos correctos"]);
         }
     }
+    public function setFile(Request $request, $id)
+    {
+        $input = $request->all();
+
+        $equipo = Equipo::find($id);
+        $validation = Validator::make($input, [
+            'adjunto' => 'required|mimes:jpg,png,jpeg,pdf,docx'
+        ]);
+        if ($validation->fails()) {
+            return response()->json([
+                'ok' => false,
+                'error' => $validation->messages()
+            ]);
+        } else {
+            $fileName = time() . $input['adjunto']->getClientOriginalName();
+            $equipo->update([
+                'adjunto' => $fileName
+            ]);
+            if($equipo->adjunto==null){
+                Storage::disk('equipos')->put($fileName, File::get($input['adjunto']));
+                return response()->json([
+                    'message'=>'Archivo subido con éxito'
+                ]);
+            }else{
+                Storage::delete('/equipos/' .$equipo->adjunto);
+                Storage::disk('equipos')->put($fileName, File::get($input['adjunto']));
+                return response()->json([
+                    'message'=>'Archivo modificado con éxito'
+                ]);
+            }
+        }
+             
+    }
     public function obtener_equipo_excel($equipo)
     {
         $equipo_e = [];

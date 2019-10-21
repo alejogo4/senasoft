@@ -15,6 +15,7 @@ class Equipo extends Model
         'modelo',
         'serial',
         'atributos',
+        'adjunto',
         'placa_sena',
         'esp_tecnica',
         'categoria_id',
