@@ -14,14 +14,16 @@ class UsuariosSeeders extends Seeder
     {
         $personas = DB::table("tbl_persona")->get();
         foreach ($personas as $value) {
-            $nombre = trim($value->nombres)." ".trim($value->apellidos);
-            User::create([
-                "documento" => $value->documento,
-                "name" => $nombre,
-                "email"=> strtolower($value->correo_principal),
-                "password"=> bcrypt($value->documento),
-                "rol"=>$value->tipo_persona
-            ]);
+            if ($value->correo_principal != "") {
+                $nombre = trim($value->nombres) . " " . trim($value->apellidos);
+                User::create([
+                    "documento" => $value->documento,
+                    "name" => $nombre,
+                    "email" => strtolower($value->correo_principal),
+                    "password" => bcrypt($value->documento),
+                    "rol" => $value->tipo_persona
+                ]);
+            }
         }
     }
 }

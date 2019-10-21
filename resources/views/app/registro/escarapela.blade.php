@@ -248,10 +248,17 @@
 
                 <td class="<?= $class ?>" height="49%" width="50%" style="overflow: hidden">
                     <div class="text">
+                        @if($value->categoria_id != 24)
                         <p style="font-size: 18px; margin-top:170px"><?php echo $value->nombre_centro ?></p>
                         <br>
                         <p style="font-size: 16px; margin-top:10px"><?php echo $value->nombre_regional ?></p>
                         <br>
+                        @else
+                        <p style="font-size: 20px; margin-top:170px"><?php echo $value->empresa ?></p>
+                        <br>
+                        <p style="font-size: 18px; margin-top:170px"><?php echo $value->cargo ?></p>
+                        <br>
+                        @endif
                         <b style="font-style: bold; font-size: 30px; margin-top:100px"><?php echo $value->nombres ?></b>
                         <br>
                         <p style="font-size: 28px; margin-top:114px"><?php echo $value->apellidos ?></p>

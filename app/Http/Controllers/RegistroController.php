@@ -482,6 +482,8 @@ class RegistroController extends Controller
         $personas = Persona::select(
             "categoria_id",
             "tipo_persona",
+            "empresa",
+            "cargo",
             DB::raw("CONCAT(UCASE(LEFT(LCASE(nombres), 1)), SUBSTRING(LCASE(nombres), 2)) as nombres"),
             DB::raw("CONCAT(UCASE(LEFT(LCASE(apellidos), 1)), SUBSTRING(LCASE(apellidos), 2)) as apellidos"),
             DB::raw("CONCAT(UCASE(LEFT(LCASE(nombre_centro), 1)), SUBSTRING(LCASE(nombre_centro), 2)) as nombre_centro"),
@@ -513,6 +515,8 @@ class RegistroController extends Controller
         $personas = Persona::select(
             "categoria_id",
             "tipo_persona",
+            "empresa",
+            "cargo",
             DB::raw("CONCAT(UCASE(LEFT(LCASE(nombres), 1)), SUBSTRING(LCASE(nombres), 2)) as nombres"),
             DB::raw("CONCAT(UCASE(LEFT(LCASE(apellidos), 1)), SUBSTRING(LCASE(apellidos), 2)) as apellidos"),
             DB::raw("CONCAT(UCASE(LEFT(LCASE(nombre_centro), 1)), SUBSTRING(LCASE(nombre_centro), 2)) as nombre_centro"),
