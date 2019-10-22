@@ -100,7 +100,8 @@ Cargar Fases a Evaluadas
               <div class="form-group col-md-6 col-sm-6">
                 <label for="grupo_id" class="col-md-4 col-form-label">Grupo<b class="text-danger">*</b></label>
                 <select class="form-control" name="grupo_id" id="grupo_id" required style="height: 52px" onchange="getTeam(value)">
-                  @foreach($grupos as $g)
+                <option value="">-- Seleccione --</option>  
+                @foreach($grupos as $g)
                   <option value="{{$g->id}}">{{$g->nombre}}</option>
                   @endforeach
                 </select>

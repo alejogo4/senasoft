@@ -52,8 +52,9 @@ class FaseController extends Controller
                 foreach ($g->fases as $i => $el) {
 
                     $porcentaje = Porcentaje::where('categoria_id', $g->categoria_id)->where('fase_id', $el->fase_id)->first();
-                    $cal = ($el->puntaje / 100) * $porcentaje->porcentaje;
-                    $total = $total + $cal;
+                    // $cal = ($el->puntaje / 100) * $porcentaje->porcentaje;
+
+                    $total = $total + $el->puntaje;
                 }
                 $g->total_puntos = $total;
             }
@@ -94,8 +95,8 @@ class FaseController extends Controller
             foreach ($g->fases as $i => $el) {
 
                 $porcentaje = Porcentaje::where('categoria_id', $g->categoria_id)->where('fase_id', $el->fase_id)->first();
-                $cal = ($el->puntaje / 100) * $porcentaje->porcentaje;
-                $total = $total + $cal;
+                // $cal = ($el->puntaje / 100) * $porcentaje->porcentaje;
+                $total = $total + $el->puntaje;
             }
             $g->total_puntos = $total;
         }
@@ -205,41 +206,51 @@ class FaseController extends Controller
         $validation = Validator::make($input, [
             'nombre_jurado' => 'required|string|max:45',
             'grupo_id' => 'required',
-            'puntaje' => 'required|integer|gt:-1|lt:101',
+            'puntaje' => 'required|integer|gt:-1',
             'adjunto' => 'mimes:jpg,png,jpeg,pdf,docx'
         ]);
-        $val = GrupoEvaluacion::where('grupo_id', $input['grupo_id'])->where('fase_id', $input['fase_id'])->get();
         if ($validation->fails()) {
             return response()->json([
                 'ok' => false,
                 'messages' => $validation->messages()
             ]);
         }
-        if (count($val) > 0) {
+        $categoria_id = Auth::user()->categoria_id;
+        $valorMax = Porcentaje::where('categoria_id',$categoria_id)->where('fase_id',$input['fase_id'])->first();
+        if ($input['puntaje']>$valorMax->porcentaje) {
             return response()->json([
-                'ok' => false,
-                'mensaje' => 'Este grupo ya ha sido evaluado en esta fase'
+                'ok'=>false,
+                'mensaje'=>"El valor máximo permitido para esta fase es $valorMax->porcentaje"
             ]);
         } else {
-            try {
-                $fileName = time() . $input['adjunto']->getClientOriginalName();
-                Storage::disk('fases')->put($fileName, File::get($input['adjunto']));
-                $input['adjunto'] = $fileName;
-                $input['categoria_id'] = Auth::user()->categoria_id;
-
-                $faseCarga = GrupoEvaluacion::create($input);
-
-                return response()->json([
-                    'ok' => true,
-                    'message' => 'Calificación subida con éxito'
-                ]);
-            } catch (\Throwable $th) {
+            $val = GrupoEvaluacion::where('grupo_id', $input['grupo_id'])->where('fase_id', $input['fase_id'])->first();
+            if ($val != null) {
                 return response()->json([
                     'ok' => false,
-                    'error' => $th->getMessage()
+                    'mensaje' => 'Este grupo ya ha sido evaluado en esta fase'
                 ]);
+            } else {
+                try {
+                    $fileName = time() . $input['adjunto']->getClientOriginalName();
+                    Storage::disk('fases')->put($fileName, File::get($input['adjunto']));
+                    $input['adjunto'] = $fileName;
+                    $input['categoria_id'] = Auth::user()->categoria_id;
+    
+                    $faseCarga = GrupoEvaluacion::create($input);
+    
+                    return response()->json([
+                        'ok' => true,
+                        'message' => 'Calificación subida con éxito'
+                    ]);
+                } catch (\Throwable $th) {
+                    return response()->json([
+                        'ok' => false,
+                        'error' => $th->getMessage()
+                    ]);
+                }
             }
         }
+        
     }
     public function getTeam($id)
     {
