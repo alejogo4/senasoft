@@ -207,7 +207,7 @@
                                 <i class="la la-user-plus"></i><span>Registrar</span>
                             </a>
                             <ul id="dropdown-invitados" class="collapse list-unstyled pt-0">
-                                <li><a href="">Invitado</a></li>
+                                <li><a href="/invitados">Invitado</a></li>
                             </ul>
                         </li>
 

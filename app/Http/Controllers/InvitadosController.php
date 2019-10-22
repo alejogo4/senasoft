@@ -31,6 +31,7 @@ class InvitadosController extends Controller
         $personas = Persona::with(["Centro", "Centro.Regional"])
             ->where('tipo_persona', '1')
             ->where('categoria_id', $categoria)
+            ->orderBy("id", "DESC")
             ->get();
 
         return Datatables::of($personas)
@@ -44,16 +45,6 @@ class InvitadosController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -61,7 +52,25 @@ class InvitadosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Persona::create([
+            'documento' => $input["documento"],
+            'tipo_documento' => $input["tipo_documento"],
+            'nombres' => $input["nombre"],
+            'apellidos' => $input["apellido"],
+ 
+            'correo_principal' => $input["correo"],
+           
+            'telefono' => $input["telefono"],
+            
+            'ciudad' => $input["ciudad"],
+            
+            'tipo_persona' => 1,
+            'centro_id' => 4,
+            'categoria_id' => 23,
+        ]);
+
+        return redirect("/invitados")->with('status', 'Información registrada');
     }
 
     /**

@@ -74,6 +74,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Invitados
     Route::get('/invitados','InvitadosController@index')->name('invitados');
+    Route::post('/invitados/guardar','InvitadosController@store');
 
     Route::get('/invitados/listado', "InvitadosController@listar_registros");
     Route::get('/invitados/obtener/{categoria}',"InvitadosController@obtener_registros");
