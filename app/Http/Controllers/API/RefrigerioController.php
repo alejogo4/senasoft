@@ -13,7 +13,8 @@ class RefrigerioController extends Controller
     function comprobarRefrigerio(Request $request){
         //Obtener usuario y refrigerio
 		$ok=null;
-		$mensaje = null;
+        $mensaje = null;
+        
         $user = Persona::select('tbl_persona.*')->where('documento', $request->cedula)->first();
 		if($user == null){
 			$ok = false;
@@ -28,9 +29,15 @@ class RefrigerioController extends Controller
 			$ok = false;
             $mensaje  = 'En este horario no hay un refrigerio programado';
             return (new APITransformer)->transform(["ok"=>$ok, "datos"=>$mensaje]);
-		}
+        }
+
+        if($user->tipo_contrato == 'PLANTA' && $refrigerio->tipo_ref_id == 3){		
+			$ok = false;
+            $mensaje  = 'A los instructores de PLANTA no se les asigno almuerzo';
+            return (new APITransformer)->transform(["ok"=>$ok, "datos"=>$mensaje]);
+        }
 		
-		$us_ref = Usref::where('persona_id', $user->id)->where('refrigerios_id', $refrigerio->id)->first();
+        $us_ref = Usref::where('persona_id', $user->id)->where('refrigerios_id', $refrigerio->id)->first();
 		
         //Comprobar el tipo de refrigerio
         $tipo_refrigerio = TipoRefrigerio::select('tbl_tipo_refrigerio.*')->where('id', $refrigerio->tipo_ref_id)->first();
