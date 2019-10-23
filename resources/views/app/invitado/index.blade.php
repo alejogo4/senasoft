@@ -28,7 +28,6 @@ Registro de innvitados
     .select2-selection {
         height: 50px !important;
     }
-
 </style>
 @endsection
 
@@ -61,11 +60,11 @@ Registro de innvitados
                     </div>
                     <div class="form-group col-md-4">
                         <label for="email" class="form-label">Correo</label>
-                        <input onkeyup="mayus(this);" type="email" name="correo" id="correo" required />
+                        <input onkeyup="mayus(this);" type="email" name="correo" id="correo" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="telefono" class="form-label">Teléfono</label>
-                        <input onkeyup="mayus(this);" type="text" name="telefono" id="telefono" required />
+                        <input onkeyup="mayus(this);" type="text" name="telefono" id="telefono" />
                     </div>
                     <div class="form-group col-md-4">
                         <label for="text" class="form-label">Ciudad <b class="text-danger">*</b></label>
@@ -92,9 +91,10 @@ Registro de innvitados
 <script src="{{asset('js/select2.min.js')}}"></script>
 <script src="{{asset('js/select2-es.js')}}"></script>
 <script>
-    $(function () {
-
-
+    function mayus(e) {
+        e.value = e.value.toUpperCase();
+    }
+    $(function() {
 
         $("#ciudad").select2();
 
@@ -108,14 +108,13 @@ Registro de innvitados
             e.forEach(v => {
                 $("#ciudad").append(
                     `<option value='${v.Departamento+"-"+v.Ciudad}'>${v.Departamento+"-"+v.Ciudad}</option>`
-                    );
+                );
             })
         })
 
         @if(session('status'))
-            alert('{{session("status")}}')
+        alert('{{session("status")}}')
         @endif
     })
-
 </script>
 @endsection

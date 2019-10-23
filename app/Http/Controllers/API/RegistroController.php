@@ -42,8 +42,8 @@ class RegistroController extends Controller
         $grupos = Grupo::select("*", \DB::raw("(SELECT SUM(gp.puntaje) FROM tbl_grupo_evaluacion gp WHERE gp.grupo_id = tbl_grupo.id) as puntaje"))
         ->with("grupoxpersonas", "grupoxpersonas.Persona", "grupoxpersonas.Persona.Centro", "grupoxpersonas.Persona.Centro.Regional")
         ->where("categoria_id", $categoria_id)
-        ->orderBy("tbl_grupo.id")
         ->orderBy("puntaje")
+        ->orderBy("tbl_grupo.id")
         ->get();
 
         return (new APITransformer)->transform(["ok" => true, "datos" => $grupos]);

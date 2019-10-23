@@ -68,6 +68,7 @@ class InvitadosController extends Controller
             'tipo_persona' => 1,
             'centro_id' => 4,
             'categoria_id' => 23,
+            'foto' => 'byto_foto.jpg',
         ]);
 
         return redirect("/invitados")->with('status', 'Información registrada');
